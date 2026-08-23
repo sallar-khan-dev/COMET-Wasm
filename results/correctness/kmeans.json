@@ -1,0 +1,21 @@
+{
+  "model": "kmeans",
+  "dataset": "iris",
+  "samples": 150,
+  "agreement_with_exported_cluster_assignment": {
+    "python_reference": 1.0,
+    "wasmtime": 1.0,
+    "docker": 1.0
+  },
+  "equivalence": {
+    "wasmtime_vs_docker_failures": 0,
+    "python_vs_wasmtime_failures": 0,
+    "python_vs_docker_failures": 0,
+    "all_backends_equivalent": true
+  },
+  "failures": {
+    "wasmtime_vs_docker": [],
+    "python_vs_wasmtime": [],
+    "python_vs_docker": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "model": "KMeans",
+  "dataset": "iris",
+  "task": "nearest_centroid_inference",
+  "feature_names": [
+    "sepal_length_cm",
+    "sepal_width_cm",
+    "petal_length_cm",
+    "petal_width_cm"
+  ],
+  "n_clusters": 3,
+  "n_features": 4,
+  "centroids": [
+    [
+      5.901612903225806,
+      2.7483870967741937,
+      4.393548387096774,
+      1.4338709677419355
+    ],
+    [
+      5.006,
+      3.428,
+      1.4620000000000002,
+      0.24600000000000055
+    ],
+    [
+      6.85,
+      3.0736842105263156,
+      5.742105263157894,
+      2.0710526315789473
+    ]
+  ],
+  "profile_hint": {
+    "compute_class": "centroid_distance",
+    "memory_class": "low_medium",
+    "complexity": "O(k*d)",
+    "samples": 150
+  }
+}
