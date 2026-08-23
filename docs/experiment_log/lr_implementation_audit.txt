@@ -1,0 +1,457 @@
+========== LR MODEL ==========
+{
+  "model": "LogisticRegression",
+  "dataset": "Iris",
+  "task": "virginica_vs_non_virginica",
+  "feature_names": [
+    "sepal_length",
+    "sepal_width",
+    "petal_length",
+    "petal_width"
+  ],
+  "weights": [
+    0.5435686295344359,
+    -0.33961576022673484,
+    1.8786291737814031,
+    2.7376368640947257
+  ],
+  "bias": -3.4419034785540097,
+  "mean": [
+    5.835238095238096,
+    3.0980952380952376,
+    3.6971428571428575,
+    1.1790476190476191
+  ],
+  "scale": [
+    0.8678359459165903,
+    0.4318246893801657,
+    1.841503378730963,
+    0.7945882717118027
+  ],
+  "metrics": {
+    "accuracy": 0.9333333333333333,
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1": 0.8888888888888888
+  },
+  "profile_hint": {
+    "compute_class": "lightweight_linear",
+    "memory_class": "very_low",
+    "complexity": "O(d)",
+    "features": 4,
+    "train_samples": 105,
+    "test_samples": 45
+  }
+}
+========== LR TEST SAMPLES ==========
+sepal_length,sepal_width,petal_length,petal_width,label
+7.3,2.9,6.3,1.8,1
+6.1,3.0,4.6,1.4,0
+6.3,2.8,5.1,1.5,1
+5.4,3.4,1.7,0.2,0
+6.1,3.0,4.9,1.8,1
+6.7,3.1,5.6,2.4,1
+4.7,3.2,1.3,0.2,0
+6.1,2.8,4.0,1.3,0
+5.2,2.7,3.9,1.4,0
+
+========== WASM CARGO ==========
+[package]
+name = "tenant_lr_real"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+
+========== WASM SOURCE ==========
+#[no_mangle]
+pub extern "C" fn predict(f1: f32, f2: f32, f3: f32, f4: f32) -> i32 {
+    let weights: [f32; 4] = [0.5435686295f32, -0.3396157602f32, 1.878629174f32, 2.737636864f32];
+    let mean: [f32; 4] = [5.835238095f32, 3.098095238f32, 3.697142857f32, 1.179047619f32];
+    let scale: [f32; 4] = [0.8678359459f32, 0.4318246894f32, 1.841503379f32, 0.7945882717f32];
+    let input: [f32; 4] = [f1, f2, f3, f4];
+    let mut z: f32 = -3.441903479f32;
+    let mut i = 0;
+    while i < 4 {
+        let x_scaled = (input[i] - mean[i]) / scale[i];
+        z += weights[i] * x_scaled;
+        i += 1;
+    }
+    let probability = 1.0f32 / (1.0f32 + (-z).exp());
+    if probability >= 0.5 { 1 } else { 0 }
+}
+
+========== WASM GENERATOR ==========
+import json
+from pathlib import Path
+ROOT = Path(__file__).resolve().parents[2]
+m = json.loads((ROOT / "models" / "logistic_regression" / "iris_lr" / "model.json").read_text())
+def arr(vals): return "[" + ", ".join(f"{v:.10}f32" for v in vals) + "]"
+code = f'''#[no_mangle]
+pub extern "C" fn predict(f1: f32, f2: f32, f3: f32, f4: f32) -> i32 {{
+    let weights: [f32; 4] = {arr(m["weights"])};
+    let mean: [f32; 4] = {arr(m["mean"])};
+    let scale: [f32; 4] = {arr(m["scale"])};
+    let input: [f32; 4] = [f1, f2, f3, f4];
+    let mut z: f32 = {m["bias"]:.10}f32;
+    let mut i = 0;
+    while i < 4 {{
+        let x_scaled = (input[i] - mean[i]) / scale[i];
+        z += weights[i] * x_scaled;
+        i += 1;
+    }}
+    let probability = 1.0f32 / (1.0f32 + (-z).exp());
+    if probability >= 0.5 {{ 1 }} else {{ 0 }}
+}}
+'''
+Path("src/lib.rs").write_text(code)
+print("Generated src/lib.rs")
+
+========== HOST CARGO ==========
+[package]
+name = "host_lr_server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.7"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+anyhow = "1"
+wasmtime = "44"
+
+========== HOST SOURCE ==========
+use axum::{extract::State, routing::post, Json, Router};
+use serde::{Deserialize, Serialize};
+use std::{net::SocketAddr, sync::{Arc, Mutex}, time::Instant};
+use wasmtime::*;
+
+#[derive(Clone)]
+struct AppState { runtime: Arc<Mutex<WasmRuntime>> }
+struct WasmRuntime { store: Store<()>, predict: TypedFunc<(f32, f32, f32, f32), i32> }
+#[derive(Deserialize)]
+struct InferenceRequest { f1: f32, f2: f32, f3: f32, f4: f32 }
+#[derive(Serialize)]
+struct InferenceResponse { prediction: i32, inference_time_ns: u128 }
+
+async fn infer(State(state): State<AppState>, Json(payload): Json<InferenceRequest>) -> Json<InferenceResponse> {
+    let start = Instant::now();
+    let mut runtime = state.runtime.lock().unwrap();
+    let predict = runtime.predict.clone();
+    let prediction = predict.call(&mut runtime.store, (payload.f1, payload.f2, payload.f3, payload.f4)).unwrap_or(-1);
+    Json(InferenceResponse { prediction, inference_time_ns: start.elapsed().as_nanos() })
+}
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    println!("Starting COMET-Wasm LR Wasmtime Server");
+    let engine = Engine::default();
+    let module_path = "../../../wasm/tenant_lr_real/target/wasm32-unknown-unknown/release/tenant_lr_real.wasm";
+    let module = Module::from_file(&engine, module_path)?;
+    let mut store = Store::new(&engine, ());
+    let instance = Instance::new(&mut store, &module, &[])?;
+    let predict = instance.get_typed_func::<(f32, f32, f32, f32), i32>(&mut store, "predict")?;
+    let runtime = WasmRuntime { store, predict };
+    let state = AppState { runtime: Arc::new(Mutex::new(runtime)) };
+    let app = Router::new().route("/infer", post(infer)).with_state(state);
+    let addr = SocketAddr::from(([0, 0, 0, 0], 8010));
+    println!("Wasm LR server listening on http://{}", addr);
+    let listener = tokio::net::TcpListener::bind(addr).await?;
+    axum::serve(listener, app).await?;
+    Ok(())
+}
+
+========== DOCKER CARGO ==========
+[package]
+name = "docker_lr_server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.7"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+anyhow = "1"
+
+========== DOCKER SOURCE ==========
+use axum::{extract::Json, routing::post, Router};
+use serde::{Deserialize, Serialize};
+use std::{net::SocketAddr, time::Instant};
+#[derive(Deserialize)]
+struct InferenceRequest { f1: f32, f2: f32, f3: f32, f4: f32 }
+#[derive(Serialize)]
+struct InferenceResponse { prediction: i32, inference_time_ns: u128 }
+async fn infer(Json(payload): Json<InferenceRequest>) -> Json<InferenceResponse> {
+    let start = Instant::now();
+    let weights: [f32; 4] = [0.5435686295f32, -0.3396157602f32, 1.878629174f32, 2.737636864f32];
+    let mean: [f32; 4] = [5.835238095f32, 3.098095238f32, 3.697142857f32, 1.179047619f32];
+    let scale: [f32; 4] = [0.8678359459f32, 0.4318246894f32, 1.841503379f32, 0.7945882717f32];
+    let input: [f32; 4] = [payload.f1, payload.f2, payload.f3, payload.f4];
+    let mut z: f32 = -3.441903479f32;
+    for i in 0..4 {
+        let x_scaled = (input[i] - mean[i]) / scale[i];
+        z += weights[i] * x_scaled;
+    }
+    let probability = 1.0f32 / (1.0f32 + (-z).exp());
+    let prediction = if probability >= 0.5 { 1 } else { 0 };
+    Json(InferenceResponse { prediction, inference_time_ns: start.elapsed().as_nanos() })
+}
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    println!("Starting Native Docker LR Server");
+    let app = Router::new().route("/infer", post(infer));
+    let addr = SocketAddr::from(([0, 0, 0, 0], 8085));
+    println!("Docker LR server listening on http://{}", addr);
+    let listener = tokio::net::TcpListener::bind(addr).await?;
+    axum::serve(listener, app).await?;
+    Ok(())
+}
+
+========== DOCKERFILE ==========
+FROM rust:1.89
+WORKDIR /app
+COPY . .
+RUN cargo build --release
+EXPOSE 8085
+CMD ["./target/release/docker_lr_server"]
+
+========== TRAINING ==========
+import json
+from pathlib import Path
+import pandas as pd
+from sklearn.datasets import load_iris, load_breast_cancer, load_wine, load_digits
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support
+from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
+from sklearn.cluster import KMeans
+from sklearn.neural_network import MLPClassifier
+
+ROOT = Path(__file__).resolve().parents[2]
+
+def save_json(path, obj):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(obj, indent=2))
+
+def save_csv(path, X, y, feature_names):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    df = pd.DataFrame(X, columns=feature_names)
+    df["label"] = y
+    df.to_csv(path, index=False)
+
+def metrics(y_true, y_pred):
+    avg = "binary" if len(set(y_true)) == 2 else "macro"
+    p, r, f1, _ = precision_recall_fscore_support(y_true, y_pred, average=avg, zero_division=0)
+    return {"accuracy": float(accuracy_score(y_true, y_pred)), "precision": float(p), "recall": float(r), "f1": float(f1)}
+
+def export_lr_iris():
+    data = load_iris()
+    X = data.data.astype(float)
+    y = (data.target == 2).astype(int)
+    feature_names = [n.replace(" (cm)", "").replace(" ", "_") for n in data.feature_names]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=42, stratify=y)
+    scaler = StandardScaler()
+    X_train_s = scaler.fit_transform(X_train)
+    X_test_s = scaler.transform(X_test)
+    clf = LogisticRegression(max_iter=1000, random_state=42)
+    clf.fit(X_train_s, y_train)
+    pred = clf.predict(X_test_s)
+    model = {
+        "model": "LogisticRegression", "dataset": "Iris", "task": "virginica_vs_non_virginica",
+        "feature_names": feature_names, "weights": clf.coef_[0].astype(float).tolist(),
+        "bias": float(clf.intercept_[0]), "mean": scaler.mean_.astype(float).tolist(),
+        "scale": scaler.scale_.astype(float).tolist(), "metrics": metrics(y_test, pred),
+        "profile_hint": {"compute_class": "lightweight_linear", "memory_class": "very_low", "complexity": "O(d)", "features": int(X.shape[1]), "train_samples": int(X_train.shape[0]), "test_samples": int(X_test.shape[0])}
+    }
+    out_dir = ROOT / "models" / "logistic_regression" / "iris_lr"
+    save_json(out_dir / "model.json", model)
+    save_csv(out_dir / "test_samples.csv", X_test, y_test, feature_names)
+    save_csv(ROOT / "datasets" / "iris" / "iris_binary_test.csv", X_test, y_test, feature_names)
+    save_json(ROOT / "datasets" / "iris" / "iris_lr_metadata.json", model)
+    print("Saved LR model:", out_dir / "model.json")
+    print(json.dumps(model["metrics"], indent=2))
+
+def export_sklearn_zoo():
+    datasets = {"breast_cancer": load_breast_cancer(), "wine": load_wine(), "digits": load_digits()}
+    classifiers = {
+        "naive_bayes": GaussianNB(),
+        "decision_tree": DecisionTreeClassifier(max_depth=8, random_state=42),
+        "random_forest": RandomForestClassifier(n_estimators=50, max_depth=8, random_state=42),
+        "svm": SVC(kernel="rbf", gamma="scale", probability=False, random_state=42),
+        "mlp": MLPClassifier(hidden_layer_sizes=(32,), max_iter=500, random_state=42),
+    }
+    summary = []
+    for dname, data in datasets.items():
+        X = data.data.astype(float)
+        y = data.target
+        feature_names = [str(n).replace(" ", "_").replace("(", "").replace(")", "") for n in getattr(data, "feature_names", [f"f{i}" for i in range(X.shape[1])])]
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=42, stratify=y)
+        scaler = StandardScaler()
+        X_train_s = scaler.fit_transform(X_train)
+        X_test_s = scaler.transform(X_test)
+        save_csv(ROOT / "datasets" / dname / "test_samples.csv", X_test, y_test, feature_names)
+        for mname, clf in classifiers.items():
+            try:
+                clf.fit(X_train_s, y_train)
+                pred = clf.predict(X_test_s)
+                met = metrics(y_test, pred)
+                obj = {"model": mname, "dataset": dname, "feature_names": feature_names, "mean": scaler.mean_.astype(float).tolist(), "scale": scaler.scale_.astype(float).tolist(), "metrics": met, "profile_hint": {"features": int(X.shape[1]), "train_samples": int(X_train.shape[0]), "test_samples": int(X_test.shape[0])}}
+                out = ROOT / "models" / mname / dname
+                save_json(out / "metadata.json", obj)
+                save_csv(out / "test_samples.csv", X_test, y_test, feature_names)
+                summary.append({"dataset": dname, "model": mname, **met})
+            except Exception as e:
+                summary.append({"dataset": dname, "model": mname, "error": str(e)})
+    iris = load_iris()
+    X = iris.data.astype(float)
+    km = KMeans(n_clusters=3, n_init=10, random_state=42)
+    labels = km.fit_predict(X)
+    save_json(ROOT / "models" / "kmeans" / "iris" / "metadata.json", {"model": "KMeans", "dataset": "iris", "centroids": km.cluster_centers_.astype(float).tolist(), "profile_hint": {"compute_class": "centroid_distance", "memory_class": "low_medium", "complexity": "O(k*d)"}})
+    save_csv(ROOT / "models" / "kmeans" / "iris" / "samples.csv", X, labels, [f"f{i}" for i in range(X.shape[1])])
+    summary.append({"dataset": "iris", "model": "kmeans", "note": "unsupervised_centroid_export"})
+    save_json(ROOT / "models" / "model_zoo_summary.json", summary)
+    print("Saved model zoo summary:", ROOT / "models" / "model_zoo_summary.json")
+
+if __name__ == "__main__":
+    export_lr_iris()
+    export_sklearn_zoo()
+
+========== WASM THROUGHPUT ==========
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/../.."
+source .venv/bin/activate
+python scripts/ci/servingMetricsPlusCI.py --name wasm_real_lr_c32 --url http://localhost:8010/infer --body '{"f1":6.3,"f2":3.3,"f3":6.0,"f4":2.5}' --concurrency 32 --duration-s 5 --warmup 1 --repeat-min 20 --repeat-max 60 --rel-precision 0.025 --cooldown-s 1
+
+========== DOCKER THROUGHPUT ==========
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/../.."
+source .venv/bin/activate
+python scripts/ci/servingMetricsPlusCI.py --name docker_real_lr_c32 --url http://localhost:8086/infer --body '{"f1":6.3,"f2":3.3,"f3":6.0,"f4":2.5}' --concurrency 32 --duration-s 5 --warmup 1 --repeat-min 20 --repeat-max 60 --rel-precision 0.025 --cooldown-s 1
+
+========== WASM COLD START ==========
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+echo "Starting REAL Wasm LR cold-start test..."
+START=$(date +%s%3N)
+cd "$ROOT/serving/wasm_server/host_lr_server"
+cargo run --release > /tmp/wasm_lr_server.log 2>&1 &
+SERVER_PID=$!
+sleep 2
+curl -s -X POST http://localhost:8010/infer -H "Content-Type: application/json" -d '{"f1":6.3,"f2":3.3,"f3":6.0,"f4":2.5}' > /dev/null || true
+END=$(date +%s%3N)
+echo "REAL Wasm LR cold-start time: $((END - START)) ms"
+kill "$SERVER_PID" > /dev/null 2>&1 || true
+wait "$SERVER_PID" 2>/dev/null || true
+
+========== DOCKER COLD START ==========
+#!/usr/bin/env bash
+set -euo pipefail
+echo "Starting REAL Docker LR cold-start test..."
+docker rm -f docker_lr_coldstart >/dev/null 2>&1 || true
+START=$(date +%s%3N)
+docker run -d -p 8090:8085 --name docker_lr_coldstart docker-lr-server > /dev/null
+sleep 2
+curl -s -X POST http://localhost:8090/infer -H "Content-Type: application/json" -d '{"f1":6.3,"f2":3.3,"f3":6.0,"f4":2.5}' > /dev/null || true
+END=$(date +%s%3N)
+echo "REAL Docker LR cold-start time: $((END - START)) ms"
+docker rm -f docker_lr_coldstart >/dev/null 2>&1 || true
+
+========== CI SCRIPT ==========
+#!/usr/bin/env python3
+import argparse, csv, re, subprocess, time
+from pathlib import Path
+import numpy as np
+from scipy import stats
+
+def run_hey(url, body, concurrency, duration_s):
+    cmd = ["hey", "-z", f"{duration_s}s", "-c", str(concurrency), "-m", "POST", "-H", "Content-Type: application/json", "-d", body, url]
+    out = subprocess.check_output(cmd, text=True, stderr=subprocess.STDOUT)
+    def extract(pattern, default=np.nan):
+        m = re.search(pattern, out)
+        return float(m.group(1)) if m else default
+    return {"rps": extract(r"Requests/sec:\s+([0-9.]+)"), "avg_ms": extract(r"Average:\s+([0-9.]+)")*1000, "p50_ms": extract(r"50%% in\s+([0-9.]+)")*1000, "p95_ms": extract(r"95%% in\s+([0-9.]+)")*1000, "p99_ms": extract(r"99%% in\s+([0-9.]+)")*1000}
+
+def rel_ci(values, confidence=0.95):
+    arr = np.array(values, dtype=float); n = len(arr); mean = float(np.mean(arr))
+    if n < 2 or mean == 0: return mean, float("inf")
+    h = stats.sem(arr) * stats.t.ppf((1 + confidence) / 2.0, n - 1)
+    return mean, abs(h / mean)
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--name", required=True); ap.add_argument("--url", required=True); ap.add_argument("--body", required=True)
+    ap.add_argument("--concurrency", type=int, default=32); ap.add_argument("--duration-s", type=int, default=5); ap.add_argument("--warmup", type=int, default=1)
+    ap.add_argument("--repeat-min", type=int, default=20); ap.add_argument("--repeat-max", type=int, default=60); ap.add_argument("--rel-precision", type=float, default=0.025); ap.add_argument("--cooldown-s", type=float, default=1.0)
+    args = ap.parse_args()
+    out_dir = Path("results/ci_runs"); out_dir.mkdir(parents=True, exist_ok=True)
+    raw_path = out_dir / f"{args.name}_raw.csv"; summary_path = out_dir / f"{args.name}_summary.csv"
+    print(f"Experiment: {args.name}\nURL: {args.url}\nConcurrency: {args.concurrency}\nDuration per repeat: {args.duration_s}s\nPrecision target: {args.rel_precision*100:.2f}%")
+    for i in range(args.warmup): print(f"Warmup {i+1}/{args.warmup}"); run_hey(args.url, args.body, args.concurrency, args.duration_s)
+    rows = []
+    with raw_path.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["run", "rps", "avg_ms", "p50_ms", "p95_ms", "p99_ms"]); writer.writeheader()
+        for i in range(1, args.repeat_max + 1):
+            print(f"Measured run {i}/{args.repeat_max}"); row = run_hey(args.url, args.body, args.concurrency, args.duration_s); row["run"] = i; rows.append(row); writer.writerow(row); f.flush()
+            if i >= args.repeat_min:
+                p95_mean, p95_rel = rel_ci([r["p95_ms"] for r in rows]); rps_mean, rps_rel = rel_ci([r["rps"] for r in rows])
+                print(f"  p95 mean={p95_mean:.4f} ms, relCI={p95_rel*100:.2f}%"); print(f"  rps mean={rps_mean:.2f}, relCI={rps_rel*100:.2f}%")
+                if p95_rel <= args.rel_precision and rps_rel <= args.rel_precision: print("Precision target reached."); break
+            time.sleep(args.cooldown_s)
+    with summary_path.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["metric", "mean", "std", "min", "max", "p95_rel_ci", "n"]); writer.writeheader()
+        for metric in ["rps", "avg_ms", "p50_ms", "p95_ms", "p99_ms"]:
+            vals = [r[metric] for r in rows]; mean, rel = rel_ci(vals)
+            writer.writerow({"metric": metric, "mean": mean, "std": float(np.std(vals, ddof=1)) if len(vals)>1 else 0, "min": float(np.min(vals)), "max": float(np.max(vals)), "p95_rel_ci": rel, "n": len(vals)})
+    print(f"Saved raw results: {raw_path}\nSaved summary: {summary_path}")
+if __name__ == "__main__": main()
+
+========== COMET SCORE ==========
+from dataclasses import dataclass
+@dataclass
+class ModelProfile:
+    compute_intensity: float; memory_intensity: float; latency_sensitivity: float; tenant_pressure: float; model_size: float; density_sensitivity: float; cold_start_sensitivity: float
+@dataclass
+class BackendProfile:
+    name: str; compute_capability: float; available_memory: float; tenant_capacity: float; sla_compliance: float; startup_efficiency: float; current_memory: float; current_tenants: int; p95_latency: float
+@dataclass
+class Constraints:
+    memory_budget: float; sla_latency: float; tenant_capacity: int
+
+def comet_score(m, b, lambdas=None):
+    if lambdas is None: lambdas = [1.0, 1.0, 1.0, 1.0, 1.0]
+    l1, l2, l3, l4, l5 = lambdas
+    return l1*m.compute_intensity*b.compute_capability + l2*m.memory_intensity*b.available_memory + l3*m.tenant_pressure*b.tenant_capacity + l4*m.latency_sensitivity*b.sla_compliance + l5*m.cold_start_sensitivity*b.startup_efficiency
+
+def feasible(b, c): return b.current_memory <= c.memory_budget and b.p95_latency <= c.sla_latency and b.current_tenants <= c.tenant_capacity
+
+def select_backend(model, backends, constraints):
+    candidates = [b for b in backends if feasible(b, constraints)]
+    return None if not candidates else max(candidates, key=lambda b: comet_score(model, b))
+
+if __name__ == "__main__":
+    model = ModelProfile(0.2, 0.1, 0.8, 0.9, 0.1, 0.9, 0.8)
+    backends = [BackendProfile("wasmtime",0.7,0.9,0.95,0.9,0.95,0.4,10,0.4), BackendProfile("docker",0.9,0.6,0.55,0.75,0.4,0.7,10,0.7), BackendProfile("wasi-nn",0.95,0.8,0.7,0.9,0.6,0.5,5,0.5)]
+    selected = select_backend(model, backends, Constraints(1.0, 1.0, 20))
+    print("Selected backend:", selected.name if selected else "none")
+
+========== COMET EQUATIONS ==========
+# COMET-Wasm Equations
+
+P(m) = <C_m, M_m, L_m, T_m, S_m, D_m, K_m>
+
+Suitability(m,b) = w_C Fit_C(m,b) + w_M Fit_M(m,b) + w_L Fit_L(m,b) + w_T Fit_T(m,b) + w_K Fit_K(m,b) - w_X SwitchCost(m,b)
+
+COMETScore(m,b) = λ1 C_m R_b + λ2 M_m A_b + λ3 T_m Q_b + λ4 L_m S_b + λ5 K_m H_b
+
+b* = argmax_b COMETScore(m,b)
+subject to Memory_b <= Budget, p95_b <= SLA_latency, Tenants_b <= Capacity_b
