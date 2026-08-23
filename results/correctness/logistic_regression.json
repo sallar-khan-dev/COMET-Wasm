@@ -1,0 +1,21 @@
+{
+  "model": "logistic_regression",
+  "dataset": "iris",
+  "samples": 45,
+  "accuracy": {
+    "python_reference": 0.9333333333333333,
+    "wasmtime": 0.9333333333333333,
+    "docker": 0.9333333333333333
+  },
+  "equivalence": {
+    "wasmtime_vs_docker_failures": 0,
+    "python_vs_wasmtime_failures": 0,
+    "python_vs_docker_failures": 0,
+    "all_backends_equivalent": true
+  },
+  "failures": {
+    "wasmtime_vs_docker": [],
+    "python_vs_wasmtime": [],
+    "python_vs_docker": []
+  }
+}
