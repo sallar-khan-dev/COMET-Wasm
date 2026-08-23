@@ -1,0 +1,127 @@
+[
+  {
+    "dataset": "breast_cancer",
+    "model": "naive_bayes",
+    "accuracy": 0.935672514619883,
+    "precision": 0.9363636363636364,
+    "recall": 0.9626168224299065,
+    "f1": 0.9493087557603687
+  },
+  {
+    "dataset": "breast_cancer",
+    "model": "decision_tree",
+    "accuracy": 0.9181286549707602,
+    "precision": 0.9345794392523364,
+    "recall": 0.9345794392523364,
+    "f1": 0.9345794392523364
+  },
+  {
+    "dataset": "breast_cancer",
+    "model": "random_forest",
+    "accuracy": 0.9298245614035088,
+    "precision": 0.9439252336448598,
+    "recall": 0.9439252336448598,
+    "f1": 0.9439252336448598
+  },
+  {
+    "dataset": "breast_cancer",
+    "model": "svm",
+    "accuracy": 0.9766081871345029,
+    "precision": 0.9813084112149533,
+    "recall": 0.9813084112149533,
+    "f1": 0.9813084112149533
+  },
+  {
+    "dataset": "breast_cancer",
+    "model": "mlp",
+    "accuracy": 0.9707602339181286,
+    "precision": 0.9903846153846154,
+    "recall": 0.9626168224299065,
+    "f1": 0.976303317535545
+  },
+  {
+    "dataset": "wine",
+    "model": "naive_bayes",
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  {
+    "dataset": "wine",
+    "model": "decision_tree",
+    "accuracy": 0.9629629629629629,
+    "precision": 0.9710144927536232,
+    "recall": 0.9592592592592593,
+    "f1": 0.9638304224511122
+  },
+  {
+    "dataset": "wine",
+    "model": "random_forest",
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  {
+    "dataset": "wine",
+    "model": "svm",
+    "accuracy": 0.9814814814814815,
+    "precision": 0.9848484848484849,
+    "recall": 0.9777777777777779,
+    "f1": 0.9807538091419407
+  },
+  {
+    "dataset": "wine",
+    "model": "mlp",
+    "accuracy": 0.9814814814814815,
+    "precision": 0.9824561403508771,
+    "recall": 0.9841269841269842,
+    "f1": 0.9828609096901779
+  },
+  {
+    "dataset": "digits",
+    "model": "naive_bayes",
+    "accuracy": 0.7722222222222223,
+    "precision": 0.8286723855421864,
+    "recall": 0.771936588917721,
+    "f1": 0.774273335033704
+  },
+  {
+    "dataset": "digits",
+    "model": "decision_tree",
+    "accuracy": 0.8296296296296296,
+    "precision": 0.8316446010642637,
+    "recall": 0.8293281142337747,
+    "f1": 0.8288342572230579
+  },
+  {
+    "dataset": "digits",
+    "model": "random_forest",
+    "accuracy": 0.9611111111111111,
+    "precision": 0.9619707408195021,
+    "recall": 0.9607847707847708,
+    "f1": 0.9607692281324317
+  },
+  {
+    "dataset": "digits",
+    "model": "svm",
+    "accuracy": 0.9833333333333333,
+    "precision": 0.9837950257289881,
+    "recall": 0.98315205758602,
+    "f1": 0.9832814731575896
+  },
+  {
+    "dataset": "digits",
+    "model": "mlp",
+    "accuracy": 0.975925925925926,
+    "precision": 0.9767177570856818,
+    "recall": 0.9756734251073874,
+    "f1": 0.9758692610948521
+  },
+  {
+    "dataset": "iris",
+    "model": "kmeans",
+    "note": "unsupervised_centroid_export"
+  }
+]

@@ -1,0 +1,33 @@
+# Rust build artifacts
+target/
+**/target/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Logs and temporary files
+*.log
+*.tmp
+*.pid
+
+# Generated raw benchmark data
+results/raw/*
+!results/raw/.gitkeep
+
+# Generated figures
+figures/*.png
+figures/*.pdf
+
+# Environment/secrets
+.env
+*.env
