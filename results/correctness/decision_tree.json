@@ -1,0 +1,21 @@
+{
+  "model": "decision_tree",
+  "dataset": "breast_cancer",
+  "samples": 171,
+  "accuracy": {
+    "python_reference": 0.9181286549707602,
+    "wasmtime": 0.9181286549707602,
+    "docker": 0.9181286549707602
+  },
+  "equivalence": {
+    "wasmtime_vs_docker_failures": 0,
+    "python_vs_wasmtime_failures": 0,
+    "python_vs_docker_failures": 0,
+    "all_backends_equivalent": true
+  },
+  "failures": {
+    "wasmtime_vs_docker": [],
+    "python_vs_wasmtime": [],
+    "python_vs_docker": []
+  }
+}
