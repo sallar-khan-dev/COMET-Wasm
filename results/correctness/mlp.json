@@ -1,0 +1,26 @@
+{
+  "model": "mlp",
+  "dataset": "breast_cancer",
+  "architecture": [
+    30,
+    32,
+    1
+  ],
+  "samples": 171,
+  "accuracy": {
+    "python_reference": 0.9707602339181286,
+    "wasmtime": 0.9707602339181286,
+    "docker": 0.9707602339181286
+  },
+  "equivalence": {
+    "wasmtime_vs_docker_failures": 0,
+    "python_vs_wasmtime_failures": 0,
+    "python_vs_docker_failures": 0,
+    "all_backends_equivalent": true
+  },
+  "failures": {
+    "wasmtime_vs_docker": [],
+    "python_vs_wasmtime": [],
+    "python_vs_docker": []
+  }
+}
