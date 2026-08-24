@@ -1,0 +1,21 @@
+hardware:
+
+  host: hpcnexus-gpu-srv03
+
+  cpu:
+    model: Intel Xeon Gold 6430
+    sockets: 2
+    logical_cpus: 128
+
+  memory:
+    total_gib: 125
+
+  gpu:
+    count: 2
+    model: NVIDIA L40S
+
+  software:
+    rust: "1.96.0"
+    python: "3.13.5"
+    docker: "29.6.1"
+    wasmtime_crate: "44"

@@ -1,0 +1,57 @@
+models:
+
+  logistic_regression:
+    task: binary_classification
+    dataset: iris
+    features: 4
+    model_path: models/logistic_regression/iris_lr/model.json
+    test_path: models/logistic_regression/iris_lr/test_samples.csv
+    workload_class: lightweight_linear
+
+  naive_bayes:
+    task: binary_classification
+    dataset: breast_cancer
+    features: 30
+    model_path: models/naive_bayes/breast_cancer/model.json
+    test_path: models/naive_bayes/breast_cancer/test_samples.csv
+    workload_class: probabilistic
+
+  decision_tree:
+    task: binary_classification
+    dataset: breast_cancer
+    features: 30
+    model_path: models/decision_tree/breast_cancer/model.json
+    test_path: models/decision_tree/breast_cancer/test_samples.csv
+    workload_class: branch_heavy
+
+  kmeans:
+    task: clustering_inference
+    dataset: iris
+    features: 4
+    model_path: models/kmeans/iris/model.json
+    test_path: models/kmeans/iris/samples.csv
+    workload_class: centroid_distance
+
+  random_forest:
+    task: binary_classification
+    dataset: breast_cancer
+    features: 30
+    model_path: models/random_forest/breast_cancer/model_packed.json
+    test_path: models/random_forest/breast_cancer/test_samples.csv
+    workload_class: tree_ensemble
+
+  svm:
+    task: binary_classification
+    dataset: breast_cancer
+    features: 30
+    model_path: models/svm/breast_cancer/model.json
+    test_path: models/svm/breast_cancer/test_samples.csv
+    workload_class: kernel_compute_heavy
+
+  mlp:
+    task: binary_classification
+    dataset: breast_cancer
+    features: 30
+    model_path: models/mlp/breast_cancer/model.json
+    test_path: models/mlp/breast_cancer/test_samples.csv
+    workload_class: dense_neural

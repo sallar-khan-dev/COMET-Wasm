@@ -1,0 +1,10 @@
+sla_profiles:
+
+  strict:
+    p95_ms: 1.0
+
+  moderate:
+    p95_ms: 5.0
+
+  relaxed:
+    p95_ms: 20.0

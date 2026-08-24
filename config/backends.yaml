@@ -1,0 +1,24 @@
+backends:
+
+  wasmtime:
+    type: wasm
+    runtime: wasmtime
+    execution: embedded
+    isolation: wasm_instance
+
+  docker:
+    type: container
+    runtime: docker
+    isolation: container
+
+  native:
+    type: native
+    runtime: linux_process
+    isolation: process
+    enabled: false
+
+  wasi_nn:
+    type: accelerated_wasm
+    runtime: wasmtime
+    accelerator: gpu
+    enabled: false
