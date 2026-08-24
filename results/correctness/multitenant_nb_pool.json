@@ -1,0 +1,17 @@
+{
+  "model": "naive_bayes",
+  "backend": "wasmtime",
+  "physical_workers": 4,
+  "logical_tenants": 100,
+  "requests_per_tenant": 10,
+  "total_requests": 1000,
+  "wrong_predictions": 0,
+  "wrong_worker_mappings": 0,
+  "workers_seen": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "status": "PASS"
+}
