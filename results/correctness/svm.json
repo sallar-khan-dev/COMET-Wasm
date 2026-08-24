@@ -1,0 +1,21 @@
+{
+  "model": "svm_rbf",
+  "dataset": "breast_cancer",
+  "samples": 171,
+  "accuracy": {
+    "python_reference": 0.9766081871345029,
+    "wasmtime": 0.9766081871345029,
+    "docker": 0.9766081871345029
+  },
+  "equivalence": {
+    "wasmtime_vs_docker_failures": 0,
+    "python_vs_wasmtime_failures": 0,
+    "python_vs_docker_failures": 0,
+    "all_backends_equivalent": true
+  },
+  "failures": {
+    "wasmtime_vs_docker": [],
+    "python_vs_wasmtime": [],
+    "python_vs_docker": []
+  }
+}
