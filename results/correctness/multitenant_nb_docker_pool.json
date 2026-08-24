@@ -1,0 +1,17 @@
+{
+  "model": "naive_bayes",
+  "backend": "docker",
+  "physical_containers": 4,
+  "logical_tenants": 100,
+  "requests_per_tenant": 10,
+  "total_requests": 1000,
+  "wrong_predictions": 0,
+  "wrong_mappings": 0,
+  "containers_seen": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "status": "PASS"
+}
