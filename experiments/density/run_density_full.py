@@ -828,6 +828,17 @@ def ci_stats(values):
 
     n = len(values)
 
+    if n == 0:
+        return {
+            "n": 0,
+            "mean": 0.0,
+            "sd": 0.0,
+            "halfwidth": math.inf,
+            "lower": None,
+            "upper": None,
+            "relative_halfwidth": math.inf,
+        }
+
     mean = statistics.mean(
         values
     )
@@ -1192,7 +1203,7 @@ try:
                 ],
 
             "ci_target_met":
-                (
+                bool(
                     stats["n"]
                     >= MIN_REPS
                     and stats[
