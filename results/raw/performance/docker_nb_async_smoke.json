@@ -1,0 +1,19 @@
+{
+  "backend": "docker",
+  "client": "aiohttp_async",
+  "physical_units": 20,
+  "concurrency": 16,
+  "requests": 5000,
+  "successful_requests": 5000,
+  "correct_predictions": 5000,
+  "errors": 0,
+  "error_rate": 0.0,
+  "elapsed_seconds": 0.6292101661674678,
+  "throughput_rps": 7946.470462254454,
+  "mean_latency_ms": 2.0011852186,
+  "p50_latency_ms": 1.9739995000000001,
+  "p90_latency_ms": 2.0751667,
+  "p95_latency_ms": 2.19089905,
+  "p99_latency_ms": 2.3529311800000006,
+  "max_latency_ms": 4.148273
+}

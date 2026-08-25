@@ -1,0 +1,19 @@
+{
+  "backend": "wasmtime",
+  "client": "aiohttp_async",
+  "physical_units": 20,
+  "concurrency": 16,
+  "requests": 5000,
+  "successful_requests": 5000,
+  "correct_predictions": 5000,
+  "errors": 0,
+  "error_rate": 0.0,
+  "elapsed_seconds": 0.5594901200383902,
+  "throughput_rps": 8936.708300866721,
+  "mean_latency_ms": 1.7784991764,
+  "p50_latency_ms": 1.635938,
+  "p90_latency_ms": 2.6504849,
+  "p95_latency_ms": 2.7146229,
+  "p99_latency_ms": 2.8138150399999997,
+  "max_latency_ms": 6.688335
+}
