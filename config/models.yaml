@@ -7,6 +7,10 @@ models:
     model_path: models/logistic_regression/iris_lr/model.json
     test_path: models/logistic_regression/iris_lr/test_samples.csv
     workload_class: lightweight_linear
+    wasm_artifact: wasm/tenant_lr_real/target/wasm32-unknown-unknown/release/tenant_lr_real.wasm
+    docker_image: comet-lr-docker:v1
+    host_server: serving/wasm_server/host_lr_server/target/release/host_lr_server
+    correctness_result: results/correctness/logistic_regression.json
 
   naive_bayes:
     task: binary_classification
@@ -15,6 +19,10 @@ models:
     model_path: models/naive_bayes/breast_cancer/model.json
     test_path: models/naive_bayes/breast_cancer/test_samples.csv
     workload_class: probabilistic
+    wasm_artifact: wasm/tenant_nb_real/target/wasm32-unknown-unknown/release/tenant_nb_real.wasm
+    docker_image: comet-nb-docker:v1
+    host_server: serving/wasm_server/host_nb_server/target/release/host_nb_server
+    correctness_result: results/correctness/naive_bayes.json
 
   decision_tree:
     task: binary_classification
@@ -23,6 +31,10 @@ models:
     model_path: models/decision_tree/breast_cancer/model.json
     test_path: models/decision_tree/breast_cancer/test_samples.csv
     workload_class: branch_heavy
+    wasm_artifact: wasm/tenant_dt_real/target/wasm32-unknown-unknown/release/tenant_dt_real.wasm
+    docker_image: comet-dt-docker:v1
+    host_server: serving/wasm_server/host_dt_server/target/release/host_dt_server
+    correctness_result: results/correctness/decision_tree.json
 
   kmeans:
     task: clustering_inference
@@ -31,6 +43,10 @@ models:
     model_path: models/kmeans/iris/model.json
     test_path: models/kmeans/iris/samples.csv
     workload_class: centroid_distance
+    wasm_artifact: wasm/tenant_kmeans_real/target/wasm32-unknown-unknown/release/tenant_kmeans_real.wasm
+    docker_image: comet-kmeans-docker:v1
+    host_server: serving/wasm_server/host_kmeans_server/target/release/host_kmeans_server
+    correctness_result: results/correctness/kmeans.json
 
   random_forest:
     task: binary_classification
@@ -39,6 +55,10 @@ models:
     model_path: models/random_forest/breast_cancer/model_packed.json
     test_path: models/random_forest/breast_cancer/test_samples.csv
     workload_class: tree_ensemble
+    wasm_artifact: wasm/tenant_rf_real/target/wasm32-unknown-unknown/release/tenant_rf_real.wasm
+    docker_image: comet-rf-docker:v1
+    host_server: serving/wasm_server/host_rf_server/target/release/host_rf_server
+    correctness_result: results/correctness/random_forest.json
 
   svm:
     task: binary_classification
@@ -47,6 +67,10 @@ models:
     model_path: models/svm/breast_cancer/model.json
     test_path: models/svm/breast_cancer/test_samples.csv
     workload_class: kernel_compute_heavy
+    wasm_artifact: wasm/tenant_svm_real/target/wasm32-unknown-unknown/release/tenant_svm_real.wasm
+    docker_image: comet-svm-docker:v1
+    host_server: serving/wasm_server/host_svm_server/target/release/host_svm_server
+    correctness_result: results/correctness/svm.json
 
   mlp:
     task: binary_classification
@@ -55,3 +79,7 @@ models:
     model_path: models/mlp/breast_cancer/model.json
     test_path: models/mlp/breast_cancer/test_samples.csv
     workload_class: dense_neural
+    wasm_artifact: wasm/tenant_mlp_real/target/wasm32-unknown-unknown/release/tenant_mlp_real.wasm
+    docker_image: comet-mlp-docker:v1
+    host_server: serving/wasm_server/host_mlp_server/target/release/host_mlp_server
+    correctness_result: results/correctness/mlp.json
