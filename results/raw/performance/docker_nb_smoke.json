@@ -1,0 +1,18 @@
+{
+  "backend": "docker",
+  "physical_units": 20,
+  "concurrency": 16,
+  "requests": 1000,
+  "successful_requests": 1000,
+  "correct_predictions": 1000,
+  "errors": 0,
+  "error_rate": 0.0,
+  "elapsed_seconds": 1.4077856899239123,
+  "throughput_rps": 710.3353920681263,
+  "mean_latency_ms": 21.606296866,
+  "p50_latency_ms": 18.0514405,
+  "p90_latency_ms": 37.9259532,
+  "p95_latency_ms": 48.45134979999998,
+  "p99_latency_ms": 64.79318219,
+  "max_latency_ms": 133.377803
+}
