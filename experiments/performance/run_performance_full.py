@@ -96,6 +96,8 @@ CONFIDENCE_LEVEL = 0.95
 
 RELATIVE_CI_TARGET = 0.025
 
+COOLDOWN_SECONDS = 1.0
+
 WASMTIME_PORT = 8100
 
 DOCKER_BASE_PORT = 8300
@@ -630,20 +632,60 @@ existing = load_existing()
 
 
 # ============================================================
-# Start backend once for the campaign
+# Backend lifecycle per repetition
 # ============================================================
 
-wasmtime_proc = None
+def run_clean_repetition(
+    backend,
+    concurrency,
+):
 
-if BACKEND == "wasmtime":
+    wasmtime_proc = None
 
-    wasmtime_proc = (
-        start_wasmtime()
-    )
+    try:
 
-else:
+        if backend == "wasmtime":
 
-    start_docker()
+            wasmtime_proc = start_wasmtime()
+
+        else:
+
+            start_docker()
+
+        # Backend warm-up before measured load.
+        warm_output = run_load(
+            backend,
+            min(concurrency, 16),
+        )
+
+        if int(warm_output["errors"]) != 0:
+
+            raise RuntimeError(
+                "Backend warm-up produced errors."
+            )
+
+        data = run_load(
+            backend,
+            concurrency,
+        )
+
+        return data
+
+    finally:
+
+        if wasmtime_proc is not None:
+
+            stop_wasmtime(
+                wasmtime_proc
+            )
+
+        if backend == "docker":
+
+            docker_cleanup()
+
+        time.sleep(
+            COOLDOWN_SECONDS
+        )
 
 
 # ============================================================
@@ -776,7 +818,7 @@ try:
 
                 break
 
-            data = run_load(
+            data = run_clean_repetition(
                 BACKEND,
                 concurrency,
             )
@@ -966,12 +1008,6 @@ try:
 
 
 finally:
-
-    if wasmtime_proc is not None:
-
-        stop_wasmtime(
-            wasmtime_proc
-        )
 
     docker_cleanup()
 
