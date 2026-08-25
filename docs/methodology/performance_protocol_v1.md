@@ -81,3 +81,30 @@ This prevents the benchmark client from directly competing with the server for t
 The experiment evaluates application-level serving throughput and latency under controlled concurrent request load.
 
 Results from the Naive Bayes reference workload are not generalized to all workload classes until cross-workload evaluation is completed.
+
+## Repetition independence amendment
+
+The initial performance stability test identified distinct throughput
+regimes when repeated client measurements were executed against one
+long-lived inference backend.
+
+Therefore, final performance repetitions use independent backend
+lifecycles.
+
+For every repetition:
+
+1. ensure no previous backend instance remains;
+2. start a clean inference backend;
+3. wait for readiness;
+4. warm all physical serving units;
+5. execute the measured request workload;
+6. record performance metrics;
+7. terminate the backend;
+8. apply a cooldown period;
+9. proceed to the next repetition.
+
+This prevents persistent backend state from coupling nominally independent
+performance observations.
+
+The original long-lived-backend measurements are retained only as a
+diagnostic dataset and are excluded from final comparative statistics.
