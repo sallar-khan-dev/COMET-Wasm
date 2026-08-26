@@ -11,12 +11,18 @@ import subprocess
 import tempfile
 import time
 from pathlib import Path
+import sys
 
 import pandas as pd
 from scipy.stats import t as student_t
 
 
 ROOT = Path(__file__).resolve().parents[2]
+
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from experiments.common.model_registry import get_model
 
 SERVER = (
     ROOT
@@ -27,15 +33,6 @@ SERVER = (
     / "comet_multitenant_server"
 )
 
-WASM = (
-    ROOT
-    / "wasm"
-    / "tenant_nb_real"
-    / "target"
-    / "wasm32-unknown-unknown"
-    / "release"
-    / "tenant_nb_real.wasm"
-)
 
 LOAD_CLIENT = (
     ROOT
@@ -102,9 +99,7 @@ WASMTIME_PORT = 8100
 
 DOCKER_BASE_PORT = 8300
 
-DOCKER_IMAGE = "comet-nb-docker:v1"
 
-DOCKER_PREFIX = "comet-nb-perf"
 
 # Server = NUMA node 0 = even CPUs
 SERVER_CPUSET = ",".join(
@@ -132,6 +127,11 @@ parser.add_argument(
 )
 
 parser.add_argument(
+    "--model",
+    required=True,
+)
+
+parser.add_argument(
     "--levels",
     nargs="*",
     type=int,
@@ -146,6 +146,18 @@ parser.add_argument(
 args = parser.parse_args()
 
 BACKEND = args.backend
+MODEL_NAME = args.model
+
+MODEL_CFG = get_model(
+    MODEL_NAME
+)
+
+WASM = MODEL_CFG["wasm_artifact_abs"]
+DOCKER_IMAGE = MODEL_CFG["docker_image"]
+
+DOCKER_PREFIX = (
+    f"comet-{MODEL_NAME.replace('_', '-')}-perf"
+)
 
 LEVELS = (
     args.levels
@@ -156,12 +168,12 @@ LEVELS = (
 
 RAW_CSV = (
     RAW_DIR
-    / f"{BACKEND}_naive_bayes_performance_full.csv"
+    / f"{BACKEND}_{MODEL_NAME}_performance_full.csv"
 )
 
 SUMMARY_JSON = (
     PROCESSED_DIR
-    / f"{BACKEND}_naive_bayes_performance_full_summary.json"
+    / f"{BACKEND}_{MODEL_NAME}_performance_full_summary.json"
 )
 
 
@@ -274,7 +286,7 @@ def start_wasmtime():
 
             str(SERVER),
 
-            "naive_bayes",
+            MODEL_NAME,
 
             str(WASM),
 
@@ -439,7 +451,9 @@ def start_docker():
             try:
 
                 body = json.dumps({
-                    "features": [0.0] * 30
+                    "features": [0.0] * int(
+                        MODEL_CFG["features"]
+                    )
                 }).encode()
 
                 req = urllib.request.Request(
@@ -518,6 +532,9 @@ def run_load(
 
                 "--backend",
                 backend,
+
+                "--model",
+                MODEL_NAME,
 
                 "--physical-units",
                 str(
@@ -838,7 +855,7 @@ try:
                     BACKEND,
 
                 "model":
-                    "naive_bayes",
+                    MODEL_NAME,
 
                 "physical_units":
                     PHYSICAL_UNITS,
@@ -984,7 +1001,7 @@ try:
                         BACKEND,
 
                     "model":
-                        "naive_bayes",
+                        MODEL_NAME,
 
                     "physical_units":
                         PHYSICAL_UNITS,

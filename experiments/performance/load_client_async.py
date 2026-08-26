@@ -6,6 +6,7 @@ import csv
 import json
 import statistics
 import time
+import sys
 from pathlib import Path
 
 import aiohttp
@@ -18,6 +19,11 @@ parser.add_argument(
     "--backend",
     required=True,
     choices=["wasmtime", "docker"],
+)
+
+parser.add_argument(
+    "--model",
+    required=True,
 )
 
 parser.add_argument(
@@ -62,26 +68,100 @@ if args.physical_units < 1:
 
 ROOT = Path(__file__).resolve().parents[2]
 
-DATA = (
-    ROOT
-    / "models"
-    / "naive_bayes"
-    / "breast_cancer"
-    / "test_samples.csv"
+if str(ROOT) not in sys.path:
+    sys.path.insert(
+        0,
+        str(ROOT)
+    )
+
+from experiments.common.model_registry import get_model
+
+
+MODEL_NAME = args.model
+
+MODEL_CFG = get_model(
+    MODEL_NAME
 )
 
+DATA = MODEL_CFG[
+    "test_path_abs"
+]
 
-with DATA.open() as f:
-    row = next(csv.DictReader(f))
+MODEL_PATH = MODEL_CFG[
+    "model_path_abs"
+]
+
+
+with DATA.open(
+    newline=""
+) as f:
+
+    row = next(
+        csv.DictReader(f)
+    )
 
 
 FEATURES = [
-    float(v)
-    for k, v in row.items()
-    if k != "label"
+    float(value)
+    for key, value in row.items()
+    if key != "label"
 ]
 
-EXPECTED = int(row["label"])
+
+if len(FEATURES) != int(
+    MODEL_CFG["features"]
+):
+
+    raise RuntimeError(
+        f"{MODEL_NAME}: feature-count mismatch. "
+        f"Registry={MODEL_CFG['features']}, "
+        f"sample={len(FEATURES)}"
+    )
+
+
+# ============================================================
+# Expected prediction
+# ============================================================
+
+if MODEL_CFG["task"] == "clustering_inference":
+
+    model_data = json.loads(
+        MODEL_PATH.read_text()
+    )
+
+    centroids = model_data[
+        "centroids"
+    ]
+
+    best_cluster = 0
+    best_distance = float(
+        "inf"
+    )
+
+    for cluster_id, centroid in enumerate(
+        centroids
+    ):
+
+        distance = sum(
+            (x - mu) ** 2
+            for x, mu in zip(
+                FEATURES,
+                centroid
+            )
+        )
+
+        if distance < best_distance:
+
+            best_distance = distance
+            best_cluster = cluster_id
+
+    EXPECTED = best_cluster
+
+else:
+
+    EXPECTED = int(
+        row["label"]
+    )
 
 WASMTIME_URL = (
     "http://127.0.0.1:8100/infer"
@@ -315,6 +395,9 @@ if not latencies:
 summary = {
     "backend":
         args.backend,
+
+    "model":
+        MODEL_NAME,
 
     "client":
         "aiohttp_async",
