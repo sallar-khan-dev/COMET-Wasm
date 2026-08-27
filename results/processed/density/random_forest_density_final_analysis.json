@@ -1,0 +1,39 @@
+{
+  "model": "random_forest",
+  "metric": "PSS_MiB",
+  "levels": [
+    1,
+    20,
+    100,
+    200
+  ],
+  "comparison": [
+    {
+      "physical_tenants": 1,
+      "wasmtime_pss_mib": 34.15342773435,
+      "docker_pss_mib": 3.2139257811999995,
+      "docker_to_wasmtime_ratio": 0.09410258338338251
+    },
+    {
+      "physical_tenants": 20,
+      "wasmtime_pss_mib": 34.047900390900004,
+      "docker_pss_mib": 49.4206445312,
+      "docker_to_wasmtime_ratio": 1.451503439677845
+    },
+    {
+      "physical_tenants": 100,
+      "wasmtime_pss_mib": 34.4755761719,
+      "docker_pss_mib": 235.7152734374,
+      "docker_to_wasmtime_ratio": 6.837167050148516
+    },
+    {
+      "physical_tenants": 200,
+      "wasmtime_pss_mib": 35.878203125,
+      "docker_pss_mib": 468.86633789065,
+      "docker_to_wasmtime_ratio": 13.068278148075455
+    }
+  ],
+  "wasmtime_growth_mib": 1.7247753906500023,
+  "docker_growth_mib": 465.65241210945004,
+  "docker_to_wasmtime_ratio_at_200": 13.068278148075455
+}

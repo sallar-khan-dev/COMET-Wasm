@@ -132,6 +132,16 @@ parser.add_argument(
 )
 
 parser.add_argument(
+    "--physical-units",
+    type=int,
+    default=20,
+    help=(
+        "Number of physical Wasmtime workers / "
+        "Docker containers. Default: 20."
+    ),
+)
+
+parser.add_argument(
     "--levels",
     nargs="*",
     type=int,
@@ -147,6 +157,15 @@ args = parser.parse_args()
 
 BACKEND = args.backend
 MODEL_NAME = args.model
+
+PHYSICAL_UNITS = int(
+    args.physical_units
+)
+
+if PHYSICAL_UNITS < 1:
+    raise SystemExit(
+        "--physical-units must be >= 1"
+    )
 
 MODEL_CFG = get_model(
     MODEL_NAME
@@ -166,14 +185,26 @@ LEVELS = (
 )
 
 
+UNIT_SUFFIX = (
+    ""
+    if PHYSICAL_UNITS == 20
+    else f"_pu{PHYSICAL_UNITS}_diagnostic"
+)
+
 RAW_CSV = (
     RAW_DIR
-    / f"{BACKEND}_{MODEL_NAME}_performance_full.csv"
+    / (
+        f"{BACKEND}_{MODEL_NAME}"
+        f"_performance_full{UNIT_SUFFIX}.csv"
+    )
 )
 
 SUMMARY_JSON = (
     PROCESSED_DIR
-    / f"{BACKEND}_{MODEL_NAME}_performance_full_summary.json"
+    / (
+        f"{BACKEND}_{MODEL_NAME}"
+        f"_performance_full{UNIT_SUFFIX}_summary.json"
+    )
 )
 
 

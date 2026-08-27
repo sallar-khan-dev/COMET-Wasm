@@ -1,0 +1,36 @@
+{
+  "backend": "docker",
+  "model": "random_forest",
+  "physical_units": 20,
+  "requests_per_repetition": 5000,
+  "confidence_level": 0.95,
+  "relative_ci_target": 0.025,
+  "summary": {
+    "1": {
+      "concurrency": 1,
+      "repetitions": 60,
+      "throughput": {
+        "n": 60,
+        "mean": 733.3940003204681,
+        "sd": 81.25853356393462,
+        "halfwidth": 20.99130509441591,
+        "relative": 0.02862213910291525
+      },
+      "p95": {
+        "n": 60,
+        "mean": 1.5128288766666667,
+        "sd": 0.17398219990797117,
+        "halfwidth": 0.044944368044648284,
+        "relative": 0.02970882479694445
+      },
+      "p99": {
+        "n": 60,
+        "mean": 1.5599643138333334,
+        "sd": 0.1778912459299203,
+        "halfwidth": 0.04595418171068356,
+        "relative": 0.02945848267372179
+      },
+      "ci_target_met": false
+    }
+  }
+}
