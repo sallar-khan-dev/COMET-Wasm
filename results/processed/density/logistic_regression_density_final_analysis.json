@@ -1,0 +1,38 @@
+{
+  "model": "logistic_regression",
+  "levels": [
+    1,
+    20,
+    100,
+    200
+  ],
+  "wasmtime_growth_1_to_200_mib": 2.2300976559,
+  "docker_growth_1_to_200_mib": 465.21781250005,
+  "docker_wasmtime_ratio_at_200": 23.411023873511958,
+  "comparison": [
+    {
+      "physical_tenants": 1,
+      "wasmtime_pss_mib": 17.777792969,
+      "docker_pss_mib": 3.1873925781,
+      "docker_wasmtime_ratio": 0.17929067931311896
+    },
+    {
+      "physical_tenants": 20,
+      "wasmtime_pss_mib": 17.9992871094,
+      "docker_pss_mib": 49.3989160157,
+      "docker_wasmtime_ratio": 2.744492918827978
+    },
+    {
+      "physical_tenants": 100,
+      "wasmtime_pss_mib": 18.85927734375,
+      "docker_pss_mib": 235.97124023455,
+      "docker_wasmtime_ratio": 12.512210088089684
+    },
+    {
+      "physical_tenants": 200,
+      "wasmtime_pss_mib": 20.0078906249,
+      "docker_pss_mib": 468.40520507815,
+      "docker_wasmtime_ratio": 23.411023873511958
+    }
+  ]
+}

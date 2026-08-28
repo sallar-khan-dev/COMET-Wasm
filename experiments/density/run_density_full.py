@@ -32,11 +32,20 @@ PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 # ============================================================
 # Supported density workloads
 #
-# LR is intentionally excluded from ABI-v1 density testing for
-# now because its current guest still uses the older scalar ABI.
+# All registered unified-ABI workloads used in the COMET-Wasm
+# density experiments are supported here.
 # ============================================================
 
 MODEL_RUNTIME = {
+    "logistic_regression": {
+        "wasm": (
+            "wasm/tenant_lr_real/target/"
+            "wasm32-unknown-unknown/release/"
+            "tenant_lr_real.wasm"
+        ),
+        "docker_image": "comet-lr-docker:v1",
+    },
+
     "naive_bayes": {
         "wasm": (
             "wasm/tenant_nb_real/target/"
