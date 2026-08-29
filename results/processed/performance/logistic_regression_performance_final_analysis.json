@@ -1,0 +1,135 @@
+{
+  "model": "logistic_regression",
+  "concurrency_levels": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "wasmtime_total_repetitions": 495,
+  "docker_total_repetitions": 319,
+  "total_repetitions": 814,
+  "wasmtime_peak": {
+    "concurrency": 32,
+    "rps": 9910.266304900933
+  },
+  "docker_peak": {
+    "concurrency": 16,
+    "rps": 6642.77483451105
+  },
+  "comparison": [
+    {
+      "concurrency": 1,
+      "wasmtime_n": 38,
+      "docker_n": 60,
+      "wasmtime_rps": 6540.598397941684,
+      "docker_rps": 1020.9156451647,
+      "rps_ratio": 6.406600221007013,
+      "wasmtime_p95_ms": 0.18472920394736841,
+      "docker_p95_ms": 1.0532747775,
+      "wasmtime_p99_ms": 0.19605227078947368,
+      "docker_p99_ms": 1.09163579
+    },
+    {
+      "concurrency": 2,
+      "wasmtime_n": 60,
+      "docker_n": 20,
+      "wasmtime_rps": 8427.0398403604,
+      "docker_rps": 2397.01240711855,
+      "rps_ratio": 3.5156429792912705,
+      "wasmtime_p95_ms": 0.2600832158333333,
+      "docker_p95_ms": 0.9280583325,
+      "wasmtime_p99_ms": 0.3417864468333333,
+      "docker_p99_ms": 1.023426652
+    },
+    {
+      "concurrency": 4,
+      "wasmtime_n": 60,
+      "docker_n": 20,
+      "wasmtime_rps": 9300.576661309016,
+      "docker_rps": 4574.86131355965,
+      "rps_ratio": 2.032974558975721,
+      "wasmtime_p95_ms": 0.4532763675,
+      "docker_p95_ms": 1.045587055,
+      "wasmtime_p99_ms": 0.6233979171666667,
+      "docker_p99_ms": 1.138250841
+    },
+    {
+      "concurrency": 8,
+      "wasmtime_n": 60,
+      "docker_n": 20,
+      "wasmtime_rps": 9606.975842851567,
+      "docker_rps": 6360.35734018055,
+      "rps_ratio": 1.5104459276463948,
+      "wasmtime_p95_ms": 0.8677017616666667,
+      "docker_p95_ms": 1.5140769825,
+      "wasmtime_p99_ms": 1.2389797355,
+      "docker_p99_ms": 1.6435495334999999
+    },
+    {
+      "concurrency": 16,
+      "wasmtime_n": 60,
+      "docker_n": 20,
+      "wasmtime_rps": 9840.60783773785,
+      "docker_rps": 6642.77483451105,
+      "rps_ratio": 1.4814001803302401,
+      "wasmtime_p95_ms": 1.6696966641666666,
+      "docker_p95_ms": 2.670938695,
+      "wasmtime_p99_ms": 3.472375978666667,
+      "docker_p99_ms": 2.9999298045
+    },
+    {
+      "concurrency": 32,
+      "wasmtime_n": 60,
+      "docker_n": 52,
+      "wasmtime_rps": 9910.266304900933,
+      "docker_rps": 6257.347937457615,
+      "rps_ratio": 1.58378060545048,
+      "wasmtime_p95_ms": 3.2851091991666665,
+      "docker_p95_ms": 5.419468475961539,
+      "wasmtime_p99_ms": 8.702518026,
+      "docker_p99_ms": 6.162572600961538
+    },
+    {
+      "concurrency": 64,
+      "wasmtime_n": 37,
+      "docker_n": 60,
+      "wasmtime_rps": 9798.969864713405,
+      "docker_rps": 5732.847188494534,
+      "rps_ratio": 1.7092675842431881,
+      "wasmtime_p95_ms": 6.464391266216216,
+      "docker_p95_ms": 11.396185760833333,
+      "wasmtime_p99_ms": 28.637482403243244,
+      "docker_p99_ms": 34.23048606966667
+    },
+    {
+      "concurrency": 128,
+      "wasmtime_n": 60,
+      "docker_n": 44,
+      "wasmtime_rps": 9476.270880116817,
+      "docker_rps": 5479.826784115932,
+      "rps_ratio": 1.7293011719978366,
+      "wasmtime_p95_ms": 13.147893935833334,
+      "docker_p95_ms": 23.42279504659091,
+      "wasmtime_p99_ms": 45.094896797333334,
+      "docker_p99_ms": 62.982296425227275
+    },
+    {
+      "concurrency": 256,
+      "wasmtime_n": 60,
+      "docker_n": 23,
+      "wasmtime_rps": 9167.115655796817,
+      "docker_rps": 5194.240010699478,
+      "rps_ratio": 1.7648617770672355,
+      "wasmtime_p95_ms": 52.88562281083333,
+      "docker_p95_ms": 92.45930614347826,
+      "wasmtime_p99_ms": 78.53416154516667,
+      "docker_p99_ms": 115.14293081695652
+    }
+  ]
+}
