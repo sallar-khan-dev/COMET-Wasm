@@ -43,6 +43,7 @@ struct InferenceResponse {
     worker_id: usize,
     prediction: i32,
     inference_time_ns: u128,
+    execution_time_ns: u128,
 }
 
 
@@ -105,7 +106,7 @@ async fn infer(
 
     let start = Instant::now();
 
-    let prediction = {
+    let (prediction, execution_time_ns) = {
         let mut worker = worker
             .lock()
             .map_err(|_| (
@@ -114,7 +115,7 @@ async fn infer(
             ))?;
 
         worker
-            .infer(&payload.features)
+            .infer_timed(&payload.features)
             .map_err(|e| (
                 StatusCode::BAD_REQUEST,
                 format!("Inference failed: {e}")
@@ -126,6 +127,7 @@ async fn infer(
         worker_id,
         prediction,
         inference_time_ns: start.elapsed().as_nanos(),
+        execution_time_ns,
     }))
 }
 

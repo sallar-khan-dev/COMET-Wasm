@@ -65,6 +65,7 @@ struct InferenceRequest {{
 struct InferenceResponse {{
     prediction: i32,
     inference_time_ns: u128,
+    execution_time_ns: u128,
 }}
 
 fn predict_mlp(input: &[f32]) -> i32 {{
@@ -137,12 +138,19 @@ async fn infer(
 
     let start = Instant::now();
 
+    let execution_start =
+        Instant::now();
+
     let prediction =
         predict_mlp(&payload.features);
+
+    let execution_time_ns =
+        execution_start.elapsed().as_nanos();
 
     Ok(Json(InferenceResponse {{
         prediction,
         inference_time_ns: start.elapsed().as_nanos(),
+        execution_time_ns,
     }}))
 }}
 

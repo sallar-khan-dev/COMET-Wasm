@@ -55,6 +55,17 @@ impl WasmWorker {
     }
 
     pub fn infer(&mut self, features: &[f32]) -> Result<i32> {
+        let (prediction, _) =
+            self.infer_timed(features)?;
+
+        Ok(prediction)
+    }
+
+    pub fn infer_timed(
+        &mut self,
+        features: &[f32],
+    ) -> Result<(i32, u128)> {
+
         if features.len() != self.feature_count {
             bail!(
                 "Expected {} features, received {}",
@@ -64,10 +75,15 @@ impl WasmWorker {
         }
 
         let mut bytes =
-            Vec::with_capacity(self.feature_count * std::mem::size_of::<f32>());
+            Vec::with_capacity(
+                self.feature_count *
+                std::mem::size_of::<f32>()
+            );
 
         for value in features {
-            bytes.extend_from_slice(&value.to_le_bytes());
+            bytes.extend_from_slice(
+                &value.to_le_bytes()
+            );
         }
 
         self.memory.write(
@@ -76,10 +92,26 @@ impl WasmWorker {
             &bytes,
         )?;
 
-        let prediction =
-            self.predict.call(&mut self.store, ())?;
+        // Isolated Wasm model execution:
+        // excludes host-side feature conversion,
+        // linear-memory copy, HTTP handling,
+        // routing, and worker-lock waiting.
+        let execution_start =
+            std::time::Instant::now();
 
-        Ok(prediction)
+        let prediction =
+            self.predict.call(
+                &mut self.store,
+                ()
+            )?;
+
+        let execution_time_ns =
+            execution_start.elapsed().as_nanos();
+
+        Ok((
+            prediction,
+            execution_time_ns
+        ))
     }
 }
 
