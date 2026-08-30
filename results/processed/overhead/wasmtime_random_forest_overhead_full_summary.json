@@ -1,0 +1,22 @@
+{
+  "backend": "wasmtime",
+  "model": "random_forest",
+  "concurrency": 1,
+  "physical_units": 1,
+  "warmup_requests": 1000,
+  "requests_per_repetition": 5000,
+  "repetitions": 20,
+  "total_measured_requests": 100000,
+  "mean_throughput_rps": 6294.511346356678,
+  "mean_e2e_ns": 152914.92835,
+  "mean_inference_ns": 3918.25032,
+  "mean_execution_ns": 3437.85419,
+  "mean_non_execution_e2e_ns": 149477.07416,
+  "mean_outside_inference_ns": 148996.67803,
+  "mean_server_non_execution_ns": 480.39612999999997,
+  "execution_fraction_of_e2e": 0.02248213583261964,
+  "inference_fraction_of_e2e": 0.025623726618971405,
+  "e2e_relative_95ci": 0.007838446325353627,
+  "execution_relative_95ci": 0.01530823619581755,
+  "ci_target_pass": true
+}

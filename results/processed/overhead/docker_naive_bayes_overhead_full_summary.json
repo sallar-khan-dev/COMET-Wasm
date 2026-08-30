@@ -1,0 +1,22 @@
+{
+  "backend": "docker",
+  "model": "naive_bayes",
+  "concurrency": 1,
+  "physical_units": 1,
+  "warmup_requests": 1000,
+  "requests_per_repetition": 5000,
+  "repetitions": 20,
+  "total_measured_requests": 100000,
+  "mean_throughput_rps": 5176.438135262643,
+  "mean_e2e_ns": 187032.98745000002,
+  "mean_inference_ns": 1275.10469,
+  "mean_execution_ns": 1094.42664,
+  "mean_non_execution_e2e_ns": 185938.56081,
+  "mean_outside_inference_ns": 185757.88276,
+  "mean_server_non_execution_ns": 180.67804999999998,
+  "execution_fraction_of_e2e": 0.0058515166491289435,
+  "inference_fraction_of_e2e": 0.006817539020173523,
+  "e2e_relative_95ci": 0.0032423013569826487,
+  "execution_relative_95ci": 0.002504971131808779,
+  "ci_target_pass": true
+}

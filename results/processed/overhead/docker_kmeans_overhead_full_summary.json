@@ -1,0 +1,22 @@
+{
+  "backend": "docker",
+  "model": "kmeans",
+  "concurrency": 1,
+  "physical_units": 1,
+  "warmup_requests": 1000,
+  "requests_per_repetition": 5000,
+  "repetitions": 20,
+  "total_measured_requests": 100000,
+  "mean_throughput_rps": 5499.510781225742,
+  "mean_e2e_ns": 175756.23019,
+  "mean_inference_ns": 291.07645,
+  "mean_execution_ns": 110.23023,
+  "mean_non_execution_e2e_ns": 175645.99996,
+  "mean_outside_inference_ns": 175465.15374,
+  "mean_server_non_execution_ns": 180.84622,
+  "execution_fraction_of_e2e": 0.0006271767998257382,
+  "inference_fraction_of_e2e": 0.0016561373083920491,
+  "e2e_relative_95ci": 0.004238370070016613,
+  "execution_relative_95ci": 0.005575471009156414,
+  "ci_target_pass": true
+}

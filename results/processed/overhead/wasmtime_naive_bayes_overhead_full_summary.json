@@ -1,0 +1,22 @@
+{
+  "backend": "wasmtime",
+  "model": "naive_bayes",
+  "concurrency": 1,
+  "physical_units": 1,
+  "warmup_requests": 1000,
+  "requests_per_repetition": 5000,
+  "repetitions": 20,
+  "total_measured_requests": 100000,
+  "mean_throughput_rps": 6286.702145286523,
+  "mean_e2e_ns": 153215.89361,
+  "mean_inference_ns": 2231.98208,
+  "mean_execution_ns": 1706.15901,
+  "mean_non_execution_e2e_ns": 151509.7346,
+  "mean_outside_inference_ns": 150983.91152999998,
+  "mean_server_non_execution_ns": 525.82307,
+  "execution_fraction_of_e2e": 0.011135652899972015,
+  "inference_fraction_of_e2e": 0.014567562329279948,
+  "e2e_relative_95ci": 0.017895240659119765,
+  "execution_relative_95ci": 0.013498200581229603,
+  "ci_target_pass": true
+}

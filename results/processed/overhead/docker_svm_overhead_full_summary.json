@@ -1,0 +1,22 @@
+{
+  "backend": "docker",
+  "model": "svm",
+  "concurrency": 1,
+  "physical_units": 1,
+  "warmup_requests": 1000,
+  "requests_per_repetition": 5000,
+  "repetitions": 20,
+  "total_measured_requests": 100000,
+  "mean_throughput_rps": 4792.787836866071,
+  "mean_e2e_ns": 202671.19606,
+  "mean_inference_ns": 11291.2687,
+  "mean_execution_ns": 11107.55802,
+  "mean_non_execution_e2e_ns": 191563.63804,
+  "mean_outside_inference_ns": 191379.92736,
+  "mean_server_non_execution_ns": 183.71067999999985,
+  "execution_fraction_of_e2e": 0.05480580485009647,
+  "inference_fraction_of_e2e": 0.055712251762984936,
+  "e2e_relative_95ci": 0.018145883722708176,
+  "execution_relative_95ci": 0.001439917726523538,
+  "ci_target_pass": true
+}

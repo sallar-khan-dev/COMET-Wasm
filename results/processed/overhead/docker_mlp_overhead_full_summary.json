@@ -1,0 +1,22 @@
+{
+  "backend": "docker",
+  "model": "mlp",
+  "concurrency": 1,
+  "physical_units": 1,
+  "warmup_requests": 1000,
+  "requests_per_repetition": 5000,
+  "repetitions": 20,
+  "total_measured_requests": 100000,
+  "mean_throughput_rps": 5100.35763286427,
+  "mean_e2e_ns": 189856.04589,
+  "mean_inference_ns": 4030.35362,
+  "mean_execution_ns": 3850.4467799999998,
+  "mean_non_execution_e2e_ns": 186005.59911,
+  "mean_outside_inference_ns": 185825.69227,
+  "mean_server_non_execution_ns": 179.9068400000001,
+  "execution_fraction_of_e2e": 0.020280875238657903,
+  "inference_fraction_of_e2e": 0.021228471293114004,
+  "e2e_relative_95ci": 0.004044494608536372,
+  "execution_relative_95ci": 0.002098112798479427,
+  "ci_target_pass": true
+}

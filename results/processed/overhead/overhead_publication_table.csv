@@ -1,0 +1,8 @@
+Model,Wasmtime E2E (us),Docker E2E (us),Wasmtime E2E Reduction (%),Wasmtime Execution (us),Docker Execution (us),Wasmtime Execution Share (%),Docker Execution Share (%)
+Logistic Regression,140.628,177.768,20.89,0.353,0.185,0.25,0.1
+K-Means,140.864,175.756,19.85,0.226,0.11,0.16,0.06
+Decision Tree,151.858,186.747,18.68,0.472,0.162,0.31,0.09
+Random Forest,152.915,188.302,18.79,3.438,1.732,2.25,0.92
+Naive Bayes,153.216,187.033,18.08,1.706,1.094,1.11,0.59
+MLP,153.424,189.856,19.19,4.251,3.85,2.77,2.03
+SVM,158.457,202.671,21.82,13.637,11.108,8.61,5.48

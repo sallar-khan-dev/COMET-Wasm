@@ -1,0 +1,22 @@
+{
+  "backend": "docker",
+  "model": "decision_tree",
+  "concurrency": 1,
+  "physical_units": 1,
+  "warmup_requests": 1000,
+  "requests_per_repetition": 5000,
+  "repetitions": 20,
+  "total_measured_requests": 100000,
+  "mean_throughput_rps": 5185.290077629161,
+  "mean_e2e_ns": 186746.96551,
+  "mean_inference_ns": 343.35475,
+  "mean_execution_ns": 162.23036,
+  "mean_non_execution_e2e_ns": 186584.73515,
+  "mean_outside_inference_ns": 186403.61076,
+  "mean_server_non_execution_ns": 181.12439,
+  "execution_fraction_of_e2e": 0.0008687175160086486,
+  "inference_fraction_of_e2e": 0.0018386095274014716,
+  "e2e_relative_95ci": 0.01072754004140529,
+  "execution_relative_95ci": 0.0049136948347933114,
+  "ci_target_pass": true
+}
