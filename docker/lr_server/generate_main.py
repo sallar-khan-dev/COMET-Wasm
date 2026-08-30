@@ -6,8 +6,12 @@ def arr(vals): return "[" + ", ".join(f"{v:.10}f32" for v in vals) + "]"
 code = f'''use axum::{{extract::Json, routing::post, Router}};
 use serde::{{Deserialize, Serialize}};
 use std::{{net::SocketAddr, time::Instant}};
+const N_FEATURES: usize = 4;
+
 #[derive(Deserialize)]
-struct InferenceRequest {{ f1: f32, f2: f32, f3: f32, f4: f32 }}
+struct InferenceRequest {{
+    features: Vec<f32>,
+}}
 #[derive(Serialize)]
 struct InferenceResponse {{
     prediction: i32,
@@ -46,11 +50,20 @@ async fn infer(
 
     let start = Instant::now();
 
+    if payload.features.len() != N_FEATURES {{
+        return Json(InferenceResponse {{
+            prediction: -1,
+            inference_time_ns:
+                start.elapsed().as_nanos(),
+            execution_time_ns: 0,
+        }});
+    }}
+
     let input: [f32; 4] = [
-        payload.f1,
-        payload.f2,
-        payload.f3,
-        payload.f4
+        payload.features[0],
+        payload.features[1],
+        payload.features[2],
+        payload.features[3],
     ];
 
     let execution_start =

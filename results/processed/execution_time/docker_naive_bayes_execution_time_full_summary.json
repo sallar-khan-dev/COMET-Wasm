@@ -1,0 +1,17 @@
+{
+  "backend": "docker",
+  "model": "naive_bayes",
+  "test_samples": 171,
+  "warmup_requests": 1000,
+  "requests_per_repetition": 5000,
+  "repetitions": 20,
+  "total_measured_requests": 100000,
+  "execution_mean_ns": 1095.4719,
+  "execution_median_of_medians_ns": 1093.0,
+  "execution_mean_p95_ns": 1128.8,
+  "execution_mean_p99_ns": 1436.4,
+  "inference_mean_ns": 1275.64307,
+  "execution_95ci_halfwidth_ns": 11.934469305040388,
+  "execution_relative_95ci": 0.010894363703021855,
+  "ci_target_pass": true
+}

@@ -1,0 +1,17 @@
+{
+  "backend": "wasmtime",
+  "model": "logistic_regression",
+  "test_samples": 45,
+  "warmup_requests": 1000,
+  "requests_per_repetition": 5000,
+  "repetitions": 20,
+  "total_measured_requests": 100000,
+  "execution_mean_ns": 292.21715,
+  "execution_median_of_medians_ns": 289.0,
+  "execution_mean_p95_ns": 322.75,
+  "execution_mean_p99_ns": 359.5,
+  "inference_mean_ns": 636.37229,
+  "execution_95ci_halfwidth_ns": 7.1206838343766465,
+  "execution_relative_95ci": 0.0243677820907385,
+  "ci_target_pass": true
+}
