@@ -1,0 +1,44 @@
+{
+  "backend": "docker",
+  "model": "random_forest",
+  "dataset": "breast_cancer",
+  "workload_class": "tree_ensemble",
+  "features": 30,
+  "repetitions": 20,
+  "primary_ci_target": 0.025,
+  "primary_stopping_metrics": [
+    "startup_ms",
+    "cold_to_first_result_ms"
+  ],
+  "startup_ms": {
+    "n": 20,
+    "mean": 539.70344965,
+    "sd": 14.564023358254236,
+    "halfwidth": 6.816172747099201,
+    "relative": 0.012629477820680074
+  },
+  "first_inference_ms": {
+    "n": 20,
+    "mean": 5.80373975,
+    "sd": 8.420001270090934,
+    "halfwidth": 3.9406818964765775,
+    "relative": 0.6789901108981631
+  },
+  "cold_to_first_result_ms": {
+    "n": 20,
+    "mean": 545.8705147,
+    "sd": 20.06257397134106,
+    "halfwidth": 9.389573648452917,
+    "relative": 0.0172011006192801
+  },
+  "warm_inference_ms": {
+    "n": 20,
+    "mean": 0.8278000625,
+    "sd": 0.04377614448977554,
+    "halfwidth": 0.02048786627873494,
+    "relative": 0.024749776192164685
+  },
+  "primary_ci_pass": true,
+  "first_inference_ci_pass": false,
+  "warm_inference_ci_pass": true
+}

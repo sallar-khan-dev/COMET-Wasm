@@ -1,0 +1,44 @@
+{
+  "backend": "docker",
+  "model": "mlp",
+  "dataset": "breast_cancer",
+  "workload_class": "dense_neural",
+  "features": 30,
+  "repetitions": 20,
+  "primary_ci_target": 0.025,
+  "primary_stopping_metrics": [
+    "startup_ms",
+    "cold_to_first_result_ms"
+  ],
+  "startup_ms": {
+    "n": 20,
+    "mean": 544.44502,
+    "sd": 13.637076158936951,
+    "halfwidth": 6.382348103828115,
+    "relative": 0.011722667798170171
+  },
+  "first_inference_ms": {
+    "n": 20,
+    "mean": 5.7482176,
+    "sd": 7.944222607622853,
+    "halfwidth": 3.7180106281743157,
+    "relative": 0.6468110442051316
+  },
+  "cold_to_first_result_ms": {
+    "n": 20,
+    "mean": 550.72454555,
+    "sd": 18.987631769424848,
+    "halfwidth": 8.886485211887377,
+    "relative": 0.01613598900519784
+  },
+  "warm_inference_ms": {
+    "n": 20,
+    "mean": 0.81887266,
+    "sd": 0.04996897264180569,
+    "halfwidth": 0.023386199070367895,
+    "relative": 0.02855901804117858
+  },
+  "primary_ci_pass": true,
+  "first_inference_ci_pass": false,
+  "warm_inference_ci_pass": false
+}

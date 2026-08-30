@@ -1,0 +1,44 @@
+{
+  "backend": "docker",
+  "model": "logistic_regression",
+  "dataset": "iris",
+  "workload_class": "lightweight_linear",
+  "features": 4,
+  "repetitions": 20,
+  "primary_ci_target": 0.025,
+  "primary_stopping_metrics": [
+    "startup_ms",
+    "cold_to_first_result_ms"
+  ],
+  "startup_ms": {
+    "n": 20,
+    "mean": 532.4884705,
+    "sd": 22.609676137597116,
+    "halfwidth": 10.581654156884136,
+    "relative": 0.01987208126205643
+  },
+  "first_inference_ms": {
+    "n": 20,
+    "mean": 5.2962722,
+    "sd": 6.135203747073078,
+    "halfwidth": 2.8713637399516734,
+    "relative": 0.542148067833763
+  },
+  "cold_to_first_result_ms": {
+    "n": 20,
+    "mean": 538.1206548,
+    "sd": 18.541166573212738,
+    "halfwidth": 8.677533068095016,
+    "relative": 0.01612562720031652
+  },
+  "warm_inference_ms": {
+    "n": 20,
+    "mean": 0.8134231725,
+    "sd": 0.0627563397976409,
+    "halfwidth": 0.02937087111947969,
+    "relative": 0.03610773839797352
+  },
+  "primary_ci_pass": true,
+  "first_inference_ci_pass": false,
+  "warm_inference_ci_pass": false
+}

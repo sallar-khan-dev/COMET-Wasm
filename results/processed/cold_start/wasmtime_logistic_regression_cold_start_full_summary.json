@@ -1,0 +1,44 @@
+{
+  "backend": "wasmtime",
+  "model": "logistic_regression",
+  "dataset": "iris",
+  "workload_class": "lightweight_linear",
+  "features": 4,
+  "repetitions": 48,
+  "primary_ci_target": 0.025,
+  "primary_stopping_metrics": [
+    "startup_ms",
+    "cold_to_first_result_ms"
+  ],
+  "startup_ms": {
+    "n": 48,
+    "mean": 43.906472479166666,
+    "sd": 3.7574901591793846,
+    "halfwidth": 1.0910614097071567,
+    "relative": 0.024849671314972028
+  },
+  "first_inference_ms": {
+    "n": 48,
+    "mean": 1.1366682083333333,
+    "sd": 0.28083289256371013,
+    "halfwidth": 0.08154537169023948,
+    "relative": 0.07174069890615425
+  },
+  "cold_to_first_result_ms": {
+    "n": 48,
+    "mean": 45.19902029166667,
+    "sd": 3.8066114544750866,
+    "halfwidth": 1.1053247470471206,
+    "relative": 0.024454617376981267
+  },
+  "warm_inference_ms": {
+    "n": 48,
+    "mean": 0.42113846041666664,
+    "sd": 0.08236409403015289,
+    "halfwidth": 0.023916039892282057,
+    "relative": 0.05678901867243369
+  },
+  "primary_ci_pass": true,
+  "first_inference_ci_pass": false,
+  "warm_inference_ci_pass": false
+}

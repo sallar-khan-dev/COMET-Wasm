@@ -1,0 +1,44 @@
+{
+  "backend": "wasmtime",
+  "model": "kmeans",
+  "dataset": "iris",
+  "workload_class": "centroid_distance",
+  "features": 4,
+  "repetitions": 60,
+  "primary_ci_target": 0.025,
+  "primary_stopping_metrics": [
+    "startup_ms",
+    "cold_to_first_result_ms"
+  ],
+  "startup_ms": {
+    "n": 60,
+    "mean": 42.28686568333333,
+    "sd": 4.028342367112913,
+    "halfwidth": 1.0406311798169037,
+    "relative": 0.02460885106996831
+  },
+  "first_inference_ms": {
+    "n": 60,
+    "mean": 1.0574664333333332,
+    "sd": 0.32948637194004826,
+    "halfwidth": 0.08511535532946744,
+    "relative": 0.08048988851699795
+  },
+  "cold_to_first_result_ms": {
+    "n": 60,
+    "mean": 43.49359425,
+    "sd": 4.128995300252148,
+    "halfwidth": 1.0666325895828224,
+    "relative": 0.024523900771498606
+  },
+  "warm_inference_ms": {
+    "n": 60,
+    "mean": 0.4002296975,
+    "sd": 0.06215520892112691,
+    "halfwidth": 0.016056393051247685,
+    "relative": 0.040117945148854646
+  },
+  "primary_ci_pass": true,
+  "first_inference_ci_pass": false,
+  "warm_inference_ci_pass": false
+}

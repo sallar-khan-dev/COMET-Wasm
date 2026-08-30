@@ -1,0 +1,44 @@
+{
+  "backend": "docker",
+  "model": "kmeans",
+  "dataset": "iris",
+  "workload_class": "centroid_distance",
+  "features": 4,
+  "repetitions": 26,
+  "primary_ci_target": 0.025,
+  "primary_stopping_metrics": [
+    "startup_ms",
+    "cold_to_first_result_ms"
+  ],
+  "startup_ms": {
+    "n": 26,
+    "mean": 537.0251693076923,
+    "sd": 31.536576164296303,
+    "halfwidth": 12.737898778199499,
+    "relative": 0.023719370164010378
+  },
+  "first_inference_ms": {
+    "n": 26,
+    "mean": 5.220674153846153,
+    "sd": 7.005569154471723,
+    "halfwidth": 2.8296106181103142,
+    "relative": 0.5420010011591502
+  },
+  "cold_to_first_result_ms": {
+    "n": 26,
+    "mean": 542.5557673461539,
+    "sd": 33.09995522883655,
+    "halfwidth": 13.369361248073304,
+    "relative": 0.024641450801394894
+  },
+  "warm_inference_ms": {
+    "n": 26,
+    "mean": 0.7894220096153846,
+    "sd": 0.08758874431108603,
+    "halfwidth": 0.035377859452204306,
+    "relative": 0.044814888641679505
+  },
+  "primary_ci_pass": true,
+  "first_inference_ci_pass": false,
+  "warm_inference_ci_pass": false
+}

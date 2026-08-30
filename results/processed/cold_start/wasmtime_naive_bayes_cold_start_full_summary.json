@@ -1,0 +1,44 @@
+{
+  "backend": "wasmtime",
+  "model": "naive_bayes",
+  "dataset": "breast_cancer",
+  "workload_class": "probabilistic",
+  "features": 30,
+  "repetitions": 58,
+  "primary_ci_target": 0.025,
+  "primary_stopping_metrics": [
+    "startup_ms",
+    "cold_to_first_result_ms"
+  ],
+  "startup_ms": {
+    "n": 58,
+    "mean": 43.438686672413795,
+    "sd": 4.096299014854063,
+    "halfwidth": 1.0770669207381214,
+    "relative": 0.02479510784616157
+  },
+  "first_inference_ms": {
+    "n": 58,
+    "mean": 1.0348844137931035,
+    "sd": 0.26771865692191005,
+    "halfwidth": 0.0703930324396253,
+    "relative": 0.06802018805328963
+  },
+  "cold_to_first_result_ms": {
+    "n": 58,
+    "mean": 44.64807044827586,
+    "sd": 4.205598479028214,
+    "halfwidth": 1.1058057498347014,
+    "relative": 0.02476715653626647
+  },
+  "warm_inference_ms": {
+    "n": 58,
+    "mean": 0.4102085,
+    "sd": 0.07023731405985884,
+    "halfwidth": 0.01846796029807499,
+    "relative": 0.04502091082480005
+  },
+  "primary_ci_pass": true,
+  "first_inference_ci_pass": false,
+  "warm_inference_ci_pass": false
+}

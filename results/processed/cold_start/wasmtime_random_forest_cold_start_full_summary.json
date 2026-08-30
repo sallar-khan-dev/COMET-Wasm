@@ -1,0 +1,44 @@
+{
+  "backend": "wasmtime",
+  "model": "random_forest",
+  "dataset": "breast_cancer",
+  "workload_class": "tree_ensemble",
+  "features": 30,
+  "repetitions": 20,
+  "primary_ci_target": 0.025,
+  "primary_stopping_metrics": [
+    "startup_ms",
+    "cold_to_first_result_ms"
+  ],
+  "startup_ms": {
+    "n": 20,
+    "mean": 55.36961555,
+    "sd": 2.3138683388336942,
+    "halfwidth": 1.0829237171330968,
+    "relative": 0.01955808626041827
+  },
+  "first_inference_ms": {
+    "n": 20,
+    "mean": 1.1416052,
+    "sd": 0.40082558342797797,
+    "halfwidth": 0.1875921475059631,
+    "relative": 0.1643231368479778
+  },
+  "cold_to_first_result_ms": {
+    "n": 20,
+    "mean": 56.68268875,
+    "sd": 2.63178583734647,
+    "halfwidth": 1.2317136864900593,
+    "relative": 0.0217299798872025
+  },
+  "warm_inference_ms": {
+    "n": 20,
+    "mean": 0.43343105,
+    "sd": 0.08688696158990139,
+    "halfwidth": 0.040664349754128054,
+    "relative": 0.09381965079365692
+  },
+  "primary_ci_pass": true,
+  "first_inference_ci_pass": false,
+  "warm_inference_ci_pass": false
+}

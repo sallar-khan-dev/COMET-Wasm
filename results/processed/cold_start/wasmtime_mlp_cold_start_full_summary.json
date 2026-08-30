@@ -1,0 +1,44 @@
+{
+  "backend": "wasmtime",
+  "model": "mlp",
+  "dataset": "breast_cancer",
+  "workload_class": "dense_neural",
+  "features": 30,
+  "repetitions": 46,
+  "primary_ci_target": 0.025,
+  "primary_stopping_metrics": [
+    "startup_ms",
+    "cold_to_first_result_ms"
+  ],
+  "startup_ms": {
+    "n": 46,
+    "mean": 46.61710491304348,
+    "sd": 3.9214188335548874,
+    "halfwidth": 1.164517648291221,
+    "relative": 0.02498047981451093
+  },
+  "first_inference_ms": {
+    "n": 46,
+    "mean": 1.134994152173913,
+    "sd": 0.25750131412971833,
+    "halfwidth": 0.07646845121371587,
+    "relative": 0.06737343189588411
+  },
+  "cold_to_first_result_ms": {
+    "n": 46,
+    "mean": 47.934416652173915,
+    "sd": 3.8796245858438194,
+    "halfwidth": 1.1521062887495848,
+    "relative": 0.024035053917722697
+  },
+  "warm_inference_ms": {
+    "n": 46,
+    "mean": 0.4209408989130435,
+    "sd": 0.07293086844380056,
+    "halfwidth": 0.021657794541426228,
+    "relative": 0.05145091531222349
+  },
+  "primary_ci_pass": true,
+  "first_inference_ci_pass": false,
+  "warm_inference_ci_pass": false
+}

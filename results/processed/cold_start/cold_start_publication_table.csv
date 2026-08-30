@@ -1,0 +1,8 @@
+Model,Wasmtime Startup (ms),Docker Startup (ms),Docker/Wasmtime Startup,Wasmtime Cold-to-Result (ms),Docker Cold-to-Result (ms)
+K-Means,42.287,537.025,12.7,43.494,542.556
+Naive Bayes,43.439,532.618,12.26,44.648,538.895
+Logistic Regression,43.906,532.488,12.13,45.199,538.121
+SVM,44.277,531.747,12.01,45.533,537.296
+MLP,46.617,544.445,11.68,47.934,550.725
+Decision Tree,55.294,535.576,9.69,56.507,541.822
+Random Forest,55.37,539.703,9.75,56.683,545.871

@@ -1,0 +1,44 @@
+{
+  "backend": "docker",
+  "model": "svm",
+  "dataset": "breast_cancer",
+  "workload_class": "kernel_compute_heavy",
+  "features": 30,
+  "repetitions": 20,
+  "primary_ci_target": 0.025,
+  "primary_stopping_metrics": [
+    "startup_ms",
+    "cold_to_first_result_ms"
+  ],
+  "startup_ms": {
+    "n": 20,
+    "mean": 531.74721375,
+    "sd": 26.173400572056106,
+    "halfwidth": 12.249528532721625,
+    "relative": 0.02303637558593907
+  },
+  "first_inference_ms": {
+    "n": 20,
+    "mean": 5.16204465,
+    "sd": 5.554774305913857,
+    "halfwidth": 2.599714399578895,
+    "relative": 0.5036210602283138
+  },
+  "cold_to_first_result_ms": {
+    "n": 20,
+    "mean": 537.2955786,
+    "sd": 22.710859241444936,
+    "halfwidth": 10.629009307171199,
+    "relative": 0.019782424666263947
+  },
+  "warm_inference_ms": {
+    "n": 20,
+    "mean": 0.79643698,
+    "sd": 0.03741063509567764,
+    "halfwidth": 0.017508716178095785,
+    "relative": 0.02198380614885033
+  },
+  "primary_ci_pass": true,
+  "first_inference_ci_pass": false,
+  "warm_inference_ci_pass": true
+}

@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
+import argparse
 import csv
 import json
 import math
 import signal
-import socket
 import statistics
 import subprocess
+import sys
 import time
 import urllib.request
 from pathlib import Path
@@ -14,82 +15,282 @@ from pathlib import Path
 from scipy.stats import t as student_t
 
 
+# ============================================================
+# Paths / registry
+# ============================================================
+
 ROOT = Path(__file__).resolve().parents[2]
+
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from experiments.common.model_registry import (
+    get_model,
+    supported_models,
+)
+
 
 SERVER = (
     ROOT
-    / "serving/multitenant_server/target/release/"
-      "comet_multitenant_server"
+    / "serving"
+    / "multitenant_server"
+    / "target"
+    / "release"
+    / "comet_multitenant_server"
 )
 
-WASM = (
+RAW_DIR = (
     ROOT
-    / "wasm/tenant_nb_real/target/"
-      "wasm32-unknown-unknown/release/"
-      "tenant_nb_real.wasm"
+    / "results"
+    / "raw"
+    / "cold_start"
 )
 
-DATA = (
+PROC_DIR = (
     ROOT
-    / "models/naive_bayes/breast_cancer/"
-      "test_samples.csv"
+    / "results"
+    / "processed"
+    / "cold_start"
 )
 
-RAW_DIR = ROOT / "results/raw/cold_start"
-PROC_DIR = ROOT / "results/processed/cold_start"
+RAW_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
 
-RAW_DIR.mkdir(parents=True, exist_ok=True)
-PROC_DIR.mkdir(parents=True, exist_ok=True)
+PROC_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+
+# ============================================================
+# Protocol
+# ============================================================
 
 MIN_REPS = 20
 MAX_REPS = 60
+
 CI_TARGET = 0.025
+
 COOLDOWN_SECONDS = 1.0
 
-DOCKER_IMAGE = "comet-nb-docker:v1"
-DOCKER_NAME = "comet-nb-coldstart"
+WASMTIME_PORT = 8100
 DOCKER_PORT = 8400
 
-with DATA.open() as f:
-    row = next(csv.DictReader(f))
+WARM_REQUESTS = 20
 
-FEATURES = [
-    float(v)
-    for k, v in row.items()
-    if k != "label"
+
+# ============================================================
+# CLI
+# ============================================================
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument(
+    "--backend",
+    required=True,
+    choices=[
+        "wasmtime",
+        "docker",
+    ],
+)
+
+parser.add_argument(
+    "--model",
+    required=True,
+    choices=supported_models(),
+)
+
+parser.add_argument(
+    "--fresh",
+    action="store_true",
+)
+
+args = parser.parse_args()
+
+BACKEND = args.backend
+MODEL_NAME = args.model
+
+MODEL = get_model(
+    MODEL_NAME
+)
+
+WASM = MODEL[
+    "wasm_artifact_abs"
 ]
 
-EXPECTED = int(row["label"])
+DATA = MODEL[
+    "test_path_abs"
+]
 
+MODEL_PATH = MODEL[
+    "model_path_abs"
+]
+
+DOCKER_IMAGE = MODEL[
+    "docker_image"
+]
+
+DOCKER_NAME = (
+    "comet-coldstart-"
+    + MODEL_NAME.replace(
+        "_",
+        "-",
+    )
+)
+
+
+RAW_CSV = (
+    RAW_DIR
+    / (
+        f"{BACKEND}_{MODEL_NAME}_"
+        "cold_start_full.csv"
+    )
+)
+
+SUMMARY_JSON = (
+    PROC_DIR
+    / (
+        f"{BACKEND}_{MODEL_NAME}_"
+        "cold_start_full_summary.json"
+    )
+)
+
+
+# ============================================================
+# Test sample / expected prediction
+# ============================================================
+
+with DATA.open(
+    newline="",
+) as f:
+
+    row = next(
+        csv.DictReader(f)
+    )
+
+
+FEATURES = [
+    float(value)
+    for key, value in row.items()
+    if key.lower() not in {
+        "label",
+        "target",
+        "class",
+        "y",
+        "expected",
+        "prediction",
+    }
+]
+
+
+if len(FEATURES) != int(
+    MODEL["features"]
+):
+
+    raise RuntimeError(
+        f"{MODEL_NAME}: "
+        f"feature-count mismatch. "
+        f"Registry={MODEL['features']}, "
+        f"sample={len(FEATURES)}"
+    )
+
+
+# ------------------------------------------------------------
+# Expected result
+#
+# For supervised models, use the CSV label.
+# For K-Means, calculate the nearest exported centroid so that
+# correctness does not depend on arbitrary cluster-label order.
+# ------------------------------------------------------------
+
+if MODEL["task"] == "clustering_inference":
+
+    model_data = json.loads(
+        MODEL_PATH.read_text()
+    )
+
+    centroids = model_data[
+        "centroids"
+    ]
+
+    best_cluster = 0
+    best_distance = float(
+        "inf"
+    )
+
+    for cluster_id, centroid in enumerate(
+        centroids
+    ):
+
+        distance = sum(
+            (x - mu) ** 2
+            for x, mu in zip(
+                FEATURES,
+                centroid,
+            )
+        )
+
+        if distance < best_distance:
+
+            best_distance = distance
+            best_cluster = cluster_id
+
+    EXPECTED = best_cluster
+
+else:
+
+    EXPECTED = int(
+        row["label"]
+    )
+
+
+# ============================================================
+# Statistics
+# ============================================================
 
 def ci(values):
 
     n = len(values)
 
     if n == 0:
+
         return {
             "n": 0,
             "mean": 0.0,
+            "sd": 0.0,
             "halfwidth": math.inf,
             "relative": math.inf,
         }
 
-    mean = statistics.mean(values)
+
+    mean = statistics.mean(
+        values
+    )
+
 
     if n < 2:
+
         return {
             "n": n,
             "mean": mean,
+            "sd": 0.0,
             "halfwidth": math.inf,
             "relative": math.inf,
         }
 
-    sd = statistics.stdev(values)
+
+    sd = statistics.stdev(
+        values
+    )
+
 
     critical = student_t.ppf(
         0.975,
-        df=n - 1
+        df=n - 1,
     )
+
 
     halfwidth = (
         critical
@@ -97,11 +298,14 @@ def ci(values):
         / math.sqrt(n)
     )
 
+
     relative = (
-        halfwidth / abs(mean)
+        halfwidth
+        / abs(mean)
         if abs(mean) > 1e-12
         else math.inf
     )
+
 
     return {
         "n": n,
@@ -112,7 +316,14 @@ def ci(values):
     }
 
 
-def make_request(url, wasmtime):
+# ============================================================
+# Inference request
+# ============================================================
+
+def make_request(
+    url,
+    wasmtime,
+):
 
     body = (
         {
@@ -125,171 +336,78 @@ def make_request(url, wasmtime):
         }
     )
 
+
     req = urllib.request.Request(
         url,
-        data=json.dumps(body).encode(),
+        data=json.dumps(
+            body
+        ).encode(),
         headers={
-            "Content-Type": "application/json"
+            "Content-Type":
+                "application/json"
         },
         method="POST",
     )
 
-    t0 = time.perf_counter_ns()
+
+    t0 = (
+        time.perf_counter_ns()
+    )
+
 
     with urllib.request.urlopen(
         req,
         timeout=5,
     ) as r:
-        result = json.loads(r.read())
 
-    t1 = time.perf_counter_ns()
-
-    if int(result["prediction"]) != EXPECTED:
-        raise RuntimeError(
-            "Incorrect prediction."
+        payload = json.loads(
+            r.read()
         )
+
+
+    t1 = (
+        time.perf_counter_ns()
+    )
+
+
+    prediction = int(
+        payload["prediction"]
+    )
+
+
+    if prediction != EXPECTED:
+
+        raise RuntimeError(
+            f"Incorrect prediction: "
+            f"expected={EXPECTED}, "
+            f"received={prediction}"
+        )
+
 
     return (
-        (t1 - t0) / 1_000_000.0
-    )
+        t1 - t0
+    ) / 1_000_000.0
 
 
-def wait_port(host, port, timeout=20):
+# ============================================================
+# Cleanup
+# ============================================================
 
-    deadline = time.time() + timeout
-
-    while time.time() < deadline:
-
-        sock = socket.socket(
-            socket.AF_INET,
-            socket.SOCK_STREAM
-        )
-
-        sock.settimeout(0.05)
-
-        try:
-            result = sock.connect_ex(
-                (host, port)
-            )
-
-            if result == 0:
-                return
-
-        finally:
-            sock.close()
-
-        time.sleep(0.002)
-
-    raise RuntimeError(
-        "Port readiness timeout."
-    )
-
-
-def measure_wasmtime():
+def cleanup_wasmtime():
 
     subprocess.run(
-        ["pkill", "-f", "comet_multitenant_server"],
+        [
+            "pkill",
+            "-f",
+            str(SERVER),
+        ],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
+        check=False,
     )
 
-    start_ns = time.perf_counter_ns()
 
-    proc = subprocess.Popen(
-        [
-            str(SERVER),
-            "naive_bayes",
-            str(WASM),
-            "1",
-            "8100",
-        ],
-        cwd=ROOT,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.STDOUT,
-    )
-
-    try:
-
-        deadline = time.time() + 20
-
-        while True:
-
-            if proc.poll() is not None:
-                raise RuntimeError(
-                    "Wasmtime exited before readiness."
-                )
-
-            try:
-                with urllib.request.urlopen(
-                    "http://127.0.0.1:8100/health",
-                    timeout=0.1,
-                ) as r:
-                    if r.status == 200:
-                        break
-            except Exception:
-                pass
-
-            if time.time() > deadline:
-                raise RuntimeError(
-                    "Wasmtime readiness timeout."
-                )
-
-            time.sleep(0.002)
-
-        ready_ns = time.perf_counter_ns()
-
-        first_ms = make_request(
-            "http://127.0.0.1:8100/infer",
-            True
-        )
-
-        first_done_ns = time.perf_counter_ns()
-
-        warm = []
-
-        for _ in range(20):
-            warm.append(
-                make_request(
-                    "http://127.0.0.1:8100/infer",
-                    True
-                )
-            )
-
-        return {
-            "startup_ms":
-                (
-                    ready_ns - start_ns
-                ) / 1_000_000.0,
-
-            "first_inference_ms":
-                first_ms,
-
-            "cold_to_first_result_ms":
-                (
-                    first_done_ns - start_ns
-                ) / 1_000_000.0,
-
-            "warm_inference_ms":
-                statistics.mean(warm),
-        }
-
-    finally:
-
-        if proc.poll() is None:
-
-            proc.send_signal(
-                signal.SIGTERM
-            )
-
-            try:
-                proc.wait(timeout=5)
-
-            except subprocess.TimeoutExpired:
-                proc.kill()
-                proc.wait()
-
-
-def measure_docker():
+def cleanup_docker():
 
     subprocess.run(
         [
@@ -300,9 +418,188 @@ def measure_docker():
         ],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
+        check=False,
     )
 
-    start_ns = time.perf_counter_ns()
+
+# ============================================================
+# Wasmtime cold start
+# ============================================================
+
+def measure_wasmtime():
+
+    cleanup_wasmtime()
+
+    time.sleep(
+        0.1
+    )
+
+
+    start_ns = (
+        time.perf_counter_ns()
+    )
+
+
+    proc = subprocess.Popen(
+        [
+            str(SERVER),
+            MODEL_NAME,
+            str(WASM),
+            "1",
+            str(WASMTIME_PORT),
+        ],
+        cwd=ROOT,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.STDOUT,
+    )
+
+
+    try:
+
+        deadline = (
+            time.time()
+            + 20
+        )
+
+
+        while True:
+
+            if proc.poll() is not None:
+
+                raise RuntimeError(
+                    "Wasmtime exited "
+                    "before readiness."
+                )
+
+
+            try:
+
+                with urllib.request.urlopen(
+                    (
+                        "http://127.0.0.1:"
+                        f"{WASMTIME_PORT}/health"
+                    ),
+                    timeout=0.1,
+                ) as r:
+
+                    if r.status == 200:
+                        break
+
+            except Exception:
+                pass
+
+
+            if time.time() > deadline:
+
+                raise RuntimeError(
+                    "Wasmtime readiness timeout."
+                )
+
+
+            time.sleep(
+                0.002
+            )
+
+
+        ready_ns = (
+            time.perf_counter_ns()
+        )
+
+
+        first_ms = make_request(
+            (
+                "http://127.0.0.1:"
+                f"{WASMTIME_PORT}/infer"
+            ),
+            True,
+        )
+
+
+        first_done_ns = (
+            time.perf_counter_ns()
+        )
+
+
+        warm = []
+
+        for _ in range(
+            WARM_REQUESTS
+        ):
+
+            warm.append(
+                make_request(
+                    (
+                        "http://127.0.0.1:"
+                        f"{WASMTIME_PORT}/infer"
+                    ),
+                    True,
+                )
+            )
+
+
+        return {
+
+            "startup_ms":
+                (
+                    ready_ns
+                    - start_ns
+                )
+                / 1_000_000.0,
+
+            "first_inference_ms":
+                first_ms,
+
+            "cold_to_first_result_ms":
+                (
+                    first_done_ns
+                    - start_ns
+                )
+                / 1_000_000.0,
+
+            "warm_inference_ms":
+                statistics.mean(
+                    warm
+                ),
+        }
+
+
+    finally:
+
+        if proc.poll() is None:
+
+            proc.send_signal(
+                signal.SIGTERM
+            )
+
+            try:
+
+                proc.wait(
+                    timeout=5
+                )
+
+            except subprocess.TimeoutExpired:
+
+                proc.kill()
+                proc.wait()
+
+
+# ============================================================
+# Docker cold start
+# ============================================================
+
+def measure_docker():
+
+    cleanup_docker()
+
+    time.sleep(
+        0.1
+    )
+
+
+    start_ns = (
+        time.perf_counter_ns()
+    )
+
 
     result = subprocess.run(
         [
@@ -310,37 +607,52 @@ def measure_docker():
             "run",
             "-d",
             "--rm",
+
             "--name",
             DOCKER_NAME,
+
             "-p",
             f"{DOCKER_PORT}:8085",
+
             DOCKER_IMAGE,
         ],
         text=True,
         capture_output=True,
     )
 
+
     if result.returncode != 0:
+
         raise RuntimeError(
             result.stderr
         )
 
+
     try:
 
-        # Application-level readiness without consuming inference.
+        # ----------------------------------------------------
+        # Application-level readiness.
         #
-        # Docker port forwarding may become reachable before the
-        # inference server inside the container is fully ready.
-        # Therefore TCP-connect readiness is insufficient for a
-        # cold-start measurement. Wait until the application itself
-        # reports that the HTTP server is listening.
+        # Do not probe /infer because that would consume the
+        # first cold inference request. Instead wait until the
+        # application itself reports its listening state.
+        # Every current COMET Docker server emits a line
+        # containing:
+        #
+        #       "server listening on http://"
+        #
+        # ----------------------------------------------------
 
-        deadline = time.time() + 30
+        deadline = (
+            time.time()
+            + 30
+        )
+
 
         ready_marker = (
-            "Docker NB server listening on "
-            "http://0.0.0.0:8085"
+            "server listening on http://"
         )
+
 
         while True:
 
@@ -354,248 +666,599 @@ def measure_docker():
                 capture_output=True,
             )
 
+
             combined = (
                 logs.stdout
                 + "\n"
                 + logs.stderr
             )
 
-            if ready_marker in combined:
+
+            if (
+                ready_marker.lower()
+                in combined.lower()
+            ):
                 break
 
-            if time.time() > deadline:
+
+            container_alive = subprocess.run(
+                [
+                    "docker",
+                    "inspect",
+                    "-f",
+                    "{{.State.Running}}",
+                    DOCKER_NAME,
+                ],
+                text=True,
+                capture_output=True,
+            )
+
+
+            if (
+                container_alive.returncode != 0
+                or
+                container_alive.stdout.strip()
+                != "true"
+            ):
+
                 raise RuntimeError(
-                    "Docker application readiness timeout."
+                    "Docker container exited "
+                    "before readiness.\n"
+                    + combined
                 )
 
-            time.sleep(0.002)
 
-        ready_ns = time.perf_counter_ns()
+            if time.time() > deadline:
 
-        # The first /infer request below is now genuinely the first
-        # inference request seen by this fresh container.
-        first_ms = make_request(
-            f"http://127.0.0.1:{DOCKER_PORT}/infer",
-            False
+                raise RuntimeError(
+                    "Docker application "
+                    "readiness timeout.\n"
+                    + combined
+                )
+
+
+            time.sleep(
+                0.002
+            )
+
+
+        ready_ns = (
+            time.perf_counter_ns()
         )
 
-        first_done_ns = time.perf_counter_ns()
+
+        first_ms = make_request(
+            (
+                "http://127.0.0.1:"
+                f"{DOCKER_PORT}/infer"
+            ),
+            False,
+        )
+
+
+        first_done_ns = (
+            time.perf_counter_ns()
+        )
+
 
         warm = []
 
-        for _ in range(20):
+        for _ in range(
+            WARM_REQUESTS
+        ):
+
             warm.append(
                 make_request(
-                    f"http://127.0.0.1:{DOCKER_PORT}/infer",
-                    False
+                    (
+                        "http://127.0.0.1:"
+                        f"{DOCKER_PORT}/infer"
+                    ),
+                    False,
                 )
             )
 
+
         return {
+
             "startup_ms":
                 (
-                    ready_ns - start_ns
-                ) / 1_000_000.0,
+                    ready_ns
+                    - start_ns
+                )
+                / 1_000_000.0,
 
             "first_inference_ms":
                 first_ms,
 
             "cold_to_first_result_ms":
                 (
-                    first_done_ns - start_ns
-                ) / 1_000_000.0,
+                    first_done_ns
+                    - start_ns
+                )
+                / 1_000_000.0,
 
             "warm_inference_ms":
-                statistics.mean(warm),
+                statistics.mean(
+                    warm
+                ),
         }
+
 
     finally:
 
-        subprocess.run(
-            [
-                "docker",
-                "rm",
-                "-f",
-                DOCKER_NAME,
-            ],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
+        cleanup_docker()
+
+
+# ============================================================
+# Persistence
+# ============================================================
+
+FIELDS = [
+    "backend",
+    "model",
+    "repetition",
+    "startup_ms",
+    "first_inference_ms",
+    "cold_to_first_result_ms",
+    "warm_inference_ms",
+    "timestamp_unix",
+]
+
+
+if args.fresh:
+
+    if RAW_CSV.exists():
+        RAW_CSV.unlink()
+
+    if SUMMARY_JSON.exists():
+        SUMMARY_JSON.unlink()
+
+
+existing = []
+
+if RAW_CSV.exists():
+
+    with RAW_CSV.open() as f:
+
+        existing = list(
+            csv.DictReader(f)
         )
 
 
-def run_backend(
-    backend,
-):
+def append_raw(row):
 
-    out_csv = (
-        RAW_DIR
-        / f"{backend}_naive_bayes_cold_start.csv"
-    )
+    exists = RAW_CSV.exists()
 
-    out_json = (
-        PROC_DIR
-        / f"{backend}_naive_bayes_cold_start_summary.json"
-    )
+    with RAW_CSV.open(
+        "a",
+        newline="",
+    ) as f:
 
-    if out_csv.exists():
-        out_csv.unlink()
-
-    measurements = []
-
-    for rep in range(
-        1,
-        MAX_REPS + 1
-    ):
-
-        data = (
-            measure_wasmtime()
-            if backend == "wasmtime"
-            else measure_docker()
+        writer = csv.DictWriter(
+            f,
+            fieldnames=FIELDS,
         )
 
-        measurements.append(data)
+        if not exists:
+            writer.writeheader()
 
-        exists = out_csv.exists()
-
-        with out_csv.open(
-            "a",
-            newline="",
-        ) as f:
-
-            writer = csv.DictWriter(
-                f,
-                fieldnames=[
-                    "backend",
-                    "repetition",
-                    "startup_ms",
-                    "first_inference_ms",
-                    "cold_to_first_result_ms",
-                    "warm_inference_ms",
-                ],
-            )
-
-            if not exists:
-                writer.writeheader()
-
-            writer.writerow({
-                "backend": backend,
-                "repetition": rep,
-                **data,
-            })
-
-        startup = ci(
-            [
-                x["startup_ms"]
-                for x in measurements
-            ]
+        writer.writerow(
+            row
         )
 
-        cold = ci(
-            [
-                x["cold_to_first_result_ms"]
-                for x in measurements
-            ]
-        )
 
-        first = ci(
-            [
-                x["first_inference_ms"]
-                for x in measurements
-            ]
-        )
+# ============================================================
+# Main experiment
+# ============================================================
 
-        print(
-            f"rep={rep:02d} | "
-            f"startup={data['startup_ms']:.3f} ms | "
-            f"first={data['first_inference_ms']:.3f} ms | "
-            f"cold→result={data['cold_to_first_result_ms']:.3f} ms | "
-            f"CI startup={startup['relative']*100:.2f}% | "
-            f"CI cold={cold['relative']*100:.2f}% | "
-            f"CI first={first['relative']*100:.2f}%"
-        )
+measurements = [
+    {
+        "startup_ms":
+            float(r["startup_ms"]),
 
-        stable = (
-            rep >= MIN_REPS
-            and startup["relative"] <= CI_TARGET
-            and cold["relative"] <= CI_TARGET
-            and first["relative"] <= CI_TARGET
-        )
+        "first_inference_ms":
+            float(r["first_inference_ms"]),
 
-        if stable:
-            print("CI targets satisfied.")
-            break
+        "cold_to_first_result_ms":
+            float(r["cold_to_first_result_ms"]),
 
-        time.sleep(
-            COOLDOWN_SECONDS
-        )
-
-    summary = {
-        "backend": backend,
-        "model": "naive_bayes",
-        "repetitions": len(measurements),
-        "startup_ms": ci(
-            [x["startup_ms"] for x in measurements]
-        ),
-        "first_inference_ms": ci(
-            [x["first_inference_ms"] for x in measurements]
-        ),
-        "cold_to_first_result_ms": ci(
-            [x["cold_to_first_result_ms"] for x in measurements]
-        ),
-        "warm_inference_ms": ci(
-            [x["warm_inference_ms"] for x in measurements]
-        ),
+        "warm_inference_ms":
+            float(r["warm_inference_ms"]),
     }
 
-    out_json.write_text(
-        json.dumps(
-            summary,
-            indent=2
+    for r in existing
+]
+
+
+print()
+print("=" * 78)
+print(
+    "COMET-Wasm UNIFIED COLD-START EXPERIMENT"
+)
+print("=" * 78)
+
+print(
+    f"Backend: {BACKEND}"
+)
+
+print(
+    f"Model: {MODEL_NAME}"
+)
+
+print(
+    f"Dataset: {MODEL['dataset']}"
+)
+
+print(
+    f"Workload class: "
+    f"{MODEL['workload_class']}"
+)
+
+print(
+    f"Features: {MODEL['features']}"
+)
+
+print(
+    f"Minimum repetitions: {MIN_REPS}"
+)
+
+print(
+    f"Maximum repetitions: {MAX_REPS}"
+)
+
+print(
+    "Primary relative 95% CI target: 2.50%"
+)
+
+print(
+    "Primary stopping metrics: "
+    "startup + cold-to-first-result"
+)
+
+print(
+    f"Warm requests/repetition: "
+    f"{WARM_REQUESTS}"
+)
+
+print(
+    f"Raw CSV: {RAW_CSV}"
+)
+
+print()
+
+
+# ============================================================
+# Resume check
+# ============================================================
+
+startup_existing = ci(
+    [
+        x["startup_ms"]
+        for x in measurements
+    ]
+)
+
+cold_existing = ci(
+    [
+        x["cold_to_first_result_ms"]
+        for x in measurements
+    ]
+)
+
+
+already_done = (
+    len(measurements) >= MIN_REPS
+    and
+    startup_existing[
+        "relative"
+    ] <= CI_TARGET
+    and
+    cold_existing[
+        "relative"
+    ] <= CI_TARGET
+)
+
+
+if already_done:
+
+    print(
+        "Existing dataset already satisfies "
+        "primary CI targets."
+    )
+
+
+# ============================================================
+# Repetitions
+# ============================================================
+
+for rep in (
+    []
+    if already_done
+    else range(
+        len(measurements) + 1,
+        MAX_REPS + 1,
+    )
+):
+
+    data = (
+        measure_wasmtime()
+        if BACKEND == "wasmtime"
+        else measure_docker()
+    )
+
+
+    measurements.append(
+        data
+    )
+
+
+    append_raw({
+
+        "backend":
+            BACKEND,
+
+        "model":
+            MODEL_NAME,
+
+        "repetition":
+            rep,
+
+        **data,
+
+        "timestamp_unix":
+            time.time(),
+    })
+
+
+    startup = ci(
+        [
+            x["startup_ms"]
+            for x in measurements
+        ]
+    )
+
+    cold = ci(
+        [
+            x["cold_to_first_result_ms"]
+            for x in measurements
+        ]
+    )
+
+    first = ci(
+        [
+            x["first_inference_ms"]
+            for x in measurements
+        ]
+    )
+
+    warm_ci = ci(
+        [
+            x["warm_inference_ms"]
+            for x in measurements
+        ]
+    )
+
+
+    print(
+        f"rep={rep:02d} | "
+        f"startup={data['startup_ms']:.3f} ms | "
+        f"first={data['first_inference_ms']:.3f} ms | "
+        f"cold→result="
+        f"{data['cold_to_first_result_ms']:.3f} ms | "
+        f"warm={data['warm_inference_ms']:.3f} ms | "
+        f"CI startup="
+        f"{startup['relative']*100:.2f}% | "
+        f"CI cold="
+        f"{cold['relative']*100:.2f}% | "
+        f"CI first="
+        f"{first['relative']*100:.2f}%"
+    )
+
+
+    stable = (
+        rep >= MIN_REPS
+        and
+        startup["relative"]
+        <= CI_TARGET
+        and
+        cold["relative"]
+        <= CI_TARGET
+    )
+
+
+    if stable:
+
+        print(
+            "Primary CI targets satisfied."
         )
-    )
 
-    print()
-    print(
-        f"===== {backend.upper()} COLD-START SUMMARY ====="
-    )
-    print(
-        f"n={summary['repetitions']}"
-    )
-    print(
-        f"startup="
-        f"{summary['startup_ms']['mean']:.3f} ms"
-    )
-    print(
-        f"first inference="
-        f"{summary['first_inference_ms']['mean']:.3f} ms"
-    )
-    print(
-        f"cold→first result="
-        f"{summary['cold_to_first_result_ms']['mean']:.3f} ms"
-    )
-    print(
-        f"warm="
-        f"{summary['warm_inference_ms']['mean']:.3f} ms"
+        break
+
+
+    time.sleep(
+        COOLDOWN_SECONDS
     )
 
 
-if __name__ == "__main__":
+# ============================================================
+# Summary
+# ============================================================
 
-    import argparse
+startup = ci(
+    [
+        x["startup_ms"]
+        for x in measurements
+    ]
+)
 
-    parser = argparse.ArgumentParser()
+first = ci(
+    [
+        x["first_inference_ms"]
+        for x in measurements
+    ]
+)
 
-    parser.add_argument(
-        "--backend",
-        required=True,
-        choices=[
-            "wasmtime",
-            "docker",
-        ],
+cold = ci(
+    [
+        x["cold_to_first_result_ms"]
+        for x in measurements
+    ]
+)
+
+warm_ci = ci(
+    [
+        x["warm_inference_ms"]
+        for x in measurements
+    ]
+)
+
+
+summary = {
+
+    "backend":
+        BACKEND,
+
+    "model":
+        MODEL_NAME,
+
+    "dataset":
+        MODEL["dataset"],
+
+    "workload_class":
+        MODEL["workload_class"],
+
+    "features":
+        int(
+            MODEL["features"]
+        ),
+
+    "repetitions":
+        len(
+            measurements
+        ),
+
+    "primary_ci_target":
+        CI_TARGET,
+
+    "primary_stopping_metrics": [
+        "startup_ms",
+        "cold_to_first_result_ms",
+    ],
+
+    "startup_ms":
+        startup,
+
+    "first_inference_ms":
+        first,
+
+    "cold_to_first_result_ms":
+        cold,
+
+    "warm_inference_ms":
+        warm_ci,
+
+    "primary_ci_pass":
+        bool(
+            startup["relative"]
+            <= CI_TARGET
+            and
+            cold["relative"]
+            <= CI_TARGET
+        ),
+
+    "first_inference_ci_pass":
+        bool(
+            first["relative"]
+            <= CI_TARGET
+        ),
+
+    "warm_inference_ci_pass":
+        bool(
+            warm_ci["relative"]
+            <= CI_TARGET
+        ),
+}
+
+
+SUMMARY_JSON.write_text(
+    json.dumps(
+        summary,
+        indent=2,
     )
+)
 
-    args = parser.parse_args()
 
-    run_backend(
-        args.backend
-    )
+# ============================================================
+# Final output
+# ============================================================
+
+print()
+print("=" * 78)
+
+print(
+    f"{BACKEND.upper()} / "
+    f"{MODEL_NAME.upper()} "
+    "COLD-START SUMMARY"
+)
+
+print("=" * 78)
+
+
+print(
+    f"n={summary['repetitions']}"
+)
+
+
+print(
+    f"startup="
+    f"{summary['startup_ms']['mean']:.3f} ms | "
+    f"CI="
+    f"{summary['startup_ms']['relative']*100:.3f}%"
+)
+
+
+print(
+    f"first inference="
+    f"{summary['first_inference_ms']['mean']:.3f} ms | "
+    f"CI="
+    f"{summary['first_inference_ms']['relative']*100:.3f}%"
+)
+
+
+print(
+    f"cold→first result="
+    f"{summary['cold_to_first_result_ms']['mean']:.3f} ms | "
+    f"CI="
+    f"{summary['cold_to_first_result_ms']['relative']*100:.3f}%"
+)
+
+
+print(
+    f"warm="
+    f"{summary['warm_inference_ms']['mean']:.3f} ms | "
+    f"CI="
+    f"{summary['warm_inference_ms']['relative']*100:.3f}%"
+)
+
+
+print(
+    "Primary CI pass:",
+    summary["primary_ci_pass"]
+)
+
+
+print()
+print(
+    f"Raw CSV: {RAW_CSV}"
+)
+
+print(
+    f"Summary JSON: {SUMMARY_JSON}"
+)
+
+print()
+
+print(
+    "UNIFIED COLD-START EXPERIMENT: COMPLETE"
+)
+
