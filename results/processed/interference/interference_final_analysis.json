@@ -1,0 +1,140 @@
+{
+  "experiment": "mixed_tenant_interference",
+  "pairs": 5,
+  "backends": 2,
+  "pair_configurations": 10,
+  "stream_observations": 20,
+  "frozen_protocol": {
+    "physical_units_per_model": 20,
+    "concurrency_per_model": 32,
+    "requests_per_model_per_repetition": 5000,
+    "total_mixed_concurrency": 64,
+    "total_mixed_requests_per_repetition": 10000,
+    "minimum_repetitions": 20,
+    "maximum_repetitions": 60,
+    "relative_ci_target": 0.025
+  },
+  "wasmtime": {
+    "mean_p95_degradation_pct": 49.986161282488126,
+    "mean_throughput_degradation_pct": 48.03246700038286,
+    "max_p95_degradation_pct": 66.8887853379913
+  },
+  "docker": {
+    "mean_p95_degradation_pct": 106.39442526757375,
+    "mean_throughput_degradation_pct": 52.634897593406244,
+    "max_p95_degradation_pct": 114.98115703785126
+  },
+  "docker_over_wasmtime_mean_p95_degradation": 2.128477613359908,
+  "pair_results": [
+    {
+      "backend": "docker",
+      "pair": "dt_mlp",
+      "pair_label": "DT + MLP",
+      "mean_p95_degradation_pct": 106.22681627219504,
+      "mean_throughput_degradation_pct": 52.343480673269354,
+      "mean_mixed_p99_ms": 13.608565581500029,
+      "mean_error_rate": 0.0,
+      "repetitions": 20,
+      "ci_pass": true
+    },
+    {
+      "backend": "docker",
+      "pair": "kmeans_rf",
+      "pair_label": "K-Means + RF",
+      "mean_p95_degradation_pct": 105.74029884149536,
+      "mean_throughput_degradation_pct": 52.73585649868533,
+      "mean_mixed_p99_ms": 13.340359748000022,
+      "mean_error_rate": 0.0,
+      "repetitions": 20,
+      "ci_pass": true
+    },
+    {
+      "backend": "docker",
+      "pair": "lr_lr",
+      "pair_label": "LR + LR",
+      "mean_p95_degradation_pct": 104.46933827691058,
+      "mean_throughput_degradation_pct": 52.43418468916111,
+      "mean_mixed_p99_ms": 12.40088998775002,
+      "mean_error_rate": 0.0,
+      "repetitions": 20,
+      "ci_pass": true
+    },
+    {
+      "backend": "docker",
+      "pair": "lr_svm",
+      "pair_label": "LR + SVM",
+      "mean_p95_degradation_pct": 108.85035316711465,
+      "mean_throughput_degradation_pct": 53.19198456149313,
+      "mean_mixed_p99_ms": 13.320477598750024,
+      "mean_error_rate": 0.0,
+      "repetitions": 20,
+      "ci_pass": true
+    },
+    {
+      "backend": "docker",
+      "pair": "svm_mlp",
+      "pair_label": "SVM + MLP",
+      "mean_p95_degradation_pct": 106.68531978015315,
+      "mean_throughput_degradation_pct": 52.46898154442229,
+      "mean_mixed_p99_ms": 13.584098944750025,
+      "mean_error_rate": 0.0,
+      "repetitions": 20,
+      "ci_pass": true
+    },
+    {
+      "backend": "wasmtime",
+      "pair": "dt_mlp",
+      "pair_label": "DT + MLP",
+      "mean_p95_degradation_pct": 36.21826232316465,
+      "mean_throughput_degradation_pct": 46.93692443357842,
+      "mean_mixed_p99_ms": 7.3632984040476215,
+      "mean_error_rate": 0.0,
+      "repetitions": 42,
+      "ci_pass": true
+    },
+    {
+      "backend": "wasmtime",
+      "pair": "kmeans_rf",
+      "pair_label": "K-Means + RF",
+      "mean_p95_degradation_pct": 42.0327098009757,
+      "mean_throughput_degradation_pct": 47.86002017646216,
+      "mean_mixed_p99_ms": 7.50647297966667,
+      "mean_error_rate": 0.0,
+      "repetitions": 60,
+      "ci_pass": false
+    },
+    {
+      "backend": "wasmtime",
+      "pair": "lr_lr",
+      "pair_label": "LR + LR",
+      "mean_p95_degradation_pct": 47.04191262942063,
+      "mean_throughput_degradation_pct": 46.363976877307806,
+      "mean_mixed_p99_ms": 7.56362659916667,
+      "mean_error_rate": 0.0,
+      "repetitions": 60,
+      "ci_pass": false
+    },
+    {
+      "backend": "wasmtime",
+      "pair": "lr_svm",
+      "pair_label": "LR + SVM",
+      "mean_p95_degradation_pct": 59.97366302826542,
+      "mean_throughput_degradation_pct": 48.79610341269486,
+      "mean_mixed_p99_ms": 8.312670110916667,
+      "mean_error_rate": 0.0,
+      "repetitions": 60,
+      "ci_pass": false
+    },
+    {
+      "backend": "wasmtime",
+      "pair": "svm_mlp",
+      "pair_label": "SVM + MLP",
+      "mean_p95_degradation_pct": 64.66425863061424,
+      "mean_throughput_degradation_pct": 50.20531010187106,
+      "mean_mixed_p99_ms": 8.849223847083334,
+      "mean_error_rate": 0.0,
+      "repetitions": 60,
+      "ci_pass": false
+    }
+  ]
+}

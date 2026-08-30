@@ -1,0 +1,58 @@
+{
+  "backend": "wasmtime",
+  "pair": "svm_mlp",
+  "model_a": "svm",
+  "model_b": "mlp",
+  "physical_units_per_model": 20,
+  "concurrency_per_model": 32,
+  "requests_per_model_per_repetition": 5000,
+  "total_mixed_concurrency": 64,
+  "total_mixed_requests_per_repetition": 10000,
+  "repetitions": 60,
+  "ci_target": 0.025,
+  "stream_a": {
+    "mixed_p95_latency_ms": {
+      "n": 60,
+      "mean": 8.3614575125,
+      "sd": 1.7773483730140465,
+      "halfwidth": 0.459137770775137,
+      "relative": 0.054911212559382964
+    },
+    "mixed_throughput_rps": {
+      "n": 60,
+      "mean": 4431.193748234831,
+      "sd": 411.9375899646703,
+      "halfwidth": 106.41476349069492,
+      "relative": 0.024014920027607755
+    },
+    "mixed_p99_latency_ms_mean": 8.919954631166668,
+    "mixed_error_rate_mean": 0.0,
+    "solo_p95_latency_ms": 5.120822280833334,
+    "solo_throughput_rps": 8630.56231753076,
+    "p95_degradation_pct": 63.28349343026415,
+    "throughput_degradation_pct": 48.65695205938082
+  },
+  "stream_b": {
+    "mixed_p95_latency_ms": {
+      "n": 60,
+      "mean": 8.35089932,
+      "sd": 1.7852688656638505,
+      "halfwidth": 0.46118385098872217,
+      "relative": 0.05522565095285117
+    },
+    "mixed_throughput_rps": {
+      "n": 60,
+      "mean": 4407.9752651032995,
+      "sd": 406.8353489571106,
+      "halfwidth": 105.09671487527588,
+      "relative": 0.0238424012283592
+    },
+    "mixed_p99_latency_ms_mean": 8.778493063,
+    "mixed_error_rate_mean": 0.0,
+    "solo_p95_latency_ms": 5.029298155,
+    "solo_throughput_rps": 9136.394613983748,
+    "p95_degradation_pct": 66.04502383096434,
+    "throughput_degradation_pct": 51.7536681443613
+  },
+  "ci_pass": false
+}

@@ -1,0 +1,25 @@
+{
+  "backend": "docker",
+  "model": "logistic_regression",
+  "repetitions": 20,
+  "physical_units": 20,
+  "concurrency": 32,
+  "requests_per_repetition": 5000,
+  "p95_latency_ms": {
+    "n": 20,
+    "mean": 5.5502426675,
+    "sd": 0.05927420563032127,
+    "halfwidth": 0.02774118216408707,
+    "relative": 0.004998192660390929
+  },
+  "throughput_rps": {
+    "n": 20,
+    "mean": 6114.543026408402,
+    "sd": 51.43405347849756,
+    "halfwidth": 24.071878008509437,
+    "relative": 0.0039368237175769665
+  },
+  "p99_latency_ms_mean": 6.390623784000027,
+  "error_rate_mean": 0.0,
+  "ci_pass": true
+}

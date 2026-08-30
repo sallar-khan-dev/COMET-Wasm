@@ -1,0 +1,25 @@
+{
+  "backend": "wasmtime",
+  "model": "random_forest",
+  "repetitions": 27,
+  "physical_units": 20,
+  "concurrency": 32,
+  "requests_per_repetition": 5000,
+  "p95_latency_ms": {
+    "n": 27,
+    "mean": 5.012833509259259,
+    "sd": 0.3132080308299073,
+    "halfwidth": 0.12390097045207245,
+    "relative": 0.024716753553297475
+  },
+  "throughput_rps": {
+    "n": 27,
+    "mean": 9306.419698281696,
+    "sd": 195.77205598236333,
+    "halfwidth": 77.44484603201339,
+    "relative": 0.008321658440389543
+  },
+  "p99_latency_ms_mean": 5.2289168577777785,
+  "error_rate_mean": 0.0,
+  "ci_pass": true
+}
