@@ -1,0 +1,18 @@
+{
+  "models": 7,
+  "backends": 2,
+  "expected_profiles": 14,
+  "actual_profiles": 14,
+  "expected_performance_cells": 126,
+  "actual_performance_cells": 126,
+  "profile_dimensions": [
+    "compute",
+    "memory",
+    "latency",
+    "throughput",
+    "startup",
+    "density",
+    "interference"
+  ],
+  "pass": true
+}

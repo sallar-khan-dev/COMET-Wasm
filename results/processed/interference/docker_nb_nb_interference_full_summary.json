@@ -1,0 +1,58 @@
+{
+  "backend": "docker",
+  "pair": "nb_nb",
+  "model_a": "naive_bayes",
+  "model_b": "naive_bayes",
+  "physical_units_per_model": 20,
+  "concurrency_per_model": 32,
+  "requests_per_model_per_repetition": 5000,
+  "total_mixed_concurrency": 64,
+  "total_mixed_requests_per_repetition": 10000,
+  "repetitions": 20,
+  "ci_target": 0.025,
+  "stream_a": {
+    "mixed_p95_latency_ms": {
+      "n": 20,
+      "mean": 12.20051154,
+      "sd": 0.12551134919432314,
+      "halfwidth": 0.058741119592144404,
+      "relative": 0.004814643992553807
+    },
+    "mixed_throughput_rps": {
+      "n": 20,
+      "mean": 2717.8837145368143,
+      "sd": 30.050186075302847,
+      "halfwidth": 14.063919998840996,
+      "relative": 0.005174584888830606
+    },
+    "mixed_p99_latency_ms_mean": 13.745640374000025,
+    "mixed_error_rate_mean": 0.0,
+    "solo_p95_latency_ms": 5.968795085344827,
+    "solo_throughput_rps": 5699.578597778807,
+    "p95_degradation_pct": 104.40493207675863,
+    "throughput_degradation_pct": 52.31430415581942
+  },
+  "stream_b": {
+    "mixed_p95_latency_ms": {
+      "n": 20,
+      "mean": 12.202988285,
+      "sd": 0.12644920289388534,
+      "halfwidth": 0.05918004863465373,
+      "relative": 0.004849635782032034
+    },
+    "mixed_throughput_rps": {
+      "n": 20,
+      "mean": 2707.004121815058,
+      "sd": 29.19069026916442,
+      "halfwidth": 13.66166357931071,
+      "relative": 0.005046783441966281
+    },
+    "mixed_p99_latency_ms_mean": 13.81157237050002,
+    "mixed_error_rate_mean": 0.0,
+    "solo_p95_latency_ms": 5.968795085344827,
+    "solo_throughput_rps": 5699.578597778807,
+    "p95_degradation_pct": 104.44642696751269,
+    "throughput_degradation_pct": 52.505188315676364
+  },
+  "ci_pass": true
+}

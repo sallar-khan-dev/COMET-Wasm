@@ -98,6 +98,11 @@ DOCKER_PORT_B = 8500
 
 
 PAIRS = {
+    "nb_nb": (
+        "naive_bayes",
+        "naive_bayes",
+    ),
+
     "lr_lr": (
         "logistic_regression",
         "logistic_regression",

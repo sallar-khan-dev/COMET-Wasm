@@ -1,0 +1,25 @@
+{
+  "backend": "docker",
+  "model": "naive_bayes",
+  "repetitions": 58,
+  "physical_units": 20,
+  "concurrency": 32,
+  "requests_per_repetition": 5000,
+  "p95_latency_ms": {
+    "n": 58,
+    "mean": 5.968795085344827,
+    "sd": 0.5598338558290838,
+    "halfwidth": 0.14720080859240275,
+    "relative": 0.02466172929169987
+  },
+  "throughput_rps": {
+    "n": 58,
+    "mean": 5699.578597778807,
+    "sd": 124.32273246805322,
+    "halfwidth": 32.68899612834682,
+    "relative": 0.005735335616055213
+  },
+  "p99_latency_ms_mean": 6.740734849310363,
+  "error_rate_mean": 0.0,
+  "ci_pass": true
+}

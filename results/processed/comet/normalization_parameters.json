@@ -1,0 +1,44 @@
+{
+  "compute_efficiency": {
+    "raw_metric": "execution_us",
+    "minimum": 0.11729142,
+    "maximum": 14.07153812,
+    "direction": "low"
+  },
+  "memory_efficiency": {
+    "raw_metric": "pss_200_mib",
+    "minimum": 19.46453125005,
+    "maximum": 469.5296191407,
+    "direction": "low"
+  },
+  "latency_efficiency": {
+    "raw_metric": "p95_latency_ms_c32",
+    "minimum": 3.2851091991666665,
+    "maximum": 5.9367624975,
+    "direction": "low"
+  },
+  "throughput_efficiency": {
+    "raw_metric": "throughput_rps_c32",
+    "minimum": 5684.0891816825,
+    "maximum": 9981.00224313485,
+    "direction": "high"
+  },
+  "startup_efficiency": {
+    "raw_metric": "startup_ms",
+    "minimum": 42.28686568333333,
+    "maximum": 544.44502,
+    "direction": "low"
+  },
+  "density_efficiency": {
+    "raw_metric": "memory_growth_mib_per_tenant",
+    "minimum": 0.0103264600395081,
+    "maximum": 2.33349053454795,
+    "direction": "low"
+  },
+  "interference_resilience": {
+    "raw_metric": "interference_p95_degradation_pct",
+    "minimum": 35.3422334856896,
+    "maximum": 111.71459098542422,
+    "direction": "low"
+  }
+}

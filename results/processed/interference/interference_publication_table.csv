@@ -3,9 +3,11 @@ DT + MLP,docker,106.23,52.34,13.609,20,True
 K-Means + RF,docker,105.74,52.74,13.34,20,True
 LR + LR,docker,104.47,52.43,12.401,20,True
 LR + SVM,docker,108.85,53.19,13.32,20,True
+NB + NB,docker,104.43,52.41,13.779,20,True
 SVM + MLP,docker,106.69,52.47,13.584,20,True
 DT + MLP,wasmtime,36.22,46.94,7.363,42,True
 K-Means + RF,wasmtime,42.03,47.86,7.506,60,False
 LR + LR,wasmtime,47.04,46.36,7.564,60,False
 LR + SVM,wasmtime,59.97,48.8,8.313,60,False
+NB + NB,wasmtime,38.04,45.68,7.467,60,False
 SVM + MLP,wasmtime,64.66,50.21,8.849,60,False

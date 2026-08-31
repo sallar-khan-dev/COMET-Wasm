@@ -1,9 +1,9 @@
 {
   "experiment": "mixed_tenant_interference",
-  "pairs": 5,
+  "pairs": 6,
   "backends": 2,
-  "pair_configurations": 10,
-  "stream_observations": 20,
+  "pair_configurations": 12,
+  "stream_observations": 24,
   "frozen_protocol": {
     "physical_units_per_model": 20,
     "concurrency_per_model": 32,
@@ -15,16 +15,16 @@
     "relative_ci_target": 0.025
   },
   "wasmtime": {
-    "mean_p95_degradation_pct": 49.986161282488126,
-    "mean_throughput_degradation_pct": 48.03246700038286,
+    "mean_p95_degradation_pct": 47.994641362651016,
+    "mean_throughput_degradation_pct": 47.63957862601878,
     "max_p95_degradation_pct": 66.8887853379913
   },
   "docker": {
-    "mean_p95_degradation_pct": 106.39442526757375,
-    "mean_throughput_degradation_pct": 52.634897593406244,
+    "mean_p95_degradation_pct": 106.06630097666739,
+    "mean_throughput_degradation_pct": 52.59737236712985,
     "max_p95_degradation_pct": 114.98115703785126
   },
-  "docker_over_wasmtime_mean_p95_degradation": 2.128477613359908,
+  "docker_over_wasmtime_mean_p95_degradation": 2.2099613199570065,
   "pair_results": [
     {
       "backend": "docker",
@@ -66,6 +66,17 @@
       "mean_p95_degradation_pct": 108.85035316711465,
       "mean_throughput_degradation_pct": 53.19198456149313,
       "mean_mixed_p99_ms": 13.320477598750024,
+      "mean_error_rate": 0.0,
+      "repetitions": 20,
+      "ci_pass": true
+    },
+    {
+      "backend": "docker",
+      "pair": "nb_nb",
+      "pair_label": "NB + NB",
+      "mean_p95_degradation_pct": 104.42567952213565,
+      "mean_throughput_degradation_pct": 52.40974623574789,
+      "mean_mixed_p99_ms": 13.778606372250023,
       "mean_error_rate": 0.0,
       "repetitions": 20,
       "ci_pass": true
@@ -121,6 +132,17 @@
       "mean_p95_degradation_pct": 59.97366302826542,
       "mean_throughput_degradation_pct": 48.79610341269486,
       "mean_mixed_p99_ms": 8.312670110916667,
+      "mean_error_rate": 0.0,
+      "repetitions": 60,
+      "ci_pass": false
+    },
+    {
+      "backend": "wasmtime",
+      "pair": "nb_nb",
+      "pair_label": "NB + NB",
+      "mean_p95_degradation_pct": 38.03704176346548,
+      "mean_throughput_degradation_pct": 45.67513675419837,
+      "mean_mixed_p99_ms": 7.467083055166668,
       "mean_error_rate": 0.0,
       "repetitions": 60,
       "ci_pass": false

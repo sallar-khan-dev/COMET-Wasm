@@ -18,6 +18,7 @@ FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 
 PAIRS = [
+    "nb_nb",
     "lr_lr",
     "lr_svm",
     "kmeans_rf",
@@ -26,6 +27,7 @@ PAIRS = [
 ]
 
 PAIR_LABELS = {
+    "nb_nb": "NB + NB",
     "lr_lr": "LR + LR",
     "lr_svm": "LR + SVM",
     "kmeans_rf": "K-Means + RF",
@@ -355,13 +357,13 @@ analysis = {
         "mixed_tenant_interference",
 
     "pairs":
-        5,
+        6,
 
     "backends":
         2,
 
     "pair_configurations":
-        10,
+        12,
 
     "stream_observations":
         len(df),

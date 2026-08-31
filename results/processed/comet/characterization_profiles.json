@@ -1,0 +1,3868 @@
+{
+  "schema_version": "comet-profile-v1",
+  "canonical_scoring_concurrency": 32,
+  "performance_concurrency_levels": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "relative_ci_target": 0.025,
+  "profiles": [
+    {
+      "model": "logistic_regression",
+      "backend": "wasmtime",
+      "raw": {
+        "execution_us": 0.29221715,
+        "throughput_rps_c32": 9910.266304900933,
+        "p95_latency_ms_c32": 3.2851091991666665,
+        "p99_latency_ms_c32": 8.702518026,
+        "peak_throughput_rps": 9910.266304900933,
+        "peak_throughput_concurrency": 32,
+        "pss_20_mib": 17.9992871094,
+        "pss_100_mib": 18.85927734375,
+        "pss_200_mib": 20.0078906249,
+        "memory_growth_mib_per_tenant": 0.0111723192551843,
+        "startup_ms": 43.906472479166666,
+        "cold_to_first_result_ms": 45.19902029166667,
+        "interference_p95_degradation_pct": 53.65753686561086,
+        "interference_throughput_degradation_pct": 47.72852343688728,
+        "interference_observations": 3
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 38,
+          "throughput_rps": {
+            "n": 38,
+            "mean": 6540.598397941684,
+            "sd": 469.6645327469762,
+            "halfwidth": 154.37489045117283,
+            "relative": 0.023602563719514465
+          },
+          "p95_latency_ms": {
+            "n": 38,
+            "mean": 0.18472920394736841,
+            "sd": 0.013686236732509592,
+            "halfwidth": 0.0044985540720151145,
+            "relative": 0.024352154266289193
+          },
+          "p99_latency_ms": {
+            "n": 38,
+            "mean": 0.19605227078947368,
+            "sd": 0.0140809557295414,
+            "halfwidth": 0.004628294977868462,
+            "relative": 0.0236074540694224
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 8427.0398403604,
+            "sd": 1049.999725471334,
+            "halfwidth": 271.24369121281103,
+            "relative": 0.03218730376872299
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 0.2600832158333333,
+            "sd": 0.05018943096113041,
+            "halfwidth": 0.01296530483153847,
+            "relative": 0.04985060181602378
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 0.3417864468333333,
+            "sd": 0.03162796470291964,
+            "halfwidth": 0.008170369651970575,
+            "relative": 0.0239048965448145
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 9300.576661309016,
+            "sd": 420.68182079424224,
+            "halfwidth": 108.67363784036702,
+            "relative": 0.011684612879162233
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 0.4532763675,
+            "sd": 0.043349274000927945,
+            "halfwidth": 0.011198304919678999,
+            "relative": 0.024705247664779256
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 0.6233979171666667,
+            "sd": 0.008791999934100158,
+            "halfwidth": 0.002271214417887222,
+            "relative": 0.00364328201192884
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 9606.975842851567,
+            "sd": 75.49860721771245,
+            "halfwidth": 19.503358340370905,
+            "relative": 0.002030124636451867
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 0.8677017616666667,
+            "sd": 0.08545939069853806,
+            "halfwidth": 0.022076501564287386,
+            "relative": 0.025442499415793764
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.2389797355,
+            "sd": 0.01729696237638287,
+            "halfwidth": 0.004468279188961838,
+            "relative": 0.0036064182980027745
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 9840.60783773785,
+            "sd": 93.56770461879829,
+            "halfwidth": 24.17110115692666,
+            "relative": 0.0024562609907319596
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.6696966641666666,
+            "sd": 0.16770116980548203,
+            "halfwidth": 0.043321805916021854,
+            "relative": 0.02594591391703082
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 3.472375978666667,
+            "sd": 0.2827492546822079,
+            "halfwidth": 0.07304187769501193,
+            "relative": 0.02103512930159676
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 9910.266304900933,
+            "sd": 83.66024653322435,
+            "halfwidth": 21.611733343319884,
+            "relative": 0.002180741937543314
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 3.2851091991666665,
+            "sd": 0.23441448297051554,
+            "halfwidth": 0.06055568215136753,
+            "relative": 0.01843338485269491
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 8.702518026,
+            "sd": 2.0451982577399805,
+            "halfwidth": 0.5283307330793655,
+            "relative": 0.06071009924953938
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 37,
+          "throughput_rps": {
+            "n": 37,
+            "mean": 9798.969864713405,
+            "sd": 65.94038823696336,
+            "halfwidth": 21.985620043455928,
+            "relative": 0.002243666461576464
+          },
+          "p95_latency_ms": {
+            "n": 37,
+            "mean": 6.464391266216216,
+            "sd": 0.05634525705981417,
+            "halfwidth": 0.018786444030572405,
+            "relative": 0.0029061427838925694
+          },
+          "p99_latency_ms": {
+            "n": 37,
+            "mean": 28.637482403243244,
+            "sd": 2.1089050277956964,
+            "halfwidth": 0.7031439439244836,
+            "relative": 0.02455327371392296
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 9476.270880116817,
+            "sd": 127.76597497800998,
+            "halfwidth": 33.00545116703006,
+            "relative": 0.0034829577567566526
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 13.147893935833334,
+            "sd": 0.23508280613099627,
+            "halfwidth": 0.06072832833076575,
+            "relative": 0.004618863570632896
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 45.094896797333334,
+            "sd": 5.872151208744029,
+            "halfwidth": 1.5169375101546014,
+            "relative": 0.033638784383343015
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 9167.115655796817,
+            "sd": 135.4717309673807,
+            "halfwidth": 34.996059019050115,
+            "relative": 0.0038175649062440254
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 52.88562281083333,
+            "sd": 3.9354600057666116,
+            "halfwidth": 1.0166371216005325,
+            "relative": 0.01922331755904518
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 78.53416154516667,
+            "sd": 8.581888951737222,
+            "halfwidth": 2.2169369956765728,
+            "relative": 0.02822895096933791
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.9874643372902386,
+        "memory_efficiency": 0.9987927093447826,
+        "latency_efficiency": 1.0,
+        "throughput_efficiency": 0.9835379638307116,
+        "startup_efficiency": 0.9967747077650521,
+        "density_efficiency": 0.9996359020764148,
+        "interference_resilience": 0.7601841297096936
+      }
+    },
+    {
+      "model": "logistic_regression",
+      "backend": "docker",
+      "raw": {
+        "execution_us": 0.1835482454545454,
+        "throughput_rps_c32": 6257.347937457615,
+        "p95_latency_ms_c32": 5.419468475961539,
+        "p99_latency_ms_c32": 6.162572600961538,
+        "peak_throughput_rps": 6642.77483451105,
+        "peak_throughput_concurrency": 16,
+        "pss_20_mib": 49.3989160157,
+        "pss_100_mib": 235.97124023455,
+        "pss_200_mib": 468.40520507815,
+        "memory_growth_mib_per_tenant": 2.327670378137479,
+        "startup_ms": 532.4884705,
+        "cold_to_first_result_ms": 538.1206548,
+        "interference_p95_degradation_pct": 107.9732778638908,
+        "interference_throughput_degradation_pct": 53.13520769793039,
+        "interference_observations": 3
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 1020.9156451647,
+            "sd": 356.4846036178909,
+            "halfwidth": 92.08973812107192,
+            "relative": 0.09020308245566701
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.0532747775,
+            "sd": 0.1163652205825472,
+            "halfwidth": 0.03006032401145117,
+            "relative": 0.028539868848659646
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.09163579,
+            "sd": 0.10721685799287536,
+            "halfwidth": 0.027697051357963676,
+            "relative": 0.025372062378024154
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 2397.01240711855,
+            "sd": 38.29394363017927,
+            "halfwidth": 17.922117297556213,
+            "relative": 0.00747685629174544
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 0.9280583325,
+            "sd": 0.00828804724195086,
+            "halfwidth": 0.003878925510321884,
+            "relative": 0.004179613904088172
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 1.023426652,
+            "sd": 0.04602125930232272,
+            "halfwidth": 0.02153861235507377,
+            "relative": 0.02104558476465568
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 4574.86131355965,
+            "sd": 95.87337081002173,
+            "halfwidth": 44.87011873112917,
+            "relative": 0.00980797354405837
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 1.045587055,
+            "sd": 0.01621181542620675,
+            "halfwidth": 0.0075873631736854494,
+            "relative": 0.00725655806219354
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 1.138250841,
+            "sd": 0.030106127067781742,
+            "halfwidth": 0.014090101189230547,
+            "relative": 0.01237873119149362
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 6360.35734018055,
+            "sd": 38.05654264253481,
+            "halfwidth": 17.811010215240287,
+            "relative": 0.0028003159669539404
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 1.5140769825,
+            "sd": 0.014091304664871547,
+            "halfwidth": 0.006594933588412102,
+            "relative": 0.004355745226060262
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 1.6435495334999999,
+            "sd": 0.019220567964772655,
+            "halfwidth": 0.008995502707086798,
+            "relative": 0.005473216671438274
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 6642.77483451105,
+            "sd": 36.75553804234152,
+            "halfwidth": 17.20212131953124,
+            "relative": 0.0025895987366847764
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 2.670938695,
+            "sd": 0.01889502969077409,
+            "halfwidth": 0.008843146105014394,
+            "relative": 0.0033108757312808315
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 2.9999298045,
+            "sd": 0.07293073838554481,
+            "halfwidth": 0.0341326362352772,
+            "relative": 0.011377811635484621
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 52,
+          "throughput_rps": {
+            "n": 52,
+            "mean": 6257.347937457615,
+            "sd": 251.14976658605343,
+            "halfwidth": 69.9205415199492,
+            "relative": 0.01117414953088867
+          },
+          "p95_latency_ms": {
+            "n": 52,
+            "mean": 5.419468475961539,
+            "sd": 0.23923155144573816,
+            "halfwidth": 0.06660248923628692,
+            "relative": 0.012289487342108786
+          },
+          "p99_latency_ms": {
+            "n": 52,
+            "mean": 6.162572600961538,
+            "sd": 0.5462009707222159,
+            "halfwidth": 0.15206332130328173,
+            "relative": 0.02467529896192306
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 5732.847188494534,
+            "sd": 62.527959160666875,
+            "halfwidth": 16.152684648683955,
+            "relative": 0.002817567626972752
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 11.396185760833333,
+            "sd": 0.43726085909521534,
+            "halfwidth": 0.11295645757491113,
+            "relative": 0.009911777496916768
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 34.23048606966667,
+            "sd": 4.512613079400142,
+            "halfwidth": 1.1657315701889879,
+            "relative": 0.03405536128866135
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 44,
+          "throughput_rps": {
+            "n": 44,
+            "mean": 5479.826784115932,
+            "sd": 63.54704255858638,
+            "halfwidth": 19.320066801732942,
+            "relative": 0.0035256710773659745
+          },
+          "p95_latency_ms": {
+            "n": 44,
+            "mean": 23.42279504659091,
+            "sd": 0.2657958033667018,
+            "halfwidth": 0.08080931023549408,
+            "relative": 0.003450028490398098
+          },
+          "p99_latency_ms": {
+            "n": 44,
+            "mean": 62.982296425227275,
+            "sd": 5.135325392304069,
+            "halfwidth": 1.56128162119394,
+            "relative": 0.02478921395074086
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 23,
+          "throughput_rps": {
+            "n": 23,
+            "mean": 5194.240010699478,
+            "sd": 106.58575604656173,
+            "halfwidth": 46.0911372329581,
+            "relative": 0.008873509336883967
+          },
+          "p95_latency_ms": {
+            "n": 23,
+            "mean": 92.45930614347826,
+            "sd": 4.660464394866427,
+            "halfwidth": 2.0153359319350885,
+            "relative": 0.021797004714784386
+          },
+          "p99_latency_ms": {
+            "n": 23,
+            "mean": 115.14293081695652,
+            "sd": 6.547871719592018,
+            "halfwidth": 2.831512063203651,
+            "relative": 0.024591280099556648
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.9952518522225535,
+        "memory_efficiency": 0.002498336557985148,
+        "latency_efficiency": 0.1950835811995485,
+        "throughput_efficiency": 0.13341176504542895,
+        "startup_efficiency": 0.023810326283101868,
+        "density_efficiency": 0.002505271355705996,
+        "interference_resilience": 0.048987791447270834
+      }
+    },
+    {
+      "model": "naive_bayes",
+      "backend": "wasmtime",
+      "raw": {
+        "execution_us": 1.449343937254902,
+        "throughput_rps_c32": 9296.60593016755,
+        "p95_latency_ms_c32": 5.0312788375,
+        "p99_latency_ms_c32": 5.1774161055,
+        "peak_throughput_rps": 9296.60593016755,
+        "peak_throughput_concurrency": 32,
+        "pss_20_mib": 17.76476562485,
+        "pss_100_mib": 18.63437499995,
+        "pss_200_mib": 19.73958007815,
+        "memory_growth_mib_per_tenant": 0.0109745053160245,
+        "startup_ms": 43.4386866724138,
+        "cold_to_first_result_ms": 44.64807044827586,
+        "interference_p95_degradation_pct": 38.03704176346548,
+        "interference_throughput_degradation_pct": 45.67513675419837,
+        "interference_observations": 2
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 30,
+          "throughput_rps": {
+            "n": 30,
+            "mean": 6171.355810211633,
+            "sd": 366.32597093853366,
+            "halfwidth": 136.7883656023178,
+            "relative": 0.022165042789459088
+          },
+          "p95_latency_ms": {
+            "n": 30,
+            "mean": 0.20510442833333334,
+            "sd": 0.012149673219606413,
+            "halfwidth": 0.004536762539806576,
+            "relative": 0.02211928126892259
+          },
+          "p99_latency_ms": {
+            "n": 30,
+            "mean": 0.213760069,
+            "sd": 0.013927763212682333,
+            "halfwidth": 0.005200712254929293,
+            "relative": 0.024329671482887165
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 30,
+          "throughput_rps": {
+            "n": 30,
+            "mean": 8476.3087109492,
+            "sd": 405.68195706414593,
+            "halfwidth": 151.4841323397881,
+            "relative": 0.017871474188299645
+          },
+          "p95_latency_ms": {
+            "n": 30,
+            "mean": 0.33530549833333334,
+            "sd": 0.02222759796488825,
+            "halfwidth": 0.008299921485481124,
+            "relative": 0.024753311612057193
+          },
+          "p99_latency_ms": {
+            "n": 30,
+            "mean": 0.34881345166666666,
+            "sd": 0.01879880198620464,
+            "halfwidth": 0.00701958802534917,
+            "relative": 0.020124189568403554
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 8902.9074865189,
+            "sd": 65.91909176940626,
+            "halfwidth": 30.851084606198885,
+            "relative": 0.003465281948949228
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 0.651672375,
+            "sd": 0.00324797952950429,
+            "halfwidth": 0.0015201012115650002,
+            "relative": 0.0023326156975197855
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 0.678097107,
+            "sd": 0.004916997287720784,
+            "halfwidth": 0.002301225566980998,
+            "relative": 0.003393651946344313
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 23,
+          "throughput_rps": {
+            "n": 23,
+            "mean": 9071.839909874827,
+            "sd": 373.59331400423645,
+            "halfwidth": 161.55386370353878,
+            "relative": 0.017808279831711436
+          },
+          "p95_latency_ms": {
+            "n": 23,
+            "mean": 1.2929177586956522,
+            "sd": 0.05917989605599462,
+            "halfwidth": 0.025591306115588918,
+            "relative": 0.019793452401339482
+          },
+          "p99_latency_ms": {
+            "n": 23,
+            "mean": 1.3389945439130435,
+            "sd": 0.07598479792520732,
+            "halfwidth": 0.032858290626182556,
+            "relative": 0.02453952540400824
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 49,
+          "throughput_rps": {
+            "n": 49,
+            "mean": 9134.73184249,
+            "sd": 518.9599238853358,
+            "halfwidth": 149.06269439684027,
+            "relative": 0.016318234291616367
+          },
+          "p95_latency_ms": {
+            "n": 49,
+            "mean": 2.5916467785714286,
+            "sd": 0.1962595830386286,
+            "halfwidth": 0.05637233416775796,
+            "relative": 0.02175154987703672
+          },
+          "p99_latency_ms": {
+            "n": 49,
+            "mean": 2.6582055091836736,
+            "sd": 0.22698912787716466,
+            "halfwidth": 0.06519889001609125,
+            "relative": 0.024527407602925936
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9296.60593016755,
+            "sd": 33.61287387257193,
+            "halfwidth": 15.731309213539378,
+            "relative": 0.0016921561838489003
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 5.0312788375,
+            "sd": 0.020150269056737526,
+            "halfwidth": 0.009430616211790688,
+            "relative": 0.0018743974477225915
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 5.1774161055,
+            "sd": 0.07894111903511637,
+            "halfwidth": 0.03694558096734421,
+            "relative": 0.0071359110827690095
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 9058.295880047566,
+            "sd": 58.73278412153311,
+            "halfwidth": 15.17228697672145,
+            "relative": 0.0016749604095115712
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 7.964104359166667,
+            "sd": 0.8861415166951986,
+            "halfwidth": 0.2289146273990017,
+            "relative": 0.0287432983139556
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 34.199839964166664,
+            "sd": 3.3787738195545822,
+            "halfwidth": 0.8728298306723832,
+            "relative": 0.025521459503521134
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 8352.065064756951,
+            "sd": 1023.9080799344044,
+            "halfwidth": 264.5035044550705,
+            "relative": 0.0316692341839135
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 15.206808476666668,
+            "sd": 2.6175914590335396,
+            "halfwidth": 0.6761955762575758,
+            "relative": 0.044466633304097336
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 51.574209901,
+            "sd": 5.997779076472829,
+            "halfwidth": 1.5493906296510456,
+            "relative": 0.030041965405290746
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 33,
+          "throughput_rps": {
+            "n": 33,
+            "mean": 8618.491698249969,
+            "sd": 105.23366365999152,
+            "halfwidth": 37.31423461674374,
+            "relative": 0.004329555091910177
+          },
+          "p95_latency_ms": {
+            "n": 33,
+            "mean": 53.42688957878788,
+            "sd": 3.3378757284512086,
+            "halfwidth": 1.1835592691648842,
+            "relative": 0.022152876173326654
+          },
+          "p99_latency_ms": {
+            "n": 33,
+            "mean": 77.47890006242424,
+            "sd": 5.34572128007874,
+            "halfwidth": 1.8955103443425418,
+            "relative": 0.024464858726896504
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.9045414241347115,
+        "memory_efficiency": 0.9993888687758717,
+        "latency_efficiency": 0.3414789032069657,
+        "throughput_efficiency": 0.8407237234779019,
+        "startup_efficiency": 0.9977062585180004,
+        "density_efficiency": 0.9997210505776896,
+        "interference_resilience": 0.964714873731831
+      }
+    },
+    {
+      "model": "naive_bayes",
+      "backend": "docker",
+      "raw": {
+        "execution_us": 1.0954719,
+        "throughput_rps_c32": 5792.178999984846,
+        "p95_latency_ms_c32": 5.8948845211538465,
+        "p99_latency_ms_c32": 9.779505607692307,
+        "peak_throughput_rps": 5996.43238295128,
+        "peak_throughput_concurrency": 16,
+        "pss_20_mib": 49.50364257825,
+        "pss_100_mib": 236.24727539065,
+        "pss_200_mib": 469.47108398415,
+        "memory_growth_mib_per_tenant": 2.333114978225491,
+        "startup_ms": 532.61803535,
+        "cold_to_first_result_ms": 538.89481295,
+        "interference_p95_degradation_pct": 104.42567952213565,
+        "interference_throughput_degradation_pct": 52.409746235747896,
+        "interference_observations": 2
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 43,
+          "throughput_rps": {
+            "n": 43,
+            "mean": 678.0940247024652,
+            "sd": 49.97663564646122,
+            "halfwidth": 15.380538238028397,
+            "relative": 0.022682014112684574
+          },
+          "p95_latency_ms": {
+            "n": 43,
+            "mean": 1.6171201197674419,
+            "sd": 0.12757315941904582,
+            "halfwidth": 0.039261223393889336,
+            "relative": 0.02427848303534526
+          },
+          "p99_latency_ms": {
+            "n": 43,
+            "mean": 1.6530453486046512,
+            "sd": 0.1324963694019113,
+            "halfwidth": 0.040776363787311705,
+            "relative": 0.0246674199360177
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 1805.8882672616999,
+            "sd": 232.856231863829,
+            "halfwidth": 60.15314320610793,
+            "relative": 0.03330944903768559
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.512860095,
+            "sd": 0.26645865237527144,
+            "halfwidth": 0.06883356887871211,
+            "relative": 0.045498965242197174
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.6152633798333333,
+            "sd": 0.2893960319141146,
+            "halfwidth": 0.07475892232589727,
+            "relative": 0.04628280641984905
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 3685.6291331339667,
+            "sd": 191.65310800945556,
+            "halfwidth": 49.50924765771428,
+            "relative": 0.013433051961909023
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.5738094008333334,
+            "sd": 0.1967926226065819,
+            "halfwidth": 0.05083692506233541,
+            "relative": 0.032301830854115636
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 2.0141645258333334,
+            "sd": 0.10133440740549135,
+            "halfwidth": 0.026177453236180575,
+            "relative": 0.012996680708270347
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 5834.98506815805,
+            "sd": 599.6615598751844,
+            "halfwidth": 154.90900714851446,
+            "relative": 0.026548312521631718
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.6905369658333333,
+            "sd": 0.062398468076587194,
+            "halfwidth": 0.016119233554580902,
+            "relative": 0.0095349784597198
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.8480957035,
+            "sd": 0.057419962982816826,
+            "halfwidth": 0.014833149315130382,
+            "relative": 0.008026180293065316
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 25,
+          "throughput_rps": {
+            "n": 25,
+            "mean": 5996.43238295128,
+            "sd": 355.5080264284995,
+            "halfwidth": 146.74650087859956,
+            "relative": 0.0244723014464102
+          },
+          "p95_latency_ms": {
+            "n": 25,
+            "mean": 3.01709101,
+            "sd": 0.030596775056136744,
+            "halfwidth": 0.012629728005763369,
+            "relative": 0.004186061329904452
+          },
+          "p99_latency_ms": {
+            "n": 25,
+            "mean": 3.4525358892,
+            "sd": 0.051372509380847364,
+            "halfwidth": 0.021205529643670614,
+            "relative": 0.006142015702140674
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 26,
+          "throughput_rps": {
+            "n": 26,
+            "mean": 5792.178999984846,
+            "sd": 344.9648230006013,
+            "halfwidth": 139.33430739370863,
+            "relative": 0.024055594171739712
+          },
+          "p95_latency_ms": {
+            "n": 26,
+            "mean": 5.8948845211538465,
+            "sd": 0.07763857179805943,
+            "halfwidth": 0.03135889779840095,
+            "relative": 0.005319679747053443
+          },
+          "p99_latency_ms": {
+            "n": 26,
+            "mean": 9.779505607692307,
+            "sd": 0.1449420347626319,
+            "halfwidth": 0.058543354798384635,
+            "relative": 0.005986330715157619
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 5436.468613548466,
+            "sd": 56.86955040443099,
+            "halfwidth": 14.690962668953578,
+            "relative": 0.002702298810728268
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 11.976939601666666,
+            "sd": 0.12004387587181423,
+            "halfwidth": 0.031010621440255175,
+            "relative": 0.0025891941073110073
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 32.447842986333335,
+            "sd": 5.091855738856102,
+            "halfwidth": 1.3153658160343686,
+            "relative": 0.04053785074676261
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 48,
+          "throughput_rps": {
+            "n": 48,
+            "mean": 5158.630890521708,
+            "sd": 92.89557683037674,
+            "halfwidth": 26.974063728285497,
+            "relative": 0.005228919126167123
+          },
+          "p95_latency_ms": {
+            "n": 48,
+            "mean": 25.314825321875,
+            "sd": 1.6364289928824074,
+            "halfwidth": 0.4751694477490989,
+            "relative": 0.018770401995959907
+          },
+          "p99_latency_ms": {
+            "n": 48,
+            "mean": 64.33276643791666,
+            "sd": 5.512405058133824,
+            "halfwidth": 1.6006355782227406,
+            "relative": 0.02488056501918675
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 41,
+          "throughput_rps": {
+            "n": 41,
+            "mean": 4916.37839664939,
+            "sd": 148.50251891682413,
+            "halfwidth": 46.87317866279845,
+            "relative": 0.009534086858477666
+          },
+          "p95_latency_ms": {
+            "n": 41,
+            "mean": 95.39953259024391,
+            "sd": 5.957625714777428,
+            "halfwidth": 1.8804587058301243,
+            "relative": 0.01971140376449214
+          },
+          "p99_latency_ms": {
+            "n": 41,
+            "mean": 119.93020340243902,
+            "sd": 9.406307280917414,
+            "halfwidth": 2.9689969230930875,
+            "relative": 0.024756040087168793
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.9299008752654487,
+        "memory_efficiency": 0.0001300593139190731,
+        "latency_efficiency": 0.015793156809932762,
+        "throughput_efficiency": 0.025155225799660987,
+        "startup_efficiency": 0.02355231025989024,
+        "density_efficiency": 0.00016165725295946842,
+        "interference_resilience": 0.09543913140711802
+      }
+    },
+    {
+      "model": "decision_tree",
+      "backend": "wasmtime",
+      "raw": {
+        "execution_us": 0.4324079555555555,
+        "throughput_rps_c32": 9397.70863261265,
+        "p95_latency_ms_c32": 5.0206311525,
+        "p99_latency_ms_c32": 5.1273202535,
+        "peak_throughput_rps": 9397.70863261265,
+        "peak_throughput_concurrency": 32,
+        "pss_20_mib": 33.58730468755,
+        "pss_100_mib": 34.1003808592,
+        "pss_200_mib": 35.61951171865,
+        "memory_growth_mib_per_tenant": 0.0114499271572744,
+        "startup_ms": 55.2939605,
+        "cold_to_first_result_ms": 56.50663895454545,
+        "interference_p95_degradation_pct": 35.3422334856896,
+        "interference_throughput_degradation_pct": 45.373936969218605,
+        "interference_observations": 1
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 43,
+          "throughput_rps": {
+            "n": 43,
+            "mean": 6217.018056528,
+            "sd": 344.6392737738483,
+            "halfwidth": 106.06431305426118,
+            "relative": 0.017060319286493212
+          },
+          "p95_latency_ms": {
+            "n": 43,
+            "mean": 0.1950682965116279,
+            "sd": 0.015526306022964302,
+            "halfwidth": 0.004778291703564131,
+            "relative": 0.024495480757321834
+          },
+          "p99_latency_ms": {
+            "n": 43,
+            "mean": 0.21417197372093022,
+            "sd": 0.014509094289490597,
+            "halfwidth": 0.004465240139358422,
+            "relative": 0.02084885366549737
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 45,
+          "throughput_rps": {
+            "n": 45,
+            "mean": 8316.4857836938,
+            "sd": 690.1251860506807,
+            "halfwidth": 207.33655927411567,
+            "relative": 0.02493078983921816
+          },
+          "p95_latency_ms": {
+            "n": 45,
+            "mean": 0.33712587,
+            "sd": 0.010234684008963876,
+            "halfwidth": 0.003074839479225364,
+            "relative": 0.009120746145127824
+          },
+          "p99_latency_ms": {
+            "n": 45,
+            "mean": 0.3576143742222222,
+            "sd": 0.026546570732431843,
+            "halfwidth": 0.007975472780072044,
+            "relative": 0.022301879775996004
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 8860.6461072613,
+            "sd": 426.8326588933375,
+            "halfwidth": 199.7638334926014,
+            "relative": 0.022545063991314916
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 0.65053315,
+            "sd": 0.010781078360903763,
+            "halfwidth": 0.005045699989645015,
+            "relative": 0.007756253450950217
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 0.683065173,
+            "sd": 0.030422002565743185,
+            "halfwidth": 0.014237935472911571,
+            "relative": 0.02084418300874428
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 24,
+          "throughput_rps": {
+            "n": 24,
+            "mean": 9078.097403427042,
+            "sd": 514.656004331923,
+            "halfwidth": 217.3201711184571,
+            "relative": 0.023938955649056737
+          },
+          "p95_latency_ms": {
+            "n": 24,
+            "mean": 1.2833779416666666,
+            "sd": 0.010963763148610988,
+            "halfwidth": 0.0046295911511832,
+            "relative": 0.003607348233810964
+          },
+          "p99_latency_ms": {
+            "n": 24,
+            "mean": 1.3388061083333334,
+            "sd": 0.06066885410407547,
+            "halfwidth": 0.025618210308404592,
+            "relative": 0.019135116092573293
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9381.60156732165,
+            "sd": 44.716635114353494,
+            "halfwidth": 20.928029440140286,
+            "relative": 0.0022307523177106125
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 2.52330096,
+            "sd": 0.010722275241200133,
+            "halfwidth": 0.005018179282481281,
+            "relative": 0.001988735930446157
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 2.5800694650000002,
+            "sd": 0.023330201432444304,
+            "halfwidth": 0.01091887037506258,
+            "relative": 0.004232006356101183
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9397.70863261265,
+            "sd": 50.99885781486073,
+            "halfwidth": 23.868200168315923,
+            "relative": 0.002539789336039496
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 5.0206311525,
+            "sd": 0.035834137861441004,
+            "halfwidth": 0.01677089276079188,
+            "relative": 0.003340395311143479
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 5.1273202535,
+            "sd": 0.042529148661781264,
+            "halfwidth": 0.019904254266488078,
+            "relative": 0.0038819994231686777
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 9152.900906577366,
+            "sd": 50.649874133799585,
+            "halfwidth": 13.084249915731194,
+            "relative": 0.0014295194550100199
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 6.887671303333334,
+            "sd": 0.06430066374123374,
+            "halfwidth": 0.016610622800664873,
+            "relative": 0.002411645688235159
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 30.696441978166668,
+            "sd": 3.000465462678261,
+            "halfwidth": 0.7751024192773711,
+            "relative": 0.025250562258279804
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 8805.204283385334,
+            "sd": 112.11773686023861,
+            "halfwidth": 28.963082616756378,
+            "relative": 0.0032893141015941257
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 14.0116994875,
+            "sd": 0.1174901450404753,
+            "halfwidth": 0.03035092281343373,
+            "relative": 0.002166112885914385
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 51.10311432066667,
+            "sd": 5.322184755805085,
+            "halfwidth": 1.3748661104012228,
+            "relative": 0.02690376366837611
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 29,
+          "throughput_rps": {
+            "n": 29,
+            "mean": 8636.601243183552,
+            "sd": 98.47527840389158,
+            "halfwidth": 37.45799261436946,
+            "relative": 0.004337121925587711
+          },
+          "p95_latency_ms": {
+            "n": 29,
+            "mean": 53.484932648275866,
+            "sd": 3.365823344244232,
+            "halfwidth": 1.280290728936801,
+            "relative": 0.023937409388849112
+          },
+          "p99_latency_ms": {
+            "n": 29,
+            "mean": 77.74039925206897,
+            "sd": 4.98709331930892,
+            "halfwidth": 1.8969888458265334,
+            "relative": 0.024401583527705478
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.9774178755521389,
+        "memory_efficiency": 0.9641052352131675,
+        "latency_efficiency": 0.34549439233847956,
+        "throughput_efficiency": 0.8642528712635746,
+        "startup_efficiency": 0.9740976130630267,
+        "density_efficiency": 0.9995164064690506,
+        "interference_resilience": 1.0
+      }
+    },
+    {
+      "model": "decision_tree",
+      "backend": "docker",
+      "raw": {
+        "execution_us": 0.196125925,
+        "throughput_rps_c32": 5770.68091544305,
+        "p95_latency_ms_c32": 5.8748099975,
+        "p99_latency_ms_c32": 6.498698587,
+        "peak_throughput_rps": 5931.84044478905,
+        "peak_throughput_concurrency": 16,
+        "pss_20_mib": 49.47999023445,
+        "pss_100_mib": 236.45789062495,
+        "pss_200_mib": 469.5296191407,
+        "memory_growth_mib_per_tenant": 2.33349053454795,
+        "startup_ms": 535.5755766,
+        "cold_to_first_result_ms": 541.8219932,
+        "interference_p95_degradation_pct": 106.80002108241224,
+        "interference_throughput_degradation_pct": 52.38391987876288,
+        "interference_observations": 1
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 43,
+          "throughput_rps": {
+            "n": 43,
+            "mean": 679.1357093174419,
+            "sd": 51.65195512612054,
+            "halfwidth": 15.896125471632798,
+            "relative": 0.023406405013821213
+          },
+          "p95_latency_ms": {
+            "n": 43,
+            "mean": 1.6168163895348837,
+            "sd": 0.1254732048734683,
+            "halfwidth": 0.03861495277625796,
+            "relative": 0.023883325915174874
+          },
+          "p99_latency_ms": {
+            "n": 43,
+            "mean": 1.6547334339534885,
+            "sd": 0.1321143306339745,
+            "halfwidth": 0.04065878960884503,
+            "relative": 0.024571202088848273
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 1900.6929879585832,
+            "sd": 216.87900322264034,
+            "halfwidth": 56.02578739176074,
+            "relative": 0.029476505541241867
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.4225896183333333,
+            "sd": 0.296384503543352,
+            "halfwidth": 0.0765642359794789,
+            "relative": 0.05382032526652306
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.5175523025,
+            "sd": 0.31320204940824803,
+            "halfwidth": 0.0809086687511041,
+            "relative": 0.05331524232661767
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 3731.537762530417,
+            "sd": 312.9279380411133,
+            "halfwidth": 80.837858276376,
+            "relative": 0.02166341691302047
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.5003549383333332,
+            "sd": 0.22396676926692197,
+            "halfwidth": 0.05785675151267113,
+            "relative": 0.038562042910287087
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.9480642131666666,
+            "sd": 0.24411152484331383,
+            "halfwidth": 0.06306069369338703,
+            "relative": 0.032370952285437765
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 44,
+          "throughput_rps": {
+            "n": 44,
+            "mean": 5670.089710302545,
+            "sd": 357.21262349525455,
+            "halfwidth": 108.60256387207895,
+            "relative": 0.0191535882888675
+          },
+          "p95_latency_ms": {
+            "n": 44,
+            "mean": 1.6851553636363636,
+            "sd": 0.1303402546669639,
+            "halfwidth": 0.0396270593521173,
+            "relative": 0.023515374432068296
+          },
+          "p99_latency_ms": {
+            "n": 44,
+            "mean": 1.8063764088636363,
+            "sd": 0.14827168019120116,
+            "halfwidth": 0.04507871099521573,
+            "relative": 0.024955325354129296
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 5931.84044478905,
+            "sd": 281.3240760486992,
+            "halfwidth": 131.6637204635643,
+            "relative": 0.022196099454972203
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 2.9958027475,
+            "sd": 0.054557617019762916,
+            "halfwidth": 0.025533750745189647,
+            "relative": 0.008523174887431284
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 3.1274583745,
+            "sd": 0.06077298253247713,
+            "halfwidth": 0.02844263134630543,
+            "relative": 0.009094487580782806
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 5770.68091544305,
+            "sd": 120.95130957062001,
+            "halfwidth": 56.60695535440567,
+            "relative": 0.009809406581971724
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 5.8748099975,
+            "sd": 0.06961467875316187,
+            "halfwidth": 0.03258067255477445,
+            "relative": 0.005545825749026609
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 6.498698587,
+            "sd": 0.102480508094825,
+            "halfwidth": 0.047962354165611294,
+            "relative": 0.007380301382426816
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 5410.91970598505,
+            "sd": 55.200305260238885,
+            "halfwidth": 14.25975092340147,
+            "relative": 0.0026353654643273814
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 12.0257612575,
+            "sd": 0.13350435140122813,
+            "halfwidth": 0.034487830985656734,
+            "relative": 0.0028678293412941337
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 33.82653589,
+            "sd": 4.010355299777806,
+            "halfwidth": 1.0359846276133993,
+            "relative": 0.03062638843605807
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 54,
+          "throughput_rps": {
+            "n": 54,
+            "mean": 5179.012555097241,
+            "sd": 88.49987009370611,
+            "halfwidth": 24.155814566358465,
+            "relative": 0.004664173780112591
+          },
+          "p95_latency_ms": {
+            "n": 54,
+            "mean": 25.12323993888889,
+            "sd": 1.9133518564672787,
+            "halfwidth": 0.5222445252866902,
+            "relative": 0.02078730794901556
+          },
+          "p99_latency_ms": {
+            "n": 54,
+            "mean": 63.22458553314815,
+            "sd": 5.7775514056801835,
+            "halfwidth": 1.5769679690539962,
+            "relative": 0.024942321974213724
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 27,
+          "throughput_rps": {
+            "n": 27,
+            "mean": 4921.378287764518,
+            "sd": 127.62818616511416,
+            "halfwidth": 50.488028933980495,
+            "relative": 0.010258920566928035
+          },
+          "p95_latency_ms": {
+            "n": 27,
+            "mean": 94.14865912777778,
+            "sd": 5.570161007473194,
+            "halfwidth": 2.203482307179469,
+            "relative": 0.023404287725318756
+          },
+          "p99_latency_ms": {
+            "n": 27,
+            "mean": 120.38666656,
+            "sd": 7.543000506877562,
+            "halfwidth": 2.9839116208043404,
+            "relative": 0.024786063989214093
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.9943505008407225,
+        "memory_efficiency": 0.0,
+        "latency_efficiency": 0.023363725581673878,
+        "throughput_efficiency": 0.020152079532947943,
+        "startup_efficiency": 0.01766264935410533,
+        "density_efficiency": 0.0,
+        "interference_resilience": 0.06435011388811773
+      }
+    },
+    {
+      "model": "kmeans",
+      "backend": "wasmtime",
+      "raw": {
+        "execution_us": 0.1971521,
+        "throughput_rps_c32": 9981.00224313485,
+        "p95_latency_ms_c32": 4.6283718025,
+        "p99_latency_ms_c32": 4.696323709,
+        "peak_throughput_rps": 9981.00224313485,
+        "peak_throughput_concurrency": 32,
+        "pss_20_mib": 17.5116015625,
+        "pss_100_mib": 18.3807617188,
+        "pss_200_mib": 19.46453125005,
+        "memory_growth_mib_per_tenant": 0.0108491210940164,
+        "startup_ms": 42.28686568333333,
+        "cold_to_first_result_ms": 43.49359425,
+        "interference_p95_degradation_pct": 47.0165332157664,
+        "interference_throughput_degradation_pct": 47.21284346366933,
+        "interference_observations": 1
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 6294.684775252684,
+            "sd": 636.0971297492379,
+            "halfwidth": 164.32131290854142,
+            "relative": 0.026104772323876244
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 0.19050193416666666,
+            "sd": 0.011898066486976625,
+            "halfwidth": 0.003073596491441264,
+            "relative": 0.016134200972218113
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 0.20661256216666668,
+            "sd": 0.018481138492310926,
+            "halfwidth": 0.004774184317257174,
+            "relative": 0.02310694116171899
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9047.43414107025,
+            "sd": 377.1897125768268,
+            "halfwidth": 176.5302194393437,
+            "relative": 0.01951163354016539
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 0.3095492025,
+            "sd": 0.007942509463730017,
+            "halfwidth": 0.003717208852152198,
+            "relative": 0.012008458823770343
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 0.3213088865,
+            "sd": 0.015651053277579575,
+            "halfwidth": 0.0073249184095529425,
+            "relative": 0.022797123631851192
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9452.33034030215,
+            "sd": 49.45212982680561,
+            "halfwidth": 23.14430918709323,
+            "relative": 0.0024485294476444854
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 0.6024784075,
+            "sd": 0.002805888717748476,
+            "halfwidth": 0.0013131963427174024,
+            "relative": 0.0021796571069933363
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 0.622670895,
+            "sd": 0.004491724096237549,
+            "halfwidth": 0.0021021915867026667,
+            "relative": 0.0033760877593333907
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9711.8550206597,
+            "sd": 31.003324537066188,
+            "halfwidth": 14.510002530259161,
+            "relative": 0.0014940505700911438
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 1.1820715525,
+            "sd": 0.004712346635993219,
+            "halfwidth": 0.0022054461136892718,
+            "relative": 0.0018657467130690226
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 1.2263886545,
+            "sd": 0.010046716347837239,
+            "halfwidth": 0.004702007988002348,
+            "relative": 0.003834027631248237
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9944.06439672355,
+            "sd": 40.70761203741655,
+            "halfwidth": 19.051748884463883,
+            "relative": 0.001915891543375484
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 2.31917236,
+            "sd": 0.008219275338873264,
+            "halfwidth": 0.0038467392689246543,
+            "relative": 0.001658668986950437
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 2.3655783565,
+            "sd": 0.011485684189440865,
+            "halfwidth": 0.005375465668247823,
+            "relative": 0.0022723684689950887
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9981.00224313485,
+            "sd": 42.68986155352135,
+            "halfwidth": 19.97947021511984,
+            "relative": 0.0020017498972973533
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 4.6283718025,
+            "sd": 0.025229858212091307,
+            "halfwidth": 0.011807937115190648,
+            "relative": 0.002551207556145906
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 4.696323709,
+            "sd": 0.03349408002545778,
+            "halfwidth": 0.01567571198169591,
+            "relative": 0.003337868714555407
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 52,
+          "throughput_rps": {
+            "n": 52,
+            "mean": 9685.337116815019,
+            "sd": 49.826043665993474,
+            "halfwidth": 13.871659139006981,
+            "relative": 0.0014322329694568872
+          },
+          "p95_latency_ms": {
+            "n": 52,
+            "mean": 6.532775685576923,
+            "sd": 0.19965966764655368,
+            "halfwidth": 0.05558560643438537,
+            "relative": 0.008508727240873645
+          },
+          "p99_latency_ms": {
+            "n": 52,
+            "mean": 29.505030763846154,
+            "sd": 2.6162304178287275,
+            "halfwidth": 0.7283631995448,
+            "relative": 0.024686068127652873
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 52,
+          "throughput_rps": {
+            "n": 52,
+            "mean": 9310.997278537096,
+            "sd": 116.17219632849473,
+            "halfwidth": 32.34254599263989,
+            "relative": 0.003473585591867063
+          },
+          "p95_latency_ms": {
+            "n": 52,
+            "mean": 13.20509168076923,
+            "sd": 0.19495652568001892,
+            "halfwidth": 0.05427624334950018,
+            "relative": 0.004110251156267508
+          },
+          "p99_latency_ms": {
+            "n": 52,
+            "mean": 51.656267553846156,
+            "sd": 4.628598497664258,
+            "halfwidth": 1.2886100506257843,
+            "relative": 0.024945860621512106
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 40,
+          "throughput_rps": {
+            "n": 40,
+            "mean": 9105.746595374576,
+            "sd": 135.7219213484562,
+            "halfwidth": 43.405976239741136,
+            "relative": 0.004766877244507328
+          },
+          "p95_latency_ms": {
+            "n": 40,
+            "mean": 52.08728185,
+            "sd": 2.586205147857259,
+            "halfwidth": 0.8271085325323188,
+            "relative": 0.015879279992267802
+          },
+          "p99_latency_ms": {
+            "n": 40,
+            "mean": 77.775405361,
+            "sd": 6.027499299191704,
+            "halfwidth": 1.9276877955039902,
+            "relative": 0.024785313384822517
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.994276962295643,
+        "memory_efficiency": 1.0,
+        "latency_efficiency": 0.4934244970194157,
+        "throughput_efficiency": 1.0,
+        "startup_efficiency": 1.0,
+        "density_efficiency": 0.9997750218935273,
+        "interference_resilience": 0.8471397229014782
+      }
+    },
+    {
+      "model": "kmeans",
+      "backend": "docker",
+      "raw": {
+        "execution_us": 0.11729142,
+        "throughput_rps_c32": 6169.372433421905,
+        "p95_latency_ms_c32": 5.592856335714286,
+        "p99_latency_ms_c32": 6.208555371428571,
+        "peak_throughput_rps": 6191.3218091086,
+        "peak_throughput_concurrency": 16,
+        "pss_20_mib": 49.43943359375,
+        "pss_100_mib": 235.68550781255,
+        "pss_200_mib": 467.91478515615,
+        "memory_growth_mib_per_tenant": 2.324757724448688,
+        "startup_ms": 537.0251693076923,
+        "cold_to_first_result_ms": 542.5557673461539,
+        "interference_p95_degradation_pct": 111.71459098542422,
+        "interference_throughput_degradation_pct": 54.13418197329024,
+        "interference_observations": 1
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 767.1820685960834,
+            "sd": 137.55866524419406,
+            "halfwidth": 35.535171309110275,
+            "relative": 0.04631908482185775
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.527332055,
+            "sd": 0.15748550476401366,
+            "halfwidth": 0.04068281980314671,
+            "relative": 0.026636525875276488
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.5667972671666666,
+            "sd": 0.16162115385960904,
+            "halfwidth": 0.04175117125033082,
+            "relative": 0.02664746239048015
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 1803.4535361863834,
+            "sd": 222.46309165128957,
+            "halfwidth": 57.46831039505549,
+            "relative": 0.03186570058055338
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.4913748675,
+            "sd": 0.2568924537384304,
+            "halfwidth": 0.06636235772866447,
+            "relative": 0.04449743600675534
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.5975495031666667,
+            "sd": 0.26439238305185936,
+            "halfwidth": 0.06829979491218036,
+            "relative": 0.04275285039793529
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 3824.93257917615,
+            "sd": 319.22959905622037,
+            "halfwidth": 82.46574993486402,
+            "relative": 0.021560053210827122
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.5255186275,
+            "sd": 0.21725809598406817,
+            "halfwidth": 0.05612371743633822,
+            "relative": 0.03678992601244931
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.9519898455,
+            "sd": 0.1578204838627888,
+            "halfwidth": 0.040769354080277244,
+            "relative": 0.020886048241626085
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 23,
+          "throughput_rps": {
+            "n": 23,
+            "mean": 6002.656576090218,
+            "sd": 339.2391949489521,
+            "halfwidth": 146.69802860299515,
+            "relative": 0.024438850822704528
+          },
+          "p95_latency_ms": {
+            "n": 23,
+            "mean": 1.6213821239130435,
+            "sd": 0.030713681364225164,
+            "halfwidth": 0.013281591792335139,
+            "relative": 0.00819152474697411
+          },
+          "p99_latency_ms": {
+            "n": 23,
+            "mean": 1.717226486521739,
+            "sd": 0.031303396909383836,
+            "halfwidth": 0.01353660391711139,
+            "relative": 0.007882829681092288
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 6191.3218091086,
+            "sd": 72.37135808676322,
+            "halfwidth": 33.87083819677994,
+            "relative": 0.005470695796647101
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 2.8743815375,
+            "sd": 0.045056362518536834,
+            "halfwidth": 0.02108702675955373,
+            "relative": 0.0073361961467002116
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 3.0257506785,
+            "sd": 0.0736059032962835,
+            "halfwidth": 0.034448623140212124,
+            "relative": 0.01138514927386213
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 21,
+          "throughput_rps": {
+            "n": 21,
+            "mean": 6169.372433421905,
+            "sd": 325.46355509657536,
+            "halfwidth": 148.1492340859627,
+            "relative": 0.024013663575144256
+          },
+          "p95_latency_ms": {
+            "n": 21,
+            "mean": 5.592856335714286,
+            "sd": 0.05144016362807899,
+            "halfwidth": 0.023415281752499625,
+            "relative": 0.004186641019719518
+          },
+          "p99_latency_ms": {
+            "n": 21,
+            "mean": 6.208555371428571,
+            "sd": 0.07248339678201121,
+            "halfwidth": 0.03299404664223458,
+            "relative": 0.005314287248539549
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 5732.848582160634,
+            "sd": 63.11572705920085,
+            "halfwidth": 16.304521197310848,
+            "relative": 0.0028440523002904593
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 11.368664093333333,
+            "sd": 0.11288040850681169,
+            "halfwidth": 0.029160101594553706,
+            "relative": 0.0025649541014808766
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 31.997403134833334,
+            "sd": 4.229074133763506,
+            "halfwidth": 1.092485693688833,
+            "relative": 0.03414294869759353
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 5465.0750941023,
+            "sd": 68.22065150066932,
+            "halfwidth": 17.623263017214505,
+            "relative": 0.0032247064704074894
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 23.550988784166666,
+            "sd": 0.35057060939036283,
+            "halfwidth": 0.09056199141298024,
+            "relative": 0.003845358351742118
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 61.374870522,
+            "sd": 6.470400884708245,
+            "halfwidth": 1.6714817890138745,
+            "relative": 0.027233976622642764
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 22,
+          "throughput_rps": {
+            "n": 22,
+            "mean": 5175.077771432909,
+            "sd": 83.83259806301226,
+            "halfwidth": 37.169291700037725,
+            "relative": 0.007182363887402228
+          },
+          "p95_latency_ms": {
+            "n": 22,
+            "mean": 91.09649446136363,
+            "sd": 5.070800355716238,
+            "halfwidth": 2.2482669263405572,
+            "relative": 0.024680059750203726
+          },
+          "p99_latency_ms": {
+            "n": 22,
+            "mean": 116.721213165,
+            "sd": 6.576934487177248,
+            "halfwidth": 2.9160493900258504,
+            "relative": 0.02498302845690655
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 1.0,
+        "memory_efficiency": 0.0035880009980742145,
+        "latency_efficiency": 0.12969499519483652,
+        "throughput_efficiency": 0.11293764728285668,
+        "startup_efficiency": 0.014775923936562574,
+        "density_efficiency": 0.003759015643830632,
+        "interference_resilience": 0.0
+      }
+    },
+    {
+      "model": "random_forest",
+      "backend": "wasmtime",
+      "raw": {
+        "execution_us": 4.922310415384615,
+        "throughput_rps_c32": 9406.85613451763,
+        "p95_latency_ms_c32": 4.961437607407407,
+        "p99_latency_ms_c32": 5.133461985925926,
+        "peak_throughput_rps": 9406.85613451763,
+        "peak_throughput_concurrency": 32,
+        "pss_20_mib": 34.047900390900004,
+        "pss_100_mib": 34.4755761719,
+        "pss_200_mib": 35.878203125,
+        "memory_growth_mib_per_tenant": 0.0103264600395081,
+        "startup_ms": 55.36961555,
+        "cold_to_first_result_ms": 56.68268875,
+        "interference_p95_degradation_pct": 37.04888638618501,
+        "interference_throughput_degradation_pct": 48.50719688925499,
+        "interference_observations": 1
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 32,
+          "throughput_rps": {
+            "n": 32,
+            "mean": 6065.910532823469,
+            "sd": 385.3038845652067,
+            "halfwidth": 138.91686419002673,
+            "relative": 0.022901238559047094
+          },
+          "p95_latency_ms": {
+            "n": 32,
+            "mean": 0.2046728140625,
+            "sd": 0.012365591322595824,
+            "halfwidth": 0.004458271092514013,
+            "relative": 0.021782429253904775
+          },
+          "p99_latency_ms": {
+            "n": 32,
+            "mean": 0.220545635,
+            "sd": 0.015191466803238267,
+            "halfwidth": 0.005477107849909583,
+            "relative": 0.02483435162935591
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 43,
+          "throughput_rps": {
+            "n": 43,
+            "mean": 8367.249554744674,
+            "sd": 625.9287772345862,
+            "halfwidth": 192.63244450150566,
+            "relative": 0.023022194239715587
+          },
+          "p95_latency_ms": {
+            "n": 43,
+            "mean": 0.3348571,
+            "sd": 0.015184646648557475,
+            "halfwidth": 0.004673144468171603,
+            "relative": 0.01395563799654122
+          },
+          "p99_latency_ms": {
+            "n": 43,
+            "mean": 0.3582842827906977,
+            "sd": 0.029043189380622548,
+            "halfwidth": 0.008938174389787994,
+            "relative": 0.024947157380636457
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 29,
+          "throughput_rps": {
+            "n": 29,
+            "mean": 8759.016287874587,
+            "sd": 571.2797468855347,
+            "halfwidth": 217.30319412563918,
+            "relative": 0.024809086658105616
+          },
+          "p95_latency_ms": {
+            "n": 29,
+            "mean": 0.6500937913793103,
+            "sd": 0.02035180063218376,
+            "halfwidth": 0.0077414109421734085,
+            "relative": 0.011908144709009421
+          },
+          "p99_latency_ms": {
+            "n": 29,
+            "mean": 0.6964173875862069,
+            "sd": 0.04377172151389839,
+            "halfwidth": 0.01664987241225254,
+            "relative": 0.023907893038054736
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 33,
+          "throughput_rps": {
+            "n": 33,
+            "mean": 9188.87015709185,
+            "sd": 124.54668637493664,
+            "halfwidth": 44.16233469878949,
+            "relative": 0.00480606798700987
+          },
+          "p95_latency_ms": {
+            "n": 33,
+            "mean": 1.2657214545454545,
+            "sd": 0.08043023847800143,
+            "halfwidth": 0.028519322472185388,
+            "relative": 0.022532068465590825
+          },
+          "p99_latency_ms": {
+            "n": 33,
+            "mean": 1.328231630909091,
+            "sd": 0.0931684842922822,
+            "halfwidth": 0.03303610803669421,
+            "relative": 0.024872249137812715
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9381.3945812969,
+            "sd": 47.04832187666124,
+            "halfwidth": 22.01929243615893,
+            "relative": 0.0023471235801186124
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 2.528020435,
+            "sd": 0.014250407452061228,
+            "halfwidth": 0.006669395984918436,
+            "relative": 0.00263818911136232
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 2.580483836,
+            "sd": 0.01880269919729513,
+            "halfwidth": 0.00879993410391438,
+            "relative": 0.0034101876482028775
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 27,
+          "throughput_rps": {
+            "n": 27,
+            "mean": 9406.85613451763,
+            "sd": 61.93551955893407,
+            "halfwidth": 24.50087553142169,
+            "relative": 0.002604576404811581
+          },
+          "p95_latency_ms": {
+            "n": 27,
+            "mean": 4.961437607407407,
+            "sd": 0.3053065460864733,
+            "halfwidth": 0.12077524719034877,
+            "relative": 0.024342792703879172
+          },
+          "p99_latency_ms": {
+            "n": 27,
+            "mean": 5.133461985925926,
+            "sd": 0.03568056460898182,
+            "halfwidth": 0.014114761264635442,
+            "relative": 0.002749559907784055
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 9159.7366080534,
+            "sd": 60.747201543642745,
+            "halfwidth": 15.69266617679328,
+            "relative": 0.001713222426395538
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 6.875828755833333,
+            "sd": 0.04271569761831799,
+            "halfwidth": 0.011034634784806116,
+            "relative": 0.00160484432883011
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 30.542752371666666,
+            "sd": 3.523555777826424,
+            "halfwidth": 0.910230976434631,
+            "relative": 0.029801864788027984
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 55,
+          "throughput_rps": {
+            "n": 55,
+            "mean": 8792.964609946019,
+            "sd": 82.53314291004874,
+            "halfwidth": 22.311833899448764,
+            "relative": 0.0025374643125722464
+          },
+          "p95_latency_ms": {
+            "n": 55,
+            "mean": 14.036561021818182,
+            "sd": 0.19763351862131726,
+            "halfwidth": 0.053427824083330314,
+            "relative": 0.003806332904497266
+          },
+          "p99_latency_ms": {
+            "n": 55,
+            "mean": 51.766747220727275,
+            "sd": 4.7547054402237094,
+            "halfwidth": 1.285376932012611,
+            "relative": 0.024830166101260254
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 43,
+          "throughput_rps": {
+            "n": 43,
+            "mean": 8625.604715743511,
+            "sd": 119.48329083114352,
+            "halfwidth": 36.77152932890546,
+            "relative": 0.004263066827278767
+          },
+          "p95_latency_ms": {
+            "n": 43,
+            "mean": 53.42090345,
+            "sd": 3.3209709495344786,
+            "halfwidth": 1.0220440014815866,
+            "relative": 0.01913191158285412
+          },
+          "p99_latency_ms": {
+            "n": 43,
+            "mean": 78.36380969372092,
+            "sd": 6.32904992851249,
+            "halfwidth": 1.9477940677019157,
+            "relative": 0.02485578579340033
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.6556590191726641,
+        "memory_efficiency": 0.9635304485582806,
+        "latency_efficiency": 0.36781765199304994,
+        "throughput_efficiency": 0.8663817255769285,
+        "startup_efficiency": 0.973946953257247,
+        "density_efficiency": 1.0,
+        "interference_resilience": 0.9776535260090492
+      }
+    },
+    {
+      "model": "random_forest",
+      "backend": "docker",
+      "raw": {
+        "execution_us": 3.885261579487179,
+        "throughput_rps_c32": 5717.99032943405,
+        "p95_latency_ms_c32": 5.8983387125,
+        "p99_latency_ms_c32": 6.538690667,
+        "peak_throughput_rps": 5895.261474752367,
+        "peak_throughput_concurrency": 16,
+        "pss_20_mib": 49.4206445312,
+        "pss_100_mib": 235.7152734374,
+        "pss_200_mib": 468.86633789065,
+        "memory_growth_mib_per_tenant": 2.330305359887745,
+        "startup_ms": 539.70344965,
+        "cold_to_first_result_ms": 545.8705147,
+        "interference_p95_degradation_pct": 99.7660066975665,
+        "interference_throughput_degradation_pct": 51.33753102408042,
+        "interference_observations": 1
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 733.3940003204833,
+            "sd": 81.25853356390373,
+            "halfwidth": 20.99130509440793,
+            "relative": 0.028622139102903777
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.5128288766666667,
+            "sd": 0.17398219990797117,
+            "halfwidth": 0.044944368044648284,
+            "relative": 0.02970882479694445
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.5599643138333332,
+            "sd": 0.17789124592992028,
+            "halfwidth": 0.04595418171068355,
+            "relative": 0.02945848267372179
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 1939.6139109932667,
+            "sd": 244.1881020714383,
+            "halfwidth": 63.08047568905375,
+            "relative": 0.032522181518460314
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.370341395,
+            "sd": 0.30965777310732684,
+            "halfwidth": 0.07999308509596706,
+            "relative": 0.0583745666502084
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.4595077985,
+            "sd": 0.33075739532217174,
+            "halfwidth": 0.08544369548558531,
+            "relative": 0.058542815306228256
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 3696.43254769045,
+            "sd": 540.9715580880867,
+            "halfwidth": 139.74777202069305,
+            "relative": 0.03780611987847801
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.5268716725,
+            "sd": 0.22398976962334372,
+            "halfwidth": 0.05786269313477227,
+            "relative": 0.03789623854900109
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.9835638388333334,
+            "sd": 0.2020682803871727,
+            "halfwidth": 0.05219977198054834,
+            "relative": 0.02631615426668119
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 5609.90173814575,
+            "sd": 30.148230311722617,
+            "halfwidth": 14.109806113951889,
+            "relative": 0.0025151610086161023
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 1.68198835,
+            "sd": 0.054419448700289315,
+            "halfwidth": 0.025469085981165172,
+            "relative": 0.015142248744567805
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 1.7958813155,
+            "sd": 0.04194246920895555,
+            "halfwidth": 0.019629679830615088,
+            "relative": 0.010930388139346443
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 5895.261474752367,
+            "sd": 246.2412752791337,
+            "halfwidth": 63.61086657016046,
+            "relative": 0.01079016882331457
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 3.0260835983333334,
+            "sd": 0.2381020107255688,
+            "halfwidth": 0.061508271581123194,
+            "relative": 0.020326031843601385
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 3.1821109696666667,
+            "sd": 0.30624258143990274,
+            "halfwidth": 0.07911084753761387,
+            "relative": 0.024861121529618092
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 5717.99032943405,
+            "sd": 40.005715916521424,
+            "halfwidth": 18.723251388074708,
+            "relative": 0.0032744461444249905
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 5.8983387125,
+            "sd": 0.05303339789604752,
+            "halfwidth": 0.024820394236750094,
+            "relative": 0.004208031353667381
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 6.538690667,
+            "sd": 0.10227825578523558,
+            "halfwidth": 0.04786769717099174,
+            "relative": 0.007320685380113538
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 5417.574211903733,
+            "sd": 74.13161797549934,
+            "halfwidth": 19.150227573846518,
+            "relative": 0.0035348343787831816
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 12.112896531666667,
+            "sd": 0.9084051383425528,
+            "halfwidth": 0.2346659307268983,
+            "relative": 0.01937323002086352
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 33.816615363333334,
+            "sd": 4.474428193275483,
+            "halfwidth": 1.155867368123274,
+            "relative": 0.034180457023991744
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 41,
+          "throughput_rps": {
+            "n": 41,
+            "mean": 5166.645041665463,
+            "sd": 67.26496279892244,
+            "halfwidth": 21.23144201201278,
+            "relative": 0.004109328556693116
+          },
+          "p95_latency_ms": {
+            "n": 41,
+            "mean": 25.210288626829268,
+            "sd": 1.3145196999607225,
+            "halfwidth": 0.4149136135969381,
+            "relative": 0.016458106439740605
+          },
+          "p99_latency_ms": {
+            "n": 41,
+            "mean": 62.885002531707315,
+            "sd": 4.918798571325609,
+            "halfwidth": 1.5525644004005004,
+            "relative": 0.024688945502032544
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 31,
+          "throughput_rps": {
+            "n": 31,
+            "mean": 4929.898330999225,
+            "sd": 137.34885879763652,
+            "halfwidth": 50.379968142948606,
+            "relative": 0.010219271222320978
+          },
+          "p95_latency_ms": {
+            "n": 31,
+            "mean": 93.53632937580645,
+            "sd": 5.253480456805185,
+            "halfwidth": 1.9269921888714137,
+            "relative": 0.020601537410445337
+          },
+          "p99_latency_ms": {
+            "n": 31,
+            "mean": 118.37051725580645,
+            "sd": 7.821389003747463,
+            "halfwidth": 2.8689086483271624,
+            "relative": 0.024236682535797853
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.7299768134751996,
+        "memory_efficiency": 0.0014737451713009442,
+        "latency_efficiency": 0.014490501086303675,
+        "throughput_efficiency": 0.007889651772496413,
+        "startup_efficiency": 0.009442384454459885,
+        "density_efficiency": 0.0013710502392645374,
+        "interference_resilience": 0.1564516885300974
+      }
+    },
+    {
+      "model": "svm",
+      "backend": "wasmtime",
+      "raw": {
+        "execution_us": 14.07153812,
+        "throughput_rps_c32": 9397.9380348936,
+        "p95_latency_ms_c32": 5.02280324,
+        "p99_latency_ms_c32": 5.134777419,
+        "peak_throughput_rps": 9397.9380348936,
+        "peak_throughput_concurrency": 32,
+        "pss_20_mib": 18.376123047,
+        "pss_100_mib": 19.2697460938,
+        "pss_200_mib": 20.35249023445,
+        "memory_growth_mib_per_tenant": 0.0109735727776639,
+        "startup_ms": 44.2774306,
+        "cold_to_first_result_ms": 45.53275182,
+        "interference_p95_degradation_pct": 58.171017074401846,
+        "interference_throughput_degradation_pct": 47.89577116436216,
+        "interference_observations": 2
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 43,
+          "throughput_rps": {
+            "n": 43,
+            "mean": 5999.202898711163,
+            "sd": 373.9913072178339,
+            "halfwidth": 115.09753561735452,
+            "relative": 0.019185471396888656
+          },
+          "p95_latency_ms": {
+            "n": 43,
+            "mean": 0.20640227906976744,
+            "sd": 0.016505639029688032,
+            "halfwidth": 0.005079685916336519,
+            "relative": 0.024610609627132556
+          },
+          "p99_latency_ms": {
+            "n": 43,
+            "mean": 0.2289084406976744,
+            "sd": 0.013564365719291047,
+            "halfwidth": 0.004174495600224144,
+            "relative": 0.018236529799866636
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 41,
+          "throughput_rps": {
+            "n": 41,
+            "mean": 8407.728530743074,
+            "sd": 532.9892071332584,
+            "halfwidth": 168.23215197644808,
+            "relative": 0.020009227386600666
+          },
+          "p95_latency_ms": {
+            "n": 41,
+            "mean": 0.33774973780487805,
+            "sd": 0.014183045667992035,
+            "halfwidth": 0.004476721596559419,
+            "relative": 0.013254552396264697
+          },
+          "p99_latency_ms": {
+            "n": 41,
+            "mean": 0.3577529856097561,
+            "sd": 0.028013155819445624,
+            "halfwidth": 0.008842042998402818,
+            "relative": 0.024715497435562676
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 8944.8329102831,
+            "sd": 51.52321363289583,
+            "halfwidth": 24.113606245246455,
+            "relative": 0.0026958140512077238
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 0.642388505,
+            "sd": 0.003382944185480895,
+            "halfwidth": 0.0015832666149195598,
+            "relative": 0.0024646558937407507
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 0.680401233,
+            "sd": 0.003791132429209122,
+            "halfwidth": 0.0017743045935156153,
+            "relative": 0.002607732772165061
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9202.1673593752,
+            "sd": 51.74258173485157,
+            "halfwidth": 24.216273677270735,
+            "relative": 0.0026315837053973064
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 1.2823814025,
+            "sd": 0.005649358058140102,
+            "halfwidth": 0.00264398095823403,
+            "relative": 0.0020617742530261236
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 1.331299102,
+            "sd": 0.010271632154692966,
+            "halfwidth": 0.0048072718258423885,
+            "relative": 0.003610963019970841
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9360.29588865415,
+            "sd": 33.18417196496982,
+            "halfwidth": 15.53067054472189,
+            "relative": 0.0016592072226634424
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 2.531071495,
+            "sd": 0.00987600910310995,
+            "halfwidth": 0.0046221145381897255,
+            "relative": 0.0018261493392503817
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 2.5802276219999998,
+            "sd": 0.011287205253172193,
+            "halfwidth": 0.005282574666703182,
+            "relative": 0.0020473289339521623
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9397.9380348936,
+            "sd": 43.745528538185134,
+            "halfwidth": 20.47353757232437,
+            "relative": 0.002178513786354856
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 5.02280324,
+            "sd": 0.026790907012693526,
+            "halfwidth": 0.012538530442997024,
+            "relative": 0.0024963212461010164
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 5.134777419,
+            "sd": 0.032441441885936485,
+            "halfwidth": 0.015183062167652884,
+            "relative": 0.0029569075597068025
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 9110.329477525283,
+            "sd": 146.77001756593938,
+            "halfwidth": 37.914715935838956,
+            "relative": 0.0041617282919758965
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 7.0604650908333335,
+            "sd": 0.9031818248283964,
+            "halfwidth": 0.23331660576654598,
+            "relative": 0.03304550093583255
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 31.222706928833333,
+            "sd": 3.061918606927333,
+            "halfwidth": 0.7909774497925164,
+            "relative": 0.025333404038138344
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 50,
+          "throughput_rps": {
+            "n": 50,
+            "mean": 8778.86982645036,
+            "sd": 103.05380947445747,
+            "halfwidth": 29.287568599496865,
+            "relative": 0.0033361433964147263
+          },
+          "p95_latency_ms": {
+            "n": 50,
+            "mean": 14.072043711,
+            "sd": 0.13274426252367175,
+            "halfwidth": 0.037725501994327164,
+            "relative": 0.002680882945583622
+          },
+          "p99_latency_ms": {
+            "n": 50,
+            "mean": 51.0885673366,
+            "sd": 4.429161154641985,
+            "halfwidth": 1.2587536726330881,
+            "relative": 0.024638656714323505
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 8616.023580744433,
+            "sd": 140.68031201566518,
+            "halfwidth": 36.34157817990855,
+            "relative": 0.004217906072254343
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 54.002408863333336,
+            "sd": 4.171724426305007,
+            "halfwidth": 1.0776706933001088,
+            "relative": 0.019955974483053623
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 79.46572433783334,
+            "sd": 7.652165785143634,
+            "halfwidth": 1.9767640342982198,
+            "relative": 0.024875681317575178
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.0,
+        "memory_efficiency": 0.9980270431804394,
+        "latency_efficiency": 0.3446752477310887,
+        "throughput_efficiency": 0.8643062589578725,
+        "startup_efficiency": 0.9960359800999838,
+        "density_efficiency": 0.9997214519864281,
+        "interference_resilience": 0.7010857810852366
+      }
+    },
+    {
+      "model": "svm",
+      "backend": "docker",
+      "raw": {
+        "execution_us": 10.79926839090909,
+        "throughput_rps_c32": 5684.0891816825,
+        "p95_latency_ms_c32": 5.9367624975,
+        "p99_latency_ms_c32": 6.7334052985,
+        "peak_throughput_rps": 5849.6661017701,
+        "peak_throughput_concurrency": 16,
+        "pss_20_mib": 49.52264648435,
+        "pss_100_mib": 236.4492285158,
+        "pss_200_mib": 468.9291308594,
+        "memory_growth_mib_per_tenant": 2.3298213931226432,
+        "startup_ms": 531.74721375,
+        "cold_to_first_result_ms": 537.2955786,
+        "interference_p95_degradation_pct": 104.84013847928786,
+        "interference_throughput_degradation_pct": 52.18725865672843,
+        "interference_observations": 2
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 729.81612682125,
+            "sd": 75.55374493880733,
+            "halfwidth": 19.51760192409006,
+            "relative": 0.026743177091879202
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.5209603866666668,
+            "sd": 0.17190927458959296,
+            "halfwidth": 0.044408874652292395,
+            "relative": 0.029197916685797964
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.5623747596666666,
+            "sd": 0.17475171606442036,
+            "halfwidth": 0.04514315514683488,
+            "relative": 0.028893935253067066
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 1912.82951996905,
+            "sd": 490.19164933742104,
+            "halfwidth": 126.62993060145133,
+            "relative": 0.06620032223441441
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.3909300141666667,
+            "sd": 0.3207231204095302,
+            "halfwidth": 0.0828515674117163,
+            "relative": 0.059565590337307
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.4751074426666666,
+            "sd": 0.34195545752190293,
+            "halfwidth": 0.08833646169475957,
+            "relative": 0.0598847644176121
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 3678.928992554533,
+            "sd": 275.66475713059083,
+            "halfwidth": 71.21175791528898,
+            "relative": 0.019356654629488178
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 1.528881245,
+            "sd": 0.2099464378701921,
+            "halfwidth": 0.054234915860886766,
+            "relative": 0.03547359615944976
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 1.9953009173333334,
+            "sd": 0.14613718423622968,
+            "halfwidth": 0.037751237751884284,
+            "relative": 0.018920072368000418
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 5615.23907350305,
+            "sd": 47.200191276161846,
+            "halfwidth": 22.090369503019556,
+            "relative": 0.003934003381487112
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 1.6691541775,
+            "sd": 0.05342434470991241,
+            "halfwidth": 0.02500336297778283,
+            "relative": 0.014979660545937093
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 1.7912024745,
+            "sd": 0.04421571331122854,
+            "halfwidth": 0.020693590819787964,
+            "relative": 0.01155290432789538
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 5849.6661017701,
+            "sd": 63.59064208474882,
+            "halfwidth": 29.76133660915528,
+            "relative": 0.005087698356005233
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 3.0136914125,
+            "sd": 0.031735305887677215,
+            "halfwidth": 0.014852580347575832,
+            "relative": 0.004928368009402433
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 3.1549361725000002,
+            "sd": 0.050042312598584875,
+            "halfwidth": 0.023420523226706767,
+            "relative": 0.007423453897689515
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 5684.0891816825,
+            "sd": 70.80568278352605,
+            "halfwidth": 33.13807959908907,
+            "relative": 0.005829971793173052
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 5.9367624975,
+            "sd": 0.10041310053282058,
+            "halfwidth": 0.04699477764265174,
+            "relative": 0.007915893159350988
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 6.7334052985,
+            "sd": 0.34296625851797663,
+            "halfwidth": 0.16051314990235155,
+            "relative": 0.023838331837548684
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 5405.500804408533,
+            "sd": 49.607891677209885,
+            "halfwidth": 12.815077304683594,
+            "relative": 0.002370747460481751
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 12.0438291675,
+            "sd": 0.11734505859801697,
+            "halfwidth": 0.03031344301106553,
+            "relative": 0.0025169273483939534
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 33.106590987,
+            "sd": 3.544842979322424,
+            "halfwidth": 0.9157300436908381,
+            "relative": 0.027660052466604575
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 46,
+          "throughput_rps": {
+            "n": 46,
+            "mean": 5152.596242495913,
+            "sd": 138.24160224140127,
+            "halfwidth": 41.05268841997918,
+            "relative": 0.007967379256577124
+          },
+          "p95_latency_ms": {
+            "n": 46,
+            "mean": 25.539315934782607,
+            "sd": 1.8368995561763317,
+            "halfwidth": 0.5454918339764506,
+            "relative": 0.021358905436990667
+          },
+          "p99_latency_ms": {
+            "n": 46,
+            "mean": 65.43519308913044,
+            "sd": 5.5025618239466185,
+            "halfwidth": 1.6340591573561836,
+            "relative": 0.02497217598380741
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 30,
+          "throughput_rps": {
+            "n": 30,
+            "mean": 4931.899442487733,
+            "sd": 144.89926409211373,
+            "halfwidth": 54.106274423727854,
+            "relative": 0.010970676724997406
+          },
+          "p95_latency_ms": {
+            "n": 30,
+            "mean": 94.68612222166666,
+            "sd": 6.203643489006607,
+            "halfwidth": 2.316478549054497,
+            "relative": 0.024464815906511228
+          },
+          "p99_latency_ms": {
+            "n": 30,
+            "mean": 119.08766269233334,
+            "sd": 7.463694798822544,
+            "halfwidth": 2.7869894407698497,
+            "relative": 0.02340283936859289
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.23449991959013528,
+        "memory_efficiency": 0.0013342254208481563,
+        "latency_efficiency": 0.0,
+        "throughput_efficiency": 0.0,
+        "startup_efficiency": 0.02528646829857628,
+        "density_efficiency": 0.0015793724883954585,
+        "interference_resilience": 0.09001231245428343
+      }
+    },
+    {
+      "model": "mlp",
+      "backend": "wasmtime",
+      "raw": {
+        "execution_us": 4.186871746938776,
+        "throughput_rps_c32": 9423.75968278865,
+        "p95_latency_ms_c32": 5.0187092875,
+        "p99_latency_ms_c32": 5.118480245,
+        "peak_throughput_rps": 9423.75968278865,
+        "peak_throughput_concurrency": 32,
+        "pss_20_mib": 18.64169921875,
+        "pss_100_mib": 19.87099609365,
+        "pss_200_mib": 21.36231445315,
+        "memory_growth_mib_per_tenant": 0.0151062772158606,
+        "startup_ms": 46.61710491304348,
+        "cold_to_first_result_ms": 47.93441665217392,
+        "interference_p95_degradation_pct": 51.56965749580202,
+        "interference_throughput_degradation_pct": 50.126790021149766,
+        "interference_observations": 2
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 32,
+          "throughput_rps": {
+            "n": 32,
+            "mean": 6083.608962633813,
+            "sd": 411.8361213844454,
+            "halfwidth": 148.48275565004923,
+            "relative": 0.024407018360655074
+          },
+          "p95_latency_ms": {
+            "n": 32,
+            "mean": 0.2029140390625,
+            "sd": 0.013701921808806042,
+            "halfwidth": 0.004940069610780549,
+            "relative": 0.024345627506133012
+          },
+          "p99_latency_ms": {
+            "n": 32,
+            "mean": 0.2183143071875,
+            "sd": 0.014894759685984658,
+            "halfwidth": 0.005370133526621238,
+            "relative": 0.024598174969857015
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 36,
+          "throughput_rps": {
+            "n": 36,
+            "mean": 8390.755123000556,
+            "sd": 602.4571857980005,
+            "halfwidth": 203.8421848866518,
+            "relative": 0.02429366390730246
+          },
+          "p95_latency_ms": {
+            "n": 36,
+            "mean": 0.3360037513888889,
+            "sd": 0.008271870533928192,
+            "halfwidth": 0.0027987983253980036,
+            "relative": 0.008329663921396788
+          },
+          "p99_latency_ms": {
+            "n": 36,
+            "mean": 0.35584007333333334,
+            "sd": 0.025974467026818476,
+            "halfwidth": 0.008788495240536884,
+            "relative": 0.024697879466499147
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 22,
+          "throughput_rps": {
+            "n": 22,
+            "mean": 8824.632248570091,
+            "sd": 463.89918351352077,
+            "halfwidth": 205.68137538172127,
+            "relative": 0.023307642696957606
+          },
+          "p95_latency_ms": {
+            "n": 22,
+            "mean": 0.6468389886363637,
+            "sd": 0.016101722736764867,
+            "halfwidth": 0.007139103917858922,
+            "relative": 0.011036910333604431
+          },
+          "p99_latency_ms": {
+            "n": 22,
+            "mean": 0.6913332359090909,
+            "sd": 0.0375463323148372,
+            "halfwidth": 0.01664711115153278,
+            "relative": 0.024079720584592065
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9194.58958539195,
+            "sd": 50.89419222986194,
+            "halfwidth": 23.819215166680124,
+            "relative": 0.0025905686105362744
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 1.28250864,
+            "sd": 0.005353574807881082,
+            "halfwidth": 0.0025055501359351,
+            "relative": 0.0019536321688523673
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 1.331124695,
+            "sd": 0.010779016635473579,
+            "halfwidth": 0.005044735072441606,
+            "relative": 0.00378982907566117
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 56,
+          "throughput_rps": {
+            "n": 56,
+            "mean": 9377.268685720483,
+            "sd": 49.077082297317865,
+            "halfwidth": 13.142928465958725,
+            "relative": 0.0014015731985980646
+          },
+          "p95_latency_ms": {
+            "n": 56,
+            "mean": 2.5152924973214286,
+            "sd": 0.11369071451812325,
+            "halfwidth": 0.03044657217197875,
+            "relative": 0.012104585134493005
+          },
+          "p99_latency_ms": {
+            "n": 56,
+            "mean": 2.620714999107143,
+            "sd": 0.24150391915976327,
+            "halfwidth": 0.06467517189665765,
+            "relative": 0.024678445355062258
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 9423.75968278865,
+            "sd": 46.5649848618169,
+            "halfwidth": 21.793083750055782,
+            "relative": 0.002312567858649685
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 5.0187092875,
+            "sd": 0.029803665947708544,
+            "halfwidth": 0.013948545027654385,
+            "relative": 0.0027793092264570395
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 5.118480245,
+            "sd": 0.04353415310548674,
+            "halfwidth": 0.02037461082465828,
+            "relative": 0.003980597726163204
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 44,
+          "throughput_rps": {
+            "n": 44,
+            "mean": 9162.530467860932,
+            "sd": 63.778238353634016,
+            "halfwidth": 19.390356747964226,
+            "relative": 0.0021162665505974647
+          },
+          "p95_latency_ms": {
+            "n": 44,
+            "mean": 6.846641392045455,
+            "sd": 0.05440607696662641,
+            "halfwidth": 0.016540959249934744,
+            "relative": 0.0024159231224162424
+          },
+          "p99_latency_ms": {
+            "n": 44,
+            "mean": 33.05664248272727,
+            "sd": 2.6957100245453134,
+            "halfwidth": 0.8195707566453769,
+            "relative": 0.024792921939172086
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 49,
+          "throughput_rps": {
+            "n": 49,
+            "mean": 8717.625045052919,
+            "sd": 95.94501240732505,
+            "halfwidth": 27.55862525240799,
+            "relative": 0.0031612537944663
+          },
+          "p95_latency_ms": {
+            "n": 49,
+            "mean": 13.963190056122448,
+            "sd": 0.19593010914621564,
+            "halfwidth": 0.056277698216355795,
+            "relative": 0.004030432729924756
+          },
+          "p99_latency_ms": {
+            "n": 49,
+            "mean": 59.002627833877554,
+            "sd": 5.133099692427349,
+            "halfwidth": 1.4743983794206688,
+            "relative": 0.024988690055837023
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 8370.088068003133,
+            "sd": 161.47524360278658,
+            "halfwidth": 41.71347863414603,
+            "relative": 0.004983636766452529
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 62.0482263825,
+            "sd": 4.853963521190115,
+            "halfwidth": 1.2539117397472932,
+            "relative": 0.02020866369358375
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 98.7620297995,
+            "sd": 9.55779779670106,
+            "halfwidth": 2.4690409829194238,
+            "relative": 0.024999901155655712
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.708362592805617,
+        "memory_efficiency": 0.9957833138935649,
+        "latency_efficiency": 0.34621917223380294,
+        "throughput_efficiency": 0.8703156074193755,
+        "startup_efficiency": 0.9913767421827437,
+        "density_efficiency": 0.997942539991557,
+        "interference_resilience": 0.7875222850077817
+      }
+    },
+    {
+      "model": "mlp",
+      "backend": "docker",
+      "raw": {
+        "execution_us": 3.7708318909090903,
+        "throughput_rps_c32": 6205.03632789145,
+        "p95_latency_ms_c32": 5.18393816,
+        "p99_latency_ms_c32": 6.077596217666667,
+        "peak_throughput_rps": 6265.1409615545,
+        "peak_throughput_concurrency": 16,
+        "pss_20_mib": 49.53568359385,
+        "pss_100_mib": 236.4156640624,
+        "pss_200_mib": 469.2202441405,
+        "memory_growth_mib_per_tenant": 2.331436011141209,
+        "startup_ms": 544.44502,
+        "cold_to_first_result_ms": 550.72454555,
+        "interference_p95_degradation_pct": 106.03176168004323,
+        "interference_throughput_degradation_pct": 52.356601325340435,
+        "interference_observations": 2
+      },
+      "performance_curve": {
+        "1": {
+          "concurrency": 1,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 3479.9252779942835,
+            "sd": 266.0241618964349,
+            "halfwidth": 68.72132808624569,
+            "relative": 0.019747932095212816
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 0.40750956833333335,
+            "sd": 0.09996056869148368,
+            "halfwidth": 0.02582255306346746,
+            "relative": 0.06336674048925696
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 0.48327502483333334,
+            "sd": 0.10087026697185095,
+            "halfwidth": 0.026057553048201742,
+            "relative": 0.0539186833774168
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "2": {
+          "concurrency": 2,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 5732.2030552072165,
+            "sd": 366.6510089259936,
+            "halfwidth": 94.71599909547116,
+            "relative": 0.016523489866505998
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 0.3689286233333333,
+            "sd": 0.05038738309840702,
+            "halfwidth": 0.013016441291002087,
+            "relative": 0.0352817332886679
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 0.4354934738333333,
+            "sd": 0.04502018891652037,
+            "halfwidth": 0.011629948012923032,
+            "relative": 0.026705217670779383
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "4": {
+          "concurrency": 4,
+          "repetitions": 28,
+          "throughput_rps": {
+            "n": 28,
+            "mean": 5937.353063136107,
+            "sd": 376.1561462914768,
+            "halfwidth": 145.85812670577792,
+            "relative": 0.02456618718051032
+          },
+          "p95_latency_ms": {
+            "n": 28,
+            "mean": 0.7165350696428572,
+            "sd": 0.03270323899834166,
+            "halfwidth": 0.012680992254246569,
+            "relative": 0.017697657506934254
+          },
+          "p99_latency_ms": {
+            "n": 28,
+            "mean": 0.8423563853571429,
+            "sd": 0.010627510106791686,
+            "halfwidth": 0.004120918217091168,
+            "relative": 0.004892131511941918
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "8": {
+          "concurrency": 8,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 6058.5068059419,
+            "sd": 32.19646980320295,
+            "halfwidth": 15.068411703762898,
+            "relative": 0.0024871494225251188
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 1.3674043875,
+            "sd": 0.0076103500747834625,
+            "halfwidth": 0.0035617534728975735,
+            "relative": 0.0026047550420760764
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 1.621699304,
+            "sd": 0.05137330582283634,
+            "halfwidth": 0.02404344723050375,
+            "relative": 0.014826082228190776
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "16": {
+          "concurrency": 16,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 6265.1409615545,
+            "sd": 43.12298146463332,
+            "halfwidth": 20.18217657322756,
+            "relative": 0.003221344371511153
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 2.5800499974999997,
+            "sd": 0.032618458450652844,
+            "halfwidth": 0.015265908470115103,
+            "relative": 0.005916904123915182
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 3.1643777805,
+            "sd": 0.021124541402984486,
+            "halfwidth": 0.0098865897056108,
+            "relative": 0.0031243392513167724
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "32": {
+          "concurrency": 32,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 6205.03632789145,
+            "sd": 125.29588254274515,
+            "halfwidth": 32.3673586289798,
+            "relative": 0.005216304453124554
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 5.18393816,
+            "sd": 0.026541539718335526,
+            "halfwidth": 0.006856406748526628,
+            "relative": 0.0013226251041016715
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 6.077596217666667,
+            "sd": 0.8476446917563205,
+            "halfwidth": 0.21896984299278924,
+            "relative": 0.03602902120352723
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "64": {
+          "concurrency": 64,
+          "repetitions": 60,
+          "throughput_rps": {
+            "n": 60,
+            "mean": 5957.455438300934,
+            "sd": 53.20154095478084,
+            "halfwidth": 13.743415352138836,
+            "relative": 0.0023069270923591597
+          },
+          "p95_latency_ms": {
+            "n": 60,
+            "mean": 10.508615529166667,
+            "sd": 0.07515252102935169,
+            "halfwidth": 0.0194139547977494,
+            "relative": 0.0018474322087306324
+          },
+          "p99_latency_ms": {
+            "n": 60,
+            "mean": 33.27912326083333,
+            "sd": 3.461821876198237,
+            "halfwidth": 0.8942834185978121,
+            "relative": 0.026872204883182933
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": false
+        },
+        "128": {
+          "concurrency": 128,
+          "repetitions": 27,
+          "throughput_rps": {
+            "n": 27,
+            "mean": 5736.349229942074,
+            "sd": 38.62979474029582,
+            "halfwidth": 15.281437848208554,
+            "relative": 0.0026639657447011583
+          },
+          "p95_latency_ms": {
+            "n": 27,
+            "mean": 21.821509275925926,
+            "sd": 0.15369576653560615,
+            "halfwidth": 0.06080002028580935,
+            "relative": 0.002786242670798466
+          },
+          "p99_latency_ms": {
+            "n": 27,
+            "mean": 64.09007092888889,
+            "sd": 3.977537938795037,
+            "halfwidth": 1.5734616041638967,
+            "relative": 0.024550785813760922
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        },
+        "256": {
+          "concurrency": 256,
+          "repetitions": 20,
+          "throughput_rps": {
+            "n": 20,
+            "mean": 5514.33816866645,
+            "sd": 53.86796859841327,
+            "halfwidth": 25.21098534863326,
+            "relative": 0.004571896858246202
+          },
+          "p95_latency_ms": {
+            "n": 20,
+            "mean": 87.9345303225,
+            "sd": 3.557644851348471,
+            "halfwidth": 1.6650290433567378,
+            "relative": 0.018934871628360803
+          },
+          "p99_latency_ms": {
+            "n": 20,
+            "mean": 110.7440982455,
+            "sd": 5.508882953832973,
+            "halfwidth": 2.578236585674953,
+            "relative": 0.023281029206264882
+          },
+          "error_rate_mean": 0.0,
+          "ci_target_met": true
+        }
+      },
+      "normalized": {
+        "compute_efficiency": 0.7381771621603128,
+        "memory_efficiency": 0.0006874005749923917,
+        "latency_efficiency": 0.2839075296808896,
+        "throughput_efficiency": 0.12123753465769939,
+        "startup_efficiency": 0.0,
+        "density_efficiency": 0.0008843643155836967,
+        "interference_resilience": 0.0744095048447434
+      }
+    }
+  ]
+}
