@@ -1,0 +1,146 @@
+{
+  "schema_version": "comet-evaluation-scenarios-v1",
+  "seed": 42,
+
+  "scenarios": [
+    {
+      "scenario_id": "homogeneous_lr",
+      "description": "Homogeneous Logistic Regression workload",
+      "models": [
+        "logistic_regression"
+      ],
+      "requests": 1000,
+      "concurrency": 32,
+      "tenants": 20,
+      "memory_budget_mib": null,
+      "sla_p95_ms": null
+    },
+
+    {
+      "scenario_id": "homogeneous_svm",
+      "description": "Homogeneous compute-heavy SVM workload",
+      "models": [
+        "svm"
+      ],
+      "requests": 1000,
+      "concurrency": 32,
+      "tenants": 20,
+      "memory_budget_mib": null,
+      "sla_p95_ms": null
+    },
+
+    {
+      "scenario_id": "heterogeneous_all",
+      "description": "Balanced mix of all seven validated workloads",
+      "models": [
+        "logistic_regression",
+        "naive_bayes",
+        "decision_tree",
+        "kmeans",
+        "random_forest",
+        "svm",
+        "mlp"
+      ],
+      "requests": 1400,
+      "concurrency": 32,
+      "tenants": 20,
+      "memory_budget_mib": null,
+      "sla_p95_ms": null
+    },
+
+    {
+      "scenario_id": "high_concurrency",
+      "description": "Mixed workload under high concurrency",
+      "models": [
+        "logistic_regression",
+        "naive_bayes",
+        "decision_tree",
+        "kmeans",
+        "random_forest",
+        "svm",
+        "mlp"
+      ],
+      "requests": 1400,
+      "concurrency": 128,
+      "tenants": 20,
+      "memory_budget_mib": null,
+      "sla_p95_ms": null
+    },
+
+    {
+      "scenario_id": "high_density",
+      "description": "Mixed workload under high tenant density",
+      "models": [
+        "logistic_regression",
+        "naive_bayes",
+        "decision_tree",
+        "kmeans",
+        "random_forest",
+        "svm",
+        "mlp"
+      ],
+      "requests": 1400,
+      "concurrency": 32,
+      "tenants": 200,
+      "memory_budget_mib": null,
+      "sla_p95_ms": null
+    },
+
+    {
+      "scenario_id": "memory_constrained",
+      "description": "Mixed workload under strict memory budget",
+      "models": [
+        "logistic_regression",
+        "naive_bayes",
+        "decision_tree",
+        "kmeans",
+        "random_forest",
+        "svm",
+        "mlp"
+      ],
+      "requests": 1400,
+      "concurrency": 32,
+      "tenants": 200,
+      "memory_budget_mib": 100.0,
+      "sla_p95_ms": null
+    },
+
+    {
+      "scenario_id": "latency_constrained",
+      "description": "Mixed workload under p95 latency SLA",
+      "models": [
+        "logistic_regression",
+        "naive_bayes",
+        "decision_tree",
+        "kmeans",
+        "random_forest",
+        "svm",
+        "mlp"
+      ],
+      "requests": 1400,
+      "concurrency": 32,
+      "tenants": 20,
+      "memory_budget_mib": null,
+      "sla_p95_ms": 4.0
+    },
+
+    {
+      "scenario_id": "combined_pressure",
+      "description": "Mixed workload under memory and latency constraints",
+      "models": [
+        "logistic_regression",
+        "naive_bayes",
+        "decision_tree",
+        "kmeans",
+        "random_forest",
+        "svm",
+        "mlp"
+      ],
+      "requests": 1400,
+      "concurrency": 32,
+      "tenants": 200,
+      "memory_budget_mib": 100.0,
+      "sla_p95_ms": 4.0
+    }
+  ]
+}
