@@ -1,0 +1,187 @@
+{
+  "models": {
+    "decision_tree": {
+      "abi_version": "comet-abi-v1",
+      "characterization_status": "profiled",
+      "display_name": "Decision Tree",
+      "docker_image": "comet-dt-docker:v1",
+      "features": 30,
+      "input_type": "f32_vector",
+      "metadata": {
+        "correctness_result": "/home/sallar/wasiMultitenant/results/correctness/decision_tree.json",
+        "dataset": "breast_cancer"
+      },
+      "model_format": "comet_json",
+      "model_id": "decision_tree",
+      "model_path": "/home/sallar/wasiMultitenant/models/decision_tree/breast_cancer/model.json",
+      "output_type": "class_id",
+      "source": "validated_case_study",
+      "supported_backends": [
+        "wasmtime",
+        "docker"
+      ],
+      "task": "binary_classification",
+      "test_path": "/home/sallar/wasiMultitenant/models/decision_tree/breast_cancer/test_samples.csv",
+      "validation_status": "validated",
+      "wasm_artifact": "/home/sallar/wasiMultitenant/wasm/tenant_dt_real/target/wasm32-unknown-unknown/release/tenant_dt_real.wasm",
+      "workload_class": "branch_heavy"
+    },
+    "kmeans": {
+      "abi_version": "comet-abi-v1",
+      "characterization_status": "profiled",
+      "display_name": "K-Means",
+      "docker_image": "comet-kmeans-docker:v1",
+      "features": 4,
+      "input_type": "f32_vector",
+      "metadata": {
+        "correctness_result": "/home/sallar/wasiMultitenant/results/correctness/kmeans.json",
+        "dataset": "iris"
+      },
+      "model_format": "comet_json",
+      "model_id": "kmeans",
+      "model_path": "/home/sallar/wasiMultitenant/models/kmeans/iris/model.json",
+      "output_type": "class_id",
+      "source": "validated_case_study",
+      "supported_backends": [
+        "wasmtime",
+        "docker"
+      ],
+      "task": "clustering_inference",
+      "test_path": "/home/sallar/wasiMultitenant/models/kmeans/iris/samples.csv",
+      "validation_status": "validated",
+      "wasm_artifact": "/home/sallar/wasiMultitenant/wasm/tenant_kmeans_real/target/wasm32-unknown-unknown/release/tenant_kmeans_real.wasm",
+      "workload_class": "centroid_distance"
+    },
+    "logistic_regression": {
+      "abi_version": "comet-abi-v1",
+      "characterization_status": "profiled",
+      "display_name": "Logistic Regression",
+      "docker_image": "comet-lr-docker:v1",
+      "features": 4,
+      "input_type": "f32_vector",
+      "metadata": {
+        "correctness_result": "/home/sallar/wasiMultitenant/results/correctness/logistic_regression.json",
+        "dataset": "iris"
+      },
+      "model_format": "comet_json",
+      "model_id": "logistic_regression",
+      "model_path": "/home/sallar/wasiMultitenant/models/logistic_regression/iris_lr/model.json",
+      "output_type": "class_id",
+      "source": "validated_case_study",
+      "supported_backends": [
+        "wasmtime",
+        "docker"
+      ],
+      "task": "binary_classification",
+      "test_path": "/home/sallar/wasiMultitenant/models/logistic_regression/iris_lr/test_samples.csv",
+      "validation_status": "validated",
+      "wasm_artifact": "/home/sallar/wasiMultitenant/wasm/tenant_lr_real/target/wasm32-unknown-unknown/release/tenant_lr_real.wasm",
+      "workload_class": "lightweight_linear"
+    },
+    "mlp": {
+      "abi_version": "comet-abi-v1",
+      "characterization_status": "profiled",
+      "display_name": "Multi-Layer Perceptron",
+      "docker_image": "comet-mlp-docker:v1",
+      "features": 30,
+      "input_type": "f32_vector",
+      "metadata": {
+        "correctness_result": "/home/sallar/wasiMultitenant/results/correctness/mlp.json",
+        "dataset": "breast_cancer"
+      },
+      "model_format": "comet_json",
+      "model_id": "mlp",
+      "model_path": "/home/sallar/wasiMultitenant/models/mlp/breast_cancer/model.json",
+      "output_type": "class_id",
+      "source": "validated_case_study",
+      "supported_backends": [
+        "wasmtime",
+        "docker"
+      ],
+      "task": "binary_classification",
+      "test_path": "/home/sallar/wasiMultitenant/models/mlp/breast_cancer/test_samples.csv",
+      "validation_status": "validated",
+      "wasm_artifact": "/home/sallar/wasiMultitenant/wasm/tenant_mlp_real/target/wasm32-unknown-unknown/release/tenant_mlp_real.wasm",
+      "workload_class": "dense_neural"
+    },
+    "naive_bayes": {
+      "abi_version": "comet-abi-v1",
+      "characterization_status": "profiled",
+      "display_name": "Gaussian Naive Bayes",
+      "docker_image": "comet-nb-docker:v1",
+      "features": 30,
+      "input_type": "f32_vector",
+      "metadata": {
+        "correctness_result": "/home/sallar/wasiMultitenant/results/correctness/naive_bayes.json",
+        "dataset": "breast_cancer"
+      },
+      "model_format": "comet_json",
+      "model_id": "naive_bayes",
+      "model_path": "/home/sallar/wasiMultitenant/models/naive_bayes/breast_cancer/model.json",
+      "output_type": "class_id",
+      "source": "validated_case_study",
+      "supported_backends": [
+        "wasmtime",
+        "docker"
+      ],
+      "task": "binary_classification",
+      "test_path": "/home/sallar/wasiMultitenant/models/naive_bayes/breast_cancer/test_samples.csv",
+      "validation_status": "validated",
+      "wasm_artifact": "/home/sallar/wasiMultitenant/wasm/tenant_nb_real/target/wasm32-unknown-unknown/release/tenant_nb_real.wasm",
+      "workload_class": "probabilistic"
+    },
+    "random_forest": {
+      "abi_version": "comet-abi-v1",
+      "characterization_status": "profiled",
+      "display_name": "Random Forest",
+      "docker_image": "comet-rf-docker:v1",
+      "features": 30,
+      "input_type": "f32_vector",
+      "metadata": {
+        "correctness_result": "/home/sallar/wasiMultitenant/results/correctness/random_forest.json",
+        "dataset": "breast_cancer"
+      },
+      "model_format": "comet_json",
+      "model_id": "random_forest",
+      "model_path": "/home/sallar/wasiMultitenant/models/random_forest/breast_cancer/model_packed.json",
+      "output_type": "class_id",
+      "source": "validated_case_study",
+      "supported_backends": [
+        "wasmtime",
+        "docker"
+      ],
+      "task": "binary_classification",
+      "test_path": "/home/sallar/wasiMultitenant/models/random_forest/breast_cancer/test_samples.csv",
+      "validation_status": "validated",
+      "wasm_artifact": "/home/sallar/wasiMultitenant/wasm/tenant_rf_real/target/wasm32-unknown-unknown/release/tenant_rf_real.wasm",
+      "workload_class": "tree_ensemble"
+    },
+    "svm": {
+      "abi_version": "comet-abi-v1",
+      "characterization_status": "profiled",
+      "display_name": "RBF-SVM",
+      "docker_image": "comet-svm-docker:v1",
+      "features": 30,
+      "input_type": "f32_vector",
+      "metadata": {
+        "correctness_result": "/home/sallar/wasiMultitenant/results/correctness/svm.json",
+        "dataset": "breast_cancer"
+      },
+      "model_format": "comet_json",
+      "model_id": "svm",
+      "model_path": "/home/sallar/wasiMultitenant/models/svm/breast_cancer/model.json",
+      "output_type": "class_id",
+      "source": "validated_case_study",
+      "supported_backends": [
+        "wasmtime",
+        "docker"
+      ],
+      "task": "binary_classification",
+      "test_path": "/home/sallar/wasiMultitenant/models/svm/breast_cancer/test_samples.csv",
+      "validation_status": "validated",
+      "wasm_artifact": "/home/sallar/wasiMultitenant/wasm/tenant_svm_real/target/wasm32-unknown-unknown/release/tenant_svm_real.wasm",
+      "workload_class": "kernel_compute_heavy"
+    }
+  },
+  "schema_version": "comet-model-registry-v1"
+}
