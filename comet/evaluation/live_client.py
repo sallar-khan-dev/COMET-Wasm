@@ -107,6 +107,20 @@ parser.add_argument(
 )
 
 parser.add_argument(
+    "--forced-backend",
+    choices=[
+        "wasmtime",
+        "docker",
+    ],
+    default=None,
+    help=(
+        "Use one preselected backend for the entire "
+        "repetition. Used by the held-out runner to "
+        "keep placement granularity consistent."
+    ),
+)
+
+parser.add_argument(
     "--output",
     required=True,
 )
@@ -231,6 +245,9 @@ rng = random.Random(
 
 
 def choose_backend():
+    if args.forced_backend is not None:
+        return args.forced_backend
+
     return choose_policy_backend(
         args.policy,
         decision,

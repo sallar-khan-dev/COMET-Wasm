@@ -4,6 +4,7 @@ import argparse
 import csv
 import json
 import math
+import random
 import signal
 import statistics
 import subprocess
@@ -27,6 +28,9 @@ from comet.evaluation.live_backend import (
 )
 from comet.scheduler.scheduler import (
     CometScheduler,
+)
+from comet.evaluation.policies import (
+    choose_policy_backend,
 )
 
 
@@ -251,52 +255,62 @@ def required_backends(
     model,
     policy,
     concurrency,
+    repetition,
 ):
 
-    if policy == "wasmtime_only":
-        return {
-            "wasmtime"
-        }
-
-    if policy == "docker_only":
-        return {
-            "docker"
-        }
-
-    if policy == "random":
-        return {
-            "wasmtime",
-            "docker",
-        }
-
-    if policy == "best_static":
-        return {
-            BEST_STATIC_BACKEND
-        }
-
-    if policy == "comet":
-
-        decision = scheduler.schedule(
-            model=model,
-            concurrency=concurrency,
-            tenants=TENANTS,
-        )
-
-        if not decision[
-            "admitted"
-        ]:
-            return set()
-
-        return {
-            decision[
-                "selected_backend"
-            ]
-        }
-
-    raise ValueError(
-        policy
+    decision = scheduler.schedule(
+        model=model,
+        concurrency=concurrency,
+        tenants=TENANTS,
     )
 
+    if policy == "comet":
+        backend = choose_policy_backend(
+            "comet",
+            decision,
+        )
+
+    elif policy == "wasmtime_only":
+        backend = choose_policy_backend(
+            "wasmtime_only",
+            decision,
+        )
+
+    elif policy == "docker_only":
+        backend = choose_policy_backend(
+            "docker_only",
+            decision,
+        )
+
+    elif policy == "best_static":
+        backend = choose_policy_backend(
+            "best_static",
+            decision,
+            static_backend=BEST_STATIC_BACKEND,
+        )
+
+    elif policy == "random":
+        rng = random.Random(
+            SEED + repetition
+        )
+
+        backend = choose_policy_backend(
+            "random",
+            decision,
+            rng=rng,
+        )
+
+    else:
+        raise ValueError(
+            policy
+        )
+
+    if backend is None:
+        return set()
+
+    return {
+        backend
+    }
 
 def start_required(
     harness,
@@ -331,6 +345,7 @@ def run_repetition(
         model,
         policy,
         concurrency,
+        repetition,
     )
 
     # A fully rejected COMET scenario can be
@@ -479,6 +494,9 @@ def run_repetition(
             "--static-backend",
             BEST_STATIC_BACKEND,
 
+            "--forced-backend",
+            next(iter(backends)),
+
             "--output",
             str(
                 output
@@ -513,6 +531,12 @@ def run_repetition(
             backends
         )
 
+        data[
+            "selected_backend"
+        ] = next(
+            iter(backends)
+        )
+
         return data
 
     finally:
@@ -531,6 +555,7 @@ def run_repetition(
 FIELDS = [
     "model",
     "policy",
+    "selected_backend",
     "concurrency",
     "repetition",
     "admission_rate",
@@ -651,6 +676,66 @@ def run_cell(
     else:
         p95_values = []
         throughput_values = []
+
+    # Resume semantics:
+    # if an existing scientific cell has already
+    # satisfied the frozen CI stopping criterion,
+    # return immediately without launching another
+    # repetition.
+    if (
+        not args.smoke
+        and len(existing) >= MIN_REPS
+        and p95_values
+    ):
+        existing_p95_ci = ci_stats(
+            p95_values
+        )
+
+        existing_thr_ci = ci_stats(
+            throughput_values
+        )
+
+        if (
+            existing_p95_ci["relative"]
+            <= CI_TARGET
+            and
+            existing_thr_ci["relative"]
+            <= CI_TARGET
+        ):
+            print(
+                f"RESUME-SKIP "
+                f"{model:22s} "
+                f"{policy:15s} "
+                f"C={concurrency:<3d} "
+                f"n={len(existing)} "
+                f"CI95="
+                f"{existing_p95_ci['relative']} "
+                f"CIRPS="
+                f"{existing_thr_ci['relative']}"
+            )
+
+            return {
+                "model":
+                    model,
+
+                "policy":
+                    policy,
+
+                "concurrency":
+                    concurrency,
+
+                "repetitions":
+                    len(existing),
+
+                "p95_latency_ms":
+                    existing_p95_ci,
+
+                "throughput_rps":
+                    existing_thr_ci,
+
+                "ci_target_met":
+                    True,
+            }
 
     # Smoke is deliberately separate from
     # scientific persistence.
