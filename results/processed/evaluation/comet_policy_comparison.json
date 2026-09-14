@@ -1,0 +1,299 @@
+{
+  "schema_version": "comet-policy-comparison-v1",
+  "practical_tie_threshold_pct": 1.0,
+  "scenario_count": 28,
+  "comparison_count": 112,
+  "summary": {
+    "wasmtime_only": {
+      "scenarios": 28,
+      "latency": {
+        "mean_improvement_pct": -0.5732149512627218,
+        "median_improvement_pct": -0.10887890124367819,
+        "min_improvement_pct": -8.228781554029315,
+        "max_improvement_pct": 3.225594489487496,
+        "wins": 5,
+        "ties": 14,
+        "losses": 9
+      },
+      "throughput": {
+        "mean_improvement_pct": -0.686816015482446,
+        "median_improvement_pct": -0.5347725005842296,
+        "min_improvement_pct": -5.895412540240973,
+        "max_improvement_pct": 1.360871757484052,
+        "wins": 1,
+        "ties": 16,
+        "losses": 11
+      }
+    },
+    "docker_only": {
+      "scenarios": 28,
+      "latency": {
+        "mean_improvement_pct": 34.51696437082522,
+        "median_improvement_pct": 41.316494393245826,
+        "min_improvement_pct": 14.95743651957839,
+        "max_improvement_pct": 44.09379164423936,
+        "wins": 28,
+        "ties": 0,
+        "losses": 0
+      },
+      "throughput": {
+        "mean_improvement_pct": 66.44644619830983,
+        "median_improvement_pct": 68.91822520734848,
+        "min_improvement_pct": 52.80214566104028,
+        "max_improvement_pct": 70.95179059051003,
+        "wins": 28,
+        "ties": 0,
+        "losses": 0
+      }
+    },
+    "random": {
+      "scenarios": 28,
+      "latency": {
+        "mean_improvement_pct": 32.65662268064775,
+        "median_improvement_pct": 39.387954246617255,
+        "min_improvement_pct": 11.700294037014846,
+        "max_improvement_pct": 43.55155283795884,
+        "wins": 28,
+        "ties": 0,
+        "losses": 0
+      },
+      "throughput": {
+        "mean_improvement_pct": 60.85661008483349,
+        "median_improvement_pct": 61.94100203082196,
+        "min_improvement_pct": 46.1606686747831,
+        "max_improvement_pct": 68.96226024316945,
+        "wins": 28,
+        "ties": 0,
+        "losses": 0
+      }
+    },
+    "best_static": {
+      "scenarios": 28,
+      "latency": {
+        "mean_improvement_pct": -0.06434952367462068,
+        "median_improvement_pct": 0.35505188428745293,
+        "min_improvement_pct": -9.505709119338587,
+        "max_improvement_pct": 4.080953056641294,
+        "wins": 10,
+        "ties": 13,
+        "losses": 5
+      },
+      "throughput": {
+        "mean_improvement_pct": 1.0366470223397006,
+        "median_improvement_pct": 0.3739202860433075,
+        "min_improvement_pct": -7.232251545062418,
+        "max_improvement_pct": 7.662784907658857,
+        "wins": 10,
+        "ties": 14,
+        "losses": 4
+      }
+    }
+  },
+  "comet_backend_selection": {
+    "legacy_unrecorded": 4,
+    "wasmtime": 24
+  },
+  "recorded_comet_backend_matches": {
+    "latency_match": 24,
+    "throughput_match": 24,
+    "recorded_scenarios": 24
+  },
+  "scenario_backend_audit": [
+    {
+      "model": "logistic_regression",
+      "concurrency": 24,
+      "comet_selected_backend": "legacy_unrecorded",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "logistic_regression",
+      "concurrency": 48,
+      "comet_selected_backend": "legacy_unrecorded",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "logistic_regression",
+      "concurrency": 96,
+      "comet_selected_backend": "legacy_unrecorded",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "logistic_regression",
+      "concurrency": 192,
+      "comet_selected_backend": "legacy_unrecorded",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "naive_bayes",
+      "concurrency": 24,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "naive_bayes",
+      "concurrency": 48,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "naive_bayes",
+      "concurrency": 96,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "naive_bayes",
+      "concurrency": 192,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "decision_tree",
+      "concurrency": 24,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "decision_tree",
+      "concurrency": 48,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "decision_tree",
+      "concurrency": 96,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "decision_tree",
+      "concurrency": 192,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "kmeans",
+      "concurrency": 24,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "kmeans",
+      "concurrency": 48,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "kmeans",
+      "concurrency": 96,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "kmeans",
+      "concurrency": 192,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "random_forest",
+      "concurrency": 24,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "random_forest",
+      "concurrency": 48,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "random_forest",
+      "concurrency": 96,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "random_forest",
+      "concurrency": 192,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "svm",
+      "concurrency": 24,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "svm",
+      "concurrency": 48,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "svm",
+      "concurrency": 96,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "svm",
+      "concurrency": 192,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "mlp",
+      "concurrency": 24,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "mlp",
+      "concurrency": 48,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "mlp",
+      "concurrency": 96,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    },
+    {
+      "model": "mlp",
+      "concurrency": 192,
+      "comet_selected_backend": "wasmtime",
+      "lower_p95_fixed_backend": "wasmtime",
+      "higher_throughput_fixed_backend": "wasmtime"
+    }
+  ]
+}

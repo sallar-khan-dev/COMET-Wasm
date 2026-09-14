@@ -1,0 +1,2959 @@
+{
+  "schema_version": "comet-live-heldout-v1",
+  "heldout_concurrencies": [
+    24,
+    48,
+    96,
+    192
+  ],
+  "physical_units": 20,
+  "tenants": 20,
+  "requests_per_repetition": 5000,
+  "min_repetitions": 20,
+  "max_repetitions": 60,
+  "confidence": 0.95,
+  "relative_ci_target": 0.025,
+  "best_static_backend": "wasmtime",
+  "cells": [
+    {
+      "model": "logistic_regression",
+      "policy": "comet",
+      "concurrency": 24,
+      "repetitions": 54,
+      "p95_latency_ms": {
+        "n": 54,
+        "mean": 3.5207813175925926,
+        "sd": 0.23729721835215434,
+        "halfwidth": 0.06476967251542858,
+        "relative": 0.018396391787183244
+      },
+      "throughput_rps": {
+        "n": 54,
+        "mean": 9263.273696575527,
+        "sd": 835.4396486858953,
+        "halfwidth": 228.03112833580704,
+        "relative": 0.02461668906750604
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "comet",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 6.591792443333338,
+        "sd": 0.6963871911120102,
+        "halfwidth": 0.17989588725440084,
+        "relative": 0.027290890725229066
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9086.233295394286,
+        "sd": 909.6829933292535,
+        "halfwidth": 234.9960356736132,
+        "relative": 0.02586286616619564
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "comet",
+      "concurrency": 96,
+      "repetitions": 39,
+      "p95_latency_ms": {
+        "n": 39,
+        "mean": 9.942869003846154,
+        "sd": 0.7467093966373478,
+        "halfwidth": 0.24205518481808172,
+        "relative": 0.024344601615936875
+      },
+      "throughput_rps": {
+        "n": 39,
+        "mean": 9555.396884525117,
+        "sd": 331.95977574921943,
+        "halfwidth": 107.6089108199222,
+        "relative": 0.011261584643772768
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "comet",
+      "concurrency": 192,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 20.983061654166665,
+        "sd": 2.346655274819281,
+        "halfwidth": 0.6062053382540362,
+        "relative": 0.02889022337374967
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9068.403774359069,
+        "sd": 679.7248333510792,
+        "halfwidth": 175.5915438210208,
+        "relative": 0.019363004580531168
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "wasmtime_only",
+      "concurrency": 24,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 3.5422483191666667,
+        "sd": 0.17930429246162888,
+        "halfwidth": 0.046319210336709195,
+        "relative": 0.013076217747378603
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9213.62256653908,
+        "sd": 882.2968538084956,
+        "halfwidth": 227.9214456604159,
+        "relative": 0.02473744111118177
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "wasmtime_only",
+      "concurrency": 48,
+      "repetitions": 35,
+      "p95_latency_ms": {
+        "n": 35,
+        "mean": 6.09060949285715,
+        "sd": 0.4384068019670093,
+        "halfwidth": 0.15059800557290645,
+        "relative": 0.024726261920013492
+      },
+      "throughput_rps": {
+        "n": 35,
+        "mean": 9655.4626513609,
+        "sd": 699.9155416691424,
+        "halfwidth": 240.4294006660628,
+        "relative": 0.02490086796950897
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "wasmtime_only",
+      "concurrency": 96,
+      "repetitions": 45,
+      "p95_latency_ms": {
+        "n": 45,
+        "mean": 9.898504992222222,
+        "sd": 0.8161331107617154,
+        "halfwidth": 0.24519353084816736,
+        "relative": 0.024770763973027125
+      },
+      "throughput_rps": {
+        "n": 45,
+        "mean": 9579.386417649972,
+        "sd": 506.9106762543823,
+        "halfwidth": 152.29282686428502,
+        "relative": 0.015897973025045347
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "wasmtime_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 20.28056777,
+        "sd": 0.28893939877628455,
+        "halfwidth": 0.13522780120961128,
+        "relative": 0.0066678508581819295
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9265.070310922712,
+        "sd": 109.66389853023068,
+        "halfwidth": 51.324284376320215,
+        "relative": 0.005539546129057795
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "docker_only",
+      "concurrency": 24,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 4.2491042425000005,
+        "sd": 0.053449048598315355,
+        "halfwidth": 0.025014924753449998,
+        "relative": 0.0058871054523087505
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 6062.266767591189,
+        "sd": 72.95475351770915,
+        "halfwidth": 34.14387566310219,
+        "relative": 0.005632196168871184
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "docker_only",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 8.467924870000001,
+        "sd": 0.08388354611236574,
+        "halfwidth": 0.03925870804217681,
+        "relative": 0.004636166315228161
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5812.188148971808,
+        "sd": 58.69439280384846,
+        "halfwidth": 27.46982140827074,
+        "relative": 0.004726244351386014
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "docker_only",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 17.243748345,
+        "sd": 0.2538033623122396,
+        "halfwidth": 0.11878362995994263,
+        "relative": 0.006888504029600104
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5651.878965145854,
+        "sd": 70.92795025465276,
+        "halfwidth": 33.1953025370129,
+        "relative": 0.005873321552305438
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "docker_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 36.68958317,
+        "sd": 0.5562289919795405,
+        "halfwidth": 0.26032318151485484,
+        "relative": 0.007095288608449319
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5397.3219458374315,
+        "sd": 80.7079921094861,
+        "halfwidth": 37.77250302046469,
+        "relative": 0.00699837871439111
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "random",
+      "concurrency": 24,
+      "repetitions": 42,
+      "p95_latency_ms": {
+        "n": 42,
+        "mean": 4.044671478571429,
+        "sd": 0.20713292419907656,
+        "halfwidth": 0.06454716308124026,
+        "relative": 0.015958567568023645
+      },
+      "throughput_rps": {
+        "n": 42,
+        "mean": 6337.733523364556,
+        "sd": 507.80887355082626,
+        "halfwidth": 158.24438486507023,
+        "relative": 0.024968608143856125
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "random",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 8.165857735833333,
+        "sd": 0.4410522908460653,
+        "halfwidth": 0.11393588825297188,
+        "relative": 0.01395271531035859
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 6140.0207836921745,
+        "sd": 721.9922541906551,
+        "halfwidth": 186.51037643445358,
+        "relative": 0.030376179984573183
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "random",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 17.144133257500002,
+        "sd": 0.330126969757536,
+        "halfwidth": 0.15450417779428,
+        "relative": 0.009012072845775942
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5694.373094482081,
+        "sd": 102.62019346517536,
+        "halfwidth": 48.02772893130136,
+        "relative": 0.008434243442503063
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "random",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 36.611126145,
+        "sd": 1.0364220685596661,
+        "halfwidth": 0.4850604592174574,
+        "relative": 0.013248990410629647
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5442.03060697733,
+        "sd": 108.77452688275315,
+        "halfwidth": 50.90804563263931,
+        "relative": 0.009354604799055916
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "best_static",
+      "concurrency": 24,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 3.558051535,
+        "sd": 0.10306757544321211,
+        "halfwidth": 0.026625178016139367,
+        "relative": 0.0074830782393767005
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9089.80658204993,
+        "sd": 1326.777690353907,
+        "halfwidth": 342.7430211839868,
+        "relative": 0.03770630519914666
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "best_static",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 6.019587925000008,
+        "sd": 0.31258905496589845,
+        "halfwidth": 0.14629618101322858,
+        "relative": 0.024303354787068486
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9794.603670701323,
+        "sd": 505.3726649599019,
+        "halfwidth": 236.52168781206143,
+        "relative": 0.02414816318903956
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "best_static",
+      "concurrency": 96,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 10.049990705,
+        "sd": 1.1405494904326139,
+        "halfwidth": 0.2946351758872711,
+        "relative": 0.029316960038648223
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9497.51068483789,
+        "sd": 600.6635937057686,
+        "halfwidth": 155.16785993517186,
+        "relative": 0.016337739970420512
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "logistic_regression",
+      "policy": "best_static",
+      "concurrency": 192,
+      "repetitions": 41,
+      "p95_latency_ms": {
+        "n": 41,
+        "mean": 20.61885124390244,
+        "sd": 1.6043236867280195,
+        "halfwidth": 0.5063870387483537,
+        "relative": 0.0245594205398861
+      },
+      "throughput_rps": {
+        "n": 41,
+        "mean": 9205.581230368782,
+        "sd": 485.8832429121017,
+        "halfwidth": 153.3636750433506,
+        "relative": 0.01665985788462884
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "comet",
+      "concurrency": 24,
+      "repetitions": 29,
+      "p95_latency_ms": {
+        "n": 29,
+        "mean": 3.815749336206897,
+        "sd": 0.03322668768213097,
+        "halfwidth": 0.012638756061115518,
+        "relative": 0.003312260567325228
+      },
+      "throughput_rps": {
+        "n": 29,
+        "mean": 9175.592697434922,
+        "sd": 589.3793862119733,
+        "halfwidth": 224.18792872300483,
+        "relative": 0.024433073275547373
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "comet",
+      "concurrency": 48,
+      "repetitions": 42,
+      "p95_latency_ms": {
+        "n": 42,
+        "mean": 5.368693992857143,
+        "sd": 0.42920061873001053,
+        "halfwidth": 0.13374832822380786,
+        "relative": 0.02491263767347427
+      },
+      "throughput_rps": {
+        "n": 42,
+        "mean": 9215.771503962622,
+        "sd": 251.37335735733882,
+        "halfwidth": 78.3334525612581,
+        "relative": 0.008499934327535798
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "comet",
+      "concurrency": 96,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 10.761398010833334,
+        "sd": 1.2650905046563246,
+        "halfwidth": 0.32680753135170953,
+        "relative": 0.030368501473759954
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 8904.251127325655,
+        "sd": 656.0740508513916,
+        "halfwidth": 169.48189884715478,
+        "relative": 0.019033818388953926
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "comet",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 21.8439467075,
+        "sd": 0.2385635387388658,
+        "halfwidth": 0.1116511729763058,
+        "relative": 0.005111309529883213
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8658.409107583786,
+        "sd": 99.2659411629632,
+        "halfwidth": 46.45789053109889,
+        "relative": 0.0053656381852420255
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "wasmtime_only",
+      "concurrency": 24,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 3.81483886,
+        "sd": 0.01719664444400649,
+        "halfwidth": 0.008048277341876107,
+        "relative": 0.0021097293063319865
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9264.13004446882,
+        "sd": 52.97365302881536,
+        "halfwidth": 24.7924327781758,
+        "relative": 0.002676174952118489
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "wasmtime_only",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 5.469813374166667,
+        "sd": 0.5825138568432959,
+        "halfwidth": 0.15047928573682298,
+        "relative": 0.027510862883827127
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9153.62432561726,
+        "sd": 400.8391524315724,
+        "halfwidth": 103.54773306188129,
+        "relative": 0.011312211357865478
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "wasmtime_only",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 10.455403935,
+        "sd": 0.05062209846033842,
+        "halfwidth": 0.023691871362646014,
+        "relative": 0.002265992926713837
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9046.449039688194,
+        "sd": 44.35706509022536,
+        "halfwidth": 20.759745488731564,
+        "relative": 0.002294794940827644
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "wasmtime_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 21.956904015,
+        "sd": 0.26586949580771163,
+        "halfwidth": 0.12443075426560948,
+        "relative": 0.005667044597025328
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8658.080814327846,
+        "sd": 80.69559888975228,
+        "halfwidth": 37.766702815087335,
+        "relative": 0.004362017821846732
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "docker_only",
+      "concurrency": 24,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 4.50152359,
+        "sd": 0.07516131220080578,
+        "halfwidth": 0.03517657691540239,
+        "relative": 0.007814371337194833
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5662.413397742556,
+        "sd": 65.50665385659453,
+        "halfwidth": 30.65805772124923,
+        "relative": 0.005414309335569128
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "docker_only",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 9.032933355,
+        "sd": 0.11582668362254017,
+        "halfwidth": 0.054208556583190966,
+        "relative": 0.0060012129452039955
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5429.591636867861,
+        "sd": 76.59681598006364,
+        "halfwidth": 35.8484133645653,
+        "relative": 0.006602414281241413
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "docker_only",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 18.345873285,
+        "sd": 0.18355768827961505,
+        "halfwidth": 0.08590764252399669,
+        "relative": 0.004682668477506422
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5342.905811124977,
+        "sd": 49.29655623280137,
+        "halfwidth": 23.071498503840722,
+        "relative": 0.0043181555729096596
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "docker_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 39.03318442,
+        "sd": 0.6061851406046926,
+        "halfwidth": 0.28370337876068075,
+        "relative": 0.007268261172545162
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5064.825046684498,
+        "sd": 76.56046742967568,
+        "halfwidth": 35.831401719331254,
+        "relative": 0.007074558625235627
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "random",
+      "concurrency": 24,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 4.34622492,
+        "sd": 0.13279804699795825,
+        "halfwidth": 0.062151399139474026,
+        "relative": 0.014300088072633393
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5785.918403766058,
+        "sd": 189.1513803093007,
+        "halfwidth": 88.52557097896585,
+        "relative": 0.015300176186609286
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "random",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 8.67857895,
+        "sd": 0.7138766158631775,
+        "halfwidth": 0.1844138847467962,
+        "relative": 0.021249318097958447
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 5827.673618634169,
+        "sd": 847.820910885988,
+        "halfwidth": 219.01536522106588,
+        "relative": 0.03758195457630939
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "random",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 18.266003802500002,
+        "sd": 0.40890184450006906,
+        "halfwidth": 0.1913719540377101,
+        "relative": 0.010476947016266235
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5368.2442283467835,
+        "sd": 137.2443397941443,
+        "halfwidth": 64.2323282232502,
+        "relative": 0.011965239562699877
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "random",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 38.6971614025,
+        "sd": 0.5301439306781264,
+        "halfwidth": 0.24811499703344633,
+        "relative": 0.006411710524519689
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5124.463353604915,
+        "sd": 79.3721154457865,
+        "halfwidth": 37.147293496653106,
+        "relative": 0.007249011444392716
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "best_static",
+      "concurrency": 24,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 3.836720624166667,
+        "sd": 0.07029798009445609,
+        "halfwidth": 0.01815989389622517,
+        "relative": 0.004733181191729196
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 8793.766512199687,
+        "sd": 970.7788423278568,
+        "halfwidth": 250.77876703835022,
+        "relative": 0.028517787763689444
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "best_static",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 5.5971094,
+        "sd": 0.8191221042056792,
+        "halfwidth": 0.21160167732331378,
+        "relative": 0.037805528211278805
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9005.598720015882,
+        "sd": 743.515855386626,
+        "halfwidth": 192.07051220874337,
+        "relative": 0.02132790036289832
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "best_static",
+      "concurrency": 96,
+      "repetitions": 42,
+      "p95_latency_ms": {
+        "n": 42,
+        "mean": 10.594456382142857,
+        "sd": 0.8425440367913767,
+        "halfwidth": 0.26255520485787615,
+        "relative": 0.024782319676205148
+      },
+      "throughput_rps": {
+        "n": 42,
+        "mean": 8987.384457275282,
+        "sd": 385.3742159415604,
+        "halfwidth": 120.09105968965939,
+        "relative": 0.01336218120639601
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "naive_bayes",
+      "policy": "best_static",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 21.7955141325,
+        "sd": 0.32376322385067996,
+        "halfwidth": 0.15152585303107557,
+        "relative": 0.006952157774756524
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8665.319575650916,
+        "sd": 152.6410047260042,
+        "halfwidth": 71.43818922218102,
+        "relative": 0.008244149404820395
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "comet",
+      "concurrency": 24,
+      "repetitions": 21,
+      "p95_latency_ms": {
+        "n": 21,
+        "mean": 3.8127701595238097,
+        "sd": 0.030766245478460554,
+        "halfwidth": 0.014004627037218163,
+        "relative": 0.0036730845163158877
+      },
+      "throughput_rps": {
+        "n": 21,
+        "mean": 9135.113821158066,
+        "sd": 485.62470864979963,
+        "halfwidth": 221.05371711538714,
+        "relative": 0.024198244427277863
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "comet",
+      "concurrency": 48,
+      "repetitions": 56,
+      "p95_latency_ms": {
+        "n": 56,
+        "mean": 5.409166052678572,
+        "sd": 0.49856862231224053,
+        "halfwidth": 0.13351754895949636,
+        "relative": 0.02468357370788786
+      },
+      "throughput_rps": {
+        "n": 56,
+        "mean": 9175.30803901829,
+        "sd": 441.99781539832145,
+        "halfwidth": 118.36778793607392,
+        "relative": 0.012900688176648798
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "comet",
+      "concurrency": 96,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 10.739560819166668,
+        "sd": 1.2647744276408277,
+        "halfwidth": 0.3267258800004652,
+        "relative": 0.030422648141939325
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 8917.993827757567,
+        "sd": 610.1135365688406,
+        "halfwidth": 157.60903903431804,
+        "relative": 0.017673149598259913
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "decision_tree",
+      "policy": "comet",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 21.9376247725,
+        "sd": 0.4471044158434697,
+        "halfwidth": 0.20925130778870638,
+        "relative": 0.009538466901440223
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8633.134828445844,
+        "sd": 126.86683614745093,
+        "halfwidth": 59.37550701392245,
+        "relative": 0.006877629991168731
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "wasmtime_only",
+      "concurrency": 24,
+      "repetitions": 29,
+      "p95_latency_ms": {
+        "n": 29,
+        "mean": 3.772566001724138,
+        "sd": 0.24177754977448265,
+        "halfwidth": 0.09196726143416538,
+        "relative": 0.024377906547462525
+      },
+      "throughput_rps": {
+        "n": 29,
+        "mean": 9269.463770892819,
+        "sd": 55.677917803712056,
+        "halfwidth": 21.17874727219352,
+        "relative": 0.002284786671123007
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "wasmtime_only",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 5.44077407,
+        "sd": 0.645511521485558,
+        "halfwidth": 0.16675330817781311,
+        "relative": 0.030648820559794558
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9177.420275681683,
+        "sd": 323.4543634727359,
+        "halfwidth": 83.55712231053376,
+        "relative": 0.009104641587782932
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "decision_tree",
+      "policy": "wasmtime_only",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 10.451653035,
+        "sd": 0.07772991947080057,
+        "halfwidth": 0.03637872212219488,
+        "relative": 0.003480666838094562
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9043.043839851238,
+        "sd": 66.70014495222927,
+        "halfwidth": 31.216628747940177,
+        "relative": 0.0034520045795170783
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "wasmtime_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 21.8951719825,
+        "sd": 0.08985387936532481,
+        "halfwidth": 0.04205291001568956,
+        "relative": 0.001920647622649454
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8639.457199528055,
+        "sd": 107.29824548044782,
+        "halfwidth": 50.217124668430614,
+        "relative": 0.005812532374276223
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "docker_only",
+      "concurrency": 24,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 4.494279205,
+        "sd": 0.06952234937149028,
+        "halfwidth": 0.0325374610740163,
+        "relative": 0.007239750711931192
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5670.039127364859,
+        "sd": 74.56493540170761,
+        "halfwidth": 34.897463981769846,
+        "relative": 0.0061547130800821085
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "docker_only",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 9.0447429175,
+        "sd": 0.10517072593405498,
+        "halfwidth": 0.049221414870778794,
+        "relative": 0.005441991587792279
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5426.14825146539,
+        "sd": 69.78148611408155,
+        "halfwidth": 32.658740802781736,
+        "relative": 0.006018770459130358
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "docker_only",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 18.415670175000002,
+        "sd": 0.27324620629920765,
+        "halfwidth": 0.12788316104761857,
+        "relative": 0.0069442577887404286
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5301.41616381723,
+        "sd": 66.07177381010662,
+        "halfwidth": 30.92254200084824,
+        "relative": 0.005832883336324002
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "docker_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 38.8606165125,
+        "sd": 0.5704212555909138,
+        "halfwidth": 0.26696536534468684,
+        "relative": 0.0068698180652593125
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5066.806783984557,
+        "sd": 73.27883163442215,
+        "halfwidth": 34.29554889052931,
+        "relative": 0.006768671147858367
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "random",
+      "concurrency": 24,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 4.3303913566666665,
+        "sd": 0.2806543117125436,
+        "halfwidth": 0.0725006965402102,
+        "relative": 0.016742296612197623
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 5922.410079552617,
+        "sd": 711.5582837858798,
+        "halfwidth": 183.81499606630535,
+        "relative": 0.03103719492524416
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "decision_tree",
+      "policy": "random",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 8.709206925833334,
+        "sd": 0.5819039684703379,
+        "halfwidth": 0.15032173486371714,
+        "relative": 0.017260094534880248
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 5746.031469789663,
+        "sd": 670.640953495461,
+        "halfwidth": 173.24492882408305,
+        "relative": 0.03015036199069491
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "decision_tree",
+      "policy": "random",
+      "concurrency": 96,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 17.793142364166666,
+        "sd": 1.513148152717055,
+        "halfwidth": 0.39088761676635836,
+        "relative": 0.021968442041668867
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 5618.673004485479,
+        "sd": 799.3148028396588,
+        "halfwidth": 206.48490880885325,
+        "relative": 0.03674976433830781
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "decision_tree",
+      "policy": "random",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 37.7778846575,
+        "sd": 1.4446805023752387,
+        "halfwidth": 0.6761312877855787,
+        "relative": 0.01789754227679731
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5281.038259396515,
+        "sd": 266.23769759091635,
+        "halfwidth": 124.6030780046188,
+        "relative": 0.02359442819466672
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "best_static",
+      "concurrency": 24,
+      "repetitions": 56,
+      "p95_latency_ms": {
+        "n": 56,
+        "mean": 3.849486991964286,
+        "sd": 0.07428545886582001,
+        "halfwidth": 0.01989377579579032,
+        "relative": 0.005167903109509946
+      },
+      "throughput_rps": {
+        "n": 56,
+        "mean": 8790.992269636574,
+        "sd": 811.7693060034815,
+        "halfwidth": 217.39323978206002,
+        "relative": 0.024729090086100965
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "decision_tree",
+      "policy": "best_static",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 5.418025048333334,
+        "sd": 0.5839474235314901,
+        "halfwidth": 0.15084961528136737,
+        "relative": 0.027842177534371307
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9173.791401160008,
+        "sd": 362.75972395455705,
+        "halfwidth": 93.71077359530297,
+        "relative": 0.010215053896195354
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "decision_tree",
+      "policy": "best_static",
+      "concurrency": 96,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 10.75195918,
+        "sd": 1.2282768243423954,
+        "halfwidth": 0.31729754930767023,
+        "relative": 0.02951067279885918
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 8897.52856214213,
+        "sd": 581.4974504507206,
+        "halfwidth": 150.2167201237028,
+        "relative": 0.016882971386330374
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "decision_tree",
+      "policy": "best_static",
+      "concurrency": 192,
+      "repetitions": 57,
+      "p95_latency_ms": {
+        "n": 57,
+        "mean": 22.1978360377193,
+        "sd": 2.087016014132297,
+        "halfwidth": 0.5537598865567007,
+        "relative": 0.024946570720485256
+      },
+      "throughput_rps": {
+        "n": 57,
+        "mean": 8588.660178390437,
+        "sd": 549.0780111729371,
+        "halfwidth": 145.69000674598087,
+        "relative": 0.016963065684278127
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "comet",
+      "concurrency": 24,
+      "repetitions": 30,
+      "p95_latency_ms": {
+        "n": 30,
+        "mean": 3.5223272383333333,
+        "sd": 0.05031997873647117,
+        "halfwidth": 0.018789788861735435,
+        "relative": 0.005334481321680446
+      },
+      "throughput_rps": {
+        "n": 30,
+        "mean": 9676.50818275362,
+        "sd": 643.1328834174672,
+        "halfwidth": 240.14976541901385,
+        "relative": 0.024817812467417873
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "comet",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 5.854307917500009,
+        "sd": 0.11773024864030127,
+        "halfwidth": 0.055099452435060155,
+        "relative": 0.009411779020087744
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9893.569291114694,
+        "sd": 33.55515954615402,
+        "halfwidth": 15.704298077318976,
+        "relative": 0.001587323807538583
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "comet",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 9.820438285,
+        "sd": 0.0965222046412869,
+        "halfwidth": 0.045173782311533905,
+        "relative": 0.004599976192562969
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9614.248036907557,
+        "sd": 85.8291482541396,
+        "halfwidth": 40.16927787368843,
+        "relative": 0.004178098767525553
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "comet",
+      "concurrency": 192,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 20.928806005000002,
+        "sd": 2.335001573489906,
+        "halfwidth": 0.6031948679765775,
+        "relative": 0.028821274746035252
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9111.17315197123,
+        "sd": 672.7652299436629,
+        "halfwidth": 173.79368761990852,
+        "relative": 0.01907478704674905
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "kmeans",
+      "policy": "wasmtime_only",
+      "concurrency": 24,
+      "repetitions": 22,
+      "p95_latency_ms": {
+        "n": 22,
+        "mean": 3.5214927340909092,
+        "sd": 0.07849794780301644,
+        "halfwidth": 0.034804040279791545,
+        "relative": 0.009883320201930328
+      },
+      "throughput_rps": {
+        "n": 22,
+        "mean": 9807.121125063179,
+        "sd": 526.3530045182464,
+        "halfwidth": 233.37184835217306,
+        "relative": 0.023796162541091247
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "wasmtime_only",
+      "concurrency": 48,
+      "repetitions": 27,
+      "p95_latency_ms": {
+        "n": 27,
+        "mean": 6.049438264814824,
+        "sd": 0.3472799485479196,
+        "halfwidth": 0.13737937220070917,
+        "relative": 0.022709442792357253
+      },
+      "throughput_rps": {
+        "n": 27,
+        "mean": 9760.738162144107,
+        "sd": 616.0221068007227,
+        "halfwidth": 243.69022930318698,
+        "relative": 0.024966372958175574
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "wasmtime_only",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 9.78826755,
+        "sd": 0.04756212167944748,
+        "halfwidth": 0.022259758145878605,
+        "relative": 0.0022741264510979377
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9637.100744448033,
+        "sd": 54.668270140308685,
+        "halfwidth": 25.585537999720387,
+        "relative": 0.002654899920441353
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "wasmtime_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 20.440611320000002,
+        "sd": 0.41805143726003474,
+        "halfwidth": 0.19565409526224944,
+        "relative": 0.009571831888942225
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9244.096449143903,
+        "sd": 116.88582712204729,
+        "halfwidth": 54.70425099942631,
+        "relative": 0.005917749917515462
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "docker_only",
+      "concurrency": 24,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 4.20551887,
+        "sd": 0.04114439306575145,
+        "halfwidth": 0.01925616869817552,
+        "relative": 0.0045787854705727484
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 6102.585719555694,
+        "sd": 55.01394151180278,
+        "halfwidth": 25.747317181466553,
+        "relative": 0.004219083248426884
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "docker_only",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 8.4594901125,
+        "sd": 0.09401529130173703,
+        "halfwidth": 0.044000510752978284,
+        "relative": 0.005201319484724238
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5809.519318696045,
+        "sd": 68.56125661847128,
+        "halfwidth": 32.08765581969762,
+        "relative": 0.005523289287709907
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "docker_only",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 17.33601796,
+        "sd": 0.19988595135005643,
+        "halfwidth": 0.0935495048727776,
+        "relative": 0.005396251035770017
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5642.725461108643,
+        "sd": 66.65667801842125,
+        "halfwidth": 31.19628559671513,
+        "relative": 0.005528584690453096
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "docker_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 36.6089217875,
+        "sd": 0.4899747896419952,
+        "halfwidth": 0.2293152603350234,
+        "relative": 0.006263917349604171
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5408.959665102677,
+        "sd": 61.947298578185055,
+        "halfwidth": 28.99222817338681,
+        "relative": 0.0053600377833167775
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "random",
+      "concurrency": 24,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 4.1209816425,
+        "sd": 0.19104473069089864,
+        "halfwidth": 0.08941168623395433,
+        "relative": 0.02169669607645051
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 6076.6190759543115,
+        "sd": 150.31218151816137,
+        "halfwidth": 70.34826641090551,
+        "relative": 0.0115768761430644
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "random",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 8.135938879166668,
+        "sd": 0.6442355253849423,
+        "halfwidth": 0.16642368343229352,
+        "relative": 0.020455375329631244
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 6204.750252749656,
+        "sd": 935.898218281437,
+        "halfwidth": 241.76814637946367,
+        "relative": 0.038965008506558874
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "kmeans",
+      "policy": "random",
+      "concurrency": 96,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 16.9490964875,
+        "sd": 1.0275110803740903,
+        "halfwidth": 0.26543425816385186,
+        "relative": 0.015660673025232365
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 5870.513651646383,
+        "sd": 621.1649865674608,
+        "halfwidth": 160.46393129586974,
+        "relative": 0.027333882657928528
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "kmeans",
+      "policy": "random",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 36.419640915,
+        "sd": 1.790396707141894,
+        "halfwidth": 0.8379314521491923,
+        "relative": 0.023007680226854656
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5491.997970445534,
+        "sd": 193.30564536911965,
+        "halfwidth": 90.46982687504801,
+        "relative": 0.016473026276029146
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "best_static",
+      "concurrency": 24,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 3.563100299166667,
+        "sd": 0.10216330933207532,
+        "halfwidth": 0.02639158130951804,
+        "relative": 0.0074069150721607436
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9121.228876669822,
+        "sd": 1272.2720968774365,
+        "halfwidth": 328.6627333442293,
+        "relative": 0.03603272517203018
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "kmeans",
+      "policy": "best_static",
+      "concurrency": 48,
+      "repetitions": 26,
+      "p95_latency_ms": {
+        "n": 26,
+        "mean": 5.945428025000008,
+        "sd": 0.35674510207901866,
+        "halfwidth": 0.14409246508648016,
+        "relative": 0.024235843824966657
+      },
+      "throughput_rps": {
+        "n": 26,
+        "mean": 9785.792481049642,
+        "sd": 582.8199940744403,
+        "halfwidth": 235.40609011437073,
+        "relative": 0.024055904574947683
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "best_static",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 9.786537895,
+        "sd": 0.049465765851692246,
+        "halfwidth": 0.023150691043186476,
+        "relative": 0.0023655649517296917
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9648.727320205691,
+        "sd": 50.8508903752447,
+        "halfwidth": 23.798949274894554,
+        "relative": 0.0024665376567390867
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "kmeans",
+      "policy": "best_static",
+      "concurrency": 192,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 21.16428189,
+        "sd": 2.678195449420798,
+        "halfwidth": 0.6918512470697624,
+        "relative": 0.03268956871136072
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9039.50262802591,
+        "sd": 758.4893191770356,
+        "halfwidth": 195.93856806649984,
+        "relative": 0.02167581294340415
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "random_forest",
+      "policy": "comet",
+      "concurrency": 24,
+      "repetitions": 46,
+      "p95_latency_ms": {
+        "n": 46,
+        "mean": 3.821881358695652,
+        "sd": 0.03935902427672618,
+        "halfwidth": 0.01168818744827113,
+        "relative": 0.003058228749481675
+      },
+      "throughput_rps": {
+        "n": 46,
+        "mean": 9003.583456998645,
+        "sd": 757.7620334763675,
+        "halfwidth": 225.02754708002595,
+        "relative": 0.024993109482992357
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "comet",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 5.31990905,
+        "sd": 0.2427765965262088,
+        "halfwidth": 0.11362294471586194,
+        "relative": 0.021358061509691027
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9256.332068692383,
+        "sd": 47.75534239298421,
+        "halfwidth": 22.350188223432532,
+        "relative": 0.002414583666356071
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "comet",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 10.4452376725,
+        "sd": 0.07343028168923493,
+        "halfwidth": 0.03436642969803478,
+        "relative": 0.0032901529649740752
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9058.254174469996,
+        "sd": 74.59277147325845,
+        "halfwidth": 34.91049166427377,
+        "relative": 0.0038539978004444113
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "comet",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 22.098277185,
+        "sd": 0.43195473481201474,
+        "halfwidth": 0.20216103881331887,
+        "relative": 0.009148271474780076
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8613.325342236581,
+        "sd": 141.28341856578763,
+        "halfwidth": 66.12267527704415,
+        "relative": 0.007676788307624102
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "wasmtime_only",
+      "concurrency": 24,
+      "repetitions": 21,
+      "p95_latency_ms": {
+        "n": 21,
+        "mean": 3.8247114452380955,
+        "sd": 0.032649841879421465,
+        "halfwidth": 0.01486202983934337,
+        "relative": 0.003885791138007845
+      },
+      "throughput_rps": {
+        "n": 21,
+        "mean": 9120.06299092843,
+        "sd": 488.74024050520154,
+        "halfwidth": 222.47189021317456,
+        "relative": 0.02439367912639019
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "wasmtime_only",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 5.417351396666667,
+        "sd": 0.5368342860367804,
+        "halfwidth": 0.13867900131959196,
+        "relative": 0.025599041148580855
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9207.763039054327,
+        "sd": 283.08110838048236,
+        "halfwidth": 73.12760459558056,
+        "relative": 0.00794195118677718
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "random_forest",
+      "policy": "wasmtime_only",
+      "concurrency": 96,
+      "repetitions": 43,
+      "p95_latency_ms": {
+        "n": 43,
+        "mean": 10.571793347674419,
+        "sd": 0.8539165006486663,
+        "halfwidth": 0.26279670931070753,
+        "relative": 0.0248582904213236
+      },
+      "throughput_rps": {
+        "n": 43,
+        "mean": 8996.248070123465,
+        "sd": 464.26973747294187,
+        "halfwidth": 142.88113550651968,
+        "relative": 0.015882302754748154
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "wasmtime_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 21.875194115,
+        "sd": 0.16153697515655072,
+        "halfwidth": 0.07560163154276238,
+        "relative": 0.0034560439164707446
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8664.195487517507,
+        "sd": 107.29527912507376,
+        "halfwidth": 50.21573637138099,
+        "relative": 0.00579577601217871
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "docker_only",
+      "concurrency": 24,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 4.497182945,
+        "sd": 0.06820669248092012,
+        "halfwidth": 0.03192171469532383,
+        "relative": 0.007098157910345769
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5663.752718950569,
+        "sd": 68.64478219916172,
+        "halfwidth": 32.12674699476534,
+        "relative": 0.005672342806788019
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "docker_only",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 9.061550025,
+        "sd": 0.1224712463706261,
+        "halfwidth": 0.05731830767365632,
+        "relative": 0.0063254418411331685
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5422.8221639814665,
+        "sd": 68.1787521225702,
+        "halfwidth": 31.908638205095528,
+        "relative": 0.005884138782391497
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "docker_only",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 18.3911642125,
+        "sd": 0.19195119838359848,
+        "halfwidth": 0.08983592617309208,
+        "relative": 0.004884732969326265
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5318.592714863613,
+        "sd": 37.865426345392265,
+        "halfwidth": 17.721565034875947,
+        "relative": 0.0033320026527600714
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "docker_only",
+      "concurrency": 192,
+      "repetitions": 40,
+      "p95_latency_ms": {
+        "n": 40,
+        "mean": 39.3480484925,
+        "sd": 3.0476128033754515,
+        "halfwidth": 0.9746738597342325,
+        "relative": 0.02477057686660145
+      },
+      "throughput_rps": {
+        "n": 40,
+        "mean": 5074.708095948634,
+        "sd": 95.67104521365098,
+        "halfwidth": 30.597084642746776,
+        "relative": 0.006029328990799253
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "random",
+      "concurrency": 24,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 4.331671260833334,
+        "sd": 0.17191088530857462,
+        "halfwidth": 0.044409290745126985,
+        "relative": 0.010252230160370817
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 5967.943232669799,
+        "sd": 629.0889318880705,
+        "halfwidth": 162.51090342890137,
+        "relative": 0.027230638277402155
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "random_forest",
+      "policy": "random",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 8.689630539166666,
+        "sd": 0.5733504259795608,
+        "halfwidth": 0.14811212053538717,
+        "relative": 0.017044697109710613
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 5727.386853415623,
+        "sd": 634.0284694537812,
+        "halfwidth": 163.78692128843585,
+        "relative": 0.028597146566196902
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "random_forest",
+      "policy": "random",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 18.00586931,
+        "sd": 0.7118648834050306,
+        "halfwidth": 0.3331630208579907,
+        "relative": 0.018503023382101327
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5486.025794724785,
+        "sd": 253.32331959552673,
+        "halfwidth": 118.55896305282404,
+        "relative": 0.021611083777044425
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "random",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 38.733337552500004,
+        "sd": 0.7700303767094008,
+        "halfwidth": 0.36038530968095733,
+        "relative": 0.009304266878434716
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5145.40266511952,
+        "sd": 138.01227242869567,
+        "halfwidth": 64.59173175938025,
+        "relative": 0.01255328998782642
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "best_static",
+      "concurrency": 24,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 3.8560329025000004,
+        "sd": 0.06883150545727049,
+        "halfwidth": 0.017781063327025132,
+        "relative": 0.00461123226295529
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 8573.619273031909,
+        "sd": 1017.4994197929457,
+        "halfwidth": 262.84797199127166,
+        "relative": 0.030657761164885517
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "random_forest",
+      "policy": "best_static",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 5.312790655,
+        "sd": 0.2340627437129857,
+        "halfwidth": 0.10954473606385078,
+        "relative": 0.020619057511847467
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9262.886490788818,
+        "sd": 52.07915388124998,
+        "halfwidth": 24.37379429058486,
+        "relative": 0.0026313389800061357
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "best_static",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 10.44914174,
+        "sd": 0.05982077420021484,
+        "halfwidth": 0.027996984128893593,
+        "relative": 0.0026793572932137864
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9058.747138798619,
+        "sd": 42.8883203364265,
+        "halfwidth": 20.07235178460002,
+        "relative": 0.002215797778329646
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "random_forest",
+      "policy": "best_static",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 22.0020072375,
+        "sd": 0.4115602435257162,
+        "halfwidth": 0.19261612307972564,
+        "relative": 0.008754479580000895
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8671.206377011964,
+        "sd": 93.4703921189257,
+        "halfwidth": 43.74549008537615,
+        "relative": 0.005044913958148755
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "comet",
+      "concurrency": 24,
+      "repetitions": 33,
+      "p95_latency_ms": {
+        "n": 33,
+        "mean": 3.7918876545454547,
+        "sd": 0.19522061104130714,
+        "halfwidth": 0.06922221871848488,
+        "relative": 0.018255345364862285
+      },
+      "throughput_rps": {
+        "n": 33,
+        "mean": 9084.329215602274,
+        "sd": 622.2640634830674,
+        "halfwidth": 220.64524269911146,
+        "relative": 0.024288556420891786
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "comet",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 5.323490375,
+        "sd": 0.2302442563614006,
+        "halfwidth": 0.10775762897257671,
+        "relative": 0.02024191298976035
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9247.884683483799,
+        "sd": 52.624275082081745,
+        "halfwidth": 24.628918865819056,
+        "relative": 0.002663194850364529
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "comet",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 10.4888678725,
+        "sd": 0.060374310533797416,
+        "halfwidth": 0.0282560471074871,
+        "relative": 0.002693908193997712
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9022.319016736634,
+        "sd": 55.68980969048541,
+        "halfwidth": 26.06363322593082,
+        "relative": 0.002888795350461684
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "comet",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 21.7230163475,
+        "sd": 0.2892706303361107,
+        "halfwidth": 0.13538282235147087,
+        "relative": 0.006232229455880856
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8660.41720608072,
+        "sd": 107.87577989824244,
+        "halfwidth": 50.48741909616184,
+        "relative": 0.0058296751639993994
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "wasmtime_only",
+      "concurrency": 24,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 3.8238595925000003,
+        "sd": 0.026232294490832024,
+        "halfwidth": 0.01227709173515928,
+        "relative": 0.0032106544286404203
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9177.941845358708,
+        "sd": 372.4747811051441,
+        "halfwidth": 174.3235635853135,
+        "relative": 0.018993753340621686
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "wasmtime_only",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 5.461139400833334,
+        "sd": 0.5766823548634877,
+        "halfwidth": 0.14897284903598676,
+        "relative": 0.02727871202358513
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9161.750264550838,
+        "sd": 392.6964616255051,
+        "halfwidth": 101.444252977969,
+        "relative": 0.011072584391487164
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "svm",
+      "policy": "wasmtime_only",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 10.4589942525,
+        "sd": 0.06026316708082949,
+        "halfwidth": 0.028204030370318853,
+        "relative": 0.0026966293019596295
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9066.054969087405,
+        "sd": 60.815028748238426,
+        "halfwidth": 28.462309581017156,
+        "relative": 0.003139437128725262
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "wasmtime_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 21.734604185,
+        "sd": 0.26500402740214796,
+        "halfwidth": 0.1240257025835044,
+        "relative": 0.005706370427905007
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8660.245817177629,
+        "sd": 137.3586196410905,
+        "halfwidth": 64.2858128379845,
+        "relative": 0.007423093315720133
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "docker_only",
+      "concurrency": 24,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 4.5351574475000005,
+        "sd": 0.06462441567237084,
+        "halfwidth": 0.030245157541138795,
+        "relative": 0.006669042451395242
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5633.4162742315675,
+        "sd": 66.82848990071318,
+        "halfwidth": 31.276696032821874,
+        "relative": 0.0055519944755171155
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "docker_only",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 9.0591342075,
+        "sd": 0.10231662120556323,
+        "halfwidth": 0.04788565274041344,
+        "relative": 0.005285897266073088
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5415.421329356135,
+        "sd": 60.174915323611074,
+        "halfwidth": 28.16272727654876,
+        "relative": 0.0052004683594761335
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "docker_only",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 18.376127995,
+        "sd": 0.18891091036964383,
+        "halfwidth": 0.0884130275828955,
+        "relative": 0.004811297984371462
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5322.889144061225,
+        "sd": 56.80380402871247,
+        "halfwidth": 26.58499862489131,
+        "relative": 0.004994467836053345
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "docker_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 38.8561789225,
+        "sd": 0.6335195191346368,
+        "halfwidth": 0.29649626170322996,
+        "relative": 0.007630607793283072
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5081.9351515246835,
+        "sd": 64.71786027304724,
+        "halfwidth": 30.288890960457497,
+        "relative": 0.005960109693916542
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "random",
+      "concurrency": 24,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 4.320991281666667,
+        "sd": 0.2853337207320667,
+        "halfwidth": 0.07370951607069169,
+        "relative": 0.017058473684830232
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 5922.034059809934,
+        "sd": 666.8658569178357,
+        "halfwidth": 172.26971796872755,
+        "relative": 0.02908961958490602
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "svm",
+      "policy": "random",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 8.746213896666667,
+        "sd": 0.5617002939713643,
+        "halfwidth": 0.14510257231136148,
+        "relative": 0.016590329715885702
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 5699.187252939287,
+        "sd": 598.9351305975207,
+        "halfwidth": 154.72135056737574,
+        "relative": 0.027147967543544052
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "svm",
+      "policy": "random",
+      "concurrency": 96,
+      "repetitions": 29,
+      "p95_latency_ms": {
+        "n": 29,
+        "mean": 17.943373339655174,
+        "sd": 0.7036829356055689,
+        "halfwidth": 0.26766667362607405,
+        "relative": 0.014917299470915312
+      },
+      "throughput_rps": {
+        "n": 29,
+        "mean": 5494.128682098594,
+        "sd": 353.0602065861741,
+        "halfwidth": 134.29692025333782,
+        "relative": 0.024443715832669643
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "random",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 38.390335925,
+        "sd": 1.4949199147775758,
+        "halfwidth": 0.699644056559944,
+        "relative": 0.0182244838369422
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5168.261332316634,
+        "sd": 200.1460387368267,
+        "halfwidth": 93.67122951671419,
+        "relative": 0.01812432140979349
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "best_static",
+      "concurrency": 24,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 3.8605709000000004,
+        "sd": 0.078146589257834,
+        "halfwidth": 0.020187404636197684,
+        "relative": 0.005229124178550298
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 8437.761686541733,
+        "sd": 1252.3484968127243,
+        "halfwidth": 323.51592169018386,
+        "relative": 0.03834143860761002
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "svm",
+      "policy": "best_static",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 5.3062063975000004,
+        "sd": 0.20459481055493237,
+        "halfwidth": 0.09575331881846258,
+        "relative": 0.01804553227774487
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9252.287086613707,
+        "sd": 45.623946181589986,
+        "halfwidth": 21.352664090711198,
+        "relative": 0.002307825502043103
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "svm",
+      "policy": "best_static",
+      "concurrency": 96,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 10.842607113333333,
+        "sd": 1.3706512377546003,
+        "halfwidth": 0.3540767602839874,
+        "relative": 0.03265605371318613
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 8879.331014813502,
+        "sd": 572.8119149219939,
+        "halfwidth": 147.9730083780504,
+        "relative": 0.01666488253801836
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "svm",
+      "policy": "best_static",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 21.9280325,
+        "sd": 0.2558179326786559,
+        "halfwidth": 0.1197264779141721,
+        "relative": 0.005459973571006523
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8611.763131962602,
+        "sd": 100.13560621013875,
+        "halfwidth": 46.864906301936905,
+        "relative": 0.005441964158070903
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "comet",
+      "concurrency": 24,
+      "repetitions": 28,
+      "p95_latency_ms": {
+        "n": 28,
+        "mean": 3.824532019642857,
+        "sd": 0.034699118628729174,
+        "halfwidth": 0.013454913581569406,
+        "relative": 0.003518054892066469
+      },
+      "throughput_rps": {
+        "n": 28,
+        "mean": 9123.585524115222,
+        "sd": 575.3045316576126,
+        "halfwidth": 223.07980901075507,
+        "relative": 0.024450892516008797
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "comet",
+      "concurrency": 48,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 5.501621630833334,
+        "sd": 0.6642866241862436,
+        "halfwidth": 0.17160343150250978,
+        "relative": 0.031191427367664486
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 9123.193848638932,
+        "sd": 466.3285807575679,
+        "halfwidth": 120.4654463180309,
+        "relative": 0.013204306333576684
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "mlp",
+      "policy": "comet",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 10.51734536,
+        "sd": 0.14250480828779644,
+        "halfwidth": 0.06669430326279749,
+        "relative": 0.006341362861055414
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9018.885021701655,
+        "sd": 79.56030409681954,
+        "halfwidth": 37.23536849646129,
+        "relative": 0.004128599977365698
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "comet",
+      "concurrency": 192,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 22.627155935833333,
+        "sd": 2.8329299983199645,
+        "halfwidth": 0.7318234196174447,
+        "relative": 0.03234270456670597
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 8470.59735988522,
+        "sd": 726.4021187924652,
+        "halfwidth": 187.64956525834282,
+        "relative": 0.022153049812874772
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "mlp",
+      "policy": "wasmtime_only",
+      "concurrency": 24,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 3.824986935,
+        "sd": 0.029320667364743962,
+        "halfwidth": 0.013722494732546555,
+        "relative": 0.003587592576325115
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9192.377923172651,
+        "sd": 334.23574703202195,
+        "halfwidth": 156.42714475151016,
+        "relative": 0.017017048913663572
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "wasmtime_only",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 5.370145435,
+        "sd": 0.2558940778609446,
+        "halfwidth": 0.11976211495646268,
+        "relative": 0.02230146583664408
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9225.936898062886,
+        "sd": 57.06458005248527,
+        "halfwidth": 26.70704556086588,
+        "relative": 0.0028947786935843225
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "wasmtime_only",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 10.471835930000001,
+        "sd": 0.0719073322833892,
+        "halfwidth": 0.033653667435850326,
+        "relative": 0.003213731351485214
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9038.666622278239,
+        "sd": 72.79501662695603,
+        "halfwidth": 34.06911649699301,
+        "relative": 0.0037692635341832897
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "wasmtime_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 21.9079757125,
+        "sd": 0.16833529812863285,
+        "halfwidth": 0.07878334463319232,
+        "relative": 0.003596103340037986
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8625.272878983495,
+        "sd": 100.56039483785995,
+        "halfwidth": 47.06371349939378,
+        "relative": 0.005456489801507629
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "docker_only",
+      "concurrency": 24,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 4.4971974775,
+        "sd": 0.03832005728979996,
+        "halfwidth": 0.017934338866463045,
+        "relative": 0.003987892227590765
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5668.736979417937,
+        "sd": 42.42330817756704,
+        "halfwidth": 19.854719395093362,
+        "relative": 0.003502494376998249
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "docker_only",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 9.070480375,
+        "sd": 0.07734841498110068,
+        "halfwidth": 0.03620017252490146,
+        "relative": 0.003990987359906112
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5405.677002794182,
+        "sd": 55.59986168906297,
+        "halfwidth": 26.021536265436435,
+        "relative": 0.004813742340133523
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "docker_only",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 18.422811267500002,
+        "sd": 0.2010713530137689,
+        "halfwidth": 0.09410428992878918,
+        "relative": 0.00510803093851372
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5313.149765110787,
+        "sd": 64.11121564963756,
+        "halfwidth": 30.004972537124583,
+        "relative": 0.005647304115941655
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "docker_only",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 38.8985098125,
+        "sd": 0.5804373474802201,
+        "halfwidth": 0.27165304064490786,
+        "relative": 0.006983636184376718
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5063.501602496273,
+        "sd": 72.29924809215503,
+        "halfwidth": 33.837089680456444,
+        "relative": 0.0066825474418285916
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "random",
+      "concurrency": 24,
+      "repetitions": 44,
+      "p95_latency_ms": {
+        "n": 44,
+        "mean": 4.331307763636364,
+        "sd": 0.1782395706412121,
+        "halfwidth": 0.05418978244857945,
+        "relative": 0.012511182627919342
+      },
+      "throughput_rps": {
+        "n": 44,
+        "mean": 5925.884424525701,
+        "sd": 484.19607216813324,
+        "halfwidth": 147.20906092208136,
+        "relative": 0.024841703006022387
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "random",
+      "concurrency": 48,
+      "repetitions": 49,
+      "p95_latency_ms": {
+        "n": 49,
+        "mean": 8.73890133367347,
+        "sd": 0.39926927501101567,
+        "halfwidth": 0.11468352599836804,
+        "relative": 0.013123334572557746
+      },
+      "throughput_rps": {
+        "n": 49,
+        "mean": 5668.493174254987,
+        "sd": 486.95742960118594,
+        "halfwidth": 139.87050477707135,
+        "relative": 0.024675076863871253
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "random",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 18.0642742375,
+        "sd": 0.3244601574223124,
+        "halfwidth": 0.15185202798291722,
+        "relative": 0.008406206968873649
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5418.629511860316,
+        "sd": 171.8035756971716,
+        "halfwidth": 80.40654850073149,
+        "relative": 0.014838908680642835
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "random",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 38.716807717500004,
+        "sd": 0.6195399596045401,
+        "halfwidth": 0.2899536264477398,
+        "relative": 0.007489089197730544
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 5116.227026417551,
+        "sd": 74.41089840229068,
+        "halfwidth": 34.82537244692102,
+        "relative": 0.006806846581885597
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "best_static",
+      "concurrency": 24,
+      "repetitions": 60,
+      "p95_latency_ms": {
+        "n": 60,
+        "mean": 3.863621284166667,
+        "sd": 0.11272633949169253,
+        "halfwidth": 0.029120301347612038,
+        "relative": 0.0075370485888326165
+      },
+      "throughput_rps": {
+        "n": 60,
+        "mean": 8515.090958320507,
+        "sd": 1281.1401707949235,
+        "halfwidth": 330.95359975588235,
+        "relative": 0.03886671338871508
+      },
+      "ci_target_met": false
+    },
+    {
+      "model": "mlp",
+      "policy": "best_static",
+      "concurrency": 48,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 5.26795653,
+        "sd": 0.03902243147932393,
+        "halfwidth": 0.01826306010585778,
+        "relative": 0.003466820578691787
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9256.790066364827,
+        "sd": 44.284347602815544,
+        "halfwidth": 20.72571265702511,
+        "relative": 0.002238974040508209
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "best_static",
+      "concurrency": 96,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 10.46923306,
+        "sd": 0.05205808061803526,
+        "halfwidth": 0.024363931699810097,
+        "relative": 0.0023271935546929257
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 9053.460961435387,
+        "sd": 40.8424239462647,
+        "halfwidth": 19.11484279996179,
+        "relative": 0.0021113298970840445
+      },
+      "ci_target_met": true
+    },
+    {
+      "model": "mlp",
+      "policy": "best_static",
+      "concurrency": 192,
+      "repetitions": 20,
+      "p95_latency_ms": {
+        "n": 20,
+        "mean": 21.8747677675,
+        "sd": 0.16492452651440673,
+        "halfwidth": 0.07718705438072637,
+        "relative": 0.0035285885181101442
+      },
+      "throughput_rps": {
+        "n": 20,
+        "mean": 8654.647911020156,
+        "sd": 63.04517220521462,
+        "halfwidth": 29.506048847265134,
+        "relative": 0.003409272006281668
+      },
+      "ci_target_met": true
+    }
+  ]
+}
