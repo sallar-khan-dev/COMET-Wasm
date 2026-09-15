@@ -1,40 +1,20 @@
-# COMET-Wasm Research Dashboard
+# COMET-Wasm Streamlit Demonstrator
 
-An interactive Streamlit dashboard for the experimental results in
-[sallar-khan-dev/COMET-Wasm](https://github.com/sallar-khan-dev/COMET-Wasm).
+This Streamlit application visualises the finalized COMET-Wasm experiments and executes the repository's real `CometScheduler` against the frozen offline characterisation database.
 
-## What is visualized
-
-- Model correctness and Python/Wasmtime/Docker semantic equivalence
-- Wasmtime vs Docker throughput across concurrency
-- P95 and P99 tail latency
-- Throughput speedup / relative performance
-- Cold-start and cold-to-result latency
-- Multi-tenant PSS memory density at 20, 100 and 200 tenants
-- Per-tenant memory-growth rate
-- Full CSV/JSON result explorer
-- Research-oriented cross-model findings
-
-The app automatically discovers finalized performance comparison CSV files and
-exposes every committed CSV/JSON file under `results/`.
-
-## Local execution
+## Run locally
 
 ```bash
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
 
-## Public deployment (recommended)
+## Streamlit Community Cloud
 
-Use Streamlit Community Cloud:
+Main file path: `streamlit_app.py`
 
-1. Push `streamlit_app.py`, `.streamlit/config.toml`, and the updated `requirements.txt`
-   to the repository.
-2. Sign in to https://share.streamlit.io with GitHub.
-3. Create an app from `sallar-khan-dev/COMET-Wasm`.
-4. Branch: `main`
-5. Main file path: `streamlit_app.py`
-6. Deploy.
+The cloud deployment is a scheduler/profile demonstrator. It does not launch Docker or Wasmtime inference servers. Scheduler decisions are computed from the same frozen profile database and scheduler implementation used by the research evaluation.
 
-Once deployed, changes pushed to GitHub are reflected automatically in the public app.
+## Scientific interpretation
+
+The current implementation uses offline characterisation and fixed runtime profiles. Adaptive online profile refresh is future work. The 756-decision profile-space audit selected Wasmtime 594 times, Docker 0 times, and rejected 162 infeasible cases; the application does not modify weights to manufacture backend diversity.

@@ -8,6 +8,13 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+try:
+    from comet.scheduler.scheduler import CometScheduler
+    SCHEDULER_IMPORT_ERROR = None
+except Exception as exc:
+    CometScheduler = None
+    SCHEDULER_IMPORT_ERROR = str(exc)
+
 ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / "results"
 CORRECTNESS_DIR = RESULTS / "correctness"
@@ -18,6 +25,7 @@ DENSITY_DIR = PROCESSED_DIR / "density"
 EXEC_DIR = PROCESSED_DIR / "execution_time"
 OVERHEAD_DIR = PROCESSED_DIR / "overhead"
 INTERFERENCE_DIR = PROCESSED_DIR / "interference"
+EVAL_DIR = PROCESSED_DIR / "evaluation"
 
 REPO_URL = "https://github.com/sallar-khan-dev/COMET-Wasm"
 
@@ -209,6 +217,11 @@ DENS = publication_table(DENSITY_DIR,"density_uniform_publication_table.csv")
 EXEC = publication_table(EXEC_DIR,"execution_time_publication_table.csv")
 OVERHEAD = publication_table(OVERHEAD_DIR,"overhead_publication_table.csv")
 INTERFERENCE = load_csv(str(INTERFERENCE_DIR/"interference_publication_table.csv")) if (INTERFERENCE_DIR/"interference_publication_table.csv").exists() else pd.DataFrame()
+LIVE = load_csv(str(EVAL_DIR/"live_heldout_canonical.csv")) if (EVAL_DIR/"live_heldout_canonical.csv").exists() else pd.DataFrame()
+POLICY = load_csv(str(EVAL_DIR/"comet_policy_comparison.csv")) if (EVAL_DIR/"comet_policy_comparison.csv").exists() else pd.DataFrame()
+CAPACITY = load_csv(str(EVAL_DIR/"density_capacity_results.csv")) if (EVAL_DIR/"density_capacity_results.csv").exists() else pd.DataFrame()
+RQ3 = load_csv(str(EVAL_DIR/"rq3_scheduler_results.csv")) if (EVAL_DIR/"rq3_scheduler_results.csv").exists() else pd.DataFrame()
+SCHED_OVERHEAD = load_json(str(EVAL_DIR/"scheduler_overhead.json")) if (EVAL_DIR/"scheduler_overhead.json").exists() else {}
 ALL_FILES = all_result_files()
 
 with st.sidebar:
@@ -216,7 +229,7 @@ with st.sidebar:
     st.caption("Research Observatory")
     page = st.radio(
         "Explore",
-        ["Executive Overview","Correctness","Performance","Cold Start","Tenant Density","Execution Time","Serving Overhead","Interference","All Results","Research Findings"],
+        ["Executive Overview","COMET Scheduler Lab","Scheduler Evaluation","Correctness","Performance","Cold Start","Tenant Density","Execution Time","Serving Overhead","Interference","Methodology","All Results","Research Findings"],
         label_visibility="collapsed",
     )
     st.divider()
@@ -252,6 +265,14 @@ if page == "Executive Overview":
             "Execution time":"✓" if (not EXEC.empty and m in set(EXEC["Model"])) else "—",
             "Overhead":"✓" if (not OVERHEAD.empty and m in set(OVERHEAD["Model"])) else "—",
         })
+    st.subheader("Final COMET-Wasm scheduler evidence")
+    q1,q2,q3,q4 = st.columns(4)
+    q1.metric("Held-out live cells", len(LIVE) if not LIVE.empty else "—")
+    q2.metric("Decision-space audit", "756 decisions")
+    q3.metric("Recorded placement agreement", "24/24")
+    q4.metric("Observed selection transitions", "0")
+    st.caption("The 756-point audit produced 594 Wasmtime selections, 0 Docker selections, and 162 rejections. No scheduler weights were retuned to manufacture backend diversity.")
+
     st.subheader("Experiment coverage")
     st.dataframe(pd.DataFrame(coverage),hide_index=True,use_container_width=True)
 
@@ -273,6 +294,237 @@ if page == "Executive Overview":
         wp=pd.to_numeric(iw["Mean P95 Degradation (%)"],errors="coerce").mean()
         dp=pd.to_numeric(idk["Mean P95 Degradation (%)"],errors="coerce").mean()
         st.markdown(f'<div class="finding"><b>Mixed-tenant interference:</b> mean P95 degradation is <b>{wp:.2f}%</b> for Wasmtime versus <b>{dp:.2f}%</b> for Docker.</div>',unsafe_allow_html=True)
+
+elif page == "COMET Scheduler Lab":
+    st.title("COMET-Wasm Scheduler Lab")
+    st.caption("Interactive execution of the repository's real CometScheduler using the frozen offline characterisation database.")
+
+    if CometScheduler is None:
+        st.error(f"Scheduler import failed: {SCHEDULER_IMPORT_ERROR}")
+    else:
+        try:
+            scheduler = CometScheduler()
+            display_to_model = {pretty_model(m): m for m in scheduler.models}
+
+            c1,c2,c3 = st.columns(3)
+            with c1:
+                model_display = st.selectbox("Model", list(display_to_model.keys()))
+                model = display_to_model[model_display]
+            with c2:
+                concurrency = st.select_slider(
+                    "Requested concurrency",
+                    options=[1,2,4,8,16,24,32,48,64,96,128,192,256],
+                    value=32,
+                )
+            with c3:
+                tenants = st.select_slider("Physical tenants", options=[20,100,200], value=20)
+
+            x1,x2,x3 = st.columns(3)
+            with x1:
+                use_memory = st.checkbox("Apply memory budget", value=False)
+                memory_budget = st.number_input("Memory budget (MiB)", min_value=1.0, value=100.0, step=10.0, disabled=not use_memory)
+            with x2:
+                use_sla = st.checkbox("Apply P95 SLA", value=False)
+                sla = st.number_input("P95 SLA (ms)", min_value=0.1, value=4.0, step=0.5, disabled=not use_sla)
+            with x3:
+                st.markdown("#### Profile policy")
+                st.write("Fixed offline profiles")
+                st.caption("Adaptive runtime profile refresh is not part of the current implementation.")
+
+            decision = scheduler.schedule(
+                model=model,
+                concurrency=concurrency,
+                tenants=tenants,
+                memory_budget_mib=memory_budget if use_memory else None,
+                sla_p95_ms=sla if use_sla else None,
+            )
+
+            st.divider()
+            if decision["admitted"]:
+                selected = str(decision["selected_backend"]).title()
+                st.success(f"COMET-Wasm decision: {selected}")
+                a,b,c,d = st.columns(4)
+                a.metric("Selected backend", selected)
+                b.metric("Requested C", decision["requested_concurrency"])
+                c.metric("Profile operating C", decision["operating_concurrency"])
+                d.metric("Selected score", fmt_num(decision.get("selected_score"),4))
+                if not decision["exact_operating_point"]:
+                    st.info(f"Requested concurrency {decision['requested_concurrency']} maps to the nearest measured profile point C={decision['operating_concurrency']}.")
+                if decision.get("placement"):
+                    st.markdown("**Placement plan**")
+                    st.json(decision["placement"])
+            else:
+                st.error("COMET-Wasm decision: REJECT — no feasible backend satisfies the active constraints.")
+
+            rows=[]
+            for candidate in decision["candidates"]:
+                reasons = candidate.get("rejection_reasons") or []
+                rows.append({
+                    "Backend": str(candidate["backend"]).title(),
+                    "Feasible": candidate["feasible"],
+                    "Suitability score": candidate["score"],
+                    "Predicted P95 (ms)": candidate["predicted_p95_ms"],
+                    "P99 at profile point (ms)": candidate["p99_latency_ms"],
+                    "Throughput (req/s)": candidate["throughput_rps"],
+                    "Predicted PSS (MiB)": candidate["predicted_memory_mib"],
+                    "CI target met": candidate["ci_target_met"],
+                    "Reason if infeasible": "; ".join(map(str,reasons)) if reasons else "—",
+                })
+            candidate_df=pd.DataFrame(rows)
+            st.subheader("Candidate comparison")
+            st.dataframe(candidate_df,hide_index=True,use_container_width=True)
+
+            if not candidate_df.empty:
+                z1,z2 = st.columns(2)
+                with z1:
+                    fig=px.bar(candidate_df,x="Backend",y="Suitability score",color="Backend",
+                               color_discrete_map={"Wasmtime":WASM,"Docker":DOCKER},text="Suitability score")
+                    fig.update_layout(**PLOTLY_LAYOUT,title="COMET suitability score")
+                    st.plotly_chart(fig,use_container_width=True)
+                with z2:
+                    metrics=candidate_df[["Backend","Predicted P95 (ms)","P99 at profile point (ms)"]].melt(
+                        "Backend",var_name="Metric",value_name="Latency (ms)")
+                    fig=px.bar(metrics,x="Backend",y="Latency (ms)",color="Metric",barmode="group")
+                    fig.update_layout(**PLOTLY_LAYOUT,title="Tail-latency evidence")
+                    st.plotly_chart(fig,use_container_width=True)
+
+            st.info("A scheduler does not need to alternate backends to be valid. Across the frozen 756-decision profile-space audit, the unchanged policy selected Wasmtime 594 times and rejected 162 infeasible cases; Docker was selected 0 times. This dashboard does not alter weights to create artificial switching.")
+        except Exception as exc:
+            st.exception(exc)
+
+elif page == "Scheduler Evaluation":
+    st.title("Held-Out Scheduler Evaluation")
+    st.caption("Final SRQ3 evidence: COMET-Wasm versus Wasmtime-only, Docker-only, random placement, and pre-frozen best-static placement.")
+
+    if LIVE.empty:
+        st.warning("Final held-out scheduler results were not found.")
+    else:
+        a,b,c,d = st.columns(4)
+        a.metric("Live evaluation cells", len(LIVE))
+        a_ci = int(pd.to_numeric(LIVE["ci_target_met"], errors="coerce").fillna(0).astype(bool).sum())
+        b.metric("CI target met", f"{a_ci}/{len(LIVE)}")
+        c.metric("Models", LIVE["model"].nunique())
+        d.metric("Held-out concurrency levels", LIVE["concurrency"].nunique())
+
+        if not POLICY.empty:
+            baseline_labels = {
+                "wasmtime_only":"Wasmtime-only",
+                "docker_only":"Docker-only",
+                "random":"Random",
+                "best_static":"Best-static",
+            }
+            summary = POLICY.groupby("baseline",as_index=False).agg(
+                p95_improvement=("latency_improvement_pct","mean"),
+                throughput_improvement=("throughput_improvement_pct","mean"),
+            )
+            summary["Baseline"]=summary["baseline"].map(baseline_labels).fillna(summary["baseline"])
+            summary=summary[["Baseline","p95_improvement","throughput_improvement"]]
+            summary.columns=["Baseline","Mean P95 improvement (%)","Mean throughput improvement (%)"]
+
+            st.subheader("COMET versus baseline policies")
+            st.dataframe(summary,hide_index=True,use_container_width=True)
+
+            s1,s2=st.columns(2)
+            with s1:
+                fig=px.bar(summary,x="Baseline",y="Mean P95 improvement (%)",text="Mean P95 improvement (%)")
+                fig.update_layout(**PLOTLY_LAYOUT,title="Mean P95 improvement by COMET")
+                fig.update_traces(texttemplate="%{text:.2f}%")
+                st.plotly_chart(fig,use_container_width=True)
+            with s2:
+                fig=px.bar(summary,x="Baseline",y="Mean throughput improvement (%)",text="Mean throughput improvement (%)")
+                fig.update_layout(**PLOTLY_LAYOUT,title="Mean throughput improvement by COMET")
+                fig.update_traces(texttemplate="%{text:.2f}%")
+                st.plotly_chart(fig,use_container_width=True)
+
+        st.subheader("Held-out policy curves")
+        selected_model = st.selectbox("Model", sorted(LIVE["model"].unique()), format_func=pretty_model)
+        tmp=LIVE[LIVE["model"]==selected_model].copy()
+        tmp["Policy"]=tmp["policy"].replace({
+            "comet":"COMET","wasmtime_only":"Wasmtime-only","docker_only":"Docker-only",
+            "random":"Random","best_static":"Best-static"
+        })
+        p1,p2=st.columns(2)
+        with p1:
+            fig=px.line(tmp,x="concurrency",y="p95_latency_ms",color="Policy",markers=True)
+            fig.update_layout(**PLOTLY_LAYOUT,title=f"{pretty_model(selected_model)}: P95 latency")
+            st.plotly_chart(fig,use_container_width=True)
+        with p2:
+            fig=px.line(tmp,x="concurrency",y="throughput_rps",color="Policy",markers=True)
+            fig.update_layout(**PLOTLY_LAYOUT,title=f"{pretty_model(selected_model)}: successful throughput")
+            st.plotly_chart(fig,use_container_width=True)
+
+        st.subheader("Placement accuracy and decision-space audit")
+        x1,x2,x3,x4 = st.columns(4)
+        x1.metric("Recorded COMET scenarios","24/28")
+        x2.metric("Lower-P95 agreement","24/24")
+        x3.metric("Higher-throughput agreement","24/24")
+        x4.metric("Backend transitions","0")
+        st.caption("Four legacy Logistic Regression COMET cells predate backend-provenance recording and are not reconstructed.")
+
+        st.markdown("#### Fixed-budget tenant capacity")
+        if not CAPACITY.empty:
+            cap200=CAPACITY[CAPACITY["tenants"]==200].copy()
+            fig=px.bar(cap200,x="model",y="predicted_memory_mib",color="backend",barmode="group",
+                       color_discrete_map={"wasmtime":WASM,"docker":DOCKER})
+            fig.add_hline(y=100,line_dash="dash",annotation_text="100 MiB budget")
+            fig.update_layout(**PLOTLY_LAYOUT,title="PSS at the maximum tested density (200 tenants)",
+                              xaxis_title="",yaxis_title="PSS (MiB)")
+            st.plotly_chart(fig,use_container_width=True)
+            st.caption("Wasmtime remains feasible at the maximum experimentally evaluated density of 200 tenants for all seven workloads; Docker is feasible only at the lowest tested density of 20 tenants. No capacity beyond 200 tenants is extrapolated.")
+
+        st.markdown("#### Scheduler overhead")
+        rows=SCHED_OVERHEAD.get("rows",[]) if isinstance(SCHED_OVERHEAD,dict) else []
+        if rows:
+            planning=[r.get("planning_ns",{}).get("mean") for r in rows]
+            dispatch=[r.get("dispatch_ns",{}).get("mean") for r in rows]
+            planning=[x for x in planning if isinstance(x,(int,float))]
+            dispatch=[x for x in dispatch if isinstance(x,(int,float))]
+            o1,o2=st.columns(2)
+            o1.metric("Mean full planning",fmt_num(sum(planning)/len(planning)/1000 if planning else None,3," μs"))
+            o2.metric("Mean post-planning dispatch",fmt_num(sum(dispatch)/len(dispatch)/1000 if dispatch else None,3," μs"))
+            st.caption("Planning includes profile lookup, feasibility filtering, scoring, and placement construction; dispatch is reported separately.")
+
+elif page == "Methodology":
+    st.title("Methodology & Reproducibility")
+    st.markdown("""
+### COMET-Wasm execution pipeline
+
+**Offline preparation**
+
+`Model → compatibility/correctness validation → controlled characterisation → fixed model–backend profile database`
+
+**Runtime decision**
+
+`Request context → profile lookup → nearest measured operating point → feasibility filter → suitability score → admission → backend selection → density-aware placement`
+
+The current implementation deliberately uses **fixed offline profiles**. Runtime observations do **not** update the characterisation database. Adaptive online profile refresh is future work.
+""")
+    st.subheader("Profile dimensions")
+    st.latex(r"P(m)=\\langle C_m,M_m,L_m,T_m,S_m,D_m,K_m\\rangle")
+    st.write("Compute intensity, memory intensity, latency sensitivity, tenant pressure, model size, density sensitivity, and cold-start sensitivity.")
+
+    st.subheader("Frozen scheduler policy")
+    st.write("Default weights are fixed policy defaults and were not optimized to manufacture backend diversity.")
+    if CometScheduler is not None:
+        try:
+            sched=CometScheduler()
+            wdf=pd.DataFrame([{"Dimension":k,"Weight":v} for k,v in sched.weights.items()])
+            st.dataframe(wdf,hide_index=True,use_container_width=True)
+        except Exception:
+            pass
+
+    st.subheader("Evaluation protocol")
+    st.markdown("""
+- Seven heterogeneous ML workloads.
+- Live held-out scheduler evaluation at concurrency **24, 48, 96, and 192**.
+- Five policies: **COMET, Wasmtime-only, Docker-only, random, and best-static**.
+- Best-static is frozen from offline measurements before held-out evaluation; it is **not an oracle**.
+- Adaptive repetitions use a 95% CI and 2.5% relative precision target with a 60-repetition cap.
+- Profile replay validates constraint/admission logic and is not presented as independent live-performance evidence.
+- The 756-decision audit is a fixed-profile decision-space diagnostic, not a new live campaign.
+""")
+    st.subheader("Interpretation boundary")
+    st.info("The present workload/hardware envelope does not contain a measured operating region where Docker wins the aggregate COMET score. This is reported transparently rather than changing the scheduler weights. Docker still retains an isolated native-kernel execution-time advantage in the measured execution-time study.")
 
 elif page == "Correctness":
     st.title("Correctness & Semantic Equivalence")
@@ -457,6 +709,9 @@ elif page == "All Results":
 
 elif page == "Research Findings":
     st.title("Research Findings")
+    st.markdown('<div class="finding"><b>Scheduler evaluation:</b> COMET improves mean P95 latency by <b>34.52%</b> versus Docker-only and <b>32.66%</b> versus random placement; successful throughput improves by <b>66.45%</b> and <b>60.86%</b>, respectively.</div>',unsafe_allow_html=True)
+    st.markdown('<div class="finding"><b>Placement:</b> in all <b>24/24</b> held-out scenarios with recorded backend provenance, COMET selects the empirically lower-P95 and higher-throughput backend.</div>',unsafe_allow_html=True)
+    st.markdown('<div class="finding"><b>Decision-space audit:</b> 756 fixed-profile decisions yield <b>594 Wasmtime selections</b>, <b>0 Docker selections</b>, and <b>162 rejections</b>; weights were not retuned to create artificial switching.</div>',unsafe_allow_html=True)
 
     if not CORR.empty:
         st.markdown(f'<div class="finding"><b>Correctness:</b> {int(CORR["Equivalent"].sum())}/{len(CORR)} canonical workloads preserve cross-backend equivalence.</div>',unsafe_allow_html=True)
