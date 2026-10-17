@@ -1,0 +1,10 @@
+{
+  "0": {
+    "backend": "wasmtime",
+    "url": "http://127.0.0.1:8100/infer"
+  },
+  "1": {
+    "backend": "docker",
+    "url": "http://172.30.0.2:8080/infer"
+  }
+}
