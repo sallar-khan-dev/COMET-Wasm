@@ -1,0 +1,16 @@
+{
+  "0": {
+    "backend": "wasmtime",
+    "model": "lr"
+  },
+  "1": {
+    "backend": "docker",
+    "model": "lr",
+    "url": "http://127.0.0.1:8085/infer"
+  },
+  "2": {
+    "backend": "native",
+    "model": "lr",
+    "url": "http://127.0.0.1:8086/infer"
+  }
+}
