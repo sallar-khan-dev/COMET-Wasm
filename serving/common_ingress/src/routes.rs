@@ -22,11 +22,11 @@ pub struct TenantRoute {
 pub type RouteTable = HashMap<String, TenantRoute>;
 
 pub fn load_routes(path: impl AsRef<Path>) -> Result<RouteTable> {
-    let contents = fs::read_to_string(path.as_ref())
-        .context("Failed to read tenant routing configuration")?;
+    let contents =
+        fs::read_to_string(path.as_ref()).context("Failed to read tenant routing configuration")?;
 
-    let routes: RouteTable = serde_json::from_str(&contents)
-        .context("Invalid routing configuration JSON")?;
+    let routes: RouteTable =
+        serde_json::from_str(&contents).context("Invalid routing configuration JSON")?;
 
     if routes.is_empty() {
         bail!("Routing configuration cannot be empty");
@@ -47,24 +47,16 @@ pub fn load_routes(path: impl AsRef<Path>) -> Result<RouteTable> {
         match route.backend {
             Backend::Wasmtime => {
                 if route.url.is_some() {
-                    bail!(
-                        "Embedded Wasmtime must not use an HTTP URL (tenant {tenant})"
-                    );
+                    bail!("Embedded Wasmtime must not use an HTTP URL (tenant {tenant})");
                 }
             }
             Backend::Docker | Backend::Native => {
                 let url = route.url.as_deref().ok_or_else(|| {
-                    anyhow::anyhow!(
-                        "Missing external backend URL for tenant {tenant}"
-                    )
+                    anyhow::anyhow!("Missing external backend URL for tenant {tenant}")
                 })?;
 
-                if !url.starts_with("http://127.0.0.1:")
-                    && !url.starts_with("http://localhost:")
-                {
-                    bail!(
-                        "External backend must use a loopback HTTP URL (tenant {tenant})"
-                    );
+                if !url.starts_with("http://127.0.0.1:") && !url.starts_with("http://localhost:") {
+                    bail!("External backend must use a loopback HTTP URL (tenant {tenant})");
                 }
             }
         }
@@ -108,9 +100,7 @@ mod tests {
 
     #[test]
     fn rejects_unknown_backend() {
-        let result = write_and_load(
-            r#"{"0":{"backend":"unknown","model":"lr"}}"#,
-        );
+        let result = write_and_load(r#"{"0":{"backend":"unknown","model":"lr"}}"#);
         assert!(result.is_err());
     }
 
@@ -132,17 +122,13 @@ mod tests {
 
     #[test]
     fn rejects_missing_external_url() {
-        let result = write_and_load(
-            r#"{"0":{"backend":"docker","model":"lr"}}"#,
-        );
+        let result = write_and_load(r#"{"0":{"backend":"docker","model":"lr"}}"#);
         assert!(result.is_err());
     }
 
     #[test]
     fn rejects_unknown_model() {
-        let result = write_and_load(
-            r#"{"0":{"backend":"wasmtime","model":"unknown"}}"#,
-        );
+        let result = write_and_load(r#"{"0":{"backend":"wasmtime","model":"unknown"}}"#);
         assert!(result.is_err());
     }
 

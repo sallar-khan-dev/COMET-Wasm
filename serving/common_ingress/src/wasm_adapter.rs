@@ -25,11 +25,7 @@ impl WasmAdapter {
         let engine = Engine::default();
 
         let module = Module::from_file(&engine, wasm_path)
-            .map_err(|e| anyhow::anyhow!(
-                "Cannot load Wasm module {}: {}",
-                wasm_path,
-                e
-            ))?;
+            .map_err(|e| anyhow::anyhow!("Cannot load Wasm module {}: {}", wasm_path, e))?;
 
         let pool = WasmWorkerPool::new(&engine, &module, worker_count)?;
 
@@ -42,11 +38,7 @@ impl WasmAdapter {
         self.pool.len()
     }
 
-    pub async fn infer(
-        &self,
-        tenant_id: u64,
-        features: Vec<f32>,
-    ) -> Result<WasmInferenceResult> {
+    pub async fn infer(&self, tenant_id: u64, features: Vec<f32>) -> Result<WasmInferenceResult> {
         let pool = Arc::clone(&self.pool);
 
         tokio::task::spawn_blocking(move || {
@@ -62,8 +54,7 @@ impl WasmAdapter {
                 .lock()
                 .map_err(|_| anyhow::anyhow!("Wasmtime worker lock poisoned"))?;
 
-            let (prediction, execution_time_ns) =
-                worker.infer_timed(&features)?;
+            let (prediction, execution_time_ns) = worker.infer_timed(&features)?;
 
             Ok(WasmInferenceResult {
                 worker_id,
@@ -95,15 +86,11 @@ mod tests {
             "wasm32-unknown-unknown/release/tenant_lr_real.wasm"
         );
 
-        let adapter = WasmAdapter::new(path, 2)
-            .expect("LR Wasm module should load");
+        let adapter = WasmAdapter::new(path, 2).expect("LR Wasm module should load");
 
         assert_eq!(adapter.worker_count(), 2);
 
-        let samples = [
-            ([5.1, 3.5, 1.4, 0.2], 0),
-            ([6.7, 3.0, 5.2, 2.3], 1),
-        ];
+        let samples = [([5.1, 3.5, 1.4, 0.2], 0), ([6.7, 3.0, 5.2, 2.3], 1)];
 
         for (i, (features, expected)) in samples.into_iter().enumerate() {
             let result = adapter

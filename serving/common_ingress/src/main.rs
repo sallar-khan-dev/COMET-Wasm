@@ -10,14 +10,14 @@ use axum::{
 };
 use docker_adapter::DockerAdapter;
 use routes::{load_routes, Backend, RouteTable};
-use wasm_adapter::WasmAdapter;
 use serde::{Deserialize, Serialize};
 use std::{net::SocketAddr, sync::Arc, time::Instant};
+use wasm_adapter::WasmAdapter;
 
 #[derive(Clone)]
 struct AppState {
     routes: Arc<RouteTable>,
-    wasm_lr: Option<WasmAdapter>,
+    wasm_models: Arc<std::collections::HashMap<String, WasmAdapter>>,
     docker: DockerAdapter,
 }
 
@@ -106,26 +106,31 @@ async fn infer(
     }
 
     if matches!(route.backend, Backend::Docker | Backend::Native) {
-        let url = route.url.as_deref().ok_or_else(|| (
-            StatusCode::INTERNAL_SERVER_ERROR,
-            Json(ErrorResponse {
-                error: "external_route_missing_url",
-                request_id: Some(request.request_id.clone()),
-                tenant_id,
-            }),
-        ))?;
-
-        let result = state.docker
-            .infer(url, &request.features)
-            .await
-            .map_err(|_| (
-                StatusCode::BAD_GATEWAY,
+        let url = route.url.as_deref().ok_or_else(|| {
+            (
+                StatusCode::INTERNAL_SERVER_ERROR,
                 Json(ErrorResponse {
-                    error: "external_inference_failed",
+                    error: "external_route_missing_url",
                     request_id: Some(request.request_id.clone()),
                     tenant_id,
                 }),
-            ))?;
+            )
+        })?;
+
+        let result = state
+            .docker
+            .infer(url, &request.features)
+            .await
+            .map_err(|_| {
+                (
+                    StatusCode::BAD_GATEWAY,
+                    Json(ErrorResponse {
+                        error: "external_inference_failed",
+                        request_id: Some(request.request_id.clone()),
+                        tenant_id,
+                    }),
+                )
+            })?;
 
         return Ok(Json(InferenceResponse {
             request_id: request.request_id,
@@ -145,7 +150,7 @@ async fn infer(
         }));
     }
 
-    if route.backend != Backend::Wasmtime || route.model != "lr" {
+    if route.backend != Backend::Wasmtime {
         return Err((
             StatusCode::NOT_IMPLEMENTED,
             Json(ErrorResponse {
@@ -156,26 +161,30 @@ async fn infer(
         ));
     }
 
-    let adapter = state.wasm_lr.as_ref().ok_or_else(|| (
-        StatusCode::SERVICE_UNAVAILABLE,
-        Json(ErrorResponse {
-            error: "wasmtime_adapter_unavailable",
-            request_id: Some(request.request_id.clone()),
-            tenant_id,
-        }),
-    ))?;
+    let adapter = state.wasm_models.get(&route.model).ok_or_else(|| {
+        (
+            StatusCode::SERVICE_UNAVAILABLE,
+            Json(ErrorResponse {
+                error: "wasmtime_adapter_unavailable",
+                request_id: Some(request.request_id.clone()),
+                tenant_id,
+            }),
+        )
+    })?;
 
     let result = adapter
         .infer(request.tenant_id, request.features)
         .await
-        .map_err(|_| (
-            StatusCode::UNPROCESSABLE_ENTITY,
-            Json(ErrorResponse {
-                error: "wasmtime_inference_failed",
-                request_id: Some(request.request_id.clone()),
-                tenant_id,
-            }),
-        ))?;
+        .map_err(|_| {
+            (
+                StatusCode::UNPROCESSABLE_ENTITY,
+                Json(ErrorResponse {
+                    error: "wasmtime_inference_failed",
+                    request_id: Some(request.request_id.clone()),
+                    tenant_id,
+                }),
+            )
+        })?;
 
     Ok(Json(InferenceResponse {
         request_id: request.request_id,
@@ -191,13 +200,26 @@ async fn infer(
     }))
 }
 
-#[tokio::main]
-async fn main() -> anyhow::Result<()> {
+fn main() -> anyhow::Result<()> {
+    let workers: usize = std::env::var("COMET_INGRESS_WORKERS")
+        .unwrap_or_else(|_| "2".to_string())
+        .parse()?;
+    anyhow::ensure!(
+        workers > 0 && workers <= 32,
+        "COMET_INGRESS_WORKERS must be 1..32"
+    );
+    println!("Ingress Tokio workers: {workers}");
+    tokio::runtime::Builder::new_multi_thread()
+        .worker_threads(workers)
+        .enable_all()
+        .build()?
+        .block_on(serve())
+}
+
+async fn serve() -> anyhow::Result<()> {
     let routes_path = std::env::args()
         .nth(1)
-        .unwrap_or_else(|| {
-            "research_enhancement/routes.example.json".to_string()
-        });
+        .unwrap_or_else(|| "research_enhancement/routes.example.json".to_string());
 
     let routes = load_routes(&routes_path)?;
 
@@ -207,26 +229,23 @@ async fn main() -> anyhow::Result<()> {
         routes_path
     );
 
-    let wasm_lr = if routes.values().any(|route| {
-        route.backend == Backend::Wasmtime && route.model == "lr"
-    }) {
-        let path = std::env::var("COMET_LR_WASM_PATH")
-            .map_err(|_| anyhow::anyhow!(
-                "COMET_LR_WASM_PATH is required for LR Wasmtime routes"
-            ))?;
-
-        let workers: usize = std::env::var("COMET_WASM_WORKERS")
-            .unwrap_or_else(|_| "2".to_string())
-            .parse()?;
-
-        Some(WasmAdapter::new(&path, workers)?)
-    } else {
-        None
-    };
-
+    let mut wasm_models = std::collections::HashMap::new();
+    let workers: usize = std::env::var("COMET_WASM_WORKERS")
+        .unwrap_or_else(|_| "2".to_string()).parse()?;
+    for route in routes.values() {
+        if route.backend != Backend::Wasmtime || wasm_models.contains_key(&route.model) {
+            continue;
+        }
+        let env_key = format!("COMET_{}_WASM_PATH", route.model.to_ascii_uppercase());
+        let path = std::env::var(&env_key).map_err(|_| {
+            anyhow::anyhow!("{} is required for Wasmtime model {}", env_key, route.model)
+        })?;
+        let adapter = WasmAdapter::new(&path, workers)?;
+        wasm_models.insert(route.model.clone(), adapter);
+    }
     let state = AppState {
         routes: Arc::new(routes),
-        wasm_lr,
+        wasm_models: Arc::new(wasm_models),
         docker: DockerAdapter::new(),
     };
 
@@ -266,7 +285,7 @@ mod tests {
 
         AppState {
             routes: Arc::new(routes),
-            wasm_lr: None,
+            wasm_models: Arc::new(std::collections::HashMap::new()),
             docker: DockerAdapter::new(),
         }
     }

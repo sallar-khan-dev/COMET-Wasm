@@ -1,0 +1,101 @@
+use anyhow::Result;
+use tokio::time::{sleep_until, Instant};
+
+use crate::request_record::RequestRecord;
+use crate::schedule::scheduled_offset;
+
+pub async fn dispatch_dry_run(
+    requests: &[crate::TraceRequest],
+    offered_rps: f64,
+) -> Result<Vec<RequestRecord>> {
+    // Validate the rate even when the schedule is empty.
+    scheduled_offset(0, offered_rps)?;
+
+    let start = Instant::now();
+    let mut handles = Vec::with_capacity(requests.len());
+
+    for request in requests {
+        let sequence = request.sequence;
+        let request_id = request.request_id.clone();
+        let tenant_slot = request.tenant_slot;
+        let model = request.model.clone();
+        let expected_prediction = request.expected_prediction;
+
+        let offset = scheduled_offset(sequence, offered_rps)?;
+        let scheduled_ns = offset.as_nanos();
+
+        handles.push(tokio::spawn(async move {
+            sleep_until(start + offset).await;
+
+            let dispatch_ns = start.elapsed().as_nanos();
+
+            let mut record = RequestRecord::new(
+                sequence,
+                request_id,
+                tenant_slot,
+                model,
+                expected_prediction,
+                scheduled_ns,
+            );
+
+            record.record_dispatch(dispatch_ns);
+
+            // No HTTP operation is performed in this dry run.
+            record.record_completion(start.elapsed().as_nanos());
+
+            record
+        }));
+    }
+
+    let mut records = Vec::with_capacity(requests.len());
+
+    for handle in handles {
+        records.push(handle.await?);
+    }
+
+    records.sort_by_key(|record| record.sequence);
+
+    Ok(records)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[tokio::test]
+    async fn concurrent_dry_run_preserves_all_requests() {
+        let requests: Vec<crate::TraceRequest> = (0..12)
+            .map(|sequence| crate::TraceRequest {
+                request_id: format!("v2-{sequence:08}"),
+                sequence,
+                tenant_slot: sequence % 3,
+                model: "lr".to_string(),
+                source_row_index: sequence,
+                features: vec![1.0, 2.0, 3.0, 4.0],
+                expected_prediction: (sequence % 2) as i64,
+                ground_truth_label: (sequence % 2) as i64,
+            })
+            .collect();
+
+        let records = dispatch_dry_run(&requests, 100.0).await.unwrap();
+
+        assert_eq!(records.len(), 12);
+
+        for (sequence, record) in records.iter().enumerate() {
+            assert_eq!(record.sequence, sequence);
+            assert_eq!(record.request_id, format!("v2-{sequence:08}"));
+            assert_eq!(record.tenant_slot, sequence % 3);
+            assert_eq!(record.model, "lr");
+            assert_eq!(record.expected_prediction, (sequence % 2) as i64);
+            assert!(record.dispatch_ns.is_some());
+            assert!(record.completion_ns.is_some());
+            assert!(record.latency_from_schedule_ns.is_some());
+            assert!(!record.success);
+        }
+    }
+
+    #[tokio::test]
+    async fn rejects_invalid_rate() {
+        assert!(dispatch_dry_run(&[], 0.0).await.is_err());
+    }
+}

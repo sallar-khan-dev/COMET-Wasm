@@ -44,8 +44,9 @@ def generate(golden, count, seed, tenants):
             for x in features
         ):
             raise ValueError("Invalid feature vector")
-        if record["expected_prediction"] not in (0, 1):
-            raise ValueError("Invalid LR expected prediction")
+        prediction = record["expected_prediction"]
+        if isinstance(prediction, bool) or not isinstance(prediction, int) or not (-2**31 <= prediction < 2**31):
+            raise ValueError("Golden prediction must be an i32 integer")
 
     rng = random.Random(seed)
     indices = list(range(len(records)))

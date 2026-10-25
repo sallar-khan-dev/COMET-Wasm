@@ -1,0 +1,198 @@
+use anyhow::{Context, Result};
+use bytes::Bytes;
+use http_body_util::{BodyExt, Full};
+use hyper::{Method, Request, StatusCode, Uri};
+use hyper_util::client::legacy::connect::HttpConnector;
+use hyper_util::client::legacy::Client;
+use hyper_util::rt::TokioExecutor;
+use std::time::Duration;
+
+type RequestBody = Full<Bytes>;
+
+#[derive(Clone)]
+pub struct HttpClient {
+    client: Client<HttpConnector, RequestBody>,
+    timeout: Duration,
+}
+
+pub struct HttpResult {
+    pub status: StatusCode,
+    pub body: Vec<u8>,
+}
+
+impl HttpClient {
+    pub fn new(timeout: Duration) -> Result<Self> {
+        if timeout.is_zero() {
+            anyhow::bail!("HTTP timeout must be positive");
+        }
+
+        let mut connector = HttpConnector::new();
+        connector.enforce_http(true);
+
+        let client = Client::builder(TokioExecutor::new())
+            .pool_idle_timeout(Duration::from_secs(30))
+            .build(connector);
+
+        Ok(Self { client, timeout })
+    }
+
+    pub async fn get_noop(&self, uri: Uri) -> Result<HttpResult> {
+        let request = Request::builder()
+            .method(Method::GET)
+            .uri(uri)
+            .body(Full::new(Bytes::new()))
+            .context("Failed to construct no-op HTTP request")?;
+
+        let operation = async {
+            let response = self
+                .client
+                .request(request)
+                .await
+                .context("No-op HTTP request failed")?;
+
+            let status = response.status();
+            let body = response
+                .into_body()
+                .collect()
+                .await
+                .context("Failed to read no-op HTTP response body")?
+                .to_bytes()
+                .to_vec();
+
+            Ok(HttpResult { status, body })
+        };
+
+        tokio::time::timeout(self.timeout, operation)
+            .await
+            .context("HTTP request timed out")?
+    }
+
+    pub async fn post_json(&self, uri: Uri, payload: Vec<u8>) -> Result<HttpResult> {
+        let request = Request::builder()
+            .method(Method::POST)
+            .uri(uri)
+            .header("content-type", "application/json")
+            .body(Full::new(Bytes::from(payload)))
+            .context("Failed to construct HTTP request")?;
+
+        let operation = async {
+            let response = self
+                .client
+                .request(request)
+                .await
+                .context("HTTP request failed")?;
+
+            let status = response.status();
+
+            let body = response
+                .into_body()
+                .collect()
+                .await
+                .context("Failed to read HTTP response body")?
+                .to_bytes()
+                .to_vec();
+
+            Ok(HttpResult { status, body })
+        };
+
+        tokio::time::timeout(self.timeout, operation)
+            .await
+            .context("HTTP request timed out")?
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn rejects_zero_timeout() {
+        assert!(HttpClient::new(Duration::ZERO).is_err());
+    }
+
+    #[tokio::test]
+    async fn posts_json_to_loopback_server() {
+        use tokio::io::{AsyncReadExt, AsyncWriteExt};
+        use tokio::net::TcpListener;
+
+        let listener = TcpListener::bind("127.0.0.1:0").await.unwrap();
+
+        let address = listener.local_addr().unwrap();
+
+        let server = tokio::spawn(async move {
+            let (mut stream, _) = listener.accept().await.unwrap();
+            let mut buffer = vec![0u8; 4096];
+
+            let n = stream.read(&mut buffer).await.unwrap();
+            let request = String::from_utf8_lossy(&buffer[..n]);
+
+            assert!(request.starts_with("POST /infer HTTP/1.1"));
+
+            let response = concat!(
+                "HTTP/1.1 200 OK\r\n",
+                "Content-Type: application/json\r\n",
+                "Content-Length: 11\r\n",
+                "Connection: close\r\n",
+                "\r\n",
+                "{\"ok\":true}"
+            );
+
+            stream.write_all(response.as_bytes()).await.unwrap();
+        });
+
+        let client = HttpClient::new(Duration::from_secs(3)).unwrap();
+
+        let uri: Uri = format!("http://{address}/infer").parse().unwrap();
+
+        let result = client
+            .post_json(uri, br#"{"test":true}"#.to_vec())
+            .await
+            .unwrap();
+
+        assert_eq!(result.status, StatusCode::OK);
+        assert_eq!(result.body, br#"{"ok":true}"#);
+
+        server.await.unwrap();
+    }
+
+    #[tokio::test]
+    async fn gets_noop_and_accepts_empty_204_response() {
+        use tokio::io::{AsyncReadExt, AsyncWriteExt};
+        use tokio::net::TcpListener;
+
+        let listener = TcpListener::bind("127.0.0.1:0").await.unwrap();
+        let address = listener.local_addr().unwrap();
+
+        let server = tokio::spawn(async move {
+            let (mut stream, _) = listener.accept().await.unwrap();
+            let mut buffer = [0u8; 4096];
+
+            let n = stream.read(&mut buffer).await.unwrap();
+            let request = String::from_utf8_lossy(&buffer[..n]);
+
+            assert!(request.starts_with("GET /noop HTTP/1.1"));
+
+            stream
+                .write_all(
+                    b"HTTP/1.1 204 No Content\r\nContent-Length: 0\r\nConnection: close\r\n\r\n",
+                )
+                .await
+                .unwrap();
+        });
+
+        let client = HttpClient::new(Duration::from_secs(3)).unwrap();
+        let uri: Uri = format!("http://{address}/noop").parse().unwrap();
+
+        let result = client.get_noop(uri).await.unwrap();
+
+        assert_eq!(result.status, StatusCode::NO_CONTENT);
+        assert!(result.body.is_empty());
+
+        server.await.unwrap();
+    }
+
+    #[test]
+    fn accepts_positive_timeout() {
+        assert!(HttpClient::new(Duration::from_secs(5)).is_ok());
+    }
+}

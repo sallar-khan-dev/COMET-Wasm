@@ -1,0 +1,69 @@
+use anyhow::Result;
+use tokio::time::{sleep_until, Instant};
+
+use crate::schedule::scheduled_offset;
+
+#[derive(Debug)]
+pub struct ArrivalRecord {
+    pub sequence: usize,
+    pub scheduled_ns: u128,
+    pub actual_ns: u128,
+    pub delay_ns: u128,
+}
+
+/// Clock-based dry run with no HTTP requests.
+///
+/// Each deadline is derived from a common start time, rather
+/// than from the completion of the preceding operation.
+pub async fn dry_run(count: usize, offered_rps: f64) -> Result<Vec<ArrivalRecord>> {
+    let start = Instant::now();
+    let mut records = Vec::with_capacity(count);
+
+    for sequence in 0..count {
+        let offset = scheduled_offset(sequence, offered_rps)?;
+
+        let deadline = start
+            .checked_add(offset)
+            .ok_or_else(|| anyhow::anyhow!("Arrival deadline overflow"))?;
+
+        sleep_until(deadline).await;
+
+        let actual = start.elapsed();
+        let delay = actual.saturating_sub(offset);
+
+        records.push(ArrivalRecord {
+            sequence,
+            scheduled_ns: offset.as_nanos(),
+            actual_ns: actual.as_nanos(),
+            delay_ns: delay.as_nanos(),
+        });
+    }
+
+    Ok(records)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[tokio::test]
+    async fn empty_schedule_returns_no_records() {
+        let records = dry_run(0, 100.0).await.unwrap();
+        assert!(records.is_empty());
+    }
+
+    #[tokio::test]
+    async fn dry_run_preserves_sequence_and_deadlines() {
+        let records = dry_run(3, 100.0).await.unwrap();
+
+        assert_eq!(records.len(), 3);
+        assert_eq!(records[0].sequence, 0);
+        assert_eq!(records[1].scheduled_ns, 10_000_000);
+        assert_eq!(records[2].scheduled_ns, 20_000_000);
+
+        for record in &records {
+            assert!(record.actual_ns >= record.scheduled_ns);
+            assert_eq!(record.delay_ns, record.actual_ns - record.scheduled_ns);
+        }
+    }
+}
