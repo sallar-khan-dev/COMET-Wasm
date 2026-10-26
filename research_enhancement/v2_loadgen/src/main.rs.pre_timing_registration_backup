@@ -1,0 +1,244 @@
+mod schedule;
+
+use anyhow::{bail, Context, Result};
+use serde::Deserialize;
+use serde_json::Value;
+use sha2::{Digest, Sha256};
+use std::collections::HashSet;
+use std::env;
+use std::fs;
+
+#[derive(Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
+struct Trace {
+    schema_version: String,
+    model: String,
+    dataset: String,
+    seed: i64,
+    request_count: usize,
+    tenant_count: usize,
+    golden_model_sha256: String,
+    golden_dataset_sha256: String,
+    golden_artifact_sha256: String,
+    requests: Vec<TraceRequest>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
+struct TraceRequest {
+    request_id: String,
+    sequence: usize,
+    tenant_slot: usize,
+    model: String,
+    source_row_index: usize,
+    features: Vec<f64>,
+    expected_prediction: i64,
+    ground_truth_label: i64,
+}
+
+fn validate(trace: &Trace) -> Result<()> {
+    if trace.schema_version != "comet-v2-trace-v1" {
+        bail!("Unsupported trace schema");
+    }
+
+    if trace.model != "lr" {
+        bail!("Only LR traces are currently supported");
+    }
+
+    if trace.dataset != "iris_binary" {
+        bail!("Unexpected dataset");
+    }
+
+    if trace.request_count == 0 || trace.request_count != trace.requests.len() {
+        bail!("Invalid request count");
+    }
+
+    if trace.tenant_count == 0 {
+        bail!("Tenant count must be positive");
+    }
+
+    for (name, digest) in [
+        ("model", &trace.golden_model_sha256),
+        ("dataset", &trace.golden_dataset_sha256),
+        ("golden artifact", &trace.golden_artifact_sha256),
+    ] {
+        if digest.len() != 64 || !digest.bytes().all(|b| b.is_ascii_hexdigit()) {
+            bail!("Invalid {name} SHA-256 field");
+        }
+    }
+
+    let mut request_ids = HashSet::new();
+
+    for (index, request) in trace.requests.iter().enumerate() {
+        if request.sequence != index {
+            bail!("Invalid sequence at request {index}");
+        }
+
+        if request.request_id != format!("v2-{index:08}") {
+            bail!("Unexpected request ID at index {index}");
+        }
+
+        if !request_ids.insert(&request.request_id) {
+            bail!("Duplicate request ID");
+        }
+
+        if request.tenant_slot >= trace.tenant_count {
+            bail!("Tenant slot out of range");
+        }
+
+        if request.model != trace.model {
+            bail!("Request model mismatch");
+        }
+
+        if request.features.len() != 4 || !request.features.iter().all(|x| x.is_finite()) {
+            bail!("Invalid LR feature vector");
+        }
+
+        if !matches!(request.expected_prediction, 0 | 1) {
+            bail!("Invalid expected prediction");
+        }
+
+        if !matches!(request.ground_truth_label, 0 | 1) {
+            bail!("Invalid ground-truth label");
+        }
+
+        if request.source_row_index >= 45 {
+            bail!("Source row index out of range");
+        }
+    }
+
+    Ok(())
+}
+
+fn verify_golden(trace: &Trace, golden_path: &str) -> Result<()> {
+    let bytes = fs::read(golden_path)
+        .with_context(|| format!("Cannot read golden reference: {golden_path}"))?;
+
+    let digest = format!("{:x}", Sha256::digest(&bytes));
+
+    if digest != trace.golden_artifact_sha256 {
+        bail!("Golden reference SHA-256 mismatch");
+    }
+
+    let golden: Value = serde_json::from_slice(&bytes).context("Invalid golden reference JSON")?;
+
+    if golden["schema_version"] != "comet-v2-golden-v1"
+        || golden["model"] != trace.model
+        || golden["dataset"] != trace.dataset
+        || golden["model_sha256"] != trace.golden_model_sha256
+        || golden["dataset_sha256"] != trace.golden_dataset_sha256
+    {
+        bail!("Golden reference metadata mismatch");
+    }
+
+    let records = golden["records"]
+        .as_array()
+        .context("Golden reference records missing")?;
+
+    if golden["sample_count"].as_u64() != Some(records.len() as u64) {
+        bail!("Golden reference sample count mismatch");
+    }
+
+    let mut source_rows = std::collections::HashMap::new();
+
+    for record in records {
+        let index = record["row_index"]
+            .as_u64()
+            .context("Invalid golden source row index")?;
+
+        if source_rows.insert(index, record).is_some() {
+            bail!("Duplicate golden source row index");
+        }
+    }
+
+    for request in &trace.requests {
+        let source = source_rows
+            .get(&(request.source_row_index as u64))
+            .context("Trace references unknown source row")?;
+
+        let features: Vec<f64> = serde_json::from_value(source["features"].clone())
+            .context("Invalid golden features")?;
+
+        if features != request.features
+            || source["expected_prediction"].as_i64() != Some(request.expected_prediction)
+            || source["ground_truth_label"].as_i64() != Some(request.ground_truth_label)
+        {
+            bail!(
+                "Golden reference mismatch at request {}",
+                request.request_id
+            );
+        }
+    }
+
+    Ok(())
+}
+
+fn main() -> Result<()> {
+    let args: Vec<String> = env::args().collect();
+
+    if args.len() != 3 {
+        bail!("Usage: comet_v2_loadgen <trace.json> <golden.json>");
+    }
+
+    let data =
+        fs::read_to_string(&args[1]).with_context(|| format!("Cannot read trace: {}", args[1]))?;
+
+    let trace: Trace = serde_json::from_str(&data).context("Invalid trace JSON")?;
+
+    validate(&trace)?;
+    verify_golden(&trace, &args[2])?;
+
+    println!("PASS: COMET-Wasm V2 trace and golden provenance validated");
+    println!("Schema: {}", trace.schema_version);
+    println!("Model: {}", trace.model);
+    println!("Dataset: {}", trace.dataset);
+    println!("Seed: {}", trace.seed);
+    println!("Requests: {}", trace.request_count);
+    println!("Tenants: {}", trace.tenant_count);
+    println!("Mode: validation only; no HTTP requests dispatched");
+
+    println!("DRY-RUN ARRIVAL SCHEDULE (100 offered RPS)");
+    println!("sequence,tenant_slot,scheduled_offset_ms");
+
+    for request in trace.requests.iter().take(5) {
+        let offset = schedule::scheduled_offset(request.sequence, 100.0)?;
+        println!(
+            "{},{},{:.3}",
+            request.sequence,
+            request.tenant_slot,
+            offset.as_secs_f64() * 1000.0
+        );
+    }
+
+    let final_offset = schedule::scheduled_offset(trace.request_count - 1, 100.0)?;
+
+    println!(
+        "Last scheduled arrival: {:.3} ms",
+        final_offset.as_secs_f64() * 1000.0
+    );
+
+    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn rejects_empty_trace() {
+        let trace = Trace {
+            schema_version: "comet-v2-trace-v1".into(),
+            model: "lr".into(),
+            dataset: "iris_binary".into(),
+            seed: 42,
+            request_count: 0,
+            tenant_count: 1,
+            golden_model_sha256: "a".repeat(64),
+            golden_dataset_sha256: "b".repeat(64),
+            golden_artifact_sha256: "c".repeat(64),
+            requests: vec![],
+        };
+
+        assert!(validate(&trace).is_err());
+    }
+}

@@ -1,0 +1,38 @@
+{
+  "milestone": "COMET-Wasm V2 Seven-Model Prediction Parity",
+  "timestamp_utc": "2026-10-26T00:44:47.730081+00:00",
+  "status": "PASS",
+  "models": [
+    "LR",
+    "NB",
+    "DT",
+    "KMEANS",
+    "RF",
+    "SVM",
+    "MLP"
+  ],
+  "backends": [
+    "Wasmtime",
+    "Docker"
+  ],
+  "predictions_matched": 4080,
+  "predictions_total": 4080,
+  "scope": "Prediction parity, not performance benchmarking",
+  "sha256": {
+    "ALL_MODELS_PARITY_SUMMARY.json": "100d6b101e0fa3ba4ce103eadd3fb218709c6d4938c9d2f6d41249a19163930d",
+    "DT_DOCKER_PARITY_REPORT.json": "bfa811c157e3a2035eac21f01c3cd938aaeb692c981f0d24f28fe59becd5962a",
+    "DT_WASMTIME_PARITY_REPORT.json": "78a2ec81b5333e7a9a945b73a364a97c0b2359bf8cb906bc5187ce74e868dd45",
+    "KMEANS_DOCKER_PARITY_REPORT.json": "8fc5a74ecd372b20aa8466cb9a279363614f2db193e12ef784336b5bc65d9491",
+    "KMEANS_WASMTIME_PARITY_REPORT.json": "6efa7e988b032a0cab9e962398e877d58c3868331e4a5057d27e1adc5ff7afc8",
+    "LR_DOCKER_PARITY_REPORT.json": "637d332aeba6e0c67bfefede463cabacd455f138a76109c122c42f041e2da429",
+    "LR_WASMTIME_PARITY_REPORT.json": "297e024ce90102020ded01bde104bcebd7b66dc8288987ca6db4a0df2695192e",
+    "MLP_DOCKER_PARITY_REPORT.json": "37c8c7f00b8c859321df1198f3e6f435acaaa3f2a0a2d0560855cd5b0227c45b",
+    "MLP_WASMTIME_PARITY_REPORT.json": "78a2ec81b5333e7a9a945b73a364a97c0b2359bf8cb906bc5187ce74e868dd45",
+    "NB_DOCKER_PARITY_REPORT.json": "12e31b865c1c55381f17c9702c09d2403333167459557707f1898e08c0325c43",
+    "NB_WASMTIME_PARITY_REPORT.json": "78a2ec81b5333e7a9a945b73a364a97c0b2359bf8cb906bc5187ce74e868dd45",
+    "RF_DOCKER_PARITY_REPORT.json": "ea5d262be39aa628815a71f5e1f007d643483150a5d86cb876357cc5bcbb204e",
+    "RF_WASMTIME_PARITY_REPORT.json": "78a2ec81b5333e7a9a945b73a364a97c0b2359bf8cb906bc5187ce74e868dd45",
+    "SVM_DOCKER_PARITY_REPORT.json": "f2daea4b9519351a8871381327d9fc0b2bc10b51ebf8e49a098b2a3fede6c835",
+    "SVM_WASMTIME_PARITY_REPORT.json": "78a2ec81b5333e7a9a945b73a364a97c0b2359bf8cb906bc5187ce74e868dd45"
+  }
+}

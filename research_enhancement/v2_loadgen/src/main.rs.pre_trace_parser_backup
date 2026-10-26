@@ -1,0 +1,8 @@
+use anyhow::Result;
+
+#[tokio::main]
+async fn main() -> Result<()> {
+    println!("COMET-Wasm V2 load generator");
+    println!("Status: skeleton initialized; no requests dispatched");
+    Ok(())
+}

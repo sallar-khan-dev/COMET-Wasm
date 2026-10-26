@@ -1,0 +1,75 @@
+use anyhow::Result;
+use tokio::time::{sleep_until, Instant};
+
+use crate::request_record::RequestRecord;
+use crate::schedule::scheduled_offset;
+
+pub async fn dispatch_dry_run(count: usize, offered_rps: f64) -> Result<Vec<RequestRecord>> {
+    // Validate the rate even when the schedule is empty.
+    scheduled_offset(0, offered_rps)?;
+
+    let start = Instant::now();
+    let mut handles = Vec::with_capacity(count);
+
+    for sequence in 0..count {
+        let offset = scheduled_offset(sequence, offered_rps)?;
+        let scheduled_ns = offset.as_nanos();
+
+        handles.push(tokio::spawn(async move {
+            sleep_until(start + offset).await;
+
+            let dispatch_ns = start.elapsed().as_nanos();
+
+            let mut record = RequestRecord::new(
+                sequence,
+                format!("v2-{sequence:08}"),
+                sequence % 3,
+                "lr".to_string(),
+                0,
+                scheduled_ns,
+            );
+
+            record.record_dispatch(dispatch_ns);
+
+            // No HTTP operation is performed in this dry run.
+            record.record_completion(start.elapsed().as_nanos());
+
+            record
+        }));
+    }
+
+    let mut records = Vec::with_capacity(count);
+
+    for handle in handles {
+        records.push(handle.await?);
+    }
+
+    records.sort_by_key(|record| record.sequence);
+
+    Ok(records)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[tokio::test]
+    async fn concurrent_dry_run_preserves_all_requests() {
+        let records = dispatch_dry_run(12, 100.0).await.unwrap();
+
+        assert_eq!(records.len(), 12);
+
+        for (sequence, record) in records.iter().enumerate() {
+            assert_eq!(record.sequence, sequence);
+            assert!(record.dispatch_ns.is_some());
+            assert!(record.completion_ns.is_some());
+            assert!(record.latency_from_schedule_ns.is_some());
+            assert!(!record.success);
+        }
+    }
+
+    #[tokio::test]
+    async fn rejects_invalid_rate() {
+        assert!(dispatch_dry_run(1, 0.0).await.is_err());
+    }
+}

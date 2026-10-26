@@ -1,0 +1,36 @@
+[
+  {
+    "path": "research_enhancement/v2_references/lr_iris_golden_v1.json",
+    "model": "lr",
+    "dataset": "iris_binary",
+    "schema_version": "comet-v2-golden-v1",
+    "sample_count": 45,
+    "request_count": null,
+    "first_record_keys": [
+      "row_index",
+      "features",
+      "expected_prediction",
+      "ground_truth_label"
+    ],
+    "first_request_keys": []
+  },
+  {
+    "path": "research_enhancement/v2_workloads/lr_iris_trace_135_seed42_t3.json",
+    "model": "lr",
+    "dataset": "iris_binary",
+    "schema_version": "comet-v2-trace-v1",
+    "sample_count": null,
+    "request_count": 135,
+    "first_record_keys": [],
+    "first_request_keys": [
+      "expected_prediction",
+      "features",
+      "ground_truth_label",
+      "model",
+      "request_id",
+      "sequence",
+      "source_row_index",
+      "tenant_slot"
+    ]
+  }
+]

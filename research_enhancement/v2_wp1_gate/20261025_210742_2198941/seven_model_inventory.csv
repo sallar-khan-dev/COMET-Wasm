@@ -1,0 +1,8 @@
+model,wasm_module,dockerfile,wasm_present,dockerfile_present
+lr,/home/sallar/wasiMultitenant/wasm/tenant_lr_real/target/wasm32-unknown-unknown/release/tenant_lr_real.wasm,/home/sallar/wasiMultitenant/docker/lr_server/Dockerfile,True,True
+nb,/home/sallar/wasiMultitenant/wasm/tenant_nb_real/target/wasm32-unknown-unknown/release/tenant_nb_real.wasm,/home/sallar/wasiMultitenant/docker/nb_server/Dockerfile,True,True
+dt,/home/sallar/wasiMultitenant/wasm/tenant_dt_real/target/wasm32-unknown-unknown/release/tenant_dt_real.wasm,/home/sallar/wasiMultitenant/docker/dt_server/Dockerfile,True,True
+kmeans,/home/sallar/wasiMultitenant/wasm/tenant_kmeans_real/target/wasm32-unknown-unknown/release/tenant_kmeans_real.wasm,/home/sallar/wasiMultitenant/docker/kmeans_server/Dockerfile,True,True
+rf,/home/sallar/wasiMultitenant/wasm/tenant_rf_real/target/wasm32-unknown-unknown/release/tenant_rf_real.wasm,/home/sallar/wasiMultitenant/docker/rf_server/Dockerfile,True,True
+svm,/home/sallar/wasiMultitenant/wasm/tenant_svm_real/target/wasm32-unknown-unknown/release/tenant_svm_real.wasm,/home/sallar/wasiMultitenant/docker/svm_server/Dockerfile,True,True
+mlp,/home/sallar/wasiMultitenant/wasm/tenant_mlp_real/target/wasm32-unknown-unknown/release/tenant_mlp_real.wasm,/home/sallar/wasiMultitenant/docker/mlp_server/Dockerfile,True,True

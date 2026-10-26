@@ -1,0 +1,2263 @@
+{
+  "dataset": "sklearn_iris",
+  "golden_artifact_sha256": "c39c64cdbe5d4aa15c81245c91d232c1bc5d59c7a62e5285f8dcc89ad429882f",
+  "golden_dataset_sha256": "1e06093c0939d433395a30c8896b48025b9502438854921c9dda9bee38e20f07",
+  "golden_model_sha256": "1a03dc302409a4db2f81167f6aafa96cb6d8027e1dc77e631bf60f378b5ee371",
+  "model": "kmeans",
+  "request_count": 150,
+  "requests": [
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.099999904632568,
+        2.9000000953674316,
+        4.699999809265137,
+        1.399999976158142
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000000",
+      "sequence": 0,
+      "source_row_index": 63,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.300000190734863,
+        2.799999952316284,
+        5.099999904632568,
+        1.5
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000001",
+      "sequence": 1,
+      "source_row_index": 133,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        7.199999809265137,
+        3.5999999046325684,
+        6.099999904632568,
+        2.5
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000002",
+      "sequence": 2,
+      "source_row_index": 109,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.099999904632568,
+        2.5999999046325684,
+        5.599999904632568,
+        1.399999976158142
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000003",
+      "sequence": 3,
+      "source_row_index": 134,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.599999904632568,
+        3.0,
+        4.400000095367432,
+        1.399999976158142
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000004",
+      "sequence": 4,
+      "source_row_index": 75,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.900000095367432,
+        3.0,
+        4.199999809265137,
+        1.5
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000005",
+      "sequence": 5,
+      "source_row_index": 61,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        7.400000095367432,
+        2.799999952316284,
+        6.099999904632568,
+        1.899999976158142
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000006",
+      "sequence": 6,
+      "source_row_index": 130,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.099999904632568,
+        3.4000000953674316,
+        1.5,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000007",
+      "sequence": 7,
+      "source_row_index": 39,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.0,
+        3.5,
+        1.2999999523162842,
+        0.30000001192092896
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000008",
+      "sequence": 8,
+      "source_row_index": 40,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.400000095367432,
+        3.0,
+        1.2999999523162842,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000009",
+      "sequence": 9,
+      "source_row_index": 38,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.699999809265137,
+        3.0999999046325684,
+        4.400000095367432,
+        1.399999976158142
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000010",
+      "sequence": 10,
+      "source_row_index": 65,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.0,
+        3.4000000953674316,
+        4.5,
+        1.600000023841858
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000011",
+      "sequence": 11,
+      "source_row_index": 85,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.099999904632568,
+        3.5,
+        1.399999976158142,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000012",
+      "sequence": 12,
+      "source_row_index": 0,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.900000095367432,
+        3.0999999046325684,
+        5.099999904632568,
+        2.299999952316284
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000013",
+      "sequence": 13,
+      "source_row_index": 141,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.699999809265137,
+        3.0,
+        4.199999809265137,
+        1.2000000476837158
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000014",
+      "sequence": 14,
+      "source_row_index": 95,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.199999809265137,
+        4.099999904632568,
+        1.5,
+        0.10000000149011612
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000015",
+      "sequence": 15,
+      "source_row_index": 32,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        7.900000095367432,
+        3.799999952316284,
+        6.400000095367432,
+        2.0
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000016",
+      "sequence": 16,
+      "source_row_index": 131,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.699999809265137,
+        3.799999952316284,
+        1.7000000476837158,
+        0.30000001192092896
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000017",
+      "sequence": 17,
+      "source_row_index": 18,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.0,
+        2.700000047683716,
+        5.099999904632568,
+        1.600000023841858
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000018",
+      "sequence": 18,
+      "source_row_index": 83,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.800000190734863,
+        3.0999999046325684,
+        1.600000023841858,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000019",
+      "sequence": 19,
+      "source_row_index": 30,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.0,
+        2.200000047683716,
+        5.0,
+        1.5
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000020",
+      "sequence": 20,
+      "source_row_index": 119,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.400000095367432,
+        2.799999952316284,
+        5.599999904632568,
+        2.200000047683716
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000021",
+      "sequence": 21,
+      "source_row_index": 132,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.300000190734863,
+        2.5,
+        4.900000095367432,
+        1.5
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000022",
+      "sequence": 22,
+      "source_row_index": 72,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.300000190734863,
+        2.700000047683716,
+        4.900000095367432,
+        1.7999999523162842
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000023",
+      "sequence": 23,
+      "source_row_index": 123,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.400000095367432,
+        2.799999952316284,
+        5.599999904632568,
+        2.0999999046325684
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000024",
+      "sequence": 24,
+      "source_row_index": 128,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.300000190734863,
+        3.4000000953674316,
+        5.599999904632568,
+        2.4000000953674316
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000025",
+      "sequence": 25,
+      "source_row_index": 136,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.599999904632568,
+        3.0999999046325684,
+        1.5,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000026",
+      "sequence": 26,
+      "source_row_index": 3,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.5,
+        2.299999952316284,
+        4.0,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000027",
+      "sequence": 27,
+      "source_row_index": 53,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.099999904632568,
+        3.0,
+        4.900000095367432,
+        1.7999999523162842
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000028",
+      "sequence": 28,
+      "source_row_index": 127,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.800000190734863,
+        2.5999999046325684,
+        4.0,
+        1.2000000476837158
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000029",
+      "sequence": 29,
+      "source_row_index": 92,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.0,
+        2.0,
+        3.5,
+        1.0
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000030",
+      "sequence": 30,
+      "source_row_index": 60,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.800000190734863,
+        2.700000047683716,
+        4.099999904632568,
+        1.0
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000031",
+      "sequence": 31,
+      "source_row_index": 67,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.400000095367432,
+        3.200000047683716,
+        1.2999999523162842,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000032",
+      "sequence": 32,
+      "source_row_index": 42,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.300000190734863,
+        2.5,
+        5.0,
+        1.899999976158142
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000033",
+      "sequence": 33,
+      "source_row_index": 146,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.400000095367432,
+        3.0999999046325684,
+        5.5,
+        1.7999999523162842
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000034",
+      "sequence": 34,
+      "source_row_index": 137,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.5,
+        3.200000047683716,
+        5.099999904632568,
+        2.0
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000035",
+      "sequence": 35,
+      "source_row_index": 110,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        7.699999809265137,
+        2.5999999046325684,
+        6.900000095367432,
+        2.299999952316284
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000036",
+      "sequence": 36,
+      "source_row_index": 118,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.699999809265137,
+        3.0999999046325684,
+        4.699999809265137,
+        1.5
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000037",
+      "sequence": 37,
+      "source_row_index": 86,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.5,
+        3.0,
+        5.5,
+        1.7999999523162842
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000038",
+      "sequence": 38,
+      "source_row_index": 116,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.599999904632568,
+        3.0,
+        4.5,
+        1.5
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000039",
+      "sequence": 39,
+      "source_row_index": 66,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.5,
+        2.4000000953674316,
+        3.700000047683716,
+        1.0
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000040",
+      "sequence": 40,
+      "source_row_index": 81,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.800000190734863,
+        2.700000047683716,
+        5.099999904632568,
+        1.899999976158142
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000041",
+      "sequence": 41,
+      "source_row_index": 101,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.099999904632568,
+        3.0,
+        4.599999904632568,
+        1.399999976158142
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000042",
+      "sequence": 42,
+      "source_row_index": 91,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.400000095367432,
+        3.9000000953674316,
+        1.2999999523162842,
+        0.4000000059604645
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000043",
+      "sequence": 43,
+      "source_row_index": 16,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.5,
+        3.0,
+        5.800000190734863,
+        2.200000047683716
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000044",
+      "sequence": 44,
+      "source_row_index": 104,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.599999904632568,
+        3.0,
+        4.099999904632568,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000045",
+      "sequence": 45,
+      "source_row_index": 88,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.0,
+        3.299999952316284,
+        1.399999976158142,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000046",
+      "sequence": 46,
+      "source_row_index": 49,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.699999809265137,
+        3.0,
+        5.199999809265137,
+        2.299999952316284
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000047",
+      "sequence": 47,
+      "source_row_index": 145,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.099999904632568,
+        2.5,
+        3.0,
+        1.100000023841858
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000048",
+      "sequence": 48,
+      "source_row_index": 98,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.599999904632568,
+        2.9000000953674316,
+        3.5999999046325684,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000049",
+      "sequence": 49,
+      "source_row_index": 64,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        7.699999809265137,
+        2.799999952316284,
+        6.699999809265137,
+        2.0
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000050",
+      "sequence": 50,
+      "source_row_index": 122,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.699999809265137,
+        2.9000000953674316,
+        4.199999809265137,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000051",
+      "sequence": 51,
+      "source_row_index": 96,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.800000190734863,
+        2.799999952316284,
+        4.800000190734863,
+        1.399999976158142
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000052",
+      "sequence": 52,
+      "source_row_index": 76,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.5,
+        3.5,
+        1.2999999523162842,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000053",
+      "sequence": 53,
+      "source_row_index": 36,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.400000095367432,
+        3.200000047683716,
+        5.300000190734863,
+        2.299999952316284
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000054",
+      "sequence": 54,
+      "source_row_index": 115,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.0,
+        3.5999999046325684,
+        1.399999976158142,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000055",
+      "sequence": 55,
+      "source_row_index": 4,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.099999904632568,
+        3.5,
+        1.399999976158142,
+        0.30000001192092896
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000056",
+      "sequence": 56,
+      "source_row_index": 17,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.0,
+        3.0,
+        1.600000023841858,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000057",
+      "sequence": 57,
+      "source_row_index": 25,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.599999904632568,
+        2.5,
+        3.9000000953674316,
+        1.100000023841858
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000058",
+      "sequence": 58,
+      "source_row_index": 69,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.400000095367432,
+        3.200000047683716,
+        4.5,
+        1.5
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000059",
+      "sequence": 59,
+      "source_row_index": 51,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.699999809265137,
+        3.200000047683716,
+        1.2999999523162842,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000060",
+      "sequence": 60,
+      "source_row_index": 2,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.900000095367432,
+        3.0999999046325684,
+        4.900000095367432,
+        1.5
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000061",
+      "sequence": 61,
+      "source_row_index": 52,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.800000190734863,
+        4.0,
+        1.2000000476837158,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000062",
+      "sequence": 62,
+      "source_row_index": 14,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.0,
+        3.0,
+        4.800000190734863,
+        1.7999999523162842
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000063",
+      "sequence": 63,
+      "source_row_index": 138,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.5,
+        2.299999952316284,
+        1.2999999523162842,
+        0.30000001192092896
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000064",
+      "sequence": 64,
+      "source_row_index": 41,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.900000095367432,
+        3.0,
+        5.099999904632568,
+        1.7999999523162842
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000065",
+      "sequence": 65,
+      "source_row_index": 149,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.400000095367432,
+        2.9000000953674316,
+        4.300000190734863,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000066",
+      "sequence": 66,
+      "source_row_index": 74,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.800000190734863,
+        2.700000047683716,
+        3.9000000953674316,
+        1.2000000476837158
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000067",
+      "sequence": 67,
+      "source_row_index": 82,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        7.699999809265137,
+        3.0,
+        6.099999904632568,
+        2.299999952316284
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000068",
+      "sequence": 68,
+      "source_row_index": 135,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.0,
+        2.9000000953674316,
+        4.5,
+        1.5
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000069",
+      "sequence": 69,
+      "source_row_index": 78,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.400000095367432,
+        3.4000000953674316,
+        1.5,
+        0.4000000059604645
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000070",
+      "sequence": 70,
+      "source_row_index": 31,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        7.099999904632568,
+        3.0,
+        5.900000095367432,
+        2.0999999046325684
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000071",
+      "sequence": 71,
+      "source_row_index": 102,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.099999904632568,
+        3.700000047683716,
+        1.5,
+        0.4000000059604645
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000072",
+      "sequence": 72,
+      "source_row_index": 21,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.900000095367432,
+        3.0999999046325684,
+        1.5,
+        0.10000000149011612
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000073",
+      "sequence": 73,
+      "source_row_index": 9,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.900000095367432,
+        3.0999999046325684,
+        1.5,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000074",
+      "sequence": 74,
+      "source_row_index": 34,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.800000190734863,
+        3.200000047683716,
+        5.900000095367432,
+        2.299999952316284
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000075",
+      "sequence": 75,
+      "source_row_index": 143,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.400000095367432,
+        2.700000047683716,
+        5.300000190734863,
+        1.899999976158142
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000076",
+      "sequence": 76,
+      "source_row_index": 111,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.599999904632568,
+        3.200000047683716,
+        1.399999976158142,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000077",
+      "sequence": 77,
+      "source_row_index": 47,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.699999809265137,
+        3.299999952316284,
+        5.699999809265137,
+        2.0999999046325684
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000078",
+      "sequence": 78,
+      "source_row_index": 124,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.599999904632568,
+        2.700000047683716,
+        4.199999809265137,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000079",
+      "sequence": 79,
+      "source_row_index": 94,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        4.900000095367432,
+        2.5,
+        4.5,
+        1.7000000476837158
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000080",
+      "sequence": 80,
+      "source_row_index": 106,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.900000095367432,
+        3.200000047683716,
+        5.699999809265137,
+        2.299999952316284
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000081",
+      "sequence": 81,
+      "source_row_index": 120,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.300000190734863,
+        3.299999952316284,
+        6.0,
+        2.5
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000082",
+      "sequence": 82,
+      "source_row_index": 100,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.800000190734863,
+        3.0,
+        5.5,
+        2.0999999046325684
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000083",
+      "sequence": 83,
+      "source_row_index": 112,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.300000190734863,
+        2.299999952316284,
+        4.400000095367432,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000084",
+      "sequence": 84,
+      "source_row_index": 87,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.699999809265137,
+        2.799999952316284,
+        4.099999904632568,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000085",
+      "sequence": 85,
+      "source_row_index": 99,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        7.699999809265137,
+        3.799999952316284,
+        6.699999809265137,
+        2.200000047683716
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000086",
+      "sequence": 86,
+      "source_row_index": 117,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.699999809265137,
+        3.200000047683716,
+        1.600000023841858,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000087",
+      "sequence": 87,
+      "source_row_index": 29,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.400000095367432,
+        3.0,
+        4.5,
+        1.5
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000088",
+      "sequence": 88,
+      "source_row_index": 84,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        7.599999904632568,
+        3.0,
+        6.599999904632568,
+        2.0999999046325684
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000089",
+      "sequence": 89,
+      "source_row_index": 105,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.800000190734863,
+        2.700000047683716,
+        5.099999904632568,
+        1.899999976158142
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000090",
+      "sequence": 90,
+      "source_row_index": 142,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.5,
+        2.5999999046325684,
+        4.400000095367432,
+        1.2000000476837158
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000091",
+      "sequence": 91,
+      "source_row_index": 90,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.800000190734863,
+        3.4000000953674316,
+        1.899999976158142,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000092",
+      "sequence": 92,
+      "source_row_index": 24,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.099999904632568,
+        2.799999952316284,
+        4.699999809265137,
+        1.2000000476837158
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000093",
+      "sequence": 93,
+      "source_row_index": 73,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.099999904632568,
+        3.799999952316284,
+        1.600000023841858,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000094",
+      "sequence": 94,
+      "source_row_index": 46,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.699999809265137,
+        2.5999999046325684,
+        3.5,
+        1.0
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000095",
+      "sequence": 95,
+      "source_row_index": 79,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.5,
+        2.4000000953674316,
+        3.799999952316284,
+        1.100000023841858
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000096",
+      "sequence": 96,
+      "source_row_index": 80,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.900000095367432,
+        3.5999999046325684,
+        1.399999976158142,
+        0.10000000149011612
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000097",
+      "sequence": 97,
+      "source_row_index": 37,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.5,
+        3.0,
+        5.199999809265137,
+        2.0
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000098",
+      "sequence": 98,
+      "source_row_index": 147,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.400000095367432,
+        3.700000047683716,
+        1.5,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000099",
+      "sequence": 99,
+      "source_row_index": 10,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.699999809265137,
+        2.5,
+        5.0,
+        2.0
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000100",
+      "sequence": 100,
+      "source_row_index": 113,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.699999809265137,
+        4.400000095367432,
+        1.5,
+        0.4000000059604645
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000101",
+      "sequence": 101,
+      "source_row_index": 15,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.199999809265137,
+        2.200000047683716,
+        4.5,
+        1.5
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000102",
+      "sequence": 102,
+      "source_row_index": 68,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.599999904632568,
+        2.9000000953674316,
+        4.599999904632568,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000103",
+      "sequence": 103,
+      "source_row_index": 58,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.0,
+        2.299999952316284,
+        3.299999952316284,
+        1.0
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000104",
+      "sequence": 104,
+      "source_row_index": 93,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.400000095367432,
+        3.9000000953674316,
+        1.7000000476837158,
+        0.4000000059604645
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000105",
+      "sequence": 105,
+      "source_row_index": 5,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        7.199999809265137,
+        3.200000047683716,
+        6.0,
+        1.7999999523162842
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000106",
+      "sequence": 106,
+      "source_row_index": 125,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.5,
+        4.199999809265137,
+        1.399999976158142,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000107",
+      "sequence": 107,
+      "source_row_index": 33,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.699999809265137,
+        3.0,
+        5.0,
+        1.7000000476837158
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000108",
+      "sequence": 108,
+      "source_row_index": 77,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.099999904632568,
+        3.799999952316284,
+        1.899999976158142,
+        0.4000000059604645
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000109",
+      "sequence": 109,
+      "source_row_index": 44,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.699999809265137,
+        3.0999999046325684,
+        5.599999904632568,
+        2.4000000953674316
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000110",
+      "sequence": 110,
+      "source_row_index": 140,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.800000190734863,
+        3.0,
+        1.399999976158142,
+        0.30000001192092896
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000111",
+      "sequence": 111,
+      "source_row_index": 45,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.800000190734863,
+        3.0,
+        1.399999976158142,
+        0.10000000149011612
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000112",
+      "sequence": 112,
+      "source_row_index": 12,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.300000190734863,
+        3.700000047683716,
+        1.5,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000113",
+      "sequence": 113,
+      "source_row_index": 48,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.800000190734863,
+        3.4000000953674316,
+        1.600000023841858,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000114",
+      "sequence": 114,
+      "source_row_index": 11,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.300000190734863,
+        3.0,
+        1.100000023841858,
+        0.10000000149011612
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000115",
+      "sequence": 115,
+      "source_row_index": 13,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.599999904632568,
+        2.799999952316284,
+        4.900000095367432,
+        2.0
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000116",
+      "sequence": 116,
+      "source_row_index": 121,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.199999809265137,
+        2.799999952316284,
+        4.800000190734863,
+        1.7999999523162842
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000117",
+      "sequence": 117,
+      "source_row_index": 126,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.199999809265137,
+        3.5,
+        1.5,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000118",
+      "sequence": 118,
+      "source_row_index": 27,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.099999904632568,
+        3.799999952316284,
+        1.5,
+        0.30000001192092896
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000119",
+      "sequence": 119,
+      "source_row_index": 19,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.699999809265137,
+        3.299999952316284,
+        5.699999809265137,
+        2.5
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000120",
+      "sequence": 120,
+      "source_row_index": 144,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.0,
+        3.5,
+        1.600000023841858,
+        0.6000000238418579
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000121",
+      "sequence": 121,
+      "source_row_index": 43,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.5,
+        2.799999952316284,
+        4.599999904632568,
+        1.5
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000122",
+      "sequence": 122,
+      "source_row_index": 54,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.5,
+        2.5,
+        4.0,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000123",
+      "sequence": 123,
+      "source_row_index": 89,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.400000095367432,
+        3.4000000953674316,
+        1.7000000476837158,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000124",
+      "sequence": 124,
+      "source_row_index": 20,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.300000190734863,
+        2.9000000953674316,
+        5.599999904632568,
+        1.7999999523162842
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000125",
+      "sequence": 125,
+      "source_row_index": 103,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.199999809265137,
+        2.9000000953674316,
+        4.300000190734863,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000126",
+      "sequence": 126,
+      "source_row_index": 97,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.900000095367432,
+        3.0,
+        1.399999976158142,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000127",
+      "sequence": 127,
+      "source_row_index": 1,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.099999904632568,
+        2.799999952316284,
+        4.0,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000128",
+      "sequence": 128,
+      "source_row_index": 71,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.800000190734863,
+        2.799999952316284,
+        5.099999904632568,
+        2.4000000953674316
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000129",
+      "sequence": 129,
+      "source_row_index": 114,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.300000190734863,
+        3.299999952316284,
+        4.699999809265137,
+        1.600000023841858
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000130",
+      "sequence": 130,
+      "source_row_index": 56,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        7.300000190734863,
+        2.9000000953674316,
+        6.300000190734863,
+        1.7999999523162842
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000131",
+      "sequence": 131,
+      "source_row_index": 107,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        7.0,
+        3.200000047683716,
+        4.699999809265137,
+        1.399999976158142
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000132",
+      "sequence": 132,
+      "source_row_index": 50,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.199999809265137,
+        3.4000000953674316,
+        5.400000095367432,
+        2.299999952316284
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000133",
+      "sequence": 133,
+      "source_row_index": 148,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        7.199999809265137,
+        3.0,
+        5.800000190734863,
+        1.600000023841858
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000134",
+      "sequence": 134,
+      "source_row_index": 129,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.199999809265137,
+        2.700000047683716,
+        3.9000000953674316,
+        1.399999976158142
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000135",
+      "sequence": 135,
+      "source_row_index": 59,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.699999809265137,
+        2.799999952316284,
+        4.5,
+        1.2999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000136",
+      "sequence": 136,
+      "source_row_index": 55,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.099999904632568,
+        3.299999952316284,
+        1.7000000476837158,
+        0.5
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000137",
+      "sequence": 137,
+      "source_row_index": 23,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.0,
+        3.4000000953674316,
+        1.5,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000138",
+      "sequence": 138,
+      "source_row_index": 7,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.400000095367432,
+        2.9000000953674316,
+        1.399999976158142,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000139",
+      "sequence": 139,
+      "source_row_index": 8,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.699999809265137,
+        2.5,
+        5.800000190734863,
+        1.7999999523162842
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000140",
+      "sequence": 140,
+      "source_row_index": 108,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.599999904632568,
+        3.5999999046325684,
+        1.0,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000141",
+      "sequence": 141,
+      "source_row_index": 22,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 2,
+      "features": [
+        6.900000095367432,
+        3.0999999046325684,
+        5.400000095367432,
+        2.0999999046325684
+      ],
+      "ground_truth_label": 2,
+      "model": "kmeans",
+      "request_id": "v2-00000142",
+      "sequence": 142,
+      "source_row_index": 139,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.0,
+        3.4000000953674316,
+        1.600000023841858,
+        0.4000000059604645
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000143",
+      "sequence": 143,
+      "source_row_index": 26,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.0,
+        3.200000047683716,
+        1.2000000476837158,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000144",
+      "sequence": 144,
+      "source_row_index": 35,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        4.900000095367432,
+        2.4000000953674316,
+        3.299999952316284,
+        1.0
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000145",
+      "sequence": 145,
+      "source_row_index": 57,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        6.0,
+        2.200000047683716,
+        4.0,
+        1.0
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000146",
+      "sequence": 146,
+      "source_row_index": 62,
+      "tenant_slot": 2
+    },
+    {
+      "expected_prediction": 0,
+      "features": [
+        5.900000095367432,
+        3.200000047683716,
+        4.800000190734863,
+        1.7999999523162842
+      ],
+      "ground_truth_label": 1,
+      "model": "kmeans",
+      "request_id": "v2-00000147",
+      "sequence": 147,
+      "source_row_index": 70,
+      "tenant_slot": 0
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        4.599999904632568,
+        3.4000000953674316,
+        1.399999976158142,
+        0.30000001192092896
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000148",
+      "sequence": 148,
+      "source_row_index": 6,
+      "tenant_slot": 1
+    },
+    {
+      "expected_prediction": 1,
+      "features": [
+        5.199999809265137,
+        3.4000000953674316,
+        1.399999976158142,
+        0.20000000298023224
+      ],
+      "ground_truth_label": 0,
+      "model": "kmeans",
+      "request_id": "v2-00000149",
+      "sequence": 149,
+      "source_row_index": 28,
+      "tenant_slot": 2
+    }
+  ],
+  "schema_version": "comet-v2-trace-v1",
+  "seed": 42,
+  "tenant_count": 3
+}

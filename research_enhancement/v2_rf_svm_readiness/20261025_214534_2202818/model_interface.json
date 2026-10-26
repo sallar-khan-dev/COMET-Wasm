@@ -1,0 +1,42 @@
+{
+  "rf": {
+    "wasm_source_exists": true,
+    "docker_source_exists": true,
+    "wasm_feature_constants": [
+      "30"
+    ],
+    "wasm_entrypoints": [
+      "pub extern \"C\" fn input_ptr() -> i32 {",
+      "pub extern \"C\" fn feature_count() -> i32 {",
+      "pub extern \"C\" fn tree_count() -> i32 {",
+      "pub extern \"C\" fn predict() -> i32 {"
+    ],
+    "docker_feature_constants": [
+      "30"
+    ],
+    "docker_entrypoints": [
+      "fn predict_rf(input: &[f32]) -> i32 {",
+      "async fn infer("
+    ]
+  },
+  "svm": {
+    "wasm_source_exists": true,
+    "docker_source_exists": true,
+    "wasm_feature_constants": [
+      "30"
+    ],
+    "wasm_entrypoints": [
+      "pub extern \"C\" fn input_ptr() -> i32 {",
+      "pub extern \"C\" fn feature_count() -> i32 {",
+      "pub extern \"C\" fn support_vector_count() -> i32 {",
+      "pub extern \"C\" fn predict() -> i32 {"
+    ],
+    "docker_feature_constants": [
+      "30"
+    ],
+    "docker_entrypoints": [
+      "fn predict_svm(input: &[f32]) -> i32 {",
+      "async fn infer("
+    ]
+  }
+}

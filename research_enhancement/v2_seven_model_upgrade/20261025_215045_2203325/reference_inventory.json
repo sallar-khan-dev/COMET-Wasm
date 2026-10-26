@@ -1,0 +1,34 @@
+{
+  "lr": {
+    "golden_references": [
+      "research_enhancement/v2_references/lr_iris_golden_v1.json"
+    ],
+    "traces": [
+      "research_enhancement/v2_workloads/lr_iris_trace_135_seed42_t3.json"
+    ]
+  },
+  "nb": {
+    "golden_references": [],
+    "traces": []
+  },
+  "dt": {
+    "golden_references": [],
+    "traces": []
+  },
+  "kmeans": {
+    "golden_references": [],
+    "traces": []
+  },
+  "rf": {
+    "golden_references": [],
+    "traces": []
+  },
+  "svm": {
+    "golden_references": [],
+    "traces": []
+  },
+  "mlp": {
+    "golden_references": [],
+    "traces": []
+  }
+}

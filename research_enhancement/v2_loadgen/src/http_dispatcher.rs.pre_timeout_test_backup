@@ -1,0 +1,186 @@
+use anyhow::{bail, Result};
+use hyper::{StatusCode, Uri};
+use std::sync::Arc;
+use tokio::sync::Semaphore;
+use tokio::task::JoinSet;
+use tokio::time::{sleep_until, Instant};
+
+use crate::http_client::HttpClient;
+use crate::inference_protocol::{encode_request, validate_response};
+use crate::request_record::RequestRecord;
+use crate::schedule::scheduled_offset;
+use crate::TraceRequest;
+
+pub async fn dispatch_http(
+    requests: &[TraceRequest],
+    offered_rps: f64,
+    uri: Uri,
+    expected_backend: &str,
+    client: HttpClient,
+    max_inflight: usize,
+) -> Result<Vec<RequestRecord>> {
+    scheduled_offset(0, offered_rps)?;
+
+    if max_inflight == 0 {
+        bail!("max_inflight must be positive");
+    }
+
+    if expected_backend.trim().is_empty() {
+        bail!("expected_backend must not be empty");
+    }
+
+    let capacity = Arc::new(Semaphore::new(max_inflight));
+    let start = Instant::now();
+    let mut tasks = JoinSet::new();
+    let mut records = Vec::with_capacity(requests.len());
+
+    for request in requests {
+        let offset = scheduled_offset(request.sequence, offered_rps)?;
+        sleep_until(start + offset).await;
+
+        let mut record = RequestRecord::new(
+            request.sequence,
+            request.request_id.clone(),
+            request.tenant_slot,
+            request.model.clone(),
+            request.expected_prediction,
+            offset.as_nanos(),
+        );
+
+        let permit = match Arc::clone(&capacity).try_acquire_owned() {
+            Ok(permit) => permit,
+            Err(_) => {
+                record.dropped = true;
+                record.error = Some("inflight_capacity_exhausted".into());
+                records.push(record);
+                continue;
+            }
+        };
+
+        let payload = match encode_request(request) {
+            Ok(payload) => payload,
+            Err(error) => {
+                record.error = Some(format!("request_encoding: {error}"));
+                records.push(record);
+                continue;
+            }
+        };
+
+        let request = (*request).clone();
+        let uri = uri.clone();
+        let client = client.clone();
+        let expected_backend = expected_backend.to_string();
+
+        tasks.spawn(async move {
+            let _permit = permit;
+
+            record.record_dispatch(start.elapsed().as_nanos());
+
+            let result = client.post_json(uri, payload).await;
+
+            record.record_completion(start.elapsed().as_nanos());
+
+            match result {
+                Ok(response) => {
+                    record.http_status = Some(response.status.as_u16());
+
+                    if response.status != StatusCode::OK {
+                        record.error = Some(format!("http_status_{}", response.status.as_u16()));
+                    } else {
+                        match validate_response(&response.body, &request, &expected_backend) {
+                            Ok(parsed) => {
+                                record.actual_prediction = Some(i64::from(parsed.prediction));
+                                record.served_backend = Some(parsed.backend);
+                                record.success = true;
+                            }
+                            Err(error) => {
+                                record.error = Some(format!("response_validation: {error}"));
+                            }
+                        }
+                    }
+                }
+                Err(error) => {
+                    let message = error.to_string();
+
+                    record.timed_out = message.contains("HTTP request timed out");
+
+                    record.error = Some(message);
+                }
+            }
+
+            record
+        });
+    }
+
+    while let Some(result) = tasks.join_next().await {
+        records.push(result?);
+    }
+
+    records.sort_by_key(|record| record.sequence);
+
+    Ok(records)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::time::Duration;
+    use tokio::io::{AsyncReadExt, AsyncWriteExt};
+    use tokio::net::TcpListener;
+
+    #[tokio::test]
+    async fn bounded_dispatch_records_overload() {
+        let listener = TcpListener::bind("127.0.0.1:0").await.unwrap();
+        let address = listener.local_addr().unwrap();
+
+        let server = tokio::spawn(async move {
+            let (mut stream, _) = listener.accept().await.unwrap();
+
+            let mut buffer = [0u8; 4096];
+            let _ = stream.read(&mut buffer).await.unwrap();
+
+            tokio::time::sleep(Duration::from_millis(100)).await;
+
+            let body = r#"{"request_id":"v2-00000000","tenant_id":0,"model":"lr","backend":"native","worker_id":null,"prediction":1,"inference_time_ns":1,"execution_time_ns":1,"request_total_ns":1,"adapter_roundtrip_ns":null}"#;
+
+            let response = format!(
+                "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nContent-Length: {}\r\nConnection: close\r\n\r\n{}",
+                body.len(),
+                body
+            );
+
+            stream.write_all(response.as_bytes()).await.unwrap();
+        });
+
+        let requests: Vec<TraceRequest> = (0..2)
+            .map(|sequence| TraceRequest {
+                request_id: format!("v2-{sequence:08}"),
+                sequence,
+                tenant_slot: 0,
+                model: "lr".to_string(),
+                source_row_index: sequence,
+                features: vec![5.1, 3.5, 1.4, 0.2],
+                expected_prediction: 1,
+                ground_truth_label: 1,
+            })
+            .collect();
+
+        let uri: Uri = format!("http://{address}/infer").parse().unwrap();
+
+        let client = HttpClient::new(Duration::from_secs(3)).unwrap();
+
+        let records = dispatch_http(&requests, 1000.0, uri, "native", client, 1)
+            .await
+            .unwrap();
+
+        assert_eq!(records.len(), 2);
+        assert!(records[0].success);
+        assert!(!records[0].dropped);
+        assert!(records[1].dropped);
+        assert!(!records[1].success);
+        assert!(records[1].dispatch_ns.is_none());
+        assert!(records[1].completion_ns.is_none());
+
+        server.await.unwrap();
+    }
+}

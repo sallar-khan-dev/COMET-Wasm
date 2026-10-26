@@ -1,0 +1,51 @@
+[
+  {
+    "model": "lr",
+    "wasm": [
+      "wasm/tenant_lr_real/target/wasm32-unknown-unknown/release/tenant_lr_real.wasm"
+    ],
+    "docker_server": true
+  },
+  {
+    "model": "nb",
+    "wasm": [
+      "wasm/tenant_nb_real/target/wasm32-unknown-unknown/release/tenant_nb_real.wasm"
+    ],
+    "docker_server": true
+  },
+  {
+    "model": "dt",
+    "wasm": [
+      "wasm/tenant_dt_real/target/wasm32-unknown-unknown/release/tenant_dt_real.wasm"
+    ],
+    "docker_server": true
+  },
+  {
+    "model": "kmeans",
+    "wasm": [
+      "wasm/tenant_kmeans_real/target/wasm32-unknown-unknown/release/tenant_kmeans_real.wasm"
+    ],
+    "docker_server": true
+  },
+  {
+    "model": "rf",
+    "wasm": [
+      "wasm/tenant_rf_real/target/wasm32-unknown-unknown/release/tenant_rf_real.wasm"
+    ],
+    "docker_server": true
+  },
+  {
+    "model": "svm",
+    "wasm": [
+      "wasm/tenant_svm_real/target/wasm32-unknown-unknown/release/tenant_svm_real.wasm"
+    ],
+    "docker_server": true
+  },
+  {
+    "model": "mlp",
+    "wasm": [
+      "wasm/tenant_mlp_real/target/wasm32-unknown-unknown/release/tenant_mlp_real.wasm"
+    ],
+    "docker_server": true
+  }
+]

@@ -1,0 +1,2 @@
+CONTAINER ID                                                       IMAGE                COMMAND                               CREATED        STATUS        PORTS                      NAMES
+68511795e786a487f211769e4bd713f1a7abe64df97198dd793c5cc903c2bb1f   comet-lr-docker:v1   "./target/release/docker_lr_server"   25 hours ago   Up 25 hours   127.0.0.1:8085->8085/tcp   comet_v2_lr_functional

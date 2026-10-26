@@ -1,0 +1,86 @@
+use anyhow::{Context, Result};
+use bytes::Bytes;
+use http_body_util::{BodyExt, Full};
+use hyper::{Method, Request, StatusCode, Uri};
+use hyper_util::client::legacy::connect::HttpConnector;
+use hyper_util::client::legacy::Client;
+use hyper_util::rt::TokioExecutor;
+use std::time::Duration;
+
+type RequestBody = Full<Bytes>;
+
+#[derive(Clone)]
+pub struct HttpClient {
+    client: Client<HttpConnector, RequestBody>,
+    timeout: Duration,
+}
+
+pub struct HttpResult {
+    pub status: StatusCode,
+    pub body: Vec<u8>,
+}
+
+impl HttpClient {
+    pub fn new(timeout: Duration) -> Result<Self> {
+        if timeout.is_zero() {
+            anyhow::bail!("HTTP timeout must be positive");
+        }
+
+        let mut connector = HttpConnector::new();
+        connector.enforce_http(true);
+
+        let client = Client::builder(TokioExecutor::new())
+            .pool_idle_timeout(Duration::from_secs(30))
+            .build(connector);
+
+        Ok(Self { client, timeout })
+    }
+
+    pub async fn post_json(&self, uri: Uri, payload: Vec<u8>) -> Result<HttpResult> {
+        let request = Request::builder()
+            .method(Method::POST)
+            .uri(uri)
+            .header("content-type", "application/json")
+            .body(Full::new(Bytes::from(payload)))
+            .context("Failed to construct HTTP request")?;
+
+        let operation = async {
+            let response = self
+                .client
+                .request(request)
+                .await
+                .context("HTTP request failed")?;
+
+            let status = response.status();
+
+            let body = response
+                .into_body()
+                .collect()
+                .await
+                .context("Failed to read HTTP response body")?
+                .to_bytes()
+                .to_vec();
+
+            Ok(HttpResult { status, body })
+        };
+
+        tokio::time::timeout(self.timeout, operation)
+            .await
+            .context("HTTP request timed out")?
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn rejects_zero_timeout() {
+        assert!(HttpClient::new(Duration::ZERO).is_err());
+    }
+
+    #[test]
+    fn accepts_positive_timeout() {
+        assert!(HttpClient::new(Duration::from_secs(5)).is_ok());
+    }
+}

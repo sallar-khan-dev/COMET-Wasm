@@ -1,0 +1,184 @@
+{
+  "lr": [
+    {
+      "path": "docker/lr_server/Cargo.toml",
+      "sha256": "26b0a984eb3b6b513aa831a7ebf4e607d18ab3a029635840e7ea40e5a86bcc32"
+    },
+    {
+      "path": "docker/lr_server/generate_main.py",
+      "sha256": "cd9c237a874346d90a5c10763f3baa2bb49fcdd4e98da415f039ac87a278fa57"
+    },
+    {
+      "path": "docker/lr_server/src/main.rs",
+      "sha256": "52c22eebf994ecc739f4029bf788380760387914ef0fc496788b036717535193"
+    },
+    {
+      "path": "wasm/tenant_lr_real/Cargo.toml",
+      "sha256": "dc080c12893628686b304571c8254cdc04a35cd398e371b085ea45664062aea4"
+    },
+    {
+      "path": "wasm/tenant_lr_real/generate_lr_lib.py",
+      "sha256": "7d3e6e65fe95c9b4fb78ea66b2f1c0b3be5543291f669fd0af0204988927a63e"
+    },
+    {
+      "path": "wasm/tenant_lr_real/src/lib.rs",
+      "sha256": "eeb91efe13a48a36214d3bae4b2485ff132e716ec2e10b4f3c6ec7c8eb8b9419"
+    }
+  ],
+  "nb": [
+    {
+      "path": "docker/nb_server/Cargo.toml",
+      "sha256": "8b4fd153d901fb88d320ab5c23e3c0b92120761afc930a29e9cfa130035643ba"
+    },
+    {
+      "path": "docker/nb_server/generate_main.py",
+      "sha256": "c84000898cfaaabb3dcbf08f250e36a517c48e57cf369cfaa643cf575f7f96d8"
+    },
+    {
+      "path": "docker/nb_server/src/main.rs",
+      "sha256": "985c2806dcf0709bf38745d7bc27a97b1270eaecffa238f484b952804eac276a"
+    },
+    {
+      "path": "wasm/tenant_nb_real/Cargo.toml",
+      "sha256": "dbe9757ea18687731e83907c9a692eba751421da83bdc38b95ed7b5ce91fa179"
+    },
+    {
+      "path": "wasm/tenant_nb_real/generate_nb_lib.py",
+      "sha256": "1a03fe481c223c6d42febffb2105da5e0c17c662268ab4413b2822dc34fa63ab"
+    },
+    {
+      "path": "wasm/tenant_nb_real/src/lib.rs",
+      "sha256": "32b9e5be267b022141c62be7ddad422a8d0ad4bfa743fd1e49b01ad3cb285d52"
+    }
+  ],
+  "dt": [
+    {
+      "path": "docker/dt_server/Cargo.toml",
+      "sha256": "60f013179603f5f90594b3dbec114063fb67579ed6c2a9f6e6ceb187d4abcdbc"
+    },
+    {
+      "path": "docker/dt_server/generate_main.py",
+      "sha256": "c0db066cca434ff5d2af2b904d4b1d38e99f6ea9012b82b821ef8f1d60555946"
+    },
+    {
+      "path": "docker/dt_server/src/main.rs",
+      "sha256": "579054b74f245c3b235aa9480cd8a31412caf5017afe6fa8b197cb887ccc4bdd"
+    },
+    {
+      "path": "wasm/tenant_dt_real/Cargo.toml",
+      "sha256": "23fdfc8759efdde6cd84d9492696cdcd78e4177550c3c5dae9e462fab85ac52a"
+    },
+    {
+      "path": "wasm/tenant_dt_real/generate_dt_lib.py",
+      "sha256": "59dbb76f0e91c59a5a41091ad0afd1bf3e9f798063f8da5d409d69f34692092c"
+    },
+    {
+      "path": "wasm/tenant_dt_real/src/lib.rs",
+      "sha256": "d276fdf860bbe47f88d29059ebb0e494e215937dd0add76367204d131d0ba57c"
+    }
+  ],
+  "kmeans": [
+    {
+      "path": "docker/kmeans_server/Cargo.toml",
+      "sha256": "a07a20c24b8285677396d9de71d9f975a51d4afa9e28c5247e0a230313fa2daf"
+    },
+    {
+      "path": "docker/kmeans_server/generate_main.py",
+      "sha256": "77065b34485602315db9d5c15f67e4041c436121b81be19651c3e40132aeaed4"
+    },
+    {
+      "path": "docker/kmeans_server/src/main.rs",
+      "sha256": "40549978644faf7b4ba34df9008031683ca4ab9542b538b04c6a29afd61ef743"
+    },
+    {
+      "path": "wasm/tenant_kmeans_real/Cargo.toml",
+      "sha256": "006113435bcddadd262d78c315ea2a0b5ad555aec0d4008378babfdb757060f2"
+    },
+    {
+      "path": "wasm/tenant_kmeans_real/generate_kmeans_lib.py",
+      "sha256": "0896b86a5ae37f697860c9853eb11472476415f3d387a512905f90cf99fff62e"
+    },
+    {
+      "path": "wasm/tenant_kmeans_real/src/lib.rs",
+      "sha256": "ab62955ff8ad68e458c707854c3a37a8f05cb18be0b9df9a9747d32919cef4de"
+    }
+  ],
+  "rf": [
+    {
+      "path": "docker/rf_server/Cargo.toml",
+      "sha256": "f54ac09029a2e35cdc3f683fc717243c0325d226f216315124b6e9aa2241f2e5"
+    },
+    {
+      "path": "docker/rf_server/generate_main.py",
+      "sha256": "561643b5433ad90f0c5b2a9c888317d64fa5d82b9e9e09745065a4a3ab660abb"
+    },
+    {
+      "path": "docker/rf_server/src/main.rs",
+      "sha256": "f904cca7cc777d5c23c14830dd85ca210360df18b397a8026e6f122b3695ceb0"
+    },
+    {
+      "path": "wasm/tenant_rf_real/Cargo.toml",
+      "sha256": "24efc85dd4de9ef0ab3f12530dd2d8455380bc1e7dbce74a36fccfc56cf99ac2"
+    },
+    {
+      "path": "wasm/tenant_rf_real/generate_rf_lib.py",
+      "sha256": "b6b6bd790cb311916445c7b661cd88a443495ebdfb132652bc7c471b7debd144"
+    },
+    {
+      "path": "wasm/tenant_rf_real/src/lib.rs",
+      "sha256": "6439c98c32b19dbc61eeabaab57d42ea0e65b93c2397fbf3b1d74833f2284abb"
+    }
+  ],
+  "svm": [
+    {
+      "path": "docker/svm_server/Cargo.toml",
+      "sha256": "be87fe13785f11db8036d407bc8e066ea525c425165705f6790e6bc0eaa2185b"
+    },
+    {
+      "path": "docker/svm_server/generate_main.py",
+      "sha256": "01d0701dd3b818894e212ad28f0d6d95162ba6ebcfa6fecbb5cb987f4cc099cf"
+    },
+    {
+      "path": "docker/svm_server/src/main.rs",
+      "sha256": "69f60b3d882d7f3e078fdea183faed4617c975652bdd92a8c87321f57c7cc94c"
+    },
+    {
+      "path": "wasm/tenant_svm_real/Cargo.toml",
+      "sha256": "08ea99ae455df2f4d7846dbd08837034eaafbc1acb948b3dfecb0827b7078692"
+    },
+    {
+      "path": "wasm/tenant_svm_real/generate_svm_lib.py",
+      "sha256": "adf02a1018f98ae3b3f63e6d909567e71514d234226bee42a98f3606f5b6d388"
+    },
+    {
+      "path": "wasm/tenant_svm_real/src/lib.rs",
+      "sha256": "43f32c4aa1442c24fc9b968c4dbce412a891f90e2432ff2c73181e5aa94a894f"
+    }
+  ],
+  "mlp": [
+    {
+      "path": "docker/mlp_server/Cargo.toml",
+      "sha256": "a4f4c68d6447241f49db1d73d1afd6d1237ade62cf73ca9289393ab2222997eb"
+    },
+    {
+      "path": "docker/mlp_server/generate_main.py",
+      "sha256": "43a53467d96f5c75b95c3b8bb6e7306bd0ea566859dd9b4b80405b1cd1ca6fdf"
+    },
+    {
+      "path": "docker/mlp_server/src/main.rs",
+      "sha256": "d74ffbf9d11f8b21af2e7c1af5008c1860ac3e1b0b86d021c0eb6ce2b2059dd7"
+    },
+    {
+      "path": "wasm/tenant_mlp_real/Cargo.toml",
+      "sha256": "d64a80dd42841da55a4ba4b0f64a4239879396fdc4a40fa262336c47a99cbd5f"
+    },
+    {
+      "path": "wasm/tenant_mlp_real/generate_mlp_lib.py",
+      "sha256": "dfddb638785c1eb3c583d4ee301d64e26b63e48d4cdf1afc46ad630258a5192d"
+    },
+    {
+      "path": "wasm/tenant_mlp_real/src/lib.rs",
+      "sha256": "ddd50e7f4a5d51d7e0c9a941fb0dd8345e546bbdd02c835864844977cebdaf4e"
+    }
+  ]
+}

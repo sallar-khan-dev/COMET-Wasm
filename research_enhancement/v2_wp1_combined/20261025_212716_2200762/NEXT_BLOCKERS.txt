@@ -1,0 +1,7 @@
+WP1 gate NOT yet passed:
+1. Existing cross-model smoke_model.py is not safe to run unmodified on shared HPC: pkill -f comet_multitenant_server and docker rm -f fixed names.
+2. Common ingress wasm_adapter only supports LR; V2 loadgen validates only LR and iris_binary. RF/SVM need real adapter and trace/golden generalization.
+3. Current Docker route is published localhost port, not a demonstrated internal Docker bridge path.
+4. Native LR has many threads; fairness requires controlled replacement instance or measured thread-constrained design, not killing current process.
+5. LR pilot 135 requests per run is not sustained, nor 95% CI +/-2.5% precision compliant.
+6. No-op 5-second test checks limited headroom only; establish saturation with sustained model tests after corrections.

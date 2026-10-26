@@ -1,0 +1,130 @@
+=== git ===
+ M serving/common_ingress/src/docker_adapter.rs
+ M serving/common_ingress/src/main.rs
+ M serving/common_ingress/src/routes.rs
+ M serving/common_ingress/src/wasm_adapter.rs
+ M serving/multitenant_server/src/main.rs
+?? comet/profiles/builder_pre_json_patch.py
+?? experiments/analysis/consolidate_interference_pre_nb_patch.py
+?? experiments/cold_start/run_cold_start_full_nb_v1_backup.py
+?? experiments/interference/run_interference_full_pre_maxrep_patch.py
+?? research_enhancement/.comet_v2_foundation.lock
+?? research_enhancement/.comet_v2_lr_pilot.lock
+?? research_enhancement/.comet_v2_wp1_combined.lock
+?? research_enhancement/.comet_v2_wp1_corrected.lock
+?? research_enhancement/comet_v2_multimodel_ingress_patch.sh
+?? research_enhancement/comet_v2_rf_svm_readiness.sh
+?? research_enhancement/comet_v2_wp1_corrected_gate.sh
+?? research_enhancement/comet_v2_wp1_safe_combined.sh
+?? research_enhancement/comet_v2_wp1_source_bundle.sh
+?? research_enhancement/v2_foundation_runs/
+?? research_enhancement/v2_inference_pilot/
+?? research_enhancement/v2_loadgen/
+?? research_enhancement/v2_rf_svm_readiness/
+?? research_enhancement/v2_wp1_combined/
+?? research_enhancement/v2_wp1_corrected/
+?? research_enhancement/v2_wp1_gate/
+?? research_enhancement/v2_wp1_source_bundle/
+?? results/archive/
+?? results/processed/evaluation/simulation_sanity.csv
+?? results/processed/evaluation/simulation_sanity.json
+?? results/processed/overhead/lr_docker_pilot.json
+?? results/processed/overhead/lr_wasmtime_pilot.json
+?? serving/common_ingress/Cargo.toml.pre_docker_adapter_backup
+?? serving/common_ingress/src/main.rs.pre_admission_backup
+?? serving/common_ingress/src/main.rs.pre_docker_integration_backup
+?? serving/common_ingress/src/main.rs.pre_native_dispatch_backup
+?? serving/common_ingress/src/main.rs.pre_timing_instrumentation_backup
+?? serving/common_ingress/src/main.rs.pre_wasm_integration_backup
+?? serving/common_ingress/src/main.rs.pre_worker_id_fix_backup
+?? serving/common_ingress/src/routes.rs.pre_v2_backup
+?? serving/multitenant_server/src/main.rs.pre_noop_backup
+?? serving/native_lr_server/Cargo.lock.pre_native_package_rename_backup
+53855eb9f039f63946b2e456b50cd3a45f9a75e8
+=== tools ===
+/home/sallar/.cargo/bin/cargo
+/home/sallar/.cargo/bin/rustc
+/usr/bin/docker
+/usr/bin/podman
+/usr/bin/curl
+/usr/bin/jq
+/opt/miniconda3/bin/python3
+=== targets ===
+wasm32-unknown-unknown
+x86_64-unknown-linux-gnu
+=== RF/SVM source files ===
+wasm/tenant_rf_real/generate_rf_lib.py
+wasm/tenant_rf_real/target/wasm32-unknown-unknown/release/tenant_rf_real.wasm
+wasm/tenant_rf_real/target/wasm32-unknown-unknown/release/tenant_rf_real.d
+wasm/tenant_svm_real/generate_svm_lib.py
+wasm/tenant_svm_real/target/wasm32-unknown-unknown/release/tenant_svm_real.wasm
+wasm/tenant_svm_real/target/wasm32-unknown-unknown/release/tenant_svm_real.d
+docker/nb_server/Dockerfile
+docker/dt_server/Dockerfile
+docker/rf_server/Dockerfile
+docker/rf_server/target/debug/deps/docker_rf_server-e35b0898b1df20d6.d
+docker/rf_server/target/debug/deps/libdocker_rf_server-e35b0898b1df20d6.rmeta
+docker/svm_server/Dockerfile
+docker/svm_server/target/debug/deps/libdocker_svm_server-60812bf29371333e.rmeta
+docker/svm_server/target/debug/deps/docker_svm_server-60812bf29371333e.d
+docker/kmeans_server/Dockerfile
+docker/mlp_server/Dockerfile
+docker/lr_server/Dockerfile
+serving/wasm_server/host_rf_server/target/release/host_rf_server
+serving/wasm_server/host_rf_server/target/release/host_rf_server.d
+serving/wasm_server/host_svm_server/target/release/host_svm_server
+serving/wasm_server/host_svm_server/target/release/host_svm_server.d
+serving/docker_tenant_manager/start_nb_perf_pool.sh
+research_enhancement/deterministic_trace.py
+research_enhancement/tests/test_trace.py
+research_enhancement/tests/__pycache__/test_trace.cpython-313.pyc
+research_enhancement/__pycache__/deterministic_trace.cpython-313.pyc
+research_enhancement/v2_references/lr_iris_golden_v1.json
+research_enhancement/v2_workloads/generate_trace.py
+research_enhancement/v2_workloads/__pycache__/generate_trace.cpython-313.pyc
+research_enhancement/v2_workloads/__pycache__/test_generate_trace.cpython-313.pyc
+research_enhancement/v2_workloads/test_generate_trace.py
+research_enhancement/v2_workloads/lr_iris_trace_135_seed42_t3.json
+research_enhancement/v2_loadgen/src/main.rs.pre_trace_parser_backup
+research_enhancement/v2_loadgen/src/dispatcher.rs.pre_trace_integration_backup
+research_enhancement/v2_loadgen/src/main.rs.pre_trace_request_clone_backup
+research_enhancement/v2_wp1_source_bundle/20261025_211936_2199544/files/research_enhancement/deterministic_trace.py
+research_enhancement/v2_wp1_source_bundle/20261025_211936_2199544/diagnostics/rf_svm_file_candidates.txt
+research_enhancement/comet_v2_rf_svm_readiness.sh
+research_enhancement/v2_rf_svm_readiness/20261025_214534_2202818/model_interface.json
+=== wasm binaries ===
+./wasm/tenant_nb_real/target/wasm32-unknown-unknown/release/deps/tenant_nb_real.wasm 1803 bytes
+./wasm/tenant_nb_real/target/wasm32-unknown-unknown/release/tenant_nb_real.wasm 1803 bytes
+./wasm/tenant_dt_real/target/wasm32-unknown-unknown/release/deps/tenant_dt_real.wasm 22372 bytes
+./wasm/tenant_dt_real/target/wasm32-unknown-unknown/release/tenant_dt_real.wasm 22372 bytes
+./wasm/tenant_rf_real/target/wasm32-unknown-unknown/release/deps/tenant_rf_real.wasm 53847 bytes
+./wasm/tenant_rf_real/target/wasm32-unknown-unknown/release/tenant_rf_real.wasm 53847 bytes
+./wasm/tenant_svm_real/target/wasm32-unknown-unknown/release/deps/tenant_svm_real.wasm 12922 bytes
+./wasm/tenant_svm_real/target/wasm32-unknown-unknown/release/tenant_svm_real.wasm 12922 bytes
+./wasm/tenant_kmeans_real/target/wasm32-unknown-unknown/release/deps/tenant_kmeans_real.wasm 756 bytes
+./wasm/tenant_kmeans_real/target/wasm32-unknown-unknown/release/tenant_kmeans_real.wasm 756 bytes
+./wasm/tenant_mlp_real/target/wasm32-unknown-unknown/release/deps/tenant_mlp_real.wasm 6025 bytes
+./wasm/tenant_mlp_real/target/wasm32-unknown-unknown/release/tenant_mlp_real.wasm 6025 bytes
+./wasm/tenant_lr_real/target/wasm32-unknown-unknown/release/deps/tenant_lr_real.wasm 1305 bytes
+./wasm/tenant_lr_real/target/wasm32-unknown-unknown/release/tenant_lr_real.wasm 1305 bytes
+./local_backups/comet_abi_negative/target/wasm32-unknown-unknown/release/deps/comet_abi_negative.wasm 432 bytes
+./local_backups/comet_abi_negative/target/wasm32-unknown-unknown/release/comet_abi_negative.wasm 432 bytes
+=== docker images ===
+comet-mlp-docker:v1 c2bd705c86dc
+comet-svm-docker:v1 2ff51f9f4359
+comet-rf-docker:v1 3c56231e9d53
+comet-kmeans-docker:v1 dab54acaed93
+comet-dt-docker:v1 3f94aa04db03
+comet-nb-docker:v1 0dfbcd935b1b
+comet-lr-docker:v1 43cd5321c707
+docker-lr-server:latest f49c252e9110
+alpine:latest 28bd5fe8b56d
+hello-world:latest 96498ffd522e
+=== running containers ===
+comet_v2_lr_functional comet-lr-docker:v1 127.0.0.1:8085->8085/tcp
+=== ingress binary ===
+serving/common_ingress/target/debug/comet_common_ingress 273213192 bytes
+serving/common_ingress/target/release/comet_common_ingress 22389856 bytes
+=== listener ports ===
+LISTEN 0      4096                     127.0.0.1:8085       0.0.0.0:*                                                
+LISTEN 0      128                      127.0.0.1:8086       0.0.0.0:*    users:(("comet_native_lr",pid=2079478,fd=9))

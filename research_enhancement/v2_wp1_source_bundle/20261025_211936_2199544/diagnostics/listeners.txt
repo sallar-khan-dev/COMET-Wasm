@@ -1,0 +1,15 @@
+State  Recv-Q Send-Q               Local Address:Port  Peer Address:PortProcess                                      
+LISTEN 0      4096                     127.0.0.1:8085       0.0.0.0:*                                                
+LISTEN 0      128                      127.0.0.1:8086       0.0.0.0:*    users:(("comet_native_lr",pid=2079478,fd=9))
+LISTEN 0      5                        127.0.0.1:4330       0.0.0.0:*                                                
+LISTEN 0      128                      127.0.0.1:38001      0.0.0.0:*                                                
+LISTEN 0      128                      127.0.0.1:38235      0.0.0.0:*                                                
+LISTEN 0      4096                100.113.139.97:52027      0.0.0.0:*                                                
+LISTEN 0      5                        127.0.0.1:44321      0.0.0.0:*                                                
+LISTEN 0      128                        0.0.0.0:22         0.0.0.0:*                                                
+LISTEN 0      5                            [::1]:4330          [::]:*                                                
+LISTEN 0      32                               *:21               *:*                                                
+LISTEN 0      128                           [::]:22            [::]:*                                                
+LISTEN 0      5                            [::1]:44321         [::]:*                                                
+LISTEN 0      4096   [fd7a:115c:a1e0::fa36:8b61]:53374         [::]:*                                                
+LISTEN 0      4096                             *:9090             *:*                                                

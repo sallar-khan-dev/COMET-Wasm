@@ -1,0 +1,156 @@
+use anyhow::{bail, Context, Result};
+use serde::Deserialize;
+use std::collections::HashSet;
+use std::env;
+use std::fs;
+
+#[derive(Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
+struct Trace {
+    schema_version: String,
+    model: String,
+    dataset: String,
+    seed: i64,
+    request_count: usize,
+    tenant_count: usize,
+    golden_model_sha256: String,
+    golden_dataset_sha256: String,
+    golden_artifact_sha256: String,
+    requests: Vec<TraceRequest>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
+struct TraceRequest {
+    request_id: String,
+    sequence: usize,
+    tenant_slot: usize,
+    model: String,
+    source_row_index: usize,
+    features: Vec<f64>,
+    expected_prediction: i64,
+    ground_truth_label: i64,
+}
+
+fn validate(trace: &Trace) -> Result<()> {
+    if trace.schema_version != "comet-v2-trace-v1" {
+        bail!("Unsupported trace schema");
+    }
+
+    if trace.model != "lr" {
+        bail!("Only LR traces are currently supported");
+    }
+
+    if trace.dataset != "iris_binary" {
+        bail!("Unexpected dataset");
+    }
+
+    if trace.request_count == 0 || trace.request_count != trace.requests.len() {
+        bail!("Invalid request count");
+    }
+
+    if trace.tenant_count == 0 {
+        bail!("Tenant count must be positive");
+    }
+
+    for (name, digest) in [
+        ("model", &trace.golden_model_sha256),
+        ("dataset", &trace.golden_dataset_sha256),
+        ("golden artifact", &trace.golden_artifact_sha256),
+    ] {
+        if digest.len() != 64 || !digest.bytes().all(|b| b.is_ascii_hexdigit()) {
+            bail!("Invalid {name} SHA-256 field");
+        }
+    }
+
+    let mut request_ids = HashSet::new();
+
+    for (index, request) in trace.requests.iter().enumerate() {
+        if request.sequence != index {
+            bail!("Invalid sequence at request {index}");
+        }
+
+        if request.request_id != format!("v2-{index:08}") {
+            bail!("Unexpected request ID at index {index}");
+        }
+
+        if !request_ids.insert(&request.request_id) {
+            bail!("Duplicate request ID");
+        }
+
+        if request.tenant_slot >= trace.tenant_count {
+            bail!("Tenant slot out of range");
+        }
+
+        if request.model != trace.model {
+            bail!("Request model mismatch");
+        }
+
+        if request.features.len() != 4 || !request.features.iter().all(|x| x.is_finite()) {
+            bail!("Invalid LR feature vector");
+        }
+
+        if !matches!(request.expected_prediction, 0 | 1) {
+            bail!("Invalid expected prediction");
+        }
+
+        if !matches!(request.ground_truth_label, 0 | 1) {
+            bail!("Invalid ground-truth label");
+        }
+
+        if request.source_row_index >= 45 {
+            bail!("Source row index out of range");
+        }
+    }
+
+    Ok(())
+}
+
+fn main() -> Result<()> {
+    let args: Vec<String> = env::args().collect();
+
+    if args.len() != 2 {
+        bail!("Usage: comet_v2_loadgen <trace.json>");
+    }
+
+    let data =
+        fs::read_to_string(&args[1]).with_context(|| format!("Cannot read trace: {}", args[1]))?;
+
+    let trace: Trace = serde_json::from_str(&data).context("Invalid trace JSON")?;
+
+    validate(&trace)?;
+
+    println!("PASS: COMET-Wasm V2 trace validated");
+    println!("Schema: {}", trace.schema_version);
+    println!("Model: {}", trace.model);
+    println!("Dataset: {}", trace.dataset);
+    println!("Seed: {}", trace.seed);
+    println!("Requests: {}", trace.request_count);
+    println!("Tenants: {}", trace.tenant_count);
+    println!("Mode: validation only; no HTTP requests dispatched");
+
+    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn rejects_empty_trace() {
+        let trace = Trace {
+            schema_version: "comet-v2-trace-v1".into(),
+            model: "lr".into(),
+            dataset: "iris_binary".into(),
+            seed: 42,
+            request_count: 0,
+            tenant_count: 1,
+            golden_model_sha256: "a".repeat(64),
+            golden_dataset_sha256: "b".repeat(64),
+            golden_artifact_sha256: "c".repeat(64),
+            requests: vec![],
+        };
+
+        assert!(validate(&trace).is_err());
+    }
+}

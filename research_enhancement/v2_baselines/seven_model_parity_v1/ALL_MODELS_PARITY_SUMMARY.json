@@ -1,0 +1,174 @@
+{
+  "status": "PASS",
+  "model_count": 7,
+  "results": {
+    "lr": {
+      "wasmtime": {
+        "examples": [],
+        "matched": 45,
+        "mismatches": 0,
+        "records": 45,
+        "status": "PASS"
+      },
+      "docker": {
+        "status": "PASS",
+        "records": 45,
+        "matched": 45,
+        "mismatches": 0,
+        "errors": 0,
+        "examples": [],
+        "image": "comet-lr-docker:v1"
+      },
+      "reference": {
+        "reference": "research_enhancement/v2_references/lr_iris_golden_v1.json",
+        "sha256": "37020d0a69705dc99f2054da29a069535512830ca20d7413dbe29c990082fc34",
+        "method": "model_json_float64_logit_threshold_zero"
+      },
+      "reference_records": 45
+    },
+    "nb": {
+      "wasmtime": {
+        "examples": [],
+        "matched": 569,
+        "mismatches": 0,
+        "records": 569,
+        "status": "PASS"
+      },
+      "docker": {
+        "status": "PASS",
+        "records": 569,
+        "matched": 569,
+        "mismatches": 0,
+        "errors": 0,
+        "examples": [],
+        "image": "comet-nb-docker:v1"
+      },
+      "reference": {
+        "reference": "research_enhancement/v2_references/nb_breast_cancer_golden_v1.json",
+        "sha256": "168519359f407316d5dc735210154744bd5f77bf381e07e93f2187fcb78dd9cb",
+        "method": "independent_numpy_float32_model_parameters"
+      },
+      "reference_records": 569
+    },
+    "dt": {
+      "wasmtime": {
+        "examples": [],
+        "matched": 569,
+        "mismatches": 0,
+        "records": 569,
+        "status": "PASS"
+      },
+      "docker": {
+        "status": "PASS",
+        "records": 569,
+        "matched": 569,
+        "mismatches": 0,
+        "errors": 0,
+        "examples": [],
+        "image": "comet-dt-docker:v1"
+      },
+      "reference": {
+        "reference": "research_enhancement/v2_references/dt_breast_cancer_golden_v1.json",
+        "sha256": "46a31c984b55a05a69159e14277fbe8481322ffbd3076d839610f0847e89825b",
+        "method": "independent_numpy_float32_model_parameters"
+      },
+      "reference_records": 569
+    },
+    "kmeans": {
+      "wasmtime": {
+        "examples": [],
+        "matched": 150,
+        "mismatches": 0,
+        "records": 150,
+        "status": "PASS"
+      },
+      "docker": {
+        "status": "PASS",
+        "records": 150,
+        "matched": 150,
+        "mismatches": 0,
+        "errors": 0,
+        "examples": [],
+        "image": "comet-kmeans-docker:v1"
+      },
+      "reference": {
+        "reference": "research_enhancement/v2_references/kmeans_iris_golden_v1.json",
+        "sha256": "c39c64cdbe5d4aa15c81245c91d232c1bc5d59c7a62e5285f8dcc89ad429882f",
+        "method": "independent_nearest_centroid_float32"
+      },
+      "reference_records": 150
+    },
+    "rf": {
+      "wasmtime": {
+        "examples": [],
+        "matched": 569,
+        "mismatches": 0,
+        "records": 569,
+        "status": "PASS"
+      },
+      "docker": {
+        "status": "PASS",
+        "records": 569,
+        "matched": 569,
+        "mismatches": 0,
+        "errors": 0,
+        "examples": [],
+        "image": "comet-rf-docker:v1"
+      },
+      "reference": {
+        "reference": "research_enhancement/v2_references/rf_breast_cancer_golden_v1.json",
+        "sha256": "69bdde867803bc19988c006276b3d9c62387712aafa35cbaf984871c7c003da8",
+        "method": "independent_python_float32_tree_traversal"
+      },
+      "reference_records": 569
+    },
+    "svm": {
+      "wasmtime": {
+        "examples": [],
+        "matched": 569,
+        "mismatches": 0,
+        "records": 569,
+        "status": "PASS"
+      },
+      "docker": {
+        "status": "PASS",
+        "records": 569,
+        "matched": 569,
+        "mismatches": 0,
+        "errors": 0,
+        "examples": [],
+        "image": "comet-svm-docker:v1"
+      },
+      "reference": {
+        "reference": "research_enhancement/v2_references/svm_breast_cancer_golden_v1.json",
+        "sha256": "fec83ad3a20a0e8a601b25d7ad34f5a5eabeab6e730dbbc69c3dccc1728263ae",
+        "method": "independent_numpy_float32_rbf"
+      },
+      "reference_records": 569
+    },
+    "mlp": {
+      "wasmtime": {
+        "examples": [],
+        "matched": 569,
+        "mismatches": 0,
+        "records": 569,
+        "status": "PASS"
+      },
+      "docker": {
+        "status": "PASS",
+        "records": 569,
+        "matched": 569,
+        "mismatches": 0,
+        "errors": 0,
+        "examples": [],
+        "image": "comet-mlp-docker:v1"
+      },
+      "reference": {
+        "reference": "research_enhancement/v2_references/mlp_breast_cancer_golden_v1.json",
+        "sha256": "d7d4e0a8f70183b315bc35057e5a15ea641b96da3fb2ea78fe7a8e63b37d9176",
+        "method": "independent_numpy_float32_model_parameters"
+      },
+      "reference_records": 569
+    }
+  }
+}
