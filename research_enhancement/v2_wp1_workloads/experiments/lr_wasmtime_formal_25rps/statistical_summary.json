@@ -1,0 +1,43 @@
+{
+  "backend": "wasmtime",
+  "outer_runs": 20,
+  "inner_replays_per_outer": 50,
+  "total_requests": 135000,
+  "metrics": {
+    "execution_time_ns": {
+      "mean_ms": 0.003801901859259259,
+      "ci95_lower_ms": 0.003783703639185348,
+      "ci95_upper_ms": 0.00382010007933317,
+      "relative_half_width_percent": 0.4786609635803842,
+      "precision_target_met": true
+    },
+    "inference_time_ns": {
+      "mean_ms": 0.009276300733333333,
+      "ci95_lower_ms": 0.009249365363943081,
+      "ci95_upper_ms": 0.009303236102723584,
+      "relative_half_width_percent": 0.29036757393453894,
+      "precision_target_met": true
+    },
+    "request_total_ns": {
+      "mean_ms": 0.20568584502222223,
+      "ci95_lower_ms": 0.20516748642153912,
+      "ci95_upper_ms": 0.20620420362290534,
+      "relative_half_width_percent": 0.252014717214544,
+      "precision_target_met": true
+    },
+    "latency_from_schedule_ns": {
+      "mean_ms": 2.610888997348148,
+      "ci95_lower_ms": 2.6063557157306483,
+      "ci95_upper_ms": 2.615422278965648,
+      "relative_half_width_percent": 0.173629810463198,
+      "precision_target_met": true
+    },
+    "latency_from_dispatch_ns": {
+      "mean_ms": 0.9957027207481481,
+      "ci95_lower_ms": 0.9937757366287088,
+      "ci95_upper_ms": 0.9976297048675875,
+      "relative_half_width_percent": 0.19353006467547176,
+      "precision_target_met": true
+    }
+  }
+}

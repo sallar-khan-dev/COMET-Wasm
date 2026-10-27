@@ -1,0 +1,48 @@
+{
+  "backend": "wasmtime",
+  "outer_run": 16,
+  "inner_replays": 50,
+  "requests": 6750,
+  "metrics": {
+    "execution_time_ns": {
+      "mean_ms": 0.0037638915555555557,
+      "median_ms": 0.0037045,
+      "p95_ms": 0.003798,
+      "p99_ms": 0.003927020000000001,
+      "min_ms": 0.001292,
+      "max_ms": 0.039685
+    },
+    "inference_time_ns": {
+      "mean_ms": 0.009184673333333334,
+      "median_ms": 0.008962,
+      "p95_ms": 0.009111,
+      "p99_ms": 0.009815100000000002,
+      "min_ms": 0.003942,
+      "max_ms": 0.045639
+    },
+    "request_total_ns": {
+      "mean_ms": 0.20542586296296297,
+      "median_ms": 0.207699,
+      "p95_ms": 0.23861055,
+      "p99_ms": 0.2780288500000005,
+      "min_ms": 0.042123,
+      "max_ms": 0.580243
+    },
+    "latency_from_schedule_ns": {
+      "mean_ms": 2.630016613185185,
+      "median_ms": 2.6329145,
+      "p95_ms": 3.1458569,
+      "p99_ms": 3.2281206300000003,
+      "min_ms": 1.811725,
+      "max_ms": 3.434546
+    },
+    "latency_from_dispatch_ns": {
+      "mean_ms": 0.9993893303703704,
+      "median_ms": 1.030717,
+      "p95_ms": 1.10726345,
+      "p99_ms": 1.2092182700000005,
+      "min_ms": 0.679666,
+      "max_ms": 1.585573
+    }
+  }
+}

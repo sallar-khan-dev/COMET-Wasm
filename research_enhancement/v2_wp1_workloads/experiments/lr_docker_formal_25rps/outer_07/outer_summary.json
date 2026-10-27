@@ -1,0 +1,48 @@
+{
+  "backend": "docker",
+  "outer_run": 7,
+  "inner_replays": 50,
+  "requests": 6750,
+  "metrics": {
+    "execution_time_ns": {
+      "mean_ms": 0.0008715325925925926,
+      "median_ms": 0.000869,
+      "p95_ms": 0.0008980000000000001,
+      "p99_ms": 0.000909,
+      "min_ms": 0.000544,
+      "max_ms": 0.02992
+    },
+    "inference_time_ns": {
+      "mean_ms": 0.0013053705185185186,
+      "median_ms": 0.001293,
+      "p95_ms": 0.001344,
+      "p99_ms": 0.001364,
+      "min_ms": 0.000937,
+      "max_ms": 0.030394
+    },
+    "request_total_ns": {
+      "mean_ms": 0.7924809733333333,
+      "median_ms": 0.759937,
+      "p95_ms": 1.0090792499999992,
+      "p99_ms": 1.2558218700000001,
+      "min_ms": 0.568649,
+      "max_ms": 1.669646
+    },
+    "latency_from_schedule_ns": {
+      "mean_ms": 3.172859655259259,
+      "median_ms": 3.1618795,
+      "p95_ms": 3.61021505,
+      "p99_ms": 3.9503265700000005,
+      "min_ms": 2.306525,
+      "max_ms": 4.457603
+    },
+    "latency_from_dispatch_ns": {
+      "mean_ms": 1.5124589663703705,
+      "median_ms": 1.473813,
+      "p95_ms": 1.7895402999999996,
+      "p99_ms": 2.09335162,
+      "min_ms": 1.040856,
+      "max_ms": 2.493338
+    }
+  }
+}
