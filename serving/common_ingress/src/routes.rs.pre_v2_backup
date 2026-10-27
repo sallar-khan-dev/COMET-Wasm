@@ -1,0 +1,86 @@
+use anyhow::{bail, Context, Result};
+use serde::Deserialize;
+use std::{collections::HashMap, fs, path::Path};
+
+#[derive(Debug, Clone, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "lowercase")]
+pub enum Backend {
+    Wasmtime,
+    Docker,
+    Native,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct TenantRoute {
+    pub backend: Backend,
+    pub url: String,
+}
+
+pub type RouteTable = HashMap<String, TenantRoute>;
+
+pub fn load_routes(path: impl AsRef<Path>) -> Result<RouteTable> {
+    let contents = fs::read_to_string(path.as_ref())
+        .with_context(|| "Failed to read tenant routing configuration")?;
+
+    let routes: RouteTable = serde_json::from_str(&contents)
+        .context("Invalid routing configuration JSON")?;
+
+    for (tenant, route) in &routes {
+        if tenant.is_empty() || tenant.parse::<u64>().is_err() {
+            bail!("Invalid tenant ID: {tenant}");
+        }
+
+        if !route.url.starts_with("http://") {
+            bail!("Invalid backend URL for tenant {tenant}");
+        }
+    }
+
+    Ok(routes)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn accepts_valid_routes() {
+        let routes: RouteTable = serde_json::from_str(
+            r#"{
+                "0": {"backend":"wasmtime","url":"http://127.0.0.1:8100/infer"},
+                "1": {"backend":"docker","url":"http://127.0.0.1:8085/infer"}
+            }"#,
+        )
+        .unwrap();
+
+        assert_eq!(routes["0"].backend, Backend::Wasmtime);
+        assert_eq!(routes["1"].backend, Backend::Docker);
+    }
+
+    #[test]
+    fn rejects_unknown_backend() {
+        let result = serde_json::from_str::<RouteTable>(
+            r#"{"0":{"backend":"unknown","url":"http://127.0.0.1:8100/infer"}}"#,
+        );
+
+        assert!(result.is_err());
+    }
+
+    #[test]
+    fn rejects_invalid_url() {
+        let path = std::env::temp_dir().join(format!(
+            "comet_routes_test_{}.json",
+            std::process::id()
+        ));
+
+        fs::write(
+            &path,
+            r#"{"0":{"backend":"docker","url":"not-a-url"}}"#,
+        )
+        .unwrap();
+
+        let result = load_routes(&path);
+        let _ = fs::remove_file(&path);
+
+        assert!(result.is_err());
+    }
+}

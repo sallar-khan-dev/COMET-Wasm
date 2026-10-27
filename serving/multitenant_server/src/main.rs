@@ -62,6 +62,10 @@ struct MetadataResponse {
 }
 
 
+async fn noop() -> StatusCode {
+    StatusCode::NO_CONTENT
+}
+
 async fn health() -> Json<HealthResponse> {
     Json(HealthResponse {
         status: "ok".to_string(),
@@ -184,6 +188,7 @@ async fn main() -> Result<()> {
     };
 
     let app = Router::new()
+        .route("/noop", get(noop))
         .route("/health", get(health))
         .route("/metadata", get(metadata))
         .route("/infer", post(infer))
@@ -205,4 +210,15 @@ async fn main() -> Result<()> {
     axum::serve(listener, app).await?;
 
     Ok(())
+}
+
+#[cfg(test)]
+mod ingress_tests {
+    use super::*;
+
+    #[tokio::test]
+    async fn noop_returns_http_204() {
+        let response = noop().await;
+        assert_eq!(response, StatusCode::NO_CONTENT);
+    }
 }

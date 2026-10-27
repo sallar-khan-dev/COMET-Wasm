@@ -16,6 +16,11 @@ pub struct RequestRecord {
     pub latency_from_dispatch_ns: Option<u128>,
     pub latency_from_schedule_ns: Option<u128>,
 
+    pub execution_time_ns: Option<u128>,
+    pub inference_time_ns: Option<u128>,
+    pub request_total_ns: Option<u128>,
+    pub adapter_roundtrip_ns: Option<u128>,
+
     pub http_status: Option<u16>,
     pub actual_prediction: Option<i64>,
     pub served_backend: Option<String>,
@@ -47,6 +52,10 @@ impl RequestRecord {
             scheduling_delay_ns: None,
             latency_from_dispatch_ns: None,
             latency_from_schedule_ns: None,
+            execution_time_ns: None,
+            inference_time_ns: None,
+            request_total_ns: None,
+            adapter_roundtrip_ns: None,
             http_status: None,
             actual_prediction: None,
             served_backend: None,

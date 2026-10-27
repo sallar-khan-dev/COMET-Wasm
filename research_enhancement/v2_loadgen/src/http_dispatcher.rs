@@ -92,6 +92,10 @@ pub async fn dispatch_http(
                             Ok(parsed) => {
                                 record.actual_prediction = Some(i64::from(parsed.prediction));
                                 record.served_backend = Some(parsed.backend);
+                                record.execution_time_ns = Some(parsed.execution_time_ns);
+                                record.inference_time_ns = Some(parsed.inference_time_ns);
+                                record.request_total_ns = Some(parsed.request_total_ns);
+                                record.adapter_roundtrip_ns = parsed.adapter_roundtrip_ns;
                                 record.success = true;
                             }
                             Err(error) => {
