@@ -1,0 +1,78 @@
+{
+  "backend": "wasmtime",
+  "confidence_level": 0.95,
+  "full_wp1_accepted": false,
+  "metrics": {
+    "p50_ms": {
+      "precision_accepted": true,
+      "run_cluster_bootstrap": {
+        "lower": 1.921236142857143,
+        "mean": 1.9529901428571428,
+        "relative_halfwidth": 0.017447141432186723,
+        "upper": 1.9893843333333332
+      },
+      "student_t": {
+        "lower": 1.914649258919178,
+        "mean": 1.9529901428571428,
+        "relative_halfwidth": 0.019631888096410813,
+        "upper": 1.9913310267951077
+      }
+    },
+    "p95_ms": {
+      "precision_accepted": true,
+      "run_cluster_bootstrap": {
+        "lower": 2.5326330952380953,
+        "mean": 2.5768724285714284,
+        "relative_halfwidth": 0.01845433854746134,
+        "upper": 2.6277420476190474
+      },
+      "student_t": {
+        "lower": 2.5227800247477967,
+        "mean": 2.5768724285714284,
+        "relative_halfwidth": 0.020991494659912038,
+        "upper": 2.63096483239506
+      }
+    },
+    "p99_ms": {
+      "precision_accepted": true,
+      "run_cluster_bootstrap": {
+        "lower": 2.681577380952381,
+        "mean": 2.7408003333333335,
+        "relative_halfwidth": 0.022832381928344265,
+        "upper": 2.806735380952381
+      },
+      "student_t": {
+        "lower": 2.6723508365351694,
+        "mean": 2.7408003333333335,
+        "relative_halfwidth": 0.024974273377629322,
+        "upper": 2.8092498301314976
+      }
+    },
+    "throughput_rps": {
+      "precision_accepted": true,
+      "run_cluster_bootstrap": {
+        "lower": 99.95127973900344,
+        "mean": 99.95293009364046,
+        "relative_halfwidth": 1.532085360002878e-05,
+        "upper": 99.95434246742116
+      },
+      "student_t": {
+        "lower": 99.95124434642918,
+        "mean": 99.95293009364046,
+        "relative_halfwidth": 1.686541064580458e-05,
+        "upper": 99.95461584085174
+      }
+    }
+  },
+  "model": "lr",
+  "offered_rps": 100,
+  "outstanding_gates": [
+    "generator_gateway_noop_headroom",
+    "verified_cpu_memory_worker_parity",
+    "within_run_serial_dependence_block_bootstrap",
+    "steady_state_achieved_load_and_loadgen_timing"
+  ],
+  "precision_accepted": true,
+  "relative_halfwidth_target": 0.025,
+  "repetitions": 21
+}

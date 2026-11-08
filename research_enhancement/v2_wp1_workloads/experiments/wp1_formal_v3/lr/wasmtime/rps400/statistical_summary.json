@@ -1,0 +1,78 @@
+{
+  "backend": "wasmtime",
+  "confidence_level": 0.95,
+  "full_wp1_accepted": false,
+  "metrics": {
+    "p50_ms": {
+      "precision_accepted": true,
+      "run_cluster_bootstrap": {
+        "lower": 1.25476605,
+        "mean": 1.27873275,
+        "relative_halfwidth": 0.01682245566948999,
+        "upper": 1.2977889
+      },
+      "student_t": {
+        "lower": 1.2554612833977459,
+        "mean": 1.27873275,
+        "relative_halfwidth": 0.018198850856251426,
+        "upper": 1.3020042166022543
+      }
+    },
+    "p95_ms": {
+      "precision_accepted": true,
+      "run_cluster_bootstrap": {
+        "lower": 1.90987865,
+        "mean": 1.93366355,
+        "relative_halfwidth": 0.011164325872512811,
+        "upper": 1.95305475
+      },
+      "student_t": {
+        "lower": 1.910408594235736,
+        "mean": 1.93366355,
+        "relative_halfwidth": 0.012026371270360747,
+        "upper": 1.9569185057642637
+      }
+    },
+    "p99_ms": {
+      "precision_accepted": true,
+      "run_cluster_bootstrap": {
+        "lower": 1.99052655,
+        "mean": 2.0149658,
+        "relative_halfwidth": 0.010873546836378036,
+        "upper": 2.0343462
+      },
+      "student_t": {
+        "lower": 1.9912518186948907,
+        "mean": 2.0149658,
+        "relative_halfwidth": 0.01176892496394209,
+        "upper": 2.0386797813051096
+      }
+    },
+    "throughput_rps": {
+      "precision_accepted": true,
+      "run_cluster_bootstrap": {
+        "lower": 399.26273619538836,
+        "mean": 399.2751876750604,
+        "relative_halfwidth": 3.2423435412111766e-05,
+        "upper": 399.28862794190684
+      },
+      "student_t": {
+        "lower": 399.2613326045696,
+        "mean": 399.2751876750604,
+        "relative_halfwidth": 3.470055470135945e-05,
+        "upper": 399.2890427455512
+      }
+    }
+  },
+  "model": "lr",
+  "offered_rps": 400,
+  "outstanding_gates": [
+    "generator_gateway_noop_headroom",
+    "verified_cpu_memory_worker_parity",
+    "within_run_serial_dependence_block_bootstrap",
+    "steady_state_achieved_load_and_loadgen_timing"
+  ],
+  "precision_accepted": true,
+  "relative_halfwidth_target": 0.025,
+  "repetitions": 20
+}
