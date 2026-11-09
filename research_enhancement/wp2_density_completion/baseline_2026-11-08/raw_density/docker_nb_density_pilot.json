@@ -1,0 +1,226 @@
+{
+  "experiment": "docker_nb_density_pilot",
+  "backend": "docker",
+  "model": "naive_bayes",
+  "measurement_method": "container-local /proc/1/smaps_rollup",
+  "repetitions": 5,
+  "memory_samples_per_repetition": 5,
+  "container_levels": [
+    1,
+    5,
+    10,
+    20
+  ],
+  "raw_results": [
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 1,
+      "repetition": 1,
+      "rss_mib": 5.546875,
+      "pss_mib": 3.1150390625,
+      "private_mib": 2.265625
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 1,
+      "repetition": 2,
+      "rss_mib": 5.6328125,
+      "pss_mib": 3.16015625,
+      "private_mib": 2.296875
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 1,
+      "repetition": 3,
+      "rss_mib": 5.69140625,
+      "pss_mib": 3.1822265625,
+      "private_mib": 2.3203125
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 1,
+      "repetition": 4,
+      "rss_mib": 5.5234375,
+      "pss_mib": 3.10078125,
+      "private_mib": 2.2734375
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 1,
+      "repetition": 5,
+      "rss_mib": 5.59765625,
+      "pss_mib": 3.1416015625,
+      "private_mib": 2.28046875
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 5,
+      "repetition": 1,
+      "rss_mib": 28.30859375,
+      "pss_mib": 13.331640625,
+      "private_mib": 11.37109375
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 5,
+      "repetition": 2,
+      "rss_mib": 28.0859375,
+      "pss_mib": 13.342578125,
+      "private_mib": 11.37890625
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 5,
+      "repetition": 3,
+      "rss_mib": 28.140625,
+      "pss_mib": 13.293359375,
+      "private_mib": 11.33984375
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 5,
+      "repetition": 4,
+      "rss_mib": 28.15234375,
+      "pss_mib": 13.3353515625,
+      "private_mib": 11.37109375
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 5,
+      "repetition": 5,
+      "rss_mib": 28.0546875,
+      "pss_mib": 13.2990234375,
+      "private_mib": 11.33984375
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 10,
+      "repetition": 1,
+      "rss_mib": 56.30859375,
+      "pss_mib": 25.1814453125,
+      "private_mib": 22.69453125
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 10,
+      "repetition": 2,
+      "rss_mib": 56.26953125,
+      "pss_mib": 25.184765625,
+      "private_mib": 22.678125
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 10,
+      "repetition": 3,
+      "rss_mib": 56.23828125,
+      "pss_mib": 25.18671875,
+      "private_mib": 22.703125
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 10,
+      "repetition": 4,
+      "rss_mib": 56.375,
+      "pss_mib": 25.2263671875,
+      "private_mib": 22.73046875
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 10,
+      "repetition": 5,
+      "rss_mib": 56.23046875,
+      "pss_mib": 25.1841796875,
+      "private_mib": 22.709375
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 20,
+      "repetition": 1,
+      "rss_mib": 112.30078125,
+      "pss_mib": 48.3150390625,
+      "private_mib": 45.390625
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 20,
+      "repetition": 2,
+      "rss_mib": 113.00390625,
+      "pss_mib": 48.38203125,
+      "private_mib": 45.4296875
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 20,
+      "repetition": 3,
+      "rss_mib": 112.8046875,
+      "pss_mib": 48.3056640625,
+      "private_mib": 45.34765625
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 20,
+      "repetition": 4,
+      "rss_mib": 112.7265625,
+      "pss_mib": 48.2837890625,
+      "private_mib": 45.33203125
+    },
+    {
+      "backend": "docker",
+      "model": "naive_bayes",
+      "containers": 20,
+      "repetition": 5,
+      "rss_mib": 112.765625,
+      "pss_mib": 48.3884765625,
+      "private_mib": 45.4453125
+    }
+  ],
+  "summary": [
+    {
+      "containers": 1,
+      "rss_mean_mib": 5.5984375,
+      "pss_mean_mib": 3.1399609375,
+      "private_mean_mib": 2.28734375,
+      "pss_sd_mib": 0.0329889114708154
+    },
+    {
+      "containers": 5,
+      "rss_mean_mib": 28.1484375,
+      "pss_mean_mib": 13.320390625,
+      "private_mean_mib": 11.36015625,
+      "pss_sd_mib": 0.022527330541763695
+    },
+    {
+      "containers": 10,
+      "rss_mean_mib": 56.284375,
+      "pss_mean_mib": 25.1926953125,
+      "private_mean_mib": 22.703125,
+      "pss_sd_mib": 0.018917404541323086
+    },
+    {
+      "containers": 20,
+      "rss_mean_mib": 112.7203125,
+      "pss_mean_mib": 48.335,
+      "private_mean_mib": 45.3890625,
+      "pss_sd_mib": 0.04731088032337504
+    }
+  ]
+}

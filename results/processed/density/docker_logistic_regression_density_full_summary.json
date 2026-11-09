@@ -6,42 +6,42 @@
   "minimum_repetitions": 20,
   "maximum_repetitions": 60,
   "density_levels": [
-    20,
-    100,
-    200
+    5,
+    10,
+    50
   ],
   "summary": {
-    "20": {
-      "physical_tenants": 20,
+    "5": {
+      "physical_tenants": 5,
       "repetitions": 20,
-      "pss_mean_mib": 49.398916015625,
-      "pss_sd_mib": 0.06459804391123253,
-      "ci95_halfwidth_mib": 0.030232815177003394,
-      "ci95_lower_mib": 49.368683200448,
-      "ci95_upper_mib": 49.429148830802,
-      "relative_ci_halfwidth": 0.0006120137366463807,
+      "pss_mean_mib": 14.437255859375,
+      "pss_sd_mib": 0.038663872433806555,
+      "ci95_halfwidth_mib": 0.01809524930700347,
+      "ci95_lower_mib": 14.419160610067996,
+      "ci95_upper_mib": 14.455351108682004,
+      "relative_ci_halfwidth": 0.0012533717960849955,
       "ci_target_met": true
     },
-    "100": {
-      "physical_tenants": 100,
+    "10": {
+      "physical_tenants": 10,
       "repetitions": 20,
-      "pss_mean_mib": 235.971240234375,
-      "pss_sd_mib": 0.1256809659135711,
-      "ci95_halfwidth_mib": 0.05882050266032215,
-      "ci95_lower_mib": 235.91241973171466,
-      "ci95_upper_mib": 236.0300607370353,
-      "relative_ci_halfwidth": 0.00024926979492034514,
+      "pss_mean_mib": 26.389912109375,
+      "pss_sd_mib": 0.0403081247047921,
+      "ci95_halfwidth_mib": 0.018864783057613372,
+      "ci95_lower_mib": 26.371047326317388,
+      "ci95_upper_mib": 26.408776892432613,
+      "relative_ci_halfwidth": 0.0007148482715450829,
       "ci_target_met": true
     },
-    "200": {
-      "physical_tenants": 200,
+    "50": {
+      "physical_tenants": 50,
       "repetitions": 20,
-      "pss_mean_mib": 468.405205078125,
-      "pss_sd_mib": 0.26158968822731177,
-      "ci95_halfwidth_mib": 0.12242774266127716,
-      "ci95_lower_mib": 468.2827773354637,
-      "ci95_upper_mib": 468.52763282078627,
-      "relative_ci_halfwidth": 0.00026137143937343205,
+      "pss_mean_mib": 119.403369140625,
+      "pss_sd_mib": 0.0650926417807695,
+      "ci95_halfwidth_mib": 0.0304642941053313,
+      "ci95_lower_mib": 119.37290484651967,
+      "ci95_upper_mib": 119.43383343473033,
+      "relative_ci_halfwidth": 0.0002551376424684681,
       "ci_target_met": true
     }
   }

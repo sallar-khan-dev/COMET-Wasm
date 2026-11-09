@@ -1,0 +1,38 @@
+{
+  "model": "mlp",
+  "levels": [
+    1,
+    20,
+    100,
+    200
+  ],
+  "comparison": [
+    {
+      "tenants": 1,
+      "wasmtime_mib": 18.391347656249998,
+      "docker_mib": 3.2032421874500003,
+      "docker_wasm_ratio": 0.174171150876017
+    },
+    {
+      "tenants": 20,
+      "wasmtime_mib": 18.64169921875,
+      "docker_mib": 49.53568359385,
+      "docker_wasm_ratio": 2.657251520506593
+    },
+    {
+      "tenants": 100,
+      "wasmtime_mib": 19.87099609365,
+      "docker_mib": 236.4156640624,
+      "docker_wasm_ratio": 11.897524560328876
+    },
+    {
+      "tenants": 200,
+      "wasmtime_mib": 21.36231445315,
+      "docker_mib": 469.22024414050003,
+      "docker_wasm_ratio": 21.964859901746777
+    }
+  ],
+  "wasmtime_growth_1_to_200_mib": 2.970966796900001,
+  "docker_growth_1_to_200_mib": 466.01700195305006,
+  "docker_wasmtime_ratio_at_200": 21.964859901746777
+}

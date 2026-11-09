@@ -1,0 +1,122 @@
+{
+  "experiment": "naive_bayes_full_density",
+  "observations": {
+    "wasmtime": 140,
+    "docker": 140,
+    "total": 280
+  },
+  "density_levels": [
+    1,
+    5,
+    10,
+    20,
+    50,
+    100,
+    200
+  ],
+  "repetitions_per_level": 20,
+  "wasmtime_regression": {
+    "intercept_mib": 17.538309241940695,
+    "slope_mib_per_tenant": 0.010981949667526136,
+    "slope_kib_per_tenant": 11.245516459546764,
+    "r2": 0.9998614602248319
+  },
+  "docker_regression": {
+    "intercept_mib": 2.103085694471935,
+    "slope_mib_per_tenant": 2.3386565984805614,
+    "slope_kib_per_tenant": 2394.784356844095,
+    "r2": 0.9999846497868888
+  },
+  "fitted_crossover_tenants": 6.63117740932554,
+  "observed_crossover_interval": [
+    5,
+    10
+  ],
+  "comparison": [
+    {
+      "physical_tenants": 1,
+      "pss_mean_mib_wasmtime": 17.5603222656,
+      "ci95_halfwidth_mib_wasmtime": 0.023770765153006992,
+      "pss_mean_mib_docker": 3.199970703150001,
+      "ci95_halfwidth_mib_docker": 0.011584520956011837,
+      "docker_to_wasmtime_pss_ratio": 0.18222733357340606,
+      "docker_minus_wasmtime_mib": -14.360351562449999,
+      "wasmtime_memory_reduction_vs_docker_pct": -448.7650948902093,
+      "wasmtime_pss_per_tenant_mib": 17.5603222656,
+      "docker_pss_per_tenant_mib": 3.199970703150001
+    },
+    {
+      "physical_tenants": 5,
+      "pss_mean_mib_wasmtime": 17.59012695305,
+      "ci95_halfwidth_mib_wasmtime": 0.01810488530345631,
+      "pss_mean_mib_docker": 13.591015624949998,
+      "ci95_halfwidth_mib_docker": 0.009910370324854749,
+      "docker_to_wasmtime_pss_ratio": 0.7726502293716201,
+      "docker_minus_wasmtime_mib": -3.9991113281000015,
+      "wasmtime_memory_reduction_vs_docker_pct": -29.4246687551337,
+      "wasmtime_pss_per_tenant_mib": 3.51802539061,
+      "docker_pss_per_tenant_mib": 2.7182031249899996
+    },
+    {
+      "physical_tenants": 10,
+      "pss_mean_mib_wasmtime": 17.6486230469,
+      "ci95_halfwidth_mib_wasmtime": 0.028745872655405215,
+      "pss_mean_mib_docker": 25.75698242185,
+      "ci95_halfwidth_mib_docker": 0.017179500268538667,
+      "docker_to_wasmtime_pss_ratio": 1.4594329740854342,
+      "docker_minus_wasmtime_mib": 8.108359374950002,
+      "wasmtime_memory_reduction_vs_docker_pct": 31.480238026918748,
+      "wasmtime_pss_per_tenant_mib": 1.7648623046899998,
+      "docker_pss_per_tenant_mib": 2.575698242185
+    },
+    {
+      "physical_tenants": 20,
+      "pss_mean_mib_wasmtime": 17.76476562485,
+      "ci95_halfwidth_mib_wasmtime": 0.023601570917010414,
+      "pss_mean_mib_docker": 49.50364257825,
+      "ci95_halfwidth_mib_docker": 0.03490812606293477,
+      "docker_to_wasmtime_pss_ratio": 2.786619515486459,
+      "docker_minus_wasmtime_mib": 31.738876953400002,
+      "wasmtime_memory_reduction_vs_docker_pct": 64.11422533853064,
+      "wasmtime_pss_per_tenant_mib": 0.8882382812425,
+      "docker_pss_per_tenant_mib": 2.4751821289125
+    },
+    {
+      "physical_tenants": 50,
+      "pss_mean_mib_wasmtime": 18.06940429675,
+      "ci95_halfwidth_mib_wasmtime": 0.026317093642856164,
+      "pss_mean_mib_docker": 119.67307617179999,
+      "ci95_halfwidth_mib_docker": 0.06106181115965924,
+      "docker_to_wasmtime_pss_ratio": 6.622967431932697,
+      "docker_minus_wasmtime_mib": 101.60367187505,
+      "wasmtime_memory_reduction_vs_docker_pct": 84.90102797156315,
+      "wasmtime_pss_per_tenant_mib": 0.36138808593500005,
+      "docker_pss_per_tenant_mib": 2.3934615234359997
+    },
+    {
+      "physical_tenants": 100,
+      "pss_mean_mib_wasmtime": 18.63437499995,
+      "ci95_halfwidth_mib_wasmtime": 0.02258971261955479,
+      "pss_mean_mib_docker": 236.24727539064997,
+      "ci95_halfwidth_mib_docker": 0.12201249970265278,
+      "docker_to_wasmtime_pss_ratio": 12.678035908973811,
+      "docker_minus_wasmtime_mib": 217.61290039069996,
+      "wasmtime_memory_reduction_vs_docker_pct": 92.1123428961723,
+      "wasmtime_pss_per_tenant_mib": 0.1863437499995,
+      "docker_pss_per_tenant_mib": 2.3624727539065
+    },
+    {
+      "physical_tenants": 200,
+      "pss_mean_mib_wasmtime": 19.73958007815,
+      "ci95_halfwidth_mib_wasmtime": 0.02531554745264809,
+      "pss_mean_mib_docker": 469.4710839841499,
+      "ci95_halfwidth_mib_docker": 0.14417285525617163,
+      "docker_to_wasmtime_pss_ratio": 23.783235617246675,
+      "docker_minus_wasmtime_mib": 449.73150390599994,
+      "wasmtime_memory_reduction_vs_docker_pct": 95.79535763723067,
+      "wasmtime_pss_per_tenant_mib": 0.09869790039074999,
+      "docker_pss_per_tenant_mib": 2.3473554199207496
+    }
+  ],
+  "measurement_scope": "Process-level PSS. Wasmtime represents one server process containing all independent Stores and Instances. Docker represents aggregate PSS across native inference processes inside containers."
+}

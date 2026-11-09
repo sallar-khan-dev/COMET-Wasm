@@ -1,0 +1,75 @@
+{
+  "experiment": "naive_bayes_density_pilot",
+  "tenant_levels": [
+    1,
+    5,
+    10,
+    20
+  ],
+  "wasmtime_fit": {
+    "slope_mib_per_tenant": 0.013934483292079806,
+    "intercept_mib": 17.52848613474628,
+    "r2": 0.9949633451918626
+  },
+  "docker_fit": {
+    "slope_mib_per_tenant": 2.3686952738242573,
+    "intercept_mib": 1.1787542543316645,
+    "r2": 0.9996390432238046
+  },
+  "estimated_pss_crossover_tenants": 6.943266571344416,
+  "comparison": [
+    {
+      "physical_tenants": 1,
+      "pss_mean_mib_wasmtime": 17.5366796875,
+      "pss_sd_mib_wasmtime": 0.0650699063500351,
+      "rss_mean_mib_wasmtime": 19.665625,
+      "pss_mean_mib_docker": 3.1399609375,
+      "pss_sd_mib_docker": 0.03298891147081535,
+      "rss_mean_mib_docker": 5.5984375,
+      "docker_to_wasmtime_pss_ratio": 0.17905105147915418,
+      "pss_difference_mib": -14.396718750000002,
+      "wasmtime_pss_per_physical_tenant_mib": 17.5366796875,
+      "docker_pss_per_physical_tenant_mib": 3.1399609375
+    },
+    {
+      "physical_tenants": 5,
+      "pss_mean_mib_wasmtime": 17.59765625,
+      "pss_sd_mib_wasmtime": 0.03905029106080509,
+      "rss_mean_mib_wasmtime": 19.73984375,
+      "pss_mean_mib_docker": 13.320390624999998,
+      "pss_sd_mib_docker": 0.02252733054176376,
+      "rss_mean_mib_docker": 28.1484375,
+      "docker_to_wasmtime_pss_ratio": 0.7569411764705881,
+      "pss_difference_mib": -4.277265625000002,
+      "wasmtime_pss_per_physical_tenant_mib": 3.51953125,
+      "docker_pss_per_physical_tenant_mib": 2.6640781249999996
+    },
+    {
+      "physical_tenants": 10,
+      "pss_mean_mib_wasmtime": 17.6794921875,
+      "pss_sd_mib_wasmtime": 0.05082067279849208,
+      "rss_mean_mib_wasmtime": 19.80625,
+      "pss_mean_mib_docker": 25.1926953125,
+      "pss_sd_mib_docker": 0.018917404541323086,
+      "rss_mean_mib_docker": 56.284375,
+      "docker_to_wasmtime_pss_ratio": 1.4249671339718732,
+      "pss_difference_mib": 7.513203125,
+      "wasmtime_pss_per_physical_tenant_mib": 1.7679492187499999,
+      "docker_pss_per_physical_tenant_mib": 2.51926953125
+    },
+    {
+      "physical_tenants": 20,
+      "pss_mean_mib_wasmtime": 17.8017578125,
+      "pss_sd_mib_wasmtime": 0.05408252146875152,
+      "rss_mean_mib_wasmtime": 19.9375,
+      "pss_mean_mib_docker": 48.335,
+      "pss_sd_mib_docker": 0.047310880323374646,
+      "rss_mean_mib_docker": 112.7203125,
+      "docker_to_wasmtime_pss_ratio": 2.7151813045147843,
+      "pss_difference_mib": 30.5332421875,
+      "wasmtime_pss_per_physical_tenant_mib": 0.890087890625,
+      "docker_pss_per_physical_tenant_mib": 2.41675
+    }
+  ],
+  "interpretation_note": "Pilot only. Results must not be treated as final publication claims until the full CI-controlled density experiment is completed."
+}

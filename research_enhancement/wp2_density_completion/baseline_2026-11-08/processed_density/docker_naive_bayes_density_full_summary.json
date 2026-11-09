@@ -1,0 +1,110 @@
+{
+  "backend": "docker",
+  "model": "naive_bayes",
+  "confidence_level": 0.95,
+  "relative_ci_target": 0.025,
+  "source": "/home/sallar/wasiMultitenant/results/raw/density/docker_naive_bayes_density_full.csv",
+  "density_levels": [
+    1,
+    5,
+    10,
+    20,
+    50,
+    100,
+    200
+  ],
+  "total_repetitions": 140,
+  "summary": {
+    "1": {
+      "physical_tenants": 1,
+      "repetitions": 20,
+      "pss_mean_mib": 3.199970703150001,
+      "pss_sd_mib": 0.024752487951445197,
+      "ci95_halfwidth_mib": 0.011584520956011837,
+      "ci95_lower_mib": 3.188386182193989,
+      "ci95_upper_mib": 3.2115552241060126,
+      "relative_ci_halfwidth": 0.003620195942609167,
+      "rss_mean_mib": 5.6943359375,
+      "private_mean_mib": 2.3399218750000004,
+      "ci_target_met": true
+    },
+    "5": {
+      "physical_tenants": 5,
+      "repetitions": 20,
+      "pss_mean_mib": 13.591015624949998,
+      "pss_sd_mib": 0.021175353127832572,
+      "ci95_halfwidth_mib": 0.009910370324854749,
+      "ci95_lower_mib": 13.581105254625143,
+      "ci95_upper_mib": 13.600925995274853,
+      "relative_ci_halfwidth": 0.0007291854117702267,
+      "rss_mean_mib": 28.40703125,
+      "private_mean_mib": 11.635546875,
+      "ci_target_met": true
+    },
+    "10": {
+      "physical_tenants": 10,
+      "repetitions": 20,
+      "pss_mean_mib": 25.75698242185,
+      "pss_sd_mib": 0.0367072039511634,
+      "ci95_halfwidth_mib": 0.017179500268538667,
+      "ci95_lower_mib": 25.73980292158146,
+      "ci95_upper_mib": 25.77416192211854,
+      "relative_ci_halfwidth": 0.0006669841981941589,
+      "rss_mean_mib": 56.858203125,
+      "private_mean_mib": 23.271640625,
+      "ci_target_met": true
+    },
+    "20": {
+      "physical_tenants": 20,
+      "repetitions": 20,
+      "pss_mean_mib": 49.50364257825,
+      "pss_sd_mib": 0.07458771692513654,
+      "ci95_halfwidth_mib": 0.03490812606293477,
+      "ci95_lower_mib": 49.468734452187064,
+      "ci95_upper_mib": 49.53855070431294,
+      "relative_ci_halfwidth": 0.0007051627768149745,
+      "rss_mean_mib": 113.8634765625,
+      "private_mean_mib": 46.564335937500005,
+      "ci_target_met": true
+    },
+    "50": {
+      "physical_tenants": 50,
+      "repetitions": 20,
+      "pss_mean_mib": 119.67307617179999,
+      "pss_sd_mib": 0.1304699392199315,
+      "ci95_halfwidth_mib": 0.06106181115965924,
+      "ci95_lower_mib": 119.61201436064033,
+      "ci95_upper_mib": 119.73413798295965,
+      "relative_ci_halfwidth": 0.0005102385023679032,
+      "rss_mean_mib": 284.423046875,
+      "private_mean_mib": 116.33074218750001,
+      "ci_target_met": true
+    },
+    "100": {
+      "physical_tenants": 100,
+      "repetitions": 20,
+      "pss_mean_mib": 236.24727539064997,
+      "pss_sd_mib": 0.26070244426018524,
+      "ci95_halfwidth_mib": 0.12201249970265278,
+      "ci95_lower_mib": 236.1252628909473,
+      "ci95_upper_mib": 236.36928789035264,
+      "relative_ci_halfwidth": 0.0005164609814055942,
+      "rss_mean_mib": 569.1150390625,
+      "private_mean_mib": 232.756640625,
+      "ci_target_met": true
+    },
+    "200": {
+      "physical_tenants": 200,
+      "repetitions": 20,
+      "pss_mean_mib": 469.4710839841499,
+      "pss_sd_mib": 0.30805217377606636,
+      "ci95_halfwidth_mib": 0.14417285525617163,
+      "ci95_lower_mib": 469.32691112889376,
+      "ci95_upper_mib": 469.6152568394061,
+      "relative_ci_halfwidth": 0.00030709634772956354,
+      "rss_mean_mib": 1138.437109375,
+      "private_mean_mib": 465.936328125,
+      "ci_target_met": true
+    }
+  }
+}
