@@ -1,0 +1,17 @@
+{
+  "backend": "wasmtime",
+  "model": "rf_trees_200",
+  "test_samples": 171,
+  "warmup_requests": 1000,
+  "requests_per_repetition": 5000,
+  "repetitions": 60,
+  "total_measured_requests": 300000,
+  "execution_mean_ns": 21045.284973333335,
+  "execution_median_of_medians_ns": 19308.75,
+  "execution_mean_p95_ns": 30128.933333333334,
+  "execution_mean_p99_ns": 36126.73333333333,
+  "inference_mean_ns": 21472.170503333335,
+  "execution_95ci_halfwidth_ns": 964.3561068694804,
+  "execution_relative_95ci": 0.045822905610041605,
+  "ci_target_pass": false
+}

@@ -1,0 +1,17 @@
+{
+  "backend": "docker",
+  "model": "rf_trees_100",
+  "test_samples": 171,
+  "warmup_requests": 1000,
+  "requests_per_repetition": 5000,
+  "repetitions": 36,
+  "total_measured_requests": 180000,
+  "execution_mean_ns": 8398.062744444445,
+  "execution_median_of_medians_ns": 7061.5,
+  "execution_mean_p95_ns": 16252.472222222223,
+  "execution_mean_p99_ns": 18627.527777777777,
+  "inference_mean_ns": 8580.354994444444,
+  "execution_95ci_halfwidth_ns": 207.5633051944574,
+  "execution_relative_95ci": 0.024715617340649945,
+  "ci_target_pass": true
+}
