@@ -1,0 +1,9 @@
+model,backend,mode,success,offered,p95_ms,p99_ms,p99_schedule_delay_ms,ingress_threads_max,docker_threads_max
+rf,wasmtime,noop,6000,6000,2.155233,2.371791,1.877715,3,
+rf,wasmtime,infer,1500,1500,2.796442,2.908125,2.092674,4,
+rf,docker,noop,6000,6000,2.158957,2.371118,1.89914,2,2
+rf,docker,infer,1500,1500,3.810772,4.123603,1.937611,2,2
+svm,wasmtime,noop,6000,6000,2.155226,2.343329,1.877494,3,
+svm,wasmtime,infer,1500,1500,2.19229,2.467461,1.854929,4,
+svm,docker,noop,6000,6000,1.951055,2.354315,1.851431,2,2
+svm,docker,infer,1500,1500,4.034528,4.374973,2.177923,2,2

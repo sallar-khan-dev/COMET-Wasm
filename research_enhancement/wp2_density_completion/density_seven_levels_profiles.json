@@ -1,0 +1,296 @@
+[
+  {
+    "backend": "wasmtime",
+    "model": "kmeans",
+    "tenants": 1,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_kmeans_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "kmeans",
+    "tenants": 5,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_kmeans_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "kmeans",
+    "tenants": 10,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_kmeans_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "kmeans",
+    "tenants": 20,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_kmeans_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "kmeans",
+    "tenants": 50,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_kmeans_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "kmeans",
+    "tenants": 100,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_kmeans_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "kmeans",
+    "tenants": 200,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_kmeans_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "svm",
+    "tenants": 1,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_svm_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "svm",
+    "tenants": 5,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_svm_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "svm",
+    "tenants": 10,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_svm_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "svm",
+    "tenants": 20,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_svm_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "svm",
+    "tenants": 50,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_svm_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "svm",
+    "tenants": 100,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_svm_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "svm",
+    "tenants": 200,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_svm_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "mlp",
+    "tenants": 1,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_mlp_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "mlp",
+    "tenants": 5,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_mlp_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "mlp",
+    "tenants": 10,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_mlp_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "mlp",
+    "tenants": 20,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_mlp_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "mlp",
+    "tenants": 50,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_mlp_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "mlp",
+    "tenants": 100,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_mlp_density_full.csv"
+  },
+  {
+    "backend": "wasmtime",
+    "model": "mlp",
+    "tenants": 200,
+    "samples": 0,
+    "source_file": "results/raw/density/wasmtime_mlp_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "kmeans",
+    "tenants": 1,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_kmeans_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "kmeans",
+    "tenants": 5,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_kmeans_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "kmeans",
+    "tenants": 10,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_kmeans_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "kmeans",
+    "tenants": 20,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_kmeans_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "kmeans",
+    "tenants": 50,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_kmeans_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "kmeans",
+    "tenants": 100,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_kmeans_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "kmeans",
+    "tenants": 200,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_kmeans_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "svm",
+    "tenants": 1,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_svm_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "svm",
+    "tenants": 5,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_svm_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "svm",
+    "tenants": 10,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_svm_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "svm",
+    "tenants": 20,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_svm_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "svm",
+    "tenants": 50,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_svm_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "svm",
+    "tenants": 100,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_svm_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "svm",
+    "tenants": 200,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_svm_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "mlp",
+    "tenants": 1,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_mlp_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "mlp",
+    "tenants": 5,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_mlp_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "mlp",
+    "tenants": 10,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_mlp_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "mlp",
+    "tenants": 20,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_mlp_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "mlp",
+    "tenants": 50,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_mlp_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "mlp",
+    "tenants": 100,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_mlp_density_full.csv"
+  },
+  {
+    "backend": "docker",
+    "model": "mlp",
+    "tenants": 200,
+    "samples": 0,
+    "source_file": "results/raw/density/docker_mlp_density_full.csv"
+  }
+]

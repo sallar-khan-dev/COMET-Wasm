@@ -1,0 +1,29 @@
+{
+  "baseline": {
+    "n": 20,
+    "mean_ready_pss_kib": 3241.07,
+    "sd_ready_pss_kib": 53.524899272257045,
+    "mean_engine_delta_kib": 1577.83,
+    "mean_module_delta_kib": 0.0,
+    "mean_worker_delta_kib": -0.07000000000000454
+  },
+  "jit": {
+    "n": 20,
+    "mean_ready_pss_kib": 10502.72,
+    "sd_ready_pss_kib": 129.64782093689124,
+    "mean_engine_delta_kib": 1574.17,
+    "mean_module_delta_kib": 6936.98,
+    "mean_worker_delta_kib": 332.59
+  },
+  "aot": {
+    "n": 20,
+    "mean_ready_pss_kib": 5092.46,
+    "sd_ready_pss_kib": 39.13808752017453,
+    "mean_engine_delta_kib": 1570.78,
+    "mean_module_delta_kib": 1528.29,
+    "mean_worker_delta_kib": 339.4
+  },
+  "mean_aot_minus_jit_pss_kib": -5410.259999999999,
+  "all_inference_predictions_pass": true,
+  "interpretation": "Only memory sensitivity of one LR Wasmtime model at one fixed worker count; not all-model WP2 acceptance; precompile artifact built outside benchmark; stage differences are within-process measurements, not independent attribution of OS shared mappings."
+}

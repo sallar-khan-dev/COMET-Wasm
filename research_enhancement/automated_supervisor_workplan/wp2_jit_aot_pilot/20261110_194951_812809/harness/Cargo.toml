@@ -1,0 +1,9 @@
+[package]
+name="comet_wp2_aot_pss_pilot"
+version="0.1.0"
+edition="2021"
+
+[dependencies]
+anyhow="1"
+wasmtime="44"
+comet_worker_pool={path="/home/sallar/wasiMultitenant/serving/worker_pool"}

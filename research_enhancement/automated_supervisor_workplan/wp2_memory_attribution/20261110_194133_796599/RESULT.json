@@ -1,0 +1,10 @@
+{
+  "experiment": "WP2 Docker RF application + helper/runtime memory",
+  "completed_trials": 20,
+  "expected_trials": 20,
+  "application_pss_trials_valid": 20,
+  "helper_pss_trials_visible": 0,
+  "helper_attribution_accepted": false,
+  "method_note": "Global daemon and containerd PSS changes are observational and may be affected by other containers. Do not assign to COMET without isolated daemon or per-container helper ownership.",
+  "next": "WP2 Wasmtime JIT/AOT controlled pilot and base/model-resident attribution remain; do not claim WP2 complete."
+}

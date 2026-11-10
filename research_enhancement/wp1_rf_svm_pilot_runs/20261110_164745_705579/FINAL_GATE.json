@@ -1,0 +1,26 @@
+{
+  "scope": "Supervisor WP1 RF/SVM common-gateway pilot, not full WP1 acceptance",
+  "cpu": 0,
+  "rps": [
+    50,
+    100,
+    300
+  ],
+  "requests": 1500,
+  "reps": 2,
+  "tenants": 3,
+  "git_head": "9155d8e1d7e76ad9b3be641b11f64b10bc0f52e2",
+  "runs": [],
+  "blockers": [
+    "Blocked: Command failed with exit 1; log: /home/sallar/wasiMultitenant/research_enhancement/wp1_rf_svm_pilot_runs/20261110_164745_705579/rf_trace.log"
+  ],
+  "status": "BLOCKED",
+  "rf_wasm_sha256": "deabe74ecd8734b0833b5d33414a3142652e8088832451b14931a5e16febc049",
+  "rf_golden_sha256": "69bdde867803bc19988c006276b3d9c62387712aafa35cbaf984871c7c003da8",
+  "rf_image": "comet-wp1-rf:latest",
+  "rf_docker_image_id": "sha256:11243a446f5c0b247e2936b0fea72da2412087ad75d130ed51a12f9dda960b12",
+  "svm_wasm_sha256": "900b962d61d922717ac07127bfbfa76c8cc9df77a223f205015e2ee0cf325220",
+  "svm_golden_sha256": "fec83ad3a20a0e8a601b25d7ad34f5a5eabeab6e730dbbc69c3dccc1728263ae",
+  "svm_image": "comet-wp1-svm:latest",
+  "svm_docker_image_id": "sha256:a6d01dfd7dde60af707d3d17af5281066f8f56ce22594ef0d7a0f542a3143edd"
+}

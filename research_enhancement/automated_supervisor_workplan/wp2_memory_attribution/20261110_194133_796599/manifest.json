@@ -1,0 +1,11 @@
+{
+  "scope": "WP2 Docker RF PSS and runtime/helper attribution",
+  "image": "comet-wp1-rf:latest",
+  "image_id": "sha256:11243a446f5c0b247e2936b0fea72da2412087ad75d130ed51a12f9dda960b12",
+  "repetitions": 20,
+  "cpu": 0,
+  "sampling_interval_s": 0.2,
+  "sampling_count": 5,
+  "git_head": "9155d8e1d7e76ad9b3be641b11f64b10bc0f52e2",
+  "warning": "Shared dockerd/containerd PSS is not causal per-container attribution unless daemon isolation is demonstrated."
+}

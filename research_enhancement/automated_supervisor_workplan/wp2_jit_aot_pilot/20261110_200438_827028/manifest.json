@@ -1,0 +1,20 @@
+{
+  "scope": "Supervisor WP2 \u00a75.1 Wasmtime JIT-loaded vs precompiled/AOT pilot",
+  "model": "lr",
+  "wasm_sha256": "f78b0eb25db720a01f5f8e9496fbc145603e75ebd670036dcc504f3f88574faf",
+  "cpu": 0,
+  "workers": 1,
+  "repetitions": 20,
+  "samples_per_stage": 5,
+  "interval_s": 0.2,
+  "wasmtime_version": "44 in Cargo manifest",
+  "engine_config": "Engine::default() both conditions",
+  "aot_loader": "Engine::precompile_module then unsafe Module::deserialize_file, same engine config",
+  "jit_loader": "Module::from_file",
+  "source_repo_unchanged": true,
+  "status": "COMPLETED",
+  "aot_sha256": "a55eca34b031e755aff26b1d1188fc2750182478aa4ee6f3abf9e37598bc1ca7",
+  "aot_bytes": 18584,
+  "precompile_stdout": "PRECOMPILED bytes=18584 elapsed_ns=13894045",
+  "harness_sha256": "b478b7da24cdc34a295ff62293ae737c7c6c7ba45e768a0ecc43cfb21941cf20"
+}

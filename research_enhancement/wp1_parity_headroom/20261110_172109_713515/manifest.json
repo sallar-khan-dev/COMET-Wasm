@@ -1,0 +1,16 @@
+{
+  "scope": "WP1 isolated-client resource parity and bounded headroom checkpoint; NOT sustained capacity / WP1 final signoff",
+  "source_pilot": "/home/sallar/wasiMultitenant/research_enhancement/wp1_rf_svm_pilot_runs/20261110_170246_710579",
+  "git_head": "9155d8e1d7e76ad9b3be641b11f64b10bc0f52e2",
+  "service_cpu": 0,
+  "client_cpu": 1,
+  "infer_rps": 300,
+  "noop_rps": 1200,
+  "requests": 1500,
+  "noop_seconds": 5,
+  "loadgen_sha256": "e104f3d38e8ed51fb3c357e3dbee0398e7fb2b6e222fd4e6f0ea261649fdc110",
+  "ingress_sha256": "0187dd40c70a95f46b409cf653862fb7e0c042994371591dc384cdc43778f740",
+  "runs": [],
+  "blockers": [],
+  "status": "INCOMPLETE"
+}

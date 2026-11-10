@@ -1,0 +1,239 @@
+{
+  "scope": "WP1 isolated-client resource parity and bounded headroom checkpoint; NOT sustained capacity / WP1 final signoff",
+  "source_pilot": "/home/sallar/wasiMultitenant/research_enhancement/wp1_rf_svm_pilot_runs/20261110_170246_710579",
+  "git_head": "9155d8e1d7e76ad9b3be641b11f64b10bc0f52e2",
+  "service_cpu": 0,
+  "client_cpu": 1,
+  "infer_rps": 300,
+  "noop_rps": 1200,
+  "requests": 1500,
+  "noop_seconds": 5,
+  "loadgen_sha256": "e104f3d38e8ed51fb3c357e3dbee0398e7fb2b6e222fd4e6f0ea261649fdc110",
+  "ingress_sha256": "0187dd40c70a95f46b409cf653862fb7e0c042994371591dc384cdc43778f740",
+  "runs": [
+    {
+      "model": "rf",
+      "backend": "wasmtime",
+      "bridge": false,
+      "baseline_resources": {
+        "ingress": {
+          "Threads": "3",
+          "Cpus_allowed_list": "0",
+          "voluntary_ctxt_switches": "6",
+          "nonvoluntary_ctxt_switches": "1",
+          "pid": 713810,
+          "tasks": 3
+        }
+      },
+      "pids": {
+        "ingress": 713810
+      },
+      "measurements": {
+        "noop": {
+          "offered": 6000,
+          "p50_ms": 1.229265,
+          "p95_ms": 2.155233,
+          "p99_ms": 2.371791,
+          "successful": 6000,
+          "failed": 0,
+          "dropped": 0,
+          "timed_out": 0,
+          "p99_scheduling_delay_ms": 1.877715,
+          "observed_max_threads": {
+            "ingress": 3
+          },
+          "sample_count": 36
+        },
+        "infer": {
+          "offered": 1500,
+          "p50_ms": 2.107685,
+          "p95_ms": 2.796442,
+          "p99_ms": 2.908125,
+          "successful": 1500,
+          "failed": 0,
+          "dropped": 0,
+          "timed_out": 0,
+          "p99_scheduling_delay_ms": 2.092674,
+          "observed_max_threads": {
+            "ingress": 4
+          },
+          "sample_count": 34
+        }
+      }
+    },
+    {
+      "model": "rf",
+      "backend": "docker",
+      "bridge": true,
+      "baseline_resources": {
+        "ingress": {
+          "Threads": "2",
+          "Cpus_allowed_list": "0",
+          "voluntary_ctxt_switches": "2",
+          "nonvoluntary_ctxt_switches": "1",
+          "pid": 714223,
+          "tasks": 2
+        },
+        "docker": {
+          "Threads": "2",
+          "Cpus_allowed_list": "0",
+          "voluntary_ctxt_switches": "14",
+          "nonvoluntary_ctxt_switches": "143",
+          "pid": 713896,
+          "tasks": 2
+        }
+      },
+      "pids": {
+        "ingress": 714223,
+        "docker": 713896
+      },
+      "measurements": {
+        "noop": {
+          "offered": 6000,
+          "p50_ms": 1.230876,
+          "p95_ms": 2.158957,
+          "p99_ms": 2.371118,
+          "successful": 6000,
+          "failed": 0,
+          "dropped": 0,
+          "timed_out": 0,
+          "p99_scheduling_delay_ms": 1.89914,
+          "observed_max_threads": {
+            "ingress": 2,
+            "docker": 2
+          },
+          "sample_count": 36
+        },
+        "infer": {
+          "offered": 1500,
+          "p50_ms": 2.922959,
+          "p95_ms": 3.810772,
+          "p99_ms": 4.123603,
+          "successful": 1500,
+          "failed": 0,
+          "dropped": 0,
+          "timed_out": 0,
+          "p99_scheduling_delay_ms": 1.937611,
+          "observed_max_threads": {
+            "ingress": 2,
+            "docker": 2
+          },
+          "sample_count": 34
+        }
+      }
+    },
+    {
+      "model": "svm",
+      "backend": "wasmtime",
+      "bridge": false,
+      "baseline_resources": {
+        "ingress": {
+          "Threads": "3",
+          "Cpus_allowed_list": "0",
+          "voluntary_ctxt_switches": "4",
+          "nonvoluntary_ctxt_switches": "2",
+          "pid": 714363,
+          "tasks": 3
+        }
+      },
+      "pids": {
+        "ingress": 714363
+      },
+      "measurements": {
+        "noop": {
+          "offered": 6000,
+          "p50_ms": 1.298591,
+          "p95_ms": 2.155226,
+          "p99_ms": 2.343329,
+          "successful": 6000,
+          "failed": 0,
+          "dropped": 0,
+          "timed_out": 0,
+          "p99_scheduling_delay_ms": 1.877494,
+          "observed_max_threads": {
+            "ingress": 3
+          },
+          "sample_count": 36
+        },
+        "infer": {
+          "offered": 1500,
+          "p50_ms": 1.488027,
+          "p95_ms": 2.19229,
+          "p99_ms": 2.467461,
+          "successful": 1500,
+          "failed": 0,
+          "dropped": 0,
+          "timed_out": 0,
+          "p99_scheduling_delay_ms": 1.854929,
+          "observed_max_threads": {
+            "ingress": 4
+          },
+          "sample_count": 34
+        }
+      }
+    },
+    {
+      "model": "svm",
+      "backend": "docker",
+      "bridge": true,
+      "baseline_resources": {
+        "ingress": {
+          "Threads": "2",
+          "Cpus_allowed_list": "0",
+          "voluntary_ctxt_switches": "2",
+          "nonvoluntary_ctxt_switches": "1",
+          "pid": 714779,
+          "tasks": 2
+        },
+        "docker": {
+          "Threads": "2",
+          "Cpus_allowed_list": "0",
+          "voluntary_ctxt_switches": "12",
+          "nonvoluntary_ctxt_switches": "107",
+          "pid": 714444,
+          "tasks": 2
+        }
+      },
+      "pids": {
+        "ingress": 714779,
+        "docker": 714444
+      },
+      "measurements": {
+        "noop": {
+          "offered": 6000,
+          "p50_ms": 1.111894,
+          "p95_ms": 1.951055,
+          "p99_ms": 2.354315,
+          "successful": 6000,
+          "failed": 0,
+          "dropped": 0,
+          "timed_out": 0,
+          "p99_scheduling_delay_ms": 1.851431,
+          "observed_max_threads": {
+            "ingress": 2,
+            "docker": 2
+          },
+          "sample_count": 36
+        },
+        "infer": {
+          "offered": 1500,
+          "p50_ms": 3.152356,
+          "p95_ms": 4.034528,
+          "p99_ms": 4.374973,
+          "successful": 1500,
+          "failed": 0,
+          "dropped": 0,
+          "timed_out": 0,
+          "p99_scheduling_delay_ms": 2.177923,
+          "observed_max_threads": {
+            "ingress": 2,
+            "docker": 2
+          },
+          "sample_count": 34
+        }
+      }
+    }
+  ],
+  "blockers": [],
+  "status": "INCOMPLETE"
+}
