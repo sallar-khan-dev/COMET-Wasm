@@ -1,0 +1,46 @@
+{
+  "supervisor_sections": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5"
+  ],
+  "purpose": "matched full-scale LR/RF Wasmtime/Docker common-ingress correction",
+  "models": [
+    "lr",
+    "rf"
+  ],
+  "backends": [
+    "wasmtime",
+    "docker"
+  ],
+  "rates_rps": [
+    100,
+    300,
+    600,
+    1200,
+    2400
+  ],
+  "minimum_independent_repetitions_per_cell": 20,
+  "maximum_independent_repetitions_per_cell": 60,
+  "confidence_level": 0.95,
+  "target_relative_ci_half_width": 0.025,
+  "stopping_rule": "Both Student-t and run-bootstrap 95% CIs on P50/P95/P99/goodput <= 2.5%, and no incorrect/lost runs; otherwise max 60, report unaccepted",
+  "offered_seconds_per_trial": 15,
+  "max_inflight": 512,
+  "loadgen_workers": 1,
+  "service_cpu_and_client_cpu": "chosen by original runner as first two CPUs in available affinity",
+  "original_gateway_source_sha256": "749b683997628ab68c4fdd540a47e60e864fdc313c26121db4b6857c9c191fa5",
+  "isolated_gateway_binary_sha256": "bc9f97e08c861d325aa4df3a9928a3c5b103f9ca92534313be5930d082c8ee11",
+  "existing_automation_sha256": "1988ad1c64daa83eb08c995bb53fb4cc60ffd4ad7c4427aba147bbe379f3ca2f",
+  "original_production_sources_untouched": true,
+  "ports": {
+    "gateway": 48569,
+    "docker_published_loopback": 52009
+  },
+  "docker_network": "bridge",
+  "native_attribution": "Already collected separately: 100 runs, not pooled with this adaptive matched campaign",
+  "interpretation": "Matched correction runs require real statistical review; not automatic WP1-WP3 GO.",
+  "isolated_gateway_binary_path": "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_matched_correction/20261112_180403_2192337/cargo_target/release/comet_common_ingress"
+}
