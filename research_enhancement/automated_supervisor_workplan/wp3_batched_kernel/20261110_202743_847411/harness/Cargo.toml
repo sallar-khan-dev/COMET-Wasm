@@ -1,0 +1,10 @@
+[package]
+name="comet_wp3_batched_kernel"
+version="0.1.0"
+edition="2021"
+[dependencies]
+anyhow="1"
+serde={version="1",features=["derive"]}
+serde_json="1"
+csv="1"
+wasmtime="44"

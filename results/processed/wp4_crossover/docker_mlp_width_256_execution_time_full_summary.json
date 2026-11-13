@@ -1,0 +1,17 @@
+{
+  "backend": "docker",
+  "model": "mlp",
+  "test_samples": 171,
+  "warmup_requests": 1000,
+  "requests_per_repetition": 5000,
+  "repetitions": 20,
+  "total_measured_requests": 100000,
+  "execution_mean_ns": 29455.87928,
+  "execution_median_of_medians_ns": 29846.0,
+  "execution_mean_p95_ns": 32151.35,
+  "execution_mean_p99_ns": 37384.35,
+  "inference_mean_ns": 29649.149,
+  "execution_95ci_halfwidth_ns": 606.1672644272994,
+  "execution_relative_95ci": 0.02057882090923953,
+  "ci_target_pass": true
+}

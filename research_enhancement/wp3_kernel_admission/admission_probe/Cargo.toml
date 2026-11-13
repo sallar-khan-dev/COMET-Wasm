@@ -1,0 +1,9 @@
+[package]
+name = "comet_admission_probe"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1"
+wasmtime = "44"
+comet_worker_pool = { path = "../../../serving/worker_pool" }

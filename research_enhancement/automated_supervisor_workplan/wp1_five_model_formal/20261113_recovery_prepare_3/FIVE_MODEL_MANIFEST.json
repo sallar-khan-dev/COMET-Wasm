@@ -1,0 +1,74 @@
+{
+  "models": [
+    "nb",
+    "dt",
+    "kmeans",
+    "svm",
+    "mlp"
+  ],
+  "backends": [
+    "wasmtime",
+    "docker"
+  ],
+  "rates_rps": [
+    100,
+    300,
+    600,
+    1200,
+    2400
+  ],
+  "duration_seconds": 15,
+  "min_runs_per_cell": 20,
+  "max_runs_per_cell": 60,
+  "confidence": 0.95,
+  "target_relative_ci_halfwidth": 0.025,
+  "metrics": [
+    "p50_ms",
+    "p95_ms",
+    "p99_ms",
+    "achieved_goodput_rps"
+  ],
+  "statistical_method": "Independent run-level Student-t and bootstrap 95% CI",
+  "stopping_rule": "Stop if every metric passes both intervals and correctness passes; otherwise stop at 60 and record unmet",
+  "gateway_blocking_threads": 1,
+  "gateway_binary_sha256": "c528f245544c85ad4a91e4e6796fad5a3faba44f0b9c793abdf4966d06025a75",
+  "original_formal_runner_sha256": "1988ad1c64daa83eb08c995bb53fb4cc60ffd4ad7c4427aba147bbe379f3ca2f",
+  "models_detail": {
+    "nb": {
+      "wasm": "/home/sallar/wasiMultitenant/wasm/tenant_nb_real/target/wasm32-unknown-unknown/release/tenant_nb_real.wasm",
+      "gold": "/home/sallar/wasiMultitenant/research_enhancement/v2_wp1_workloads/golden/nb_breast_cancer_wp1_golden.json",
+      "gold_source": "/home/sallar/wasiMultitenant/research_enhancement/v2_wp1_workloads/golden/nb_breast_cancer_wp1_golden.json",
+      "image": "comet-wp1-nb:latest",
+      "image_id": "sha256:caaf320e23e3e78156f42aec165ee4d07005959619a531bbeb61a3c57e9457bb"
+    },
+    "dt": {
+      "wasm": "/home/sallar/wasiMultitenant/wasm/tenant_dt_real/target/wasm32-unknown-unknown/release/tenant_dt_real.wasm",
+      "gold": "/home/sallar/wasiMultitenant/research_enhancement/v2_wp1_workloads/golden/dt_breast_cancer_wp1_golden.json",
+      "gold_source": "/home/sallar/wasiMultitenant/research_enhancement/v2_wp1_workloads/golden/dt_breast_cancer_wp1_golden.json",
+      "image": "comet-wp1-dt:latest",
+      "image_id": "sha256:353ee5b7cec8bf2ac30886c59ee77993512091eebb98a3ea6c268ac9a53009e4"
+    },
+    "kmeans": {
+      "wasm": "/home/sallar/wasiMultitenant/wasm/tenant_kmeans_real/target/wasm32-unknown-unknown/release/tenant_kmeans_real.wasm",
+      "gold": "/home/sallar/wasiMultitenant/research_enhancement/v2_references/kmeans_iris_golden_v1.json",
+      "gold_source": "/home/sallar/wasiMultitenant/research_enhancement/v2_references/kmeans_iris_golden_v1.json",
+      "image": "comet-wp1-kmeans:latest",
+      "image_id": "sha256:35d3b3ac334296b939b068ff4e9d77bef9f482a4b65aa9a5e0923db13b2f9f09"
+    },
+    "svm": {
+      "wasm": "/home/sallar/wasiMultitenant/wasm/tenant_svm_real/target/wasm32-unknown-unknown/release/tenant_svm_real.wasm",
+      "gold": "/home/sallar/wasiMultitenant/research_enhancement/v2_wp1_workloads/golden/svm_breast_cancer_wp1_golden.json",
+      "gold_source": "/home/sallar/wasiMultitenant/research_enhancement/v2_wp1_workloads/golden/svm_breast_cancer_wp1_golden.json",
+      "image": "comet-wp1-svm:latest",
+      "image_id": "sha256:fc9b70f3a488d1f92c5f3a1d48c497347702f44a1607544900848e89961a3bc5"
+    },
+    "mlp": {
+      "wasm": "/home/sallar/wasiMultitenant/wasm/tenant_mlp_real/target/wasm32-unknown-unknown/release/tenant_mlp_real.wasm",
+      "gold": "/home/sallar/wasiMultitenant/research_enhancement/v2_wp1_workloads/golden/mlp_breast_cancer_wp1_golden.json",
+      "gold_source": "/home/sallar/wasiMultitenant/research_enhancement/v2_wp1_workloads/golden/mlp_breast_cancer_wp1_golden.json",
+      "image": "comet-wp1-mlp:latest",
+      "image_id": "sha256:891e754ff9f82879cd682ade00f0fdd6f4a2c7e136b0b6c3332299e99b8c16a5"
+    }
+  },
+  "methodology": "Matches LR/RF corrected campaign; no automatic supervisor GO"
+}
