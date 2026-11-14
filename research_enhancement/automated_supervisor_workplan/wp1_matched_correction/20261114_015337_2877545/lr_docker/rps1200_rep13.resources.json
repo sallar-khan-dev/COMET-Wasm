@@ -1,0 +1,2197 @@
+[
+  {
+    "elapsed_utc": "2026-11-14T02:49:56.515077+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "192",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8515,
+      "stime_ticks": 6601,
+      "pss_kib": 3669
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3103,
+      "stime_ticks": 3396,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "1660 kB",
+      "Threads": "1",
+      "Cpus_allowed_list": "0-127",
+      "voluntary_ctxt_switches": "0",
+      "nonvoluntary_ctxt_switches": "0",
+      "utime_ticks": 0,
+      "stime_ticks": 0,
+      "pss_kib": 211
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:56.766983+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8518,
+      "stime_ticks": 6602,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3103,
+      "stime_ticks": 3397,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "11712 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "212",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 2,
+      "stime_ticks": 2,
+      "pss_kib": 9567
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:57.019112+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8520,
+      "stime_ticks": 6604,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3104,
+      "stime_ticks": 3398,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "12340 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "446",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 3,
+      "stime_ticks": 3,
+      "pss_kib": 10191
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:57.271196+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8522,
+      "stime_ticks": 6605,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3104,
+      "stime_ticks": 3399,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "12968 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "689",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 4,
+      "stime_ticks": 4,
+      "pss_kib": 10819
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:57.523293+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8524,
+      "stime_ticks": 6608,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3105,
+      "stime_ticks": 3399,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "13592 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "926",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 6,
+      "stime_ticks": 6,
+      "pss_kib": 11443
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:57.775267+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8526,
+      "stime_ticks": 6609,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3106,
+      "stime_ticks": 3400,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "14216 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "1163",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 7,
+      "stime_ticks": 6,
+      "pss_kib": 12071
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:58.027230+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8528,
+      "stime_ticks": 6612,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3107,
+      "stime_ticks": 3401,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "14840 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "1401",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 9,
+      "stime_ticks": 7,
+      "pss_kib": 12691
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:58.279220+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8530,
+      "stime_ticks": 6614,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3109,
+      "stime_ticks": 3401,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "15464 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "1641",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 10,
+      "stime_ticks": 9,
+      "pss_kib": 13315
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:58.531189+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8531,
+      "stime_ticks": 6616,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3110,
+      "stime_ticks": 3402,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "16092 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "1877",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 11,
+      "stime_ticks": 10,
+      "pss_kib": 13943
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:58.783425+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8533,
+      "stime_ticks": 6619,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3110,
+      "stime_ticks": 3403,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "16716 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "2116",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 12,
+      "stime_ticks": 11,
+      "pss_kib": 14567
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:59.035449+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8535,
+      "stime_ticks": 6621,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3111,
+      "stime_ticks": 3404,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "17340 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "2351",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 13,
+      "stime_ticks": 12,
+      "pss_kib": 15191
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:59.287487+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8537,
+      "stime_ticks": 6623,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3112,
+      "stime_ticks": 3405,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "17964 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "2580",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 13,
+      "stime_ticks": 14,
+      "pss_kib": 15815
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:59.539524+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8539,
+      "stime_ticks": 6625,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3113,
+      "stime_ticks": 3406,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "18588 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "2820",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 14,
+      "stime_ticks": 15,
+      "pss_kib": 16439
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:49:59.791545+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8541,
+      "stime_ticks": 6627,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3114,
+      "stime_ticks": 3406,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "19212 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "3063",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 15,
+      "stime_ticks": 17,
+      "pss_kib": 17063
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:00.043652+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8543,
+      "stime_ticks": 6629,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3115,
+      "stime_ticks": 3407,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "19840 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "3304",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 16,
+      "stime_ticks": 18,
+      "pss_kib": 17691
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:00.295703+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8545,
+      "stime_ticks": 6631,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3116,
+      "stime_ticks": 3408,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "20464 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "3546",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 17,
+      "stime_ticks": 20,
+      "pss_kib": 18315
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:00.547763+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8547,
+      "stime_ticks": 6633,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3117,
+      "stime_ticks": 3409,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "21088 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "3778",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 18,
+      "stime_ticks": 21,
+      "pss_kib": 18939
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:00.799917+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8549,
+      "stime_ticks": 6635,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3118,
+      "stime_ticks": 3410,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "21712 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "4014",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 19,
+      "stime_ticks": 22,
+      "pss_kib": 19563
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:01.051992+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8551,
+      "stime_ticks": 6637,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3118,
+      "stime_ticks": 3411,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "22336 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "4252",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 20,
+      "stime_ticks": 23,
+      "pss_kib": 20191
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:01.304105+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5844 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "195",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8553,
+      "stime_ticks": 6639,
+      "pss_kib": 3662
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3804 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "20",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3119,
+      "stime_ticks": 3412,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "22960 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "4487",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 21,
+      "stime_ticks": 25,
+      "pss_kib": 20811
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:01.556267+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5972 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8555,
+      "stime_ticks": 6642,
+      "pss_kib": 3790
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3120,
+      "stime_ticks": 3413,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "23740 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "4722",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 22,
+      "stime_ticks": 26,
+      "pss_kib": 21591
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:01.808538+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8557,
+      "stime_ticks": 6643,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3121,
+      "stime_ticks": 3414,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "24372 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "4958",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 23,
+      "stime_ticks": 27,
+      "pss_kib": 22223
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:02.060680+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8559,
+      "stime_ticks": 6645,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3121,
+      "stime_ticks": 3415,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "25000 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "5194",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 25,
+      "stime_ticks": 28,
+      "pss_kib": 22851
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:02.312812+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8561,
+      "stime_ticks": 6648,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3122,
+      "stime_ticks": 3416,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "25624 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "5430",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 26,
+      "stime_ticks": 29,
+      "pss_kib": 23475
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:02.564983+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8563,
+      "stime_ticks": 6650,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3123,
+      "stime_ticks": 3417,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "26252 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "5670",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 27,
+      "stime_ticks": 30,
+      "pss_kib": 24107
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:02.817167+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8565,
+      "stime_ticks": 6651,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3124,
+      "stime_ticks": 3418,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "26884 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "5904",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 28,
+      "stime_ticks": 31,
+      "pss_kib": 24735
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:03.069337+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8567,
+      "stime_ticks": 6653,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3125,
+      "stime_ticks": 3419,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "27508 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "6143",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 29,
+      "stime_ticks": 32,
+      "pss_kib": 25359
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:03.321524+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8570,
+      "stime_ticks": 6655,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3126,
+      "stime_ticks": 3419,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "28132 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "6378",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 30,
+      "stime_ticks": 33,
+      "pss_kib": 25983
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:03.573731+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8572,
+      "stime_ticks": 6657,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3126,
+      "stime_ticks": 3421,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "28756 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "6623",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 32,
+      "stime_ticks": 35,
+      "pss_kib": 26607
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:03.825984+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8574,
+      "stime_ticks": 6659,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3127,
+      "stime_ticks": 3422,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "29384 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "6866",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 33,
+      "stime_ticks": 36,
+      "pss_kib": 27235
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:04.078186+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8576,
+      "stime_ticks": 6661,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3128,
+      "stime_ticks": 3422,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "30008 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "7101",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 34,
+      "stime_ticks": 37,
+      "pss_kib": 27859
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:04.330413+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8578,
+      "stime_ticks": 6663,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3129,
+      "stime_ticks": 3423,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "30632 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "7340",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 35,
+      "stime_ticks": 39,
+      "pss_kib": 28487
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:04.582651+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8580,
+      "stime_ticks": 6665,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3130,
+      "stime_ticks": 3424,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "31256 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "7583",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 36,
+      "stime_ticks": 40,
+      "pss_kib": 29111
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:04.834907+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8582,
+      "stime_ticks": 6667,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3130,
+      "stime_ticks": 3425,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "31880 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "7819",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 36,
+      "stime_ticks": 42,
+      "pss_kib": 29731
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:05.087177+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8585,
+      "stime_ticks": 6668,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3131,
+      "stime_ticks": 3426,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "32508 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "8058",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 37,
+      "stime_ticks": 43,
+      "pss_kib": 30359
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:05.339453+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8587,
+      "stime_ticks": 6671,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3132,
+      "stime_ticks": 3427,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "33132 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "8297",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 39,
+      "stime_ticks": 44,
+      "pss_kib": 30983
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:05.591751+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8589,
+      "stime_ticks": 6673,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3133,
+      "stime_ticks": 3428,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "33760 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "8534",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 40,
+      "stime_ticks": 45,
+      "pss_kib": 31611
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:05.844035+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8590,
+      "stime_ticks": 6675,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3133,
+      "stime_ticks": 3429,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "34384 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "8776",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 41,
+      "stime_ticks": 46,
+      "pss_kib": 32235
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:06.096333+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8592,
+      "stime_ticks": 6677,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3134,
+      "stime_ticks": 3430,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "35008 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "9014",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 42,
+      "stime_ticks": 48,
+      "pss_kib": 32863
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:06.348625+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8595,
+      "stime_ticks": 6679,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3135,
+      "stime_ticks": 3431,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "35632 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "9251",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 44,
+      "stime_ticks": 49,
+      "pss_kib": 33483
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:06.600959+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8597,
+      "stime_ticks": 6681,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3136,
+      "stime_ticks": 3432,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "36260 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "9494",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 45,
+      "stime_ticks": 50,
+      "pss_kib": 34111
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:06.853280+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8599,
+      "stime_ticks": 6683,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3137,
+      "stime_ticks": 3433,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "36884 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "9744",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 46,
+      "stime_ticks": 51,
+      "pss_kib": 34735
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:07.105632+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8601,
+      "stime_ticks": 6684,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3138,
+      "stime_ticks": 3434,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "37512 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "9980",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 47,
+      "stime_ticks": 53,
+      "pss_kib": 35363
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:07.358011+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8603,
+      "stime_ticks": 6687,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3138,
+      "stime_ticks": 3435,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "38132 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "10224",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 47,
+      "stime_ticks": 54,
+      "pss_kib": 35987
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:07.610369+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8605,
+      "stime_ticks": 6689,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3139,
+      "stime_ticks": 3436,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "38756 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "10467",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 49,
+      "stime_ticks": 55,
+      "pss_kib": 36611
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:07.862809+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8607,
+      "stime_ticks": 6691,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3140,
+      "stime_ticks": 3437,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "39384 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "10703",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 50,
+      "stime_ticks": 57,
+      "pss_kib": 37235
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:08.115211+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8609,
+      "stime_ticks": 6693,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3141,
+      "stime_ticks": 3438,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "40008 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "10946",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 51,
+      "stime_ticks": 58,
+      "pss_kib": 37863
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:08.367604+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8611,
+      "stime_ticks": 6695,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3142,
+      "stime_ticks": 3438,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "40636 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "11189",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 52,
+      "stime_ticks": 59,
+      "pss_kib": 38487
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:08.620012+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8613,
+      "stime_ticks": 6696,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3143,
+      "stime_ticks": 3439,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "41260 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "11424",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 53,
+      "stime_ticks": 60,
+      "pss_kib": 39111
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:08.872420+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8615,
+      "stime_ticks": 6699,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3143,
+      "stime_ticks": 3440,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "41888 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "11657",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 53,
+      "stime_ticks": 62,
+      "pss_kib": 39739
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:09.124824+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8617,
+      "stime_ticks": 6701,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3144,
+      "stime_ticks": 3441,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "42512 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "11896",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 54,
+      "stime_ticks": 63,
+      "pss_kib": 40367
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:09.377250+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8619,
+      "stime_ticks": 6703,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3145,
+      "stime_ticks": 3442,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "43136 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "12131",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 56,
+      "stime_ticks": 64,
+      "pss_kib": 40991
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:09.629680+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8621,
+      "stime_ticks": 6705,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3145,
+      "stime_ticks": 3444,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "43764 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "12366",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 56,
+      "stime_ticks": 66,
+      "pss_kib": 41615
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:09.882110+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8623,
+      "stime_ticks": 6707,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3146,
+      "stime_ticks": 3445,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "44388 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "12605",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 58,
+      "stime_ticks": 67,
+      "pss_kib": 42239
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:10.134562+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8625,
+      "stime_ticks": 6709,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3146,
+      "stime_ticks": 3446,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "45012 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "12840",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 59,
+      "stime_ticks": 68,
+      "pss_kib": 42871
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:10.387040+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8627,
+      "stime_ticks": 6711,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3147,
+      "stime_ticks": 3447,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "45640 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "13081",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 60,
+      "stime_ticks": 70,
+      "pss_kib": 43491
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:10.639811+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8629,
+      "stime_ticks": 6713,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3148,
+      "stime_ticks": 3448,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "46264 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "13322",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 61,
+      "stime_ticks": 71,
+      "pss_kib": 44119
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:10.892319+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8631,
+      "stime_ticks": 6715,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3149,
+      "stime_ticks": 3449,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "46892 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "13564",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 62,
+      "stime_ticks": 72,
+      "pss_kib": 44743
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:11.144813+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8633,
+      "stime_ticks": 6717,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3150,
+      "stime_ticks": 3450,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "47516 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "13800",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 64,
+      "stime_ticks": 73,
+      "pss_kib": 45367
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:11.397417+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8635,
+      "stime_ticks": 6719,
+      "pss_kib": 3794
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3151,
+      "stime_ticks": 3450,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "VmRSS": "48140 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "14037",
+      "nonvoluntary_ctxt_switches": "2",
+      "utime_ticks": 64,
+      "stime_ticks": 75,
+      "pss_kib": 45995
+    }
+  },
+  {
+    "elapsed_utc": "2026-11-14T02:50:11.650049+00:00",
+    "gateway": {
+      "pid": 2886396,
+      "VmRSS": "5976 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "198",
+      "nonvoluntary_ctxt_switches": "4",
+      "utime_ticks": 8636,
+      "stime_ticks": 6720,
+      "pss_kib": 3801
+    },
+    "docker_backend": {
+      "pid": 2886071,
+      "VmRSS": "3868 kB",
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "23",
+      "nonvoluntary_ctxt_switches": "142",
+      "utime_ticks": 3152,
+      "stime_ticks": 3450,
+      "pss_kib": null
+    },
+    "loadgen": {
+      "pid": 2886714,
+      "Threads": "1",
+      "Cpus_allowed_list": "1",
+      "voluntary_ctxt_switches": "14180",
+      "nonvoluntary_ctxt_switches": "20",
+      "utime_ticks": 71,
+      "stime_ticks": 79,
+      "pss_kib": null
+    }
+  }
+]

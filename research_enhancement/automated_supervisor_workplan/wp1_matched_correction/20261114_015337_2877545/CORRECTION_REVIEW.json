@@ -1,0 +1,2188 @@
+{
+  "supervisor_gate": "REVIEW_REQUIRED_NOT_AUTOMATIC_GO",
+  "campaign_status": "DATA COLLECTED; ACCEPTANCE REVIEW REQUIRED",
+  "minimum_repetitions": 400,
+  "maximum_repetitions": 1200,
+  "completed_repetition_records": 481,
+  "full_success_repetitions": 481,
+  "backend_breakdown": {
+    "lr_wasmtime": {
+      "repetitions_present": 144,
+      "full_success_repetitions": 144,
+      "incomplete_repetitions": 0,
+      "measured_noop_rates": [
+        4800
+      ],
+      "zero_error_noop_rates": [
+        4800
+      ],
+      "gateway_threads_observed": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "docker_threads_observed": []
+    },
+    "lr_docker": {
+      "repetitions_present": 105,
+      "full_success_repetitions": 105,
+      "incomplete_repetitions": 0,
+      "measured_noop_rates": [
+        4800
+      ],
+      "zero_error_noop_rates": [
+        4800
+      ],
+      "gateway_threads_observed": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "docker_threads_observed": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "rf_wasmtime": {
+      "repetitions_present": 126,
+      "full_success_repetitions": 126,
+      "incomplete_repetitions": 0,
+      "measured_noop_rates": [
+        4800
+      ],
+      "zero_error_noop_rates": [
+        4800
+      ],
+      "gateway_threads_observed": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "docker_threads_observed": []
+    },
+    "rf_docker": {
+      "repetitions_present": 106,
+      "full_success_repetitions": 106,
+      "incomplete_repetitions": 0,
+      "measured_noop_rates": [
+        4800
+      ],
+      "zero_error_noop_rates": [
+        4800
+      ],
+      "gateway_threads_observed": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "docker_threads_observed": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  },
+  "formal_precision_by_cell": {
+    "lr_wasmtime_rps100": {
+      "n": 48,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 48,
+          "mean": 2.123775875,
+          "student_t_ci95": [
+            2.0715999061272456,
+            2.1759518438727548
+          ],
+          "student_t_relative_halfwidth": 0.024567549470235123,
+          "run_bootstrap_ci95": [
+            2.0744840833333336,
+            2.1758394583333334
+          ],
+          "run_bootstrap_relative_halfwidth": 0.023862069485086273,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 48,
+          "mean": 2.663288833333333,
+          "student_t_ci95": [
+            2.6229225749360716,
+            2.7036550917305946
+          ],
+          "student_t_relative_halfwidth": 0.015156545505708283,
+          "run_bootstrap_ci95": [
+            2.6256009375000002,
+            2.7038467291666666
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01468969318824032,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 48,
+          "mean": 2.7497431458333335,
+          "student_t_ci95": [
+            2.7104250673558017,
+            2.7890612243108652
+          ],
+          "student_t_relative_halfwidth": 0.014298818614062295,
+          "run_bootstrap_ci95": [
+            2.711437666666667,
+            2.788122479166667
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01394399557213187,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 48,
+          "mean": 100.03625974022516,
+          "student_t_ci95": [
+            100.03569479477973,
+            100.0368246856706
+          ],
+          "student_t_relative_halfwidth": 5.647406719305056e-06,
+          "run_bootstrap_ci95": [
+            100.03569062050575,
+            100.03676174601024
+          ],
+          "run_bootstrap_relative_halfwidth": 5.353686289735296e-06,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "lr_wasmtime_rps300": {
+      "n": 25,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 25,
+          "mean": 2.05809036,
+          "student_t_ci95": [
+            2.006772249171235,
+            2.109408470828765
+          ],
+          "student_t_relative_halfwidth": 0.024934819105204505,
+          "run_bootstrap_ci95": [
+            2.0123588,
+            2.1056347200000003
+          ],
+          "run_bootstrap_relative_halfwidth": 0.02266079318305548,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 25,
+          "mean": 2.73209596,
+          "student_t_ci95": [
+            2.697962328609718,
+            2.766229591390282
+          ],
+          "student_t_relative_halfwidth": 0.012493569731819443,
+          "run_bootstrap_ci95": [
+            2.7006037600000004,
+            2.76455512
+          ],
+          "run_bootstrap_relative_halfwidth": 0.011703717756677817,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 25,
+          "mean": 2.8881438,
+          "student_t_ci95": [
+            2.8401178271687275,
+            2.9361697728312723
+          ],
+          "student_t_relative_halfwidth": 0.016628663999096023,
+          "run_bootstrap_ci95": [
+            2.8413849600000005,
+            2.9324256
+          ],
+          "run_bootstrap_relative_halfwidth": 0.015761098876032362,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 25,
+          "mean": 299.84076337254623,
+          "student_t_ci95": [
+            299.8372075066714,
+            299.84431923842106
+          ],
+          "student_t_relative_halfwidth": 1.1859180969464336e-05,
+          "run_bootstrap_ci95": [
+            299.8373775884573,
+            299.84400021953513
+          ],
+          "run_bootstrap_relative_halfwidth": 1.1043580271334922e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "lr_wasmtime_rps600": {
+      "n": 31,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 31,
+          "mean": 1.858121806451613,
+          "student_t_ci95": [
+            1.81188445201513,
+            1.9043591608880959
+          ],
+          "student_t_relative_halfwidth": 0.024883920029322937,
+          "run_bootstrap_ci95": [
+            1.816928870967742,
+            1.9009075161290323
+          ],
+          "run_bootstrap_relative_halfwidth": 0.022597723375751458,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 31,
+          "mean": 2.579172322580645,
+          "student_t_ci95": [
+            2.516512371283472,
+            2.641832273877818
+          ],
+          "student_t_relative_halfwidth": 0.02429459666133405,
+          "run_bootstrap_ci95": [
+            2.5228005806451614,
+            2.6415600967741937
+          ],
+          "run_bootstrap_relative_halfwidth": 0.02302279593521012,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 31,
+          "mean": 2.7329851935483873,
+          "student_t_ci95": [
+            2.673673959006998,
+            2.792296428089777
+          ],
+          "student_t_relative_halfwidth": 0.02170199629379708,
+          "run_bootstrap_ci95": [
+            2.676031064516129,
+            2.79019635483871
+          ],
+          "run_bootstrap_relative_halfwidth": 0.020886554854392343,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 31,
+          "mean": 599.4508849828051,
+          "student_t_ci95": [
+            599.4398418532069,
+            599.4619281124033
+          ],
+          "student_t_relative_halfwidth": 1.842207572771582e-05,
+          "run_bootstrap_ci95": [
+            599.4403528807221,
+            599.4606936177963
+          ],
+          "run_bootstrap_relative_halfwidth": 1.6966141500308646e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "lr_wasmtime_rps1200": {
+      "n": 20,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 20,
+          "mean": 1.4063999,
+          "student_t_ci95": [
+            1.3732150811537591,
+            1.439584718846241
+          ],
+          "student_t_relative_halfwidth": 0.023595578218002573,
+          "run_bootstrap_ci95": [
+            1.37479205,
+            1.4362355
+          ],
+          "run_bootstrap_relative_halfwidth": 0.021844231502007382,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.34599,
+          "student_t_ci95": [
+            2.3111629164134517,
+            2.3808170835865483
+          ],
+          "student_t_relative_halfwidth": 0.01484536745107533,
+          "run_bootstrap_ci95": [
+            2.31362845,
+            2.3774769499999997
+          ],
+          "run_bootstrap_relative_halfwidth": 0.013608007706767665,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.58709105,
+          "student_t_ci95": [
+            2.5557570147855886,
+            2.6184250852144118
+          ],
+          "student_t_relative_halfwidth": 0.012111686295081024,
+          "run_bootstrap_ci95": [
+            2.55971445,
+            2.61493565
+          ],
+          "run_bootstrap_relative_halfwidth": 0.010672450047709005,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 20,
+          "mean": 1198.2480808482585,
+          "student_t_ci95": [
+            1198.0874550877268,
+            1198.4087066087902
+          ],
+          "student_t_relative_halfwidth": 0.00013405050514910598,
+          "run_bootstrap_ci95": [
+            1198.1111004575077,
+            1198.396337679034
+          ],
+          "run_bootstrap_relative_halfwidth": 0.00011902260729031783,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "lr_wasmtime_rps2400": {
+      "n": 20,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 20,
+          "mean": 1.32477155,
+          "student_t_ci95": [
+            1.306503657659961,
+            1.343039442340039
+          ],
+          "student_t_relative_halfwidth": 0.013789466070613494,
+          "run_bootstrap_ci95": [
+            1.3091017,
+            1.3408077
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01196659152289314,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.29660685,
+          "student_t_ci95": [
+            2.27420208978466,
+            2.3190116102153397
+          ],
+          "student_t_relative_halfwidth": 0.009755592349356643,
+          "run_bootstrap_ci95": [
+            2.2766575,
+            2.31832505
+          ],
+          "run_bootstrap_relative_halfwidth": 0.009071546137729257,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.5571493,
+          "student_t_ci95": [
+            2.5353611724706155,
+            2.578937427529384
+          ],
+          "student_t_relative_halfwidth": 0.008520475331410773,
+          "run_bootstrap_ci95": [
+            2.5373501999999997,
+            2.5774801
+          ],
+          "run_bootstrap_relative_halfwidth": 0.00784660872167303,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 20,
+          "mean": 2395.961064280595,
+          "student_t_ci95": [
+            2395.9193370004523,
+            2396.002791560738
+          ],
+          "student_t_relative_halfwidth": 1.7415675390018792e-05,
+          "run_bootstrap_ci95": [
+            2395.922974913963,
+            2396.0003211282756
+          ],
+          "run_bootstrap_relative_halfwidth": 1.6140958103524088e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "lr_docker_rps100": {
+      "n": 20,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.3260612,
+          "student_t_ci95": [
+            3.2604334049276975,
+            3.391688995072302
+          ],
+          "student_t_relative_halfwidth": 0.019731385301119033,
+          "run_bootstrap_ci95": [
+            3.2669669,
+            3.3856316499999997
+          ],
+          "run_bootstrap_relative_halfwidth": 0.017838629968684846,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.774152,
+          "student_t_ci95": [
+            3.708114405297259,
+            3.840189594702741
+          ],
+          "student_t_relative_halfwidth": 0.017497333097008502,
+          "run_bootstrap_ci95": [
+            3.7104027000000004,
+            3.8315207
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01604572364865003,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.8555941,
+          "student_t_ci95": [
+            3.78806698928665,
+            3.9231212107133495
+          ],
+          "student_t_relative_halfwidth": 0.017514061117935024,
+          "run_bootstrap_ci95": [
+            3.7903963,
+            3.91418745
+          ],
+          "run_bootstrap_relative_halfwidth": 0.016053446860498127,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 20,
+          "mean": 100.02874992911143,
+          "student_t_ci95": [
+            100.02789190443711,
+            100.02960795378574
+          ],
+          "student_t_relative_halfwidth": 8.5777806373645e-06,
+          "run_bootstrap_ci95": [
+            100.02797877098398,
+            100.02955339558093
+          ],
+          "run_bootstrap_relative_halfwidth": 7.870860118071755e-06,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "lr_docker_rps300": {
+      "n": 20,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.11733545,
+          "student_t_ci95": [
+            3.0687465044890545,
+            3.1659243955109457
+          ],
+          "student_t_relative_halfwidth": 0.015586691355576042,
+          "run_bootstrap_ci95": [
+            3.0737334499999998,
+            3.16326265
+          ],
+          "run_bootstrap_relative_halfwidth": 0.014359891874966536,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.91853055,
+          "student_t_ci95": [
+            3.8686157617504775,
+            3.968445338249522
+          ],
+          "student_t_relative_halfwidth": 0.012738139364390647,
+          "run_bootstrap_ci95": [
+            3.8736371499999995,
+            3.9616195500000004
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01122645324278522,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 20,
+          "mean": 4.247197,
+          "student_t_ci95": [
+            4.19318599000375,
+            4.30120800999625
+          ],
+          "student_t_relative_halfwidth": 0.012716860083544581,
+          "run_bootstrap_ci95": [
+            4.1965504000000005,
+            4.29594025
+          ],
+          "run_bootstrap_relative_halfwidth": 0.011700640445922296,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 20,
+          "mean": 299.811624548066,
+          "student_t_ci95": [
+            299.8039756595652,
+            299.8192734365668
+          ],
+          "student_t_relative_halfwidth": 2.55123146485698e-05,
+          "run_bootstrap_ci95": [
+            299.80504289725525,
+            299.8187719627261
+          ],
+          "run_bootstrap_relative_halfwidth": 2.289615269510639e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "lr_docker_rps600": {
+      "n": 25,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 25,
+          "mean": 2.24338456,
+          "student_t_ci95": [
+            2.1874786126025985,
+            2.2992905073974015
+          ],
+          "student_t_relative_halfwidth": 0.02492035845936343,
+          "run_bootstrap_ci95": [
+            2.19173312,
+            2.2957410400000002
+          ],
+          "run_bootstrap_relative_halfwidth": 0.02318102786621665,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 25,
+          "mean": 3.43750252,
+          "student_t_ci95": [
+            3.384597244444749,
+            3.4904077955552504
+          ],
+          "student_t_relative_halfwidth": 0.015390614333353507,
+          "run_bootstrap_ci95": [
+            3.3885789999999996,
+            3.4859299600000004
+          ],
+          "run_bootstrap_relative_halfwidth": 0.014160129255701736,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 25,
+          "mean": 3.7823352,
+          "student_t_ci95": [
+            3.721179859158161,
+            3.843490540841839
+          ],
+          "student_t_relative_halfwidth": 0.016168672951524483,
+          "run_bootstrap_ci95": [
+            3.7242838000000003,
+            3.83970452
+          ],
+          "run_bootstrap_relative_halfwidth": 0.015257865035335832,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 25,
+          "mean": 599.4303611048124,
+          "student_t_ci95": [
+            599.4156408670652,
+            599.4450813425595
+          ],
+          "student_t_relative_halfwidth": 2.4557043990849177e-05,
+          "run_bootstrap_ci95": [
+            599.4162511017083,
+            599.4433293156835
+          ],
+          "run_bootstrap_relative_halfwidth": 2.2586622010002397e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "lr_docker_rps1200": {
+      "n": 20,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 20,
+          "mean": 1.71553435,
+          "student_t_ci95": [
+            1.6845731035309741,
+            1.7464955964690259
+          ],
+          "student_t_relative_halfwidth": 0.01804758177475484,
+          "run_bootstrap_ci95": [
+            1.6881055,
+            1.7436443999999998
+          ],
+          "run_bootstrap_relative_halfwidth": 0.016187055654117252,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.940947,
+          "student_t_ci95": [
+            2.9113020700122596,
+            2.9705919299877404
+          ],
+          "student_t_relative_halfwidth": 0.010080062642319088,
+          "run_bootstrap_ci95": [
+            2.91470375,
+            2.96767345
+          ],
+          "run_bootstrap_relative_halfwidth": 0.009005551613136821,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.38441275,
+          "student_t_ci95": [
+            3.348037569218989,
+            3.420787930781011
+          ],
+          "student_t_relative_halfwidth": 0.010747855970289398,
+          "run_bootstrap_ci95": [
+            3.3513119000000002,
+            3.4182803
+          ],
+          "run_bootstrap_relative_halfwidth": 0.009893651417073749,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 20,
+          "mean": 1197.9752751501908,
+          "student_t_ci95": [
+            1197.9429439855649,
+            1198.0076063148167
+          ],
+          "student_t_relative_halfwidth": 2.6988173542916203e-05,
+          "run_bootstrap_ci95": [
+            1197.9452020952913,
+            1198.0035840273868
+          ],
+          "run_bootstrap_relative_halfwidth": 2.4366918627829082e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "lr_docker_rps2400": {
+      "n": 20,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 20,
+          "mean": 1.68161205,
+          "student_t_ci95": [
+            1.6491013826117797,
+            1.7141227173882203
+          ],
+          "student_t_relative_halfwidth": 0.019333036646722545,
+          "run_bootstrap_ci95": [
+            1.6517270499999999,
+            1.7113448000000002
+          ],
+          "run_bootstrap_relative_halfwidth": 0.017726368575915103,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.83183445,
+          "student_t_ci95": [
+            2.773903596789186,
+            2.8897653032108144
+          ],
+          "student_t_relative_halfwidth": 0.02045700560313971,
+          "run_bootstrap_ci95": [
+            2.7758721,
+            2.8810744
+          ],
+          "run_bootstrap_relative_halfwidth": 0.018574938234825165,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.3108716,
+          "student_t_ci95": [
+            3.2562169234377807,
+            3.3655262765622194
+          ],
+          "student_t_relative_halfwidth": 0.016507640031168586,
+          "run_bootstrap_ci95": [
+            3.2598173000000004,
+            3.35915605
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01500190312424073,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 20,
+          "mean": 2395.9929317713572,
+          "student_t_ci95": [
+            2395.8943495997714,
+            2396.091513942943
+          ],
+          "student_t_relative_halfwidth": 4.114460033602283e-05,
+          "run_bootstrap_ci95": [
+            2395.921800980377,
+            2396.0900481229364
+          ],
+          "run_bootstrap_relative_halfwidth": 3.511010828293253e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "rf_wasmtime_rps100": {
+      "n": 32,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 32,
+          "mean": 2.195008375,
+          "student_t_ci95": [
+            2.1405139115501086,
+            2.2495028384498914
+          ],
+          "student_t_relative_halfwidth": 0.024826540103698353,
+          "run_bootstrap_ci95": [
+            2.14372325,
+            2.2499805625000002
+          ],
+          "run_bootstrap_relative_halfwidth": 0.024204306851448885,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 32,
+          "mean": 2.72976646875,
+          "student_t_ci95": [
+            2.6958031845097308,
+            2.763729752990269
+          ],
+          "student_t_relative_halfwidth": 0.012441827764050931,
+          "run_bootstrap_ci95": [
+            2.698761625,
+            2.7618775625
+          ],
+          "run_bootstrap_relative_halfwidth": 0.011560684443622356,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 32,
+          "mean": 2.819488125,
+          "student_t_ci95": [
+            2.786540637288935,
+            2.852435612711065
+          ],
+          "student_t_relative_halfwidth": 0.011685627408366914,
+          "run_bootstrap_ci95": [
+            2.7903875,
+            2.8521385
+          ],
+          "run_bootstrap_relative_halfwidth": 0.010950746600502194,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 32,
+          "mean": 100.03636817738737,
+          "student_t_ci95": [
+            100.0357476119584,
+            100.03698874281635
+          ],
+          "student_t_relative_halfwidth": 6.203398226881597e-06,
+          "run_bootstrap_ci95": [
+            100.03572047799108,
+            100.03693722459141
+          ],
+          "run_bootstrap_relative_halfwidth": 6.081521263233e-06,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "rf_wasmtime_rps300": {
+      "n": 20,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 20,
+          "mean": 1.9446437,
+          "student_t_ci95": [
+            1.8978165380207617,
+            1.9914708619792385
+          ],
+          "student_t_relative_halfwidth": 0.024080072858199335,
+          "run_bootstrap_ci95": [
+            1.9046533,
+            1.9910063999999998
+          ],
+          "run_bootstrap_relative_halfwidth": 0.022202807640288997,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.65298285,
+          "student_t_ci95": [
+            2.6036482623345134,
+            2.7023174376654864
+          ],
+          "student_t_relative_halfwidth": 0.018595893925769807,
+          "run_bootstrap_ci95": [
+            2.6143841500000002,
+            2.7041355
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01691517719385178,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.80493345,
+          "student_t_ci95": [
+            2.7607891445274424,
+            2.8490777554725577
+          ],
+          "student_t_relative_halfwidth": 0.015738093705060203,
+          "run_bootstrap_ci95": [
+            2.7695577,
+            2.8502708500000002
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01438771212201135,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 20,
+          "mean": 299.858348040619,
+          "student_t_ci95": [
+            299.8515516998255,
+            299.86514438141245
+          ],
+          "student_t_relative_halfwidth": 2.2665171197995075e-05,
+          "run_bootstrap_ci95": [
+            299.8515132299806,
+            299.86416379942085
+          ],
+          "run_bootstrap_relative_halfwidth": 2.10942425364033e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "rf_wasmtime_rps600": {
+      "n": 34,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 34,
+          "mean": 1.7708412647058824,
+          "student_t_ci95": [
+            1.7268898003127833,
+            1.8147927290989816
+          ],
+          "student_t_relative_halfwidth": 0.024819539316754655,
+          "run_bootstrap_ci95": [
+            1.7305987058823529,
+            1.8128224705882354
+          ],
+          "run_bootstrap_relative_halfwidth": 0.02321601781725451,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 34,
+          "mean": 2.556904382352941,
+          "student_t_ci95": [
+            2.516820239209567,
+            2.5969885254963154
+          ],
+          "student_t_relative_halfwidth": 0.015676825234460873,
+          "run_bootstrap_ci95": [
+            2.5222763529411765,
+            2.5941513529411764
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01405508170271474,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 34,
+          "mean": 2.7822020588235294,
+          "student_t_ci95": [
+            2.7303559059142595,
+            2.8340482117327994
+          ],
+          "student_t_relative_halfwidth": 0.018634934419965714,
+          "run_bootstrap_ci95": [
+            2.7333311470588235,
+            2.830422794117647
+          ],
+          "run_bootstrap_relative_halfwidth": 0.017448705199341174,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 34,
+          "mean": 599.4290972651041,
+          "student_t_ci95": [
+            599.4192670748425,
+            599.4389274553657
+          ],
+          "student_t_relative_halfwidth": 1.6399254401382003e-05,
+          "run_bootstrap_ci95": [
+            599.4200374417235,
+            599.4385467887677
+          ],
+          "run_bootstrap_relative_halfwidth": 1.5439146288223216e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "rf_wasmtime_rps1200": {
+      "n": 20,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 20,
+          "mean": 1.42810485,
+          "student_t_ci95": [
+            1.3969107255501885,
+            1.4592989744498115
+          ],
+          "student_t_relative_halfwidth": 0.02184302115479238,
+          "run_bootstrap_ci95": [
+            1.3986567,
+            1.4559747
+          ],
+          "run_bootstrap_relative_halfwidth": 0.020067854261541083,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.3576315,
+          "student_t_ci95": [
+            2.318463033578857,
+            2.3967999664211432
+          ],
+          "student_t_relative_halfwidth": 0.016613481123382987,
+          "run_bootstrap_ci95": [
+            2.3183737,
+            2.3915087
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01551026952261203,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.6122273,
+          "student_t_ci95": [
+            2.5849730955235772,
+            2.6394815044764224
+          ],
+          "student_t_relative_halfwidth": 0.010433320437475907,
+          "run_bootstrap_ci95": [
+            2.58624535,
+            2.6356818
+          ],
+          "run_bootstrap_relative_halfwidth": 0.009462509254076008,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 20,
+          "mean": 1198.1246668444055,
+          "student_t_ci95": [
+            1198.0193546264445,
+            1198.2299790623665
+          ],
+          "student_t_relative_halfwidth": 8.789754595266563e-05,
+          "run_bootstrap_ci95": [
+            1198.0318930960955,
+            1198.2279697863073
+          ],
+          "run_bootstrap_relative_halfwidth": 8.182649754147116e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "rf_wasmtime_rps2400": {
+      "n": 20,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 20,
+          "mean": 1.3020118,
+          "student_t_ci95": [
+            1.2774101705476648,
+            1.3266134294523353
+          ],
+          "student_t_relative_halfwidth": 0.018895089470260782,
+          "run_bootstrap_ci95": [
+            1.2788374,
+            1.32301425
+          ],
+          "run_bootstrap_relative_halfwidth": 0.016964842407726232,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.2373881,
+          "student_t_ci95": [
+            2.1827458805994917,
+            2.2920303194005083
+          ],
+          "student_t_relative_halfwidth": 0.024422325031812027,
+          "run_bootstrap_ci95": [
+            2.17896685,
+            2.2805488499999997
+          ],
+          "run_bootstrap_relative_halfwidth": 0.02270102357297771,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.5374645,
+          "student_t_ci95": [
+            2.4940985222045056,
+            2.5808304777954945
+          ],
+          "student_t_relative_halfwidth": 0.017090279606077015,
+          "run_bootstrap_ci95": [
+            2.4927599000000003,
+            2.57039975
+          ],
+          "run_bootstrap_relative_halfwidth": 0.0152987066420042,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 20,
+          "mean": 2396.0001292811066,
+          "student_t_ci95": [
+            2395.876341800395,
+            2396.1239167618182
+          ],
+          "student_t_relative_halfwidth": 5.166422121558455e-05,
+          "run_bootstrap_ci95": [
+            2395.9138914971036,
+            2396.136814725066
+          ],
+          "run_bootstrap_relative_halfwidth": 4.6519869769220045e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "rf_docker_rps100": {
+      "n": 20,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.4462372,
+          "student_t_ci95": [
+            3.3970386514091633,
+            3.495435748590837
+          ],
+          "student_t_relative_halfwidth": 0.01427601924523268,
+          "run_bootstrap_ci95": [
+            3.4029311499999997,
+            3.4926755
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01302062870193615,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.9044165,
+          "student_t_ci95": [
+            3.8512346790260272,
+            3.9575983209739727
+          ],
+          "student_t_relative_halfwidth": 0.01362093951144119,
+          "run_bootstrap_ci95": [
+            3.8559226000000004,
+            3.9550121000000003
+          ],
+          "run_bootstrap_relative_halfwidth": 0.012689412105496407,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.98228245,
+          "student_t_ci95": [
+            3.931560164103096,
+            4.0330047358969034
+          ],
+          "student_t_relative_halfwidth": 0.012736988532017312,
+          "run_bootstrap_ci95": [
+            3.935687,
+            4.03075655
+          ],
+          "run_bootstrap_relative_halfwidth": 0.011936565423680618,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 20,
+          "mean": 100.02790855856581,
+          "student_t_ci95": [
+            100.02707843373311,
+            100.02873868339852
+          ],
+          "student_t_relative_halfwidth": 8.298932214630788e-06,
+          "run_bootstrap_ci95": [
+            100.02711317896174,
+            100.02866400474163
+          ],
+          "run_bootstrap_relative_halfwidth": 7.751965437621226e-06,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "rf_docker_rps300": {
+      "n": 20,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.0086577,
+          "student_t_ci95": [
+            2.9570017061301677,
+            3.0603136938698325
+          ],
+          "student_t_relative_halfwidth": 0.0171691162706321,
+          "run_bootstrap_ci95": [
+            2.9633278499999998,
+            3.05538505
+          ],
+          "run_bootstrap_relative_halfwidth": 0.015298716101868313,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.84420725,
+          "student_t_ci95": [
+            3.778626245473173,
+            3.9097882545268274
+          ],
+          "student_t_relative_halfwidth": 0.017059695344684486,
+          "run_bootstrap_ci95": [
+            3.7898803,
+            3.91095385
+          ],
+          "run_bootstrap_relative_halfwidth": 0.015747531561936437,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 20,
+          "mean": 4.1570915,
+          "student_t_ci95": [
+            4.09523578905045,
+            4.21894721094955
+          ],
+          "student_t_relative_halfwidth": 0.014879564462208722,
+          "run_bootstrap_ci95": [
+            4.09943825,
+            4.21498145
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01389712013796177,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 20,
+          "mean": 299.8277630192332,
+          "student_t_ci95": [
+            299.8210063064311,
+            299.8345197320353
+          ],
+          "student_t_relative_halfwidth": 2.2535314055221587e-05,
+          "run_bootstrap_ci95": [
+            299.8216846954526,
+            299.8337295764343
+          ],
+          "run_bootstrap_relative_halfwidth": 2.0086333667726787e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "rf_docker_rps600": {
+      "n": 23,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 23,
+          "mean": 2.3261375652173912,
+          "student_t_ci95": [
+            2.269150742758719,
+            2.3831243876760633
+          ],
+          "student_t_relative_halfwidth": 0.024498474772426535,
+          "run_bootstrap_ci95": [
+            2.274821695652174,
+            2.3784868695652177
+          ],
+          "run_bootstrap_relative_halfwidth": 0.022282683419747734,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 23,
+          "mean": 3.5098213913043477,
+          "student_t_ci95": [
+            3.4419653602482545,
+            3.577677422360441
+          ],
+          "student_t_relative_halfwidth": 0.0193331863621915,
+          "run_bootstrap_ci95": [
+            3.4499895217391305,
+            3.572834347826087
+          ],
+          "run_bootstrap_relative_halfwidth": 0.017500153482354806,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 23,
+          "mean": 3.8725904782608693,
+          "student_t_ci95": [
+            3.802561941357838,
+            3.9426190151639005
+          ],
+          "student_t_relative_halfwidth": 0.018083124796216477,
+          "run_bootstrap_ci95": [
+            3.808741304347826,
+            3.939331
+          ],
+          "run_bootstrap_relative_halfwidth": 0.016860767538583152,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 23,
+          "mean": 599.4456102076671,
+          "student_t_ci95": [
+            599.4361910589535,
+            599.4550293563807
+          ],
+          "student_t_relative_halfwidth": 1.5713099826336162e-05,
+          "run_bootstrap_ci95": [
+            599.4362903581447,
+            599.4534532560923
+          ],
+          "run_bootstrap_relative_halfwidth": 1.4315642366354454e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "rf_docker_rps1200": {
+      "n": 20,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 20,
+          "mean": 1.7377664,
+          "student_t_ci95": [
+            1.7011030976979946,
+            1.7744297023020053
+          ],
+          "student_t_relative_halfwidth": 0.021097946364945958,
+          "run_bootstrap_ci95": [
+            1.7021868999999998,
+            1.7712230999999998
+          ],
+          "run_bootstrap_relative_halfwidth": 0.019863486829990496,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 20,
+          "mean": 2.960702,
+          "student_t_ci95": [
+            2.925104625545675,
+            2.996299374454325
+          ],
+          "student_t_relative_halfwidth": 0.012023288549244397,
+          "run_bootstrap_ci95": [
+            2.9300541,
+            2.9935417
+          ],
+          "run_bootstrap_relative_halfwidth": 0.010721713971889132,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 20,
+          "mean": 3.4091948,
+          "student_t_ci95": [
+            3.3725404561969623,
+            3.4458491438030374
+          ],
+          "student_t_relative_halfwidth": 0.01075161319706274,
+          "run_bootstrap_ci95": [
+            3.3798697499999997,
+            3.4421231
+          ],
+          "run_bootstrap_relative_halfwidth": 0.009130213093132755,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 20,
+          "mean": 1197.9785364065342,
+          "student_t_ci95": [
+            1197.9551315084514,
+            1198.001941304617
+          ],
+          "student_t_relative_halfwidth": 1.9536992835470342e-05,
+          "run_bootstrap_ci95": [
+            1197.9559780069721,
+            1197.9989220608852
+          ],
+          "run_bootstrap_relative_halfwidth": 1.7923548965191113e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    },
+    "rf_docker_rps2400": {
+      "n": 23,
+      "confidence": 0.95,
+      "target_relative_halfwidth": 0.025,
+      "all_metrics_precision_met": true,
+      "all_runs_correct": true,
+      "formal_acceptance": true,
+      "metrics": {
+        "p50_ms": {
+          "n_independent_runs": 23,
+          "mean": 1.7214469130434782,
+          "student_t_ci95": [
+            1.6858960276016965,
+            1.7569977984852598
+          ],
+          "student_t_relative_halfwidth": 0.02065174660479573,
+          "run_bootstrap_ci95": [
+            1.684167086956522,
+            1.7513526956521739
+          ],
+          "run_bootstrap_relative_halfwidth": 0.01951428422990673,
+          "precision_met": true
+        },
+        "p95_ms": {
+          "n_independent_runs": 23,
+          "mean": 2.8777891739130435,
+          "student_t_ci95": [
+            2.8086367705713604,
+            2.9469415772547265
+          ],
+          "student_t_relative_halfwidth": 0.024029697508262452,
+          "run_bootstrap_ci95": [
+            2.800684739130435,
+            2.9338936521739134
+          ],
+          "run_bootstrap_relative_halfwidth": 0.023144314088573235,
+          "precision_met": true
+        },
+        "p99_ms": {
+          "n_independent_runs": 23,
+          "mean": 3.3556237391304347,
+          "student_t_ci95": [
+            3.2783067243155783,
+            3.432940753945291
+          ],
+          "student_t_relative_halfwidth": 0.023041026296616873,
+          "run_bootstrap_ci95": [
+            3.2761453913043477,
+            3.4106282608695655
+          ],
+          "run_bootstrap_relative_halfwidth": 0.02003843100717652,
+          "precision_met": true
+        },
+        "achieved_goodput_rps": {
+          "n_independent_runs": 23,
+          "mean": 2395.876793447728,
+          "student_t_ci95": [
+            2395.810543339001,
+            2395.9430435564545
+          ],
+          "student_t_relative_halfwidth": 2.7651717695968492e-05,
+          "run_bootstrap_ci95": [
+            2395.812894718639,
+            2395.9345971627035
+          ],
+          "run_bootstrap_relative_halfwidth": 2.5398310213023732e-05,
+          "precision_met": true
+        }
+      },
+      "stopping_reason": "precision_met_after_minimum"
+    }
+  },
+  "remaining_supervisor_gate": [
+    "WP1 common-ingress path parity, no-op load generator/gateway headroom, observed thread and CPU parity",
+    "WP2 application vs Docker-helper PSS where measurable; current visibility is partial",
+    "WP3 guest-call, input-copy, and complete-service timing boundaries without double-counting",
+    "WP3 real service cold start and warm admission scope comparability"
+  ]
+}
