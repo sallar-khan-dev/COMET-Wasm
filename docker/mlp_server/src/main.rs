@@ -121,7 +121,7 @@ async fn infer(
     }))
 }
 
-#[tokio::main]
+#[tokio::main(flavor = "multi_thread", worker_threads = 1)]
 async fn main() -> anyhow::Result<()> {
 
     println!("Starting Native Docker MLP Server");
