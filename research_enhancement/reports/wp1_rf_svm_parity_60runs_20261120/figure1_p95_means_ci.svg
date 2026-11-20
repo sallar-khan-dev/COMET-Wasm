@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 600"><rect width="1140" height="600" fill="white"/><text x="45" y="38" fill="#243447" font-family="Arial" font-size="23">RF/SVM P95 latency: 60 independent full runs</text>
+<text x="45" y="64" fill="#243447" font-family="Arial" font-size="14">Mean P95 with Student-t 95% confidence intervals</text>
+<text x="40" y="123" fill="#243447" font-family="Arial" font-size="15">rf|docker|infer</text>
+<rect x="290" y="103" width="589.91" height="25" fill="#d58236"/>
+<line x1="859.65" y1="115" x2="900.17" y2="115" stroke="black" stroke-width="2"/>
+<text x="1015" y="122" fill="#243447" font-family="Arial" font-size="13">3.7087 ms</text>
+<text x="40" y="176" fill="#243447" font-family="Arial" font-size="15">rf|docker|noop</text>
+<rect x="290" y="156" width="345.40" height="25" fill="#d58236"/>
+<line x1="631.43" y1="168" x2="639.38" y2="168" stroke="black" stroke-width="2"/>
+<text x="1015" y="175" fill="#243447" font-family="Arial" font-size="13">2.1715 ms</text>
+<text x="40" y="229" fill="#243447" font-family="Arial" font-size="15">rf|wasmtime|infer</text>
+<rect x="290" y="209" width="404.02" height="25" fill="#2764a7"/>
+<line x1="682.08" y1="221" x2="705.97" y2="221" stroke="black" stroke-width="2"/>
+<text x="1015" y="228" fill="#243447" font-family="Arial" font-size="13">2.5400 ms</text>
+<text x="40" y="282" fill="#243447" font-family="Arial" font-size="15">rf|wasmtime|noop</text>
+<rect x="290" y="262" width="344.26" height="25" fill="#2764a7"/>
+<line x1="629.65" y1="274" x2="638.86" y2="274" stroke="black" stroke-width="2"/>
+<text x="1015" y="281" fill="#243447" font-family="Arial" font-size="13">2.1643 ms</text>
+<text x="40" y="335" fill="#243447" font-family="Arial" font-size="15">svm|docker|infer</text>
+<rect x="290" y="315" width="581.17" height="25" fill="#d58236"/>
+<line x1="848.90" y1="327" x2="893.45" y2="327" stroke="black" stroke-width="2"/>
+<text x="1015" y="334" fill="#243447" font-family="Arial" font-size="13">3.6538 ms</text>
+<text x="40" y="388" fill="#243447" font-family="Arial" font-size="15">svm|docker|noop</text>
+<rect x="290" y="368" width="344.44" height="25" fill="#d58236"/>
+<line x1="630.35" y1="380" x2="638.53" y2="380" stroke="black" stroke-width="2"/>
+<text x="1015" y="387" fill="#243447" font-family="Arial" font-size="13">2.1655 ms</text>
+<text x="40" y="441" fill="#243447" font-family="Arial" font-size="15">svm|wasmtime|infer</text>
+<rect x="290" y="421" width="414.59" height="25" fill="#2764a7"/>
+<line x1="694.69" y1="433" x2="714.50" y2="433" stroke="black" stroke-width="2"/>
+<text x="1015" y="440" fill="#243447" font-family="Arial" font-size="13">2.6065 ms</text>
+<text x="40" y="494" fill="#243447" font-family="Arial" font-size="15">svm|wasmtime|noop</text>
+<rect x="290" y="474" width="345.78" height="25" fill="#2764a7"/>
+<line x1="631.31" y1="486" x2="640.26" y2="486" stroke="black" stroke-width="2"/>
+<text x="1015" y="493" fill="#243447" font-family="Arial" font-size="13">2.1739 ms</text>
+<text x="45" y="572" fill="#962f24" font-family="Arial" font-size="14">Precision unmet in 6/8 conditions; descriptive results only.</text></svg>

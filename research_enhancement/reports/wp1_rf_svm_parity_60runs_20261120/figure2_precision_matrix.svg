@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 605"><rect width="1050" height="605" fill="white"/><text x="45" y="38" fill="#243447" font-family="Arial" font-size="23">Precision at 60 independent repetitions</text>
+<text x="45" y="65" fill="#243447" font-family="Arial" font-size="14">Maximum Student-t / bootstrap 95% CI relative half-width; target 2.5%</text>
+<text x="395" y="104" fill="#243447" font-family="Arial" font-size="16">P50_MS</text>
+<text x="595" y="104" fill="#243447" font-family="Arial" font-size="16">P95_MS</text>
+<text x="795" y="104" fill="#243447" font-family="Arial" font-size="16">P99_MS</text>
+<text x="38" y="156" fill="#243447" font-family="Arial" font-size="14">rf|docker|infer</text>
+<rect x="350" y="130" width="175" height="37" fill="#fce0d9"/>
+<text x="363" y="155" fill="#243447" font-family="Arial" font-size="14">4.56% FAIL</text>
+<rect x="550" y="130" width="175" height="37" fill="#fce0d9"/>
+<text x="563" y="155" fill="#243447" font-family="Arial" font-size="14">3.61% FAIL</text>
+<rect x="750" y="130" width="175" height="37" fill="#fce0d9"/>
+<text x="763" y="155" fill="#243447" font-family="Arial" font-size="14">3.69% FAIL</text>
+<text x="38" y="208" fill="#243447" font-family="Arial" font-size="14">rf|docker|noop</text>
+<rect x="350" y="182" width="175" height="37" fill="#dcf5e2"/>
+<text x="363" y="207" fill="#243447" font-family="Arial" font-size="14">1.17% PASS</text>
+<rect x="550" y="182" width="175" height="37" fill="#dcf5e2"/>
+<text x="563" y="207" fill="#243447" font-family="Arial" font-size="14">1.15% PASS</text>
+<rect x="750" y="182" width="175" height="37" fill="#fce0d9"/>
+<text x="763" y="207" fill="#243447" font-family="Arial" font-size="14">10.87% FAIL</text>
+<text x="38" y="260" fill="#243447" font-family="Arial" font-size="14">rf|wasmtime|infer</text>
+<rect x="350" y="234" width="175" height="37" fill="#fce0d9"/>
+<text x="363" y="259" fill="#243447" font-family="Arial" font-size="14">4.08% FAIL</text>
+<rect x="550" y="234" width="175" height="37" fill="#fce0d9"/>
+<text x="563" y="259" fill="#243447" font-family="Arial" font-size="14">2.97% FAIL</text>
+<rect x="750" y="234" width="175" height="37" fill="#fce0d9"/>
+<text x="763" y="259" fill="#243447" font-family="Arial" font-size="14">2.80% FAIL</text>
+<text x="38" y="312" fill="#243447" font-family="Arial" font-size="14">rf|wasmtime|noop</text>
+<rect x="350" y="286" width="175" height="37" fill="#dcf5e2"/>
+<text x="363" y="311" fill="#243447" font-family="Arial" font-size="14">1.23% PASS</text>
+<rect x="550" y="286" width="175" height="37" fill="#dcf5e2"/>
+<text x="563" y="311" fill="#243447" font-family="Arial" font-size="14">1.38% PASS</text>
+<rect x="750" y="286" width="175" height="37" fill="#dcf5e2"/>
+<text x="763" y="311" fill="#243447" font-family="Arial" font-size="14">1.23% PASS</text>
+<text x="38" y="364" fill="#243447" font-family="Arial" font-size="14">svm|docker|infer</text>
+<rect x="350" y="338" width="175" height="37" fill="#fce0d9"/>
+<text x="363" y="363" fill="#243447" font-family="Arial" font-size="14">5.15% FAIL</text>
+<rect x="550" y="338" width="175" height="37" fill="#fce0d9"/>
+<text x="563" y="363" fill="#243447" font-family="Arial" font-size="14">3.93% FAIL</text>
+<rect x="750" y="338" width="175" height="37" fill="#fce0d9"/>
+<text x="763" y="363" fill="#243447" font-family="Arial" font-size="14">4.06% FAIL</text>
+<text x="38" y="416" fill="#243447" font-family="Arial" font-size="14">svm|docker|noop</text>
+<rect x="350" y="390" width="175" height="37" fill="#dcf5e2"/>
+<text x="363" y="415" fill="#243447" font-family="Arial" font-size="14">1.24% PASS</text>
+<rect x="550" y="390" width="175" height="37" fill="#dcf5e2"/>
+<text x="563" y="415" fill="#243447" font-family="Arial" font-size="14">1.19% PASS</text>
+<rect x="750" y="390" width="175" height="37" fill="#fce0d9"/>
+<text x="763" y="415" fill="#243447" font-family="Arial" font-size="14">20.58% FAIL</text>
+<text x="38" y="468" fill="#243447" font-family="Arial" font-size="14">svm|wasmtime|infer</text>
+<rect x="350" y="442" width="175" height="37" fill="#fce0d9"/>
+<text x="363" y="467" fill="#243447" font-family="Arial" font-size="14">3.46% FAIL</text>
+<rect x="550" y="442" width="175" height="37" fill="#dcf5e2"/>
+<text x="563" y="467" fill="#243447" font-family="Arial" font-size="14">2.44% PASS</text>
+<rect x="750" y="442" width="175" height="37" fill="#dcf5e2"/>
+<text x="763" y="467" fill="#243447" font-family="Arial" font-size="14">2.28% PASS</text>
+<text x="38" y="520" fill="#243447" font-family="Arial" font-size="14">svm|wasmtime|noop</text>
+<rect x="350" y="494" width="175" height="37" fill="#dcf5e2"/>
+<text x="363" y="519" fill="#243447" font-family="Arial" font-size="14">1.30% PASS</text>
+<rect x="550" y="494" width="175" height="37" fill="#dcf5e2"/>
+<text x="563" y="519" fill="#243447" font-family="Arial" font-size="14">1.30% PASS</text>
+<rect x="750" y="494" width="175" height="37" fill="#dcf5e2"/>
+<text x="763" y="519" fill="#243447" font-family="Arial" font-size="14">1.14% PASS</text></svg>
