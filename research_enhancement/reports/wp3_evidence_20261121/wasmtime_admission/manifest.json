@@ -1,0 +1,16 @@
+{
+  "experiment": "Supervisor WP3 Section 6.2, preloaded Wasmtime admission",
+  "model": "LR",
+  "cpu": 0,
+  "admissions_per_independent_batch": 100,
+  "warmup_per_batch": 3,
+  "minimum_batches": 20,
+  "maximum_batches": 60,
+  "confidence": 0.95,
+  "relative_halfwidth_target": 0.025,
+  "bootstrap_resamples": 5000,
+  "probe_sha256": "748db42c20f4f419766fde18449b8aee7e2516dd7261b0997bd3efef19d6f3b7",
+  "wasm_sha256": "f78b0eb25db720a01f5f8e9496fbc145603e75ebd670036dcc504f3f88574faf",
+  "scope": "Store/Instance admission with preloaded Engine/Module; excludes HTTP and deployment startup",
+  "historical_60_run_experiment": "NOT_POOLED"
+}

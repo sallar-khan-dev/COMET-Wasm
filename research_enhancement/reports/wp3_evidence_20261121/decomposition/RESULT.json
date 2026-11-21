@@ -1,0 +1,53 @@
+{
+  "precision": [
+    {
+      "metric": "copy_plus_wasm",
+      "independent_processes": 60,
+      "calls_per_process": 67500,
+      "mean_ns_per_call": 60.35057925931667,
+      "student_t_relative_halfwidth_pct": 2.2192730474582545,
+      "bootstrap_relative_halfwidth_pct": 1.9917905520407677,
+      "accepted": true
+    },
+    {
+      "metric": "host_copy",
+      "independent_processes": 60,
+      "calls_per_process": 67500,
+      "mean_ns_per_call": 8.794337036983332,
+      "student_t_relative_halfwidth_pct": 4.257706233596616,
+      "bootstrap_relative_halfwidth_pct": 3.5546525942887555,
+      "accepted": false
+    },
+    {
+      "metric": "native",
+      "independent_processes": 60,
+      "calls_per_process": 67500,
+      "mean_ns_per_call": 12.074535802416667,
+      "student_t_relative_halfwidth_pct": 0.7060308638864737,
+      "bootstrap_relative_halfwidth_pct": 0.6858534757699157,
+      "accepted": true
+    },
+    {
+      "metric": "noop_typed_call",
+      "independent_processes": 60,
+      "calls_per_process": 67500,
+      "mean_ns_per_call": 29.118965432066666,
+      "student_t_relative_halfwidth_pct": 2.006168003995882,
+      "bootstrap_relative_halfwidth_pct": 1.8923179738544285,
+      "accepted": true
+    },
+    {
+      "metric": "wasmtime",
+      "independent_processes": 60,
+      "calls_per_process": 67500,
+      "mean_ns_per_call": 53.869777777783334,
+      "student_t_relative_halfwidth_pct": 1.7092159739725672,
+      "bootstrap_relative_halfwidth_pct": 1.4575920223488885,
+      "accepted": true
+    }
+  ],
+  "accepted_metrics": 4,
+  "total_metrics": 5,
+  "all_accepted": false,
+  "status": "PRECISION_NOT_YET_MET"
+}
