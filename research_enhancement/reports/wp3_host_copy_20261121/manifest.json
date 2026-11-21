@@ -1,0 +1,17 @@
+{
+  "experiment": "WP3 host-copy precision extension",
+  "original_campaign": "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp3_copy_call_decomposition/20261121_031019_419098_3892934",
+  "original_trials_sha256": "abc767e6946c00334972489121e66542c376a059a80370cbc1c55ffdc08c4c4c",
+  "binary_sha256": "4b7e4b6a5b6c45fe95914a00f2edfa72829be5f9a2e1d680f2f2d5ff04314355",
+  "wasm_sha256": "f78b0eb25db720a01f5f8e9496fbc145603e75ebd670036dcc504f3f88574faf",
+  "trace_sha256": "859aed24b6075eb5789c8fbe52b84e8ae0508e8cf0969dc9aed969ea36bc0875",
+  "cpu": 0,
+  "calls_per_input": 500,
+  "historical_processes": 60,
+  "maximum_total_processes": 220,
+  "confidence": 0.95,
+  "relative_halfwidth_target": 0.025,
+  "bootstrap_resamples": 5000,
+  "accepted_prior_metrics": "Preserved; no new acceptance claim",
+  "scope": "Host-to-Wasm linear-memory write only"
+}
