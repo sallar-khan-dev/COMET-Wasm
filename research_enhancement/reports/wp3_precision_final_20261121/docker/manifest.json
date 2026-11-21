@@ -1,0 +1,15 @@
+{
+  "work_package": "WP3 Section 6.2",
+  "experiment": "Docker cold deployment to correct HTTP inference",
+  "image_id_frozen": "sha256:883b5a144ebcc2cd75a22ce38b1f8dcf29a99cf0396feef939d12c9a054927e5",
+  "image_tag_at_start": "comet-wp1cap-lr:latest",
+  "network": "bridge",
+  "backend_cpu": 0,
+  "minimum_repetitions": 20,
+  "maximum_repetitions": 120,
+  "confidence": 0.95,
+  "student_t_and_bootstrap_target_pct": 2.5,
+  "bootstrap_resamples": 5000,
+  "historical_image_data_pooled": false,
+  "scope": "docker run through successful POST /infer; not warm admission"
+}
