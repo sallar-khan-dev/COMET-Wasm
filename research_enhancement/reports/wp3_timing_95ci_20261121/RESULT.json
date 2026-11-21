@@ -1,0 +1,78 @@
+{
+  "work_package": "WP3",
+  "confidence_level": 0.95,
+  "relative_halfwidth_target_pct": 2.5,
+  "bootstrap_resamples": 5000,
+  "accepted_metrics": 5,
+  "total_metrics": 7,
+  "metrics": [
+    {
+      "metric": "native_kernel_ns_per_call",
+      "n": 20,
+      "mean": 7.7202392,
+      "student_t_relative_halfwidth_pct": 2.105359737824953,
+      "bootstrap_relative_halfwidth_pct": 1.6977640326869645,
+      "precision_pass": true
+    },
+    {
+      "metric": "wasmtime_call_ns_per_call",
+      "n": 20,
+      "mean": 33.513678549999995,
+      "student_t_relative_halfwidth_pct": 2.2500826643044856,
+      "bootstrap_relative_halfwidth_pct": 1.87977164028745,
+      "precision_pass": true
+    },
+    {
+      "metric": "wasmtime_native_call_ratio",
+      "n": 20,
+      "mean": 4.340944670479833,
+      "student_t_relative_halfwidth_pct": 0.7104833928660559,
+      "bootstrap_relative_halfwidth_pct": 0.649984140587751,
+      "precision_pass": true
+    },
+    {
+      "metric": "wasmtime_deploy_ms",
+      "n": 20,
+      "mean": 44.27236190000001,
+      "student_t_relative_halfwidth_pct": 2.281102533452859,
+      "bootstrap_relative_halfwidth_pct": 1.9135044950018918,
+      "precision_pass": true
+    },
+    {
+      "metric": "docker_deploy_ms",
+      "n": 20,
+      "mean": 419.13688149999996,
+      "student_t_relative_halfwidth_pct": 6.103371001479218,
+      "bootstrap_relative_halfwidth_pct": 5.307243380078209,
+      "precision_pass": false
+    },
+    {
+      "metric": "wasmtime_admit_ms",
+      "n": 20,
+      "mean": 1.5588664,
+      "student_t_relative_halfwidth_pct": 4.185360884727792,
+      "bootstrap_relative_halfwidth_pct": 3.7592800608185604,
+      "precision_pass": false
+    },
+    {
+      "metric": "docker_admit_ms",
+      "n": 20,
+      "mean": 360.7357179499999,
+      "student_t_relative_halfwidth_pct": 2.1906143768022157,
+      "bootstrap_relative_halfwidth_pct": 1.9568755518211458,
+      "precision_pass": true
+    }
+  ],
+  "source_sha256": {
+    "research_enhancement/automated_supervisor_workplan/wp3_batched_kernel/20261110_202743_847411/samples.csv": "6a17ef560aa6ee5e1ac37ef59864e29cc014a00331597f305f9a640729fa1aff",
+    "research_enhancement/automated_supervisor_workplan/wp3_cold_admission/20261110_203607_858197/trials.csv": "98b97a710da8bbd3293f0c87c67fcb4408c255cc1f513c1350b89e03fccfba01"
+  },
+  "status": "EXISTING_EVIDENCE_ANALYSED_ACCEPTANCE_PENDING",
+  "limitations": [
+    "Wasmtime kernel timing includes typed-call overhead",
+    "Kernel experiment excludes input copying and HTTP",
+    "Cold deployment paths are structurally different",
+    "Warm Wasmtime adapter is not the full COMET ingress",
+    "Full supervisor WP3 acceptance remains pending"
+  ]
+}
