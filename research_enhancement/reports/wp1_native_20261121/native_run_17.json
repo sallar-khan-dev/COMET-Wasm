@@ -1,0 +1,400 @@
+{
+  "supervisor": "WP1 \u00a74.1\u20134.5 and WP3 \u00a76.1",
+  "baseline": "native process through common gateway (not scheduler backend)",
+  "existing_wp1": "research_enhancement/automated_supervisor_workplan/20261110_175044_716445/wp1_capacity_summary.csv",
+  "service_cpu": 0,
+  "loadgen_cpu": 1,
+  "rates": [
+    1200
+  ],
+  "repetitions": 5,
+  "seconds": 15,
+  "source_sha256": {
+    "gateway_existing": "0187dd40c70a95f46b409cf653862fb7e0c042994371591dc384cdc43778f740",
+    "loadgen": "e104f3d38e8ed51fb3c357e3dbee0398e7fb2b6e222fd4e6f0ea261649fdc110",
+    "golden": "37020d0a69705dc99f2054da29a069535512830ca20d7413dbe29c990082fc34"
+  },
+  "isolated_ports": {
+    "gateway": 35395,
+    "native": 43791
+  },
+  "results": [
+    {
+      "backend": "native",
+      "model": "lr",
+      "rps": 1200,
+      "repeat": 1,
+      "summary": {
+        "offered_requests": 18000,
+        "successful_requests": 18000,
+        "failed_requests": 0,
+        "timed_out_requests": 0,
+        "dropped_requests": 0,
+        "p50_latency_ms": 1.400459,
+        "p95_latency_ms": 2.323966,
+        "p99_latency_ms": 2.778307
+      },
+      "raw_analysis": {
+        "offered_records": 18000,
+        "successful_records": 18000,
+        "unsuccessful_records": 0,
+        "measurements": {
+          "latency_from_dispatch_ns": {
+            "n": 18000,
+            "mean_ms": 0.3903555658333333,
+            "p50_ms": 0.319162,
+            "p95_ms": 0.801535,
+            "p99_ms": 0.972542
+          },
+          "request_total_ns": {
+            "n": 18000,
+            "mean_ms": 0.1578646198888889,
+            "p50_ms": 0.107458,
+            "p95_ms": 0.401021,
+            "p99_ms": 0.536779
+          },
+          "adapter_roundtrip_ns": {
+            "n": 18000,
+            "mean_ms": 0.15409233511111112,
+            "p50_ms": 0.104186,
+            "p95_ms": 0.392289,
+            "p99_ms": 0.527938
+          },
+          "inference_time_ns": {
+            "n": 18000,
+            "mean_ms": 0.00037419327777777776,
+            "p50_ms": 0.00034,
+            "p95_ms": 0.000699,
+            "p99_ms": 0.000777
+          },
+          "execution_time_ns": {
+            "n": 18000,
+            "mean_ms": 0.00021290277777777779,
+            "p50_ms": 0.000178,
+            "p95_ms": 0.000534,
+            "p99_ms": 0.000594
+          },
+          "scheduling_delay_ns": {
+            "n": 18000,
+            "mean_ms": 1.0417020083888888,
+            "p50_ms": 1.036061,
+            "p95_ms": 1.787454,
+            "p99_ms": 1.9785
+          }
+        },
+        "metric_note": "Gateway/server clock metrics are nested; do not subtract unrelated machine clocks or call execution_time pure native/guest kernel without validation."
+      },
+      "gateway_threads": "3",
+      "native_threads": "2"
+    },
+    {
+      "backend": "native",
+      "model": "lr",
+      "rps": 1200,
+      "repeat": 2,
+      "summary": {
+        "offered_requests": 18000,
+        "successful_requests": 18000,
+        "failed_requests": 0,
+        "timed_out_requests": 0,
+        "dropped_requests": 0,
+        "p50_latency_ms": 1.618387,
+        "p95_latency_ms": 2.53183,
+        "p99_latency_ms": 2.800673
+      },
+      "raw_analysis": {
+        "offered_records": 18000,
+        "successful_records": 18000,
+        "unsuccessful_records": 0,
+        "measurements": {
+          "latency_from_dispatch_ns": {
+            "n": 18000,
+            "mean_ms": 0.5296685171111111,
+            "p50_ms": 0.632238,
+            "p95_ms": 0.798361,
+            "p99_ms": 0.936925
+          },
+          "request_total_ns": {
+            "n": 18000,
+            "mean_ms": 0.20972241188888888,
+            "p50_ms": 0.180064,
+            "p95_ms": 0.430554,
+            "p99_ms": 0.495457
+          },
+          "adapter_roundtrip_ns": {
+            "n": 18000,
+            "mean_ms": 0.20374762616666667,
+            "p50_ms": 0.174456,
+            "p95_ms": 0.422181,
+            "p99_ms": 0.487208
+          },
+          "inference_time_ns": {
+            "n": 18000,
+            "mean_ms": 0.00046605666666666665,
+            "p50_ms": 0.000352,
+            "p95_ms": 0.000748,
+            "p99_ms": 0.000805
+          },
+          "execution_time_ns": {
+            "n": 18000,
+            "mean_ms": 0.00032432322222222224,
+            "p50_ms": 0.000192,
+            "p95_ms": 0.000586,
+            "p99_ms": 0.000614
+          },
+          "scheduling_delay_ns": {
+            "n": 18000,
+            "mean_ms": 1.0907735412777777,
+            "p50_ms": 1.075931,
+            "p95_ms": 1.800034,
+            "p99_ms": 2.031947
+          }
+        },
+        "metric_note": "Gateway/server clock metrics are nested; do not subtract unrelated machine clocks or call execution_time pure native/guest kernel without validation."
+      },
+      "gateway_threads": "3",
+      "native_threads": "2"
+    },
+    {
+      "backend": "native",
+      "model": "lr",
+      "rps": 1200,
+      "repeat": 3,
+      "summary": {
+        "offered_requests": 18000,
+        "successful_requests": 18000,
+        "failed_requests": 0,
+        "timed_out_requests": 0,
+        "dropped_requests": 0,
+        "p50_latency_ms": 1.388587,
+        "p95_latency_ms": 2.283422,
+        "p99_latency_ms": 2.566095
+      },
+      "raw_analysis": {
+        "offered_records": 18000,
+        "successful_records": 18000,
+        "unsuccessful_records": 0,
+        "measurements": {
+          "latency_from_dispatch_ns": {
+            "n": 18000,
+            "mean_ms": 0.4601027353888889,
+            "p50_ms": 0.37948,
+            "p95_ms": 0.788252,
+            "p99_ms": 0.97279
+          },
+          "request_total_ns": {
+            "n": 18000,
+            "mean_ms": 0.18515950988888888,
+            "p50_ms": 0.114253,
+            "p95_ms": 0.417539,
+            "p99_ms": 0.493602
+          },
+          "adapter_roundtrip_ns": {
+            "n": 18000,
+            "mean_ms": 0.18026581911111111,
+            "p50_ms": 0.110495,
+            "p95_ms": 0.409222,
+            "p99_ms": 0.484459
+          },
+          "inference_time_ns": {
+            "n": 18000,
+            "mean_ms": 0.00042373983333333335,
+            "p50_ms": 0.000342,
+            "p95_ms": 0.000737,
+            "p99_ms": 0.000808
+          },
+          "execution_time_ns": {
+            "n": 18000,
+            "mean_ms": 0.00027598772222222224,
+            "p50_ms": 0.000178,
+            "p95_ms": 0.000572,
+            "p99_ms": 0.000612
+          },
+          "scheduling_delay_ns": {
+            "n": 18000,
+            "mean_ms": 0.9421895207777777,
+            "p50_ms": 0.924908,
+            "p95_ms": 1.692017,
+            "p99_ms": 1.906499
+          }
+        },
+        "metric_note": "Gateway/server clock metrics are nested; do not subtract unrelated machine clocks or call execution_time pure native/guest kernel without validation."
+      },
+      "gateway_threads": "3",
+      "native_threads": "2"
+    },
+    {
+      "backend": "native",
+      "model": "lr",
+      "rps": 1200,
+      "repeat": 4,
+      "summary": {
+        "offered_requests": 18000,
+        "successful_requests": 18000,
+        "failed_requests": 0,
+        "timed_out_requests": 0,
+        "dropped_requests": 0,
+        "p50_latency_ms": 1.542486,
+        "p95_latency_ms": 2.593125,
+        "p99_latency_ms": 2.774195
+      },
+      "raw_analysis": {
+        "offered_records": 18000,
+        "successful_records": 18000,
+        "unsuccessful_records": 0,
+        "measurements": {
+          "latency_from_dispatch_ns": {
+            "n": 18000,
+            "mean_ms": 0.6029922375,
+            "p50_ms": 0.682698,
+            "p95_ms": 0.942646,
+            "p99_ms": 1.161941
+          },
+          "request_total_ns": {
+            "n": 18000,
+            "mean_ms": 0.22626899111111112,
+            "p50_ms": 0.183108,
+            "p95_ms": 0.507368,
+            "p99_ms": 0.569037
+          },
+          "adapter_roundtrip_ns": {
+            "n": 18000,
+            "mean_ms": 0.22032627677777777,
+            "p50_ms": 0.177528,
+            "p95_ms": 0.498557,
+            "p99_ms": 0.56008
+          },
+          "inference_time_ns": {
+            "n": 18000,
+            "mean_ms": 0.0004609297777777778,
+            "p50_ms": 0.000343,
+            "p95_ms": 0.000762,
+            "p99_ms": 0.000826
+          },
+          "execution_time_ns": {
+            "n": 18000,
+            "mean_ms": 0.0003143866111111111,
+            "p50_ms": 0.00018,
+            "p95_ms": 0.000587,
+            "p99_ms": 0.000621
+          },
+          "scheduling_delay_ns": {
+            "n": 18000,
+            "mean_ms": 0.9738723479444444,
+            "p50_ms": 0.975523,
+            "p95_ms": 1.758563,
+            "p99_ms": 1.922351
+          }
+        },
+        "metric_note": "Gateway/server clock metrics are nested; do not subtract unrelated machine clocks or call execution_time pure native/guest kernel without validation."
+      },
+      "gateway_threads": "3",
+      "native_threads": "2"
+    },
+    {
+      "backend": "native",
+      "model": "lr",
+      "rps": 1200,
+      "repeat": 5,
+      "summary": {
+        "offered_requests": 18000,
+        "successful_requests": 18000,
+        "failed_requests": 0,
+        "timed_out_requests": 0,
+        "dropped_requests": 0,
+        "p50_latency_ms": 1.512063,
+        "p95_latency_ms": 2.609178,
+        "p99_latency_ms": 2.801823
+      },
+      "raw_analysis": {
+        "offered_records": 18000,
+        "successful_records": 18000,
+        "unsuccessful_records": 0,
+        "measurements": {
+          "latency_from_dispatch_ns": {
+            "n": 18000,
+            "mean_ms": 0.5765614745,
+            "p50_ms": 0.667971,
+            "p95_ms": 0.938531,
+            "p99_ms": 1.100367
+          },
+          "request_total_ns": {
+            "n": 18000,
+            "mean_ms": 0.21816527855555556,
+            "p50_ms": 0.153001,
+            "p95_ms": 0.510391,
+            "p99_ms": 0.573078
+          },
+          "adapter_roundtrip_ns": {
+            "n": 18000,
+            "mean_ms": 0.2125902418888889,
+            "p50_ms": 0.149575,
+            "p95_ms": 0.501958,
+            "p99_ms": 0.563426
+          },
+          "inference_time_ns": {
+            "n": 18000,
+            "mean_ms": 0.0004488853888888889,
+            "p50_ms": 0.000341,
+            "p95_ms": 0.000766,
+            "p99_ms": 0.000829
+          },
+          "execution_time_ns": {
+            "n": 18000,
+            "mean_ms": 0.0002999352222222222,
+            "p50_ms": 0.00018,
+            "p95_ms": 0.000588,
+            "p99_ms": 0.000623
+          },
+          "scheduling_delay_ns": {
+            "n": 18000,
+            "mean_ms": 0.9814458264444444,
+            "p50_ms": 0.974337,
+            "p95_ms": 1.767954,
+            "p99_ms": 1.937527
+          }
+        },
+        "metric_note": "Gateway/server clock metrics are nested; do not subtract unrelated machine clocks or call execution_time pure native/guest kernel without validation."
+      },
+      "gateway_threads": "3",
+      "native_threads": "2"
+    }
+  ],
+  "status": "NATIVE_CAMPAIGN_COMPLETE",
+  "blockers": [],
+  "binary_provenance": {
+    "native_binary_sha256": "7ace933bd0fcc318785d6763d56d06077315078bc0b96392e27ad5dc000ab9c3",
+    "gateway_binary_sha256": "0187dd40c70a95f46b409cf653862fb7e0c042994371591dc384cdc43778f740",
+    "native_source": "existing comet-wp1-lr:latest Docker image executable",
+    "execution": "native host process",
+    "port_method": "LD_PRELOAD bind-port remapping at startup only"
+  },
+  "processes": {
+    "native": {
+      "pid": 3882610,
+      "Threads": "2",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "2",
+      "nonvoluntary_ctxt_switches": "1"
+    },
+    "gateway": {
+      "pid": 3882611,
+      "Threads": "3",
+      "Cpus_allowed_list": "0",
+      "voluntary_ctxt_switches": "2",
+      "nonvoluntary_ctxt_switches": "1"
+    }
+  },
+  "trace_sha256": {
+    "1200": "d6e9be247b6323e25383f4a72960e0ca813abed6036c395d40c800256fc402ff"
+  },
+  "historical_backend_raw_comparisons": 6,
+  "scope_limits": [
+    "Native route uses isolated copies of the real gateway/native Rust sources with environment-configured ports, not a third scheduler backend.",
+    "Only native path runs now; Wasmtime/Docker historical campaigns have three repetitions and possibly different max-inflight settings, so pooled cross-backend statistical equivalence is NOT asserted.",
+    "Existing Docker gateway route uses a published loopback port; verified Docker bridge internals still require a separate deployment review.",
+    "Execution, inference, adapter and gateway timings have nested boundaries; guest-call/input-copy isolation cannot be inferred by subtraction alone.",
+    "No-go remains until WP1 generator headroom, matched threads and WP2 helper visibility are scientifically resolved."
+  ],
+  "stop_go": "NO_GO_PENDING_ACCEPTANCE"
+}

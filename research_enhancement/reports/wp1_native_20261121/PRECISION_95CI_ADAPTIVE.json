@@ -1,0 +1,169 @@
+{
+  "confidence_level": 0.95,
+  "required_relative_halfwidth_pct": 2.5,
+  "student_t_required": true,
+  "bootstrap_required": true,
+  "bootstrap_resamples": 3000,
+  "minimum_repetitions": 20,
+  "maximum_repetitions": 60,
+  "additional_batch_size": 5,
+  "source_runs": [
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_010932_3880135/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_013514_3881596/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_013631_3881624/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_013748_3881664/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_013905_3881688/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_014022_3881716/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_014140_3881738/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_014257_3881764/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_014414_3881795/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_014532_3881819/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_014650_3881846/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_014808_3881870/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_014926_3881894/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_015044_3881922/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_015202_3881950/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_015320_3881978/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_015438_3882005/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_015556_3882609/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_015716_3882634/RESULT.json",
+    "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp1_wp3_native_attribution/20261121_015835_3882847/RESULT.json"
+  ],
+  "metrics": [
+    {
+      "rate": 100,
+      "metric": "p50_latency_ms",
+      "n": 20,
+      "mean_ms": 2.5564915,
+      "student_t_relative_halfwidth_pct": 0.9192733660791162,
+      "bootstrap_relative_halfwidth_pct": 0.8540150143272471,
+      "accepted": true
+    },
+    {
+      "rate": 100,
+      "metric": "p95_latency_ms",
+      "n": 20,
+      "mean_ms": 3.0139266,
+      "student_t_relative_halfwidth_pct": 1.0804969954027088,
+      "bootstrap_relative_halfwidth_pct": 0.9879478941192543,
+      "accepted": true
+    },
+    {
+      "rate": 100,
+      "metric": "p99_latency_ms",
+      "n": 20,
+      "mean_ms": 3.08028075,
+      "student_t_relative_halfwidth_pct": 0.9740886095893098,
+      "bootstrap_relative_halfwidth_pct": 0.8923526086055584,
+      "accepted": true
+    },
+    {
+      "rate": 300,
+      "metric": "p50_latency_ms",
+      "n": 60,
+      "mean_ms": 2.2174010833333333,
+      "student_t_relative_halfwidth_pct": 3.4346866265109446,
+      "bootstrap_relative_halfwidth_pct": 3.4100311145033064,
+      "accepted": false
+    },
+    {
+      "rate": 300,
+      "metric": "p95_latency_ms",
+      "n": 60,
+      "mean_ms": 2.9269762833333335,
+      "student_t_relative_halfwidth_pct": 2.4472462657737677,
+      "bootstrap_relative_halfwidth_pct": 2.3639962004133603,
+      "accepted": true
+    },
+    {
+      "rate": 300,
+      "metric": "p99_latency_ms",
+      "n": 60,
+      "mean_ms": 3.0683136666666666,
+      "student_t_relative_halfwidth_pct": 2.3118167298770786,
+      "bootstrap_relative_halfwidth_pct": 2.2408748871937294,
+      "accepted": true
+    },
+    {
+      "rate": 600,
+      "metric": "p50_latency_ms",
+      "n": 60,
+      "mean_ms": 1.81502675,
+      "student_t_relative_halfwidth_pct": 2.534340175762364,
+      "bootstrap_relative_halfwidth_pct": 2.451235647537056,
+      "accepted": false
+    },
+    {
+      "rate": 600,
+      "metric": "p95_latency_ms",
+      "n": 60,
+      "mean_ms": 2.731038633333333,
+      "student_t_relative_halfwidth_pct": 1.4887655208274242,
+      "bootstrap_relative_halfwidth_pct": 1.4393213102844096,
+      "accepted": true
+    },
+    {
+      "rate": 600,
+      "metric": "p99_latency_ms",
+      "n": 60,
+      "mean_ms": 2.9705329833333334,
+      "student_t_relative_halfwidth_pct": 1.3442373691603555,
+      "bootstrap_relative_halfwidth_pct": 1.2953206548304104,
+      "accepted": true
+    },
+    {
+      "rate": 1200,
+      "metric": "p50_latency_ms",
+      "n": 35,
+      "mean_ms": 1.5046907999999999,
+      "student_t_relative_halfwidth_pct": 2.3540713520976126,
+      "bootstrap_relative_halfwidth_pct": 2.175290930203073,
+      "accepted": true
+    },
+    {
+      "rate": 1200,
+      "metric": "p95_latency_ms",
+      "n": 35,
+      "mean_ms": 2.4442802,
+      "student_t_relative_halfwidth_pct": 2.0102954332619767,
+      "bootstrap_relative_halfwidth_pct": 1.907712924472171,
+      "accepted": true
+    },
+    {
+      "rate": 1200,
+      "metric": "p99_latency_ms",
+      "n": 35,
+      "mean_ms": 2.6979278285714288,
+      "student_t_relative_halfwidth_pct": 1.65504946988199,
+      "bootstrap_relative_halfwidth_pct": 1.5283615709131504,
+      "accepted": true
+    },
+    {
+      "rate": 2400,
+      "metric": "p50_latency_ms",
+      "n": 20,
+      "mean_ms": 1.5198072,
+      "student_t_relative_halfwidth_pct": 1.5261171603582986,
+      "bootstrap_relative_halfwidth_pct": 1.4045278654424058,
+      "accepted": true
+    },
+    {
+      "rate": 2400,
+      "metric": "p95_latency_ms",
+      "n": 20,
+      "mean_ms": 2.4558276,
+      "student_t_relative_halfwidth_pct": 1.2730807938472364,
+      "bootstrap_relative_halfwidth_pct": 1.165478849166783,
+      "accepted": true
+    },
+    {
+      "rate": 2400,
+      "metric": "p99_latency_ms",
+      "n": 20,
+      "mean_ms": 2.77548065,
+      "student_t_relative_halfwidth_pct": 1.0703723099849372,
+      "bootstrap_relative_halfwidth_pct": 0.9288816785661942,
+      "accepted": true
+    }
+  ]
+}
