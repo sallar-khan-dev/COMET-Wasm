@@ -1,0 +1,26 @@
+{
+  "work_package": "WP2",
+  "cells": 98,
+  "precision_metrics": 294,
+  "accepted_precision_metrics": 294,
+  "confidence": 0.95,
+  "relative_halfwidth_limit_pct": 2.5,
+  "bootstrap_resamples": 5000,
+  "original_data_sha256": {
+    "results/raw/density/wasmtime_logistic_regression_density_full.csv": "ed5308be291f4160044fe0e8c5a302b1036ce3295de70d8e31927955a509fab3",
+    "results/raw/density/docker_logistic_regression_density_full.csv": "fe4120e4004ebb7eea6a61a4e3e49e275cd1f77b415d46af8f94e606d4666708",
+    "results/raw/density/wasmtime_naive_bayes_density_full.csv": "2f29f0c63d1dcd85d106f2064da70d0d29c4d15706ccb86cbbaf3e794258bbc0",
+    "results/raw/density/docker_naive_bayes_density_full.csv": "ffcf513ba3fe41233d31f117fca33c90bc486c10d8aa5e2d164555964f721013",
+    "results/raw/density/wasmtime_decision_tree_density_full.csv": "c1d78b250544ec4e588d3c536b95e12223ea4bba5d10d2f0751126c2f14019d9",
+    "results/raw/density/docker_decision_tree_density_full.csv": "e2e385cf23775c1b7581bb017b69bcf4d90a417dd85f2b591ab32623b65a68c6",
+    "results/raw/density/wasmtime_kmeans_density_full.csv": "ac4bdd2cc28fac59ae2be2ccde29c5df9b42dad748a16a8a110d9acd438a9526",
+    "results/raw/density/docker_kmeans_density_full.csv": "7b129e9c42867d6613f908b8860e9f8a41c17efd6bb68c00e61717bf31a9614f",
+    "results/raw/density/wasmtime_random_forest_density_full.csv": "037534cb6e0b2773ea7b929655dc23e0983b5205f6c57d94ec474cca90d5020a",
+    "results/raw/density/docker_random_forest_density_full.csv": "e28f07272eb69c7477d7a6f2ad0c6126522c41e7418117acf2e726b6c74f00c1",
+    "results/raw/density/wasmtime_svm_density_full.csv": "3f7db76666fd80af1421d83095aebcbe2b21386dd7b06eca9ae1c526990f33d2",
+    "results/raw/density/docker_svm_density_full.csv": "0147699bbe72461bac0faf4f9c0eb49952540507b41661ff4e61d8967ed275fa",
+    "results/raw/density/wasmtime_mlp_density_full.csv": "6d3e494a791dcc32e3bdec7e834225e120ced05f5da6d374072d4e2e302a3182",
+    "results/raw/density/docker_mlp_density_full.csv": "54b946b09610807c98057402db847e3a4c49840ef18fc24e3e058d751ba9d7a2"
+  },
+  "methodological_status": "Historical density measurements; supervisor resource-parity and memory-attribution acceptance remain pending"
+}
