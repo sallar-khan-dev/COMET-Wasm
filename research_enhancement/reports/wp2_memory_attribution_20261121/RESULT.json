@@ -1,0 +1,22 @@
+{
+  "work_package": "WP2 Section 5 and 5.1",
+  "status": "MEASUREMENTS_ANALYSED_ACCEPTANCE_PENDING",
+  "experiment": "Existing LR Wasmtime JIT/AOT memory pilot",
+  "repetitions_per_mode": 20,
+  "confidence": 0.95,
+  "relative_halfwidth_target_pct": 2.5,
+  "jit_ready_pss_kib": 10502.72,
+  "aot_ready_pss_kib": 5092.46,
+  "observed_aot_pss_reduction_pct": 51.512941409463444,
+  "primary_ready_pss_precision_accepted": true,
+  "all_reported_component_precision_accepted": false,
+  "source_sha256": "8b9658c26af4fd9d29ece8e2a85414c78958249dfe21987397e113f82d07ac14",
+  "docker_helper_pss": "UNAVAILABLE: prior 20 trials could not observe container-owned helper PSS",
+  "limitations": [
+    "Only LR JIT/AOT sensitivity measured",
+    "Stage deltas are observational, not independent OS component ownership",
+    "Docker shared daemon memory cannot be assigned to one tenant",
+    "Worker/CPU configuration parity across historical density experiments remains unconfirmed",
+    "WP2 supervisor sign-off remains pending"
+  ]
+}
