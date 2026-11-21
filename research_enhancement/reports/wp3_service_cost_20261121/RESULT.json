@@ -1,0 +1,21 @@
+{
+  "work_package": "WP3 Section 6.1",
+  "source_campaign": "research_enhancement/automated_supervisor_workplan/wp1_matched_correction/20261114_015337_2877545",
+  "independent_runs_analysed": 481,
+  "conditions": 20,
+  "confidence": 0.95,
+  "bootstrap_resamples": 3000,
+  "target_relative_halfwidth_pct": 2.5,
+  "accepted_metric_quantiles": 338,
+  "total_metric_quantiles": 480,
+  "status": "EVIDENCE_ANALYSED_STOP_GO_REVIEW_PENDING",
+  "notes": [
+    "Per-request nested timing differences calculated before percentiles",
+    "Gateway handler timer excludes ingress parsing and response serialization",
+    "Client-to-response includes HTTP transport and client overhead",
+    "Docker adapter timing includes bridge transport and backend response",
+    "Backend inference and execution timers have different scopes",
+    "No raw experiments rerun or pooled with different configurations",
+    "Precision failures remain explicitly unaccepted"
+  ]
+}
