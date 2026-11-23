@@ -1,0 +1,269 @@
+{
+  "utc": "2026-11-23T17:58:15.831991+00:00",
+  "wp1": {
+    "diagnostic": {
+      "attempted": false,
+      "exit_code": null,
+      "runner": "COMET_WP1_Parity_Headroom_Checkpoint.py",
+      "runner_scope": "bounded pilot, not full sustained no-op capacity envelope"
+    },
+    "successful_diagnostic_path": "research_enhancement/wp1_parity_headroom/20261120_175031_3808506/FINAL_GATE.json",
+    "recorded_runs": 4,
+    "thread_process_observations": true,
+    "bounded_noop_lossfree": true,
+    "native_evidence": true,
+    "rf_svm_precision_note": "RF/SVM 60-run P95 pilot precision 2/8 conditions (report documents 6 misses)",
+    "requirements_not_proven": [
+      "Matched total runnable serving resources/worker semantics across full LR/RF/SVM comparable campaigns.",
+      "Sustained generator + gateway throughput headroom above fastest backend with client CPU sampling and no client saturation.",
+      "Same port/network/service configuration, input trace and request semantics for compared results."
+    ]
+  },
+  "wp2": {
+    "passed_coverage": true,
+    "raw_conditions": 98,
+    "ci_met": 98,
+    "missing": [],
+    "extra": [],
+    "invalid": [],
+    "source": "research_enhancement/automated_supervisor_workplan/wp2_seven_model_controlled_audit_20261123/WP2_Seven_Model_98_Conditions.csv",
+    "model_curves": [
+      {
+        "model": "logistic_regression",
+        "docker_lower_application_pss_densities": [
+          1,
+          5,
+          10,
+          20
+        ],
+        "wasmtime_lower_application_pss_densities": [
+          50,
+          100,
+          200
+        ]
+      },
+      {
+        "model": "naive_bayes",
+        "docker_lower_application_pss_densities": [
+          1,
+          5,
+          10,
+          20
+        ],
+        "wasmtime_lower_application_pss_densities": [
+          50,
+          100,
+          200
+        ]
+      },
+      {
+        "model": "decision_tree",
+        "docker_lower_application_pss_densities": [
+          1,
+          5,
+          10,
+          20
+        ],
+        "wasmtime_lower_application_pss_densities": [
+          50,
+          100,
+          200
+        ]
+      },
+      {
+        "model": "kmeans",
+        "docker_lower_application_pss_densities": [
+          1,
+          5,
+          10,
+          20
+        ],
+        "wasmtime_lower_application_pss_densities": [
+          50,
+          100,
+          200
+        ]
+      },
+      {
+        "model": "random_forest",
+        "docker_lower_application_pss_densities": [
+          1,
+          5,
+          10,
+          20
+        ],
+        "wasmtime_lower_application_pss_densities": [
+          50,
+          100,
+          200
+        ]
+      },
+      {
+        "model": "svm",
+        "docker_lower_application_pss_densities": [
+          1,
+          5,
+          10,
+          20
+        ],
+        "wasmtime_lower_application_pss_densities": [
+          50,
+          100,
+          200
+        ]
+      },
+      {
+        "model": "mlp",
+        "docker_lower_application_pss_densities": [
+          1,
+          5,
+          10,
+          20
+        ],
+        "wasmtime_lower_application_pss_densities": [
+          50,
+          100,
+          200
+        ]
+      }
+    ],
+    "descriptive_linear_fits": [
+      {
+        "model": "logistic_regression",
+        "backend": "wasmtime",
+        "intercept_mib_descriptive": 10.928600990525908,
+        "incremental_mib_per_tenant_descriptive": 0.01092781389968127,
+        "r2_descriptive": 0.9999049501129762
+      },
+      {
+        "model": "logistic_regression",
+        "backend": "docker",
+        "intercept_mib_descriptive": 3.0254727543050475,
+        "incremental_mib_per_tenant_descriptive": 0.27063817591232214,
+        "r2_descriptive": 0.9993726069750962
+      },
+      {
+        "model": "naive_bayes",
+        "backend": "wasmtime",
+        "intercept_mib_descriptive": 10.80068322425618,
+        "incremental_mib_per_tenant_descriptive": 0.01102306133419278,
+        "r2_descriptive": 0.9994462858688987
+      },
+      {
+        "model": "naive_bayes",
+        "backend": "docker",
+        "intercept_mib_descriptive": 3.0502745330301355,
+        "incremental_mib_per_tenant_descriptive": 0.2748319236777782,
+        "r2_descriptive": 0.9993968552271714
+      },
+      {
+        "model": "decision_tree",
+        "backend": "wasmtime",
+        "intercept_mib_descriptive": 12.361639048776278,
+        "incremental_mib_per_tenant_descriptive": 0.011064894935296317,
+        "r2_descriptive": 0.9969542840337934
+      },
+      {
+        "model": "decision_tree",
+        "backend": "docker",
+        "intercept_mib_descriptive": 3.046582425503713,
+        "incremental_mib_per_tenant_descriptive": 0.2747625144392677,
+        "r2_descriptive": 0.9994068976055988
+      },
+      {
+        "model": "kmeans",
+        "backend": "wasmtime",
+        "intercept_mib_descriptive": 10.633538972467747,
+        "incremental_mib_per_tenant_descriptive": 0.011125414858637583,
+        "r2_descriptive": 0.9997157657178088
+      },
+      {
+        "model": "kmeans",
+        "backend": "docker",
+        "intercept_mib_descriptive": 3.050133771853641,
+        "incremental_mib_per_tenant_descriptive": 0.27081100510887185,
+        "r2_descriptive": 0.9993984444449888
+      },
+      {
+        "model": "random_forest",
+        "backend": "wasmtime",
+        "intercept_mib_descriptive": 12.481184145564557,
+        "incremental_mib_per_tenant_descriptive": 0.010740219308090965,
+        "r2_descriptive": 0.9902144160001964
+      },
+      {
+        "model": "random_forest",
+        "backend": "docker",
+        "intercept_mib_descriptive": 3.070893348828749,
+        "incremental_mib_per_tenant_descriptive": 0.2749233503234855,
+        "r2_descriptive": 0.9994020531871276
+      },
+      {
+        "model": "svm",
+        "backend": "wasmtime",
+        "intercept_mib_descriptive": 11.009748937563153,
+        "incremental_mib_per_tenant_descriptive": 0.012482086948336645,
+        "r2_descriptive": 0.9999463362857693
+      },
+      {
+        "model": "svm",
+        "backend": "docker",
+        "intercept_mib_descriptive": 3.066754204910012,
+        "incremental_mib_per_tenant_descriptive": 0.2748744025744946,
+        "r2_descriptive": 0.9994072607826097
+      },
+      {
+        "model": "mlp",
+        "backend": "wasmtime",
+        "intercept_mib_descriptive": 11.141644161826504,
+        "incremental_mib_per_tenant_descriptive": 0.01496669225638466,
+        "r2_descriptive": 0.999924807978697
+      },
+      {
+        "model": "mlp",
+        "backend": "docker",
+        "intercept_mib_descriptive": 3.059541647134184,
+        "incremental_mib_per_tenant_descriptive": 0.2748326995122471,
+        "r2_descriptive": 0.999397224078013
+      }
+    ],
+    "readiness_retries": 2,
+    "jit_aot": {
+      "reported_aot_reduction_pct": 51.512941409463444,
+      "ready_pss_ci_accepted": true,
+      "all_component_precision_accepted": false
+    },
+    "docker_helper_memory": "UNAVAILABLE: prior 20 trials could not observe container-owned helper PSS",
+    "limitations": [
+      "Fitted intercept/slope describe measured APPLICATION PSS only; they do not isolate OS memory ownership or Docker helper memory.",
+      "Stage-level JIT/AOT changes measured on LR; do not generalize to every model.",
+      "Compare physical worker/thread parity at actual experimental serving configurations, not only total thread counts."
+    ]
+  },
+  "wp3": {
+    "direct_endpoint_diagnostic": {
+      "scope": "DIRECT_ENDPOINT_DIAGNOSTIC_NOT_COMMON_GATEWAY",
+      "backend_conditions": 42,
+      "timing_metric_checks": 84,
+      "unaccepted": [],
+      "repetition_range": [
+        20,
+        25
+      ]
+    },
+    "batched_and_decomposed_timing_report_present": true,
+    "service_cost_report_present": true,
+    "scientific_limitations": [
+      "Diagnostic compares direct /infer readiness with different execution topologies, not common-gateway /health parity.",
+      "Cold deployment vs warm admission scopes differ; the archived warm admission harness is not a symmetric live service topology.",
+      "Batched kernel/copy/guest-call and full service cost are separate timings; do not equate raw percentile differences with per-request component cost.",
+      "Previously observed 60-repetition host-copy CI miss should remain reported, not silently called accepted."
+    ]
+  },
+  "decision": "NO_GO_PENDING_METHODOLOGICAL_ACCEPTANCE",
+  "blockers": [
+    "WP1 sustained headroom, exact worker parity and comparable serving-path capacity have not been demonstrated by bounded diagnostics.",
+    "WP2 complete model/base/incremental PSS component OWNERSHIP and Docker helper memory remain unresolved.",
+    "WP3 same-path symmetric cold /health vs warm admission and common-gateway timing decomposition remain unresolved."
+  ]
+}
