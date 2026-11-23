@@ -1,0 +1,58 @@
+{
+  "source_csv": "research_enhancement/automated_supervisor_workplan/wp3_symmetric_common_gateway_cold_20261123/20261123_181241_1339927/trials.csv",
+  "source_row_count": 120,
+  "method": "2000 seeded percentile bootstrap resamples; max relative distance from sample mean; two-sided 95% Student-t",
+  "correction": "Prior code incorrectly used upper endpoint rather than upper endpoint minus the mean",
+  "scope": "Cold deployment through the common gateway; not warm tenant admission",
+  "statistics": {
+    "wasmtime": {
+      "gateway_health_ms": {
+        "n": 60,
+        "mean_ms": 43.863905438532434,
+        "student_t_pct": 1.6038779583497291,
+        "bootstrap_pct": 1.7252110761225516,
+        "bootstrap_95ci_ms": [
+          43.10716048348695,
+          44.27221393367896
+        ],
+        "accepted": true
+      },
+      "first_valid_ms": {
+        "n": 60,
+        "mean_ms": 45.283461563910045,
+        "student_t_pct": 1.7915772067596392,
+        "bootstrap_pct": 1.9795124373676278,
+        "bootstrap_95ci_ms": [
+          44.387069810181856,
+          45.99738249089569
+        ],
+        "accepted": true
+      }
+    },
+    "docker": {
+      "gateway_health_ms": {
+        "n": 60,
+        "mean_ms": 424.0485274155314,
+        "student_t_pct": 2.071943700189683,
+        "bootstrap_pct": 2.126812318379549,
+        "bootstrap_95ci_ms": [
+          416.5187881638606,
+          433.067243732512
+        ],
+        "accepted": true
+      },
+      "first_valid_ms": {
+        "n": 60,
+        "mean_ms": 426.66359580277157,
+        "student_t_pct": 2.0591294119638084,
+        "bootstrap_pct": 2.1097050478320303,
+        "bootstrap_95ci_ms": [
+          419.1165041644126,
+          435.6649392206843
+        ],
+        "accepted": true
+      }
+    }
+  },
+  "decision": "PRECISION_ACCEPTED_SCOPED_COLD_ONLY"
+}
