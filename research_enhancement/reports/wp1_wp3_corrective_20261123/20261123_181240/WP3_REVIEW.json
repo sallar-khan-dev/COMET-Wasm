@@ -1,0 +1,12 @@
+{
+  "seven_model_direct_endpoint": {
+    "conditions": 42,
+    "precision_accepted": 42,
+    "scope": "DIRECT_ENDPOINT_DIAGNOSTIC_NOT_COMMON_GATEWAY",
+    "source": "research_enhancement/automated_supervisor_workplan/wp3_cold_http_ready_seven_models_20261123/RESULT.json"
+  },
+  "matched_common_gateway_cold": "research_enhancement/automated_supervisor_workplan/wp3_symmetric_common_gateway_cold_20261123/20261123_181241_1339927",
+  "warm_admission_existing": "research_enhancement/automated_supervisor_workplan/wp3_cold_admission/20261110_203607_858197/RESULT.json",
+  "warm_limit": "Existing warm Wasmtime uses preloaded Engine/Module in separate harness; Docker uses precreated container start. These are documented timing operations, not a common-gateway live admission API.",
+  "kernel_limit": "Re-use batched kernel and existing service-cost evidence; do not call typed no-op a pure host call."
+}

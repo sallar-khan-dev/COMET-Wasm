@@ -1,0 +1,28 @@
+{
+  "started_utc": "2026-11-23T18:12:40.675442+00:00",
+  "stages": {
+    "WP1_NEW": {
+      "exit": 2,
+      "source": null
+    },
+    "WP2": {
+      "precision": 98,
+      "models": 7
+    },
+    "WP3_NEW_COLD": {
+      "exit": 0
+    },
+    "WP3": {
+      "direct_precision": {
+        "conditions": 42,
+        "precision_accepted": 42,
+        "scope": "DIRECT_ENDPOINT_DIAGNOSTIC_NOT_COMMON_GATEWAY",
+        "source": "research_enhancement/automated_supervisor_workplan/wp3_cold_http_ready_seven_models_20261123/RESULT.json"
+      },
+      "cold_new": true,
+      "warm_existing": true
+    },
+    "FINAL": "NO_GO_PENDING_SCIENTIFIC_REVIEW"
+  },
+  "status": "REPORT_WRITTEN"
+}

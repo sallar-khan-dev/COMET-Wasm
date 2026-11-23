@@ -1,0 +1,94 @@
+{
+  "scope": "WP2 \u00a75, \u00a75.1: interpret existing seven-density application PSS and JIT/AOT evidence; no new density repetitions",
+  "density_conditions": 98,
+  "precision_conditions_met": 98,
+  "models": {
+    "decision_tree": {
+      "wasmtime_N1_application_pss_mib": 12.424202473958333,
+      "docker_N1_application_pss_mib": 2.3412109375,
+      "wasmtime_N200_application_pss_mib": 14.603059895833331,
+      "docker_N200_application_pss_mib": 57.75598958333334,
+      "wasmtime_observed_mean_increment_per_added_tenant_mib": 0.010949032270728633,
+      "docker_observed_mean_increment_per_added_tenant_mib": 0.2784662243509213,
+      "memory_crossover_interval": "20..50"
+    },
+    "kmeans": {
+      "wasmtime_N1_application_pss_mib": 10.622265625,
+      "docker_N1_application_pss_mib": 2.3471028645833334,
+      "wasmtime_N200_application_pss_mib": 12.851171875,
+      "docker_N200_application_pss_mib": 56.97483723958334,
+      "wasmtime_observed_mean_increment_per_added_tenant_mib": 0.011200533919597988,
+      "docker_observed_mean_increment_per_added_tenant_mib": 0.2745112280150754,
+      "memory_crossover_interval": "20..50"
+    },
+    "logistic_regression": {
+      "wasmtime_N1_application_pss_mib": 10.927294921875,
+      "docker_N1_application_pss_mib": 2.298844401041667,
+      "wasmtime_N200_application_pss_mib": 13.110498046875,
+      "docker_N200_application_pss_mib": 56.91044921875,
+      "wasmtime_observed_mean_increment_per_added_tenant_mib": 0.010970869974874373,
+      "docker_observed_mean_increment_per_added_tenant_mib": 0.2744301749633585,
+      "memory_crossover_interval": "20..50"
+    },
+    "mlp": {
+      "wasmtime_N1_application_pss_mib": 11.163297526041667,
+      "docker_N1_application_pss_mib": 2.341959635416667,
+      "wasmtime_N200_application_pss_mib": 14.133870442708332,
+      "docker_N200_application_pss_mib": 57.787711588541676,
+      "wasmtime_observed_mean_increment_per_added_tenant_mib": 0.014927502093802336,
+      "docker_observed_mean_increment_per_added_tenant_mib": 0.278621869111181,
+      "memory_crossover_interval": "20..50"
+    },
+    "naive_bayes": {
+      "wasmtime_N1_application_pss_mib": 10.776920572916667,
+      "docker_N1_application_pss_mib": 2.3345540364583335,
+      "wasmtime_N200_application_pss_mib": 12.998095703125,
+      "docker_N200_application_pss_mib": 57.77724609375,
+      "wasmtime_observed_mean_increment_per_added_tenant_mib": 0.011161684071398652,
+      "docker_observed_mean_increment_per_added_tenant_mib": 0.2786064927502094,
+      "memory_crossover_interval": "20..50"
+    },
+    "random_forest": {
+      "wasmtime_N1_application_pss_mib": 12.566064453125,
+      "docker_N1_application_pss_mib": 2.3588541666666667,
+      "wasmtime_N200_application_pss_mib": 14.69365234375,
+      "docker_N200_application_pss_mib": 57.817236328125,
+      "wasmtime_observed_mean_increment_per_added_tenant_mib": 0.010691396435301505,
+      "docker_observed_mean_increment_per_added_tenant_mib": 0.2786853374947655,
+      "memory_crossover_interval": "20..50"
+    },
+    "svm": {
+      "wasmtime_N1_application_pss_mib": 11.020068359375,
+      "docker_N1_application_pss_mib": 2.361686197916667,
+      "wasmtime_N200_application_pss_mib": 13.505322265625,
+      "docker_N200_application_pss_mib": 57.80405273437499,
+      "wasmtime_observed_mean_increment_per_added_tenant_mib": 0.012488713096733675,
+      "docker_observed_mean_increment_per_added_tenant_mib": 0.2786048569671272,
+      "memory_crossover_interval": "20..50"
+    }
+  },
+  "jit_aot_existing": {
+    "work_package": "WP2 Section 5 and 5.1",
+    "status": "MEASUREMENTS_ANALYSED_ACCEPTANCE_PENDING",
+    "experiment": "Existing LR Wasmtime JIT/AOT memory pilot",
+    "repetitions_per_mode": 20,
+    "confidence": 0.95,
+    "relative_halfwidth_target_pct": 2.5,
+    "jit_ready_pss_kib": 10502.72,
+    "aot_ready_pss_kib": 5092.46,
+    "observed_aot_pss_reduction_pct": 51.512941409463444,
+    "primary_ready_pss_precision_accepted": true,
+    "all_reported_component_precision_accepted": false,
+    "source_sha256": "8b9658c26af4fd9d29ece8e2a85414c78958249dfe21987397e113f82d07ac14",
+    "docker_helper_pss": "UNAVAILABLE: prior 20 trials could not observe container-owned helper PSS",
+    "limitations": [
+      "Only LR JIT/AOT sensitivity measured",
+      "Stage deltas are observational, not independent OS component ownership",
+      "Docker shared daemon memory cannot be assigned to one tenant",
+      "Worker/CPU configuration parity across historical density experiments remains unconfirmed",
+      "WP2 supervisor sign-off remains pending"
+    ]
+  },
+  "helper_memory": "NOT ATTRIBUTABLE when Docker shared daemon/helper PSS is unavailable; never assign zero",
+  "ownership_warning": "N=1 PSS includes runtime and resident model; (N=200 - N=1)/199 is an OBSERVATIONAL marginal average, not independently measured component ownership"
+}

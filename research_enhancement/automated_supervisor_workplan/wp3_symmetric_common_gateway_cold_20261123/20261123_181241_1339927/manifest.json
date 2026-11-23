@@ -1,0 +1,61 @@
+{
+  "work_package": "WP3 \u00a76.2",
+  "purpose": "matched HTTP through common COMET gateway; cold deployment only",
+  "backend_topology": {
+    "wasmtime": "fresh gateway process+engine+module+worker",
+    "docker": "fresh container+fresh gateway process+Docker bridge"
+  },
+  "min_reps": 20,
+  "max_reps": 60,
+  "cpu": 0,
+  "docker_image_id": "sha256:883b5a144ebcc2cd75a22ce38b1f8dcf29a99cf0396feef939d12c9a054927e5",
+  "wasm_sha256": "f78b0eb25db720a01f5f8e9496fbc145603e75ebd670036dcc504f3f88574faf",
+  "gateway_sha256": "0187dd40c70a95f46b409cf653862fb7e0c042994371591dc384cdc43778f740",
+  "wp2_server_is_distinct": "WP2 used multitenant_server, not common_ingress",
+  "cold_readiness_probes": [
+    "GET common-gateway /health",
+    "POST common-gateway /infer with golden prediction"
+  ],
+  "limitation": "Does not measure warm tenant admission; no dynamic gateway admission API; Docker and Wasm execution units differ intrinsically",
+  "status": "MEASURED_SCOPE_LIMITED",
+  "blockers": [],
+  "statistics": {
+    "wasmtime": {
+      "gateway_health_ms": {
+        "n": 60,
+        "mean_ms": 43.863905438532434,
+        "student_t_pct": 1.6038779583497291,
+        "bootstrap_pct": 100.93085303523348,
+        "accepted": false,
+        "method": "student_t"
+      },
+      "first_valid_ms": {
+        "n": 60,
+        "mean_ms": 45.283461563910045,
+        "student_t_pct": 1.7915772067596392,
+        "bootstrap_pct": 101.57655996765632,
+        "accepted": false,
+        "method": "student_t"
+      }
+    },
+    "docker": {
+      "gateway_health_ms": {
+        "n": 60,
+        "mean_ms": 424.0485274155314,
+        "student_t_pct": 2.071943700189683,
+        "bootstrap_pct": 102.12681231837955,
+        "accepted": false,
+        "method": "student_t"
+      },
+      "first_valid_ms": {
+        "n": 60,
+        "mean_ms": 426.66359580277157,
+        "student_t_pct": 2.0591294119638084,
+        "bootstrap_pct": 102.10970504783204,
+        "accepted": false,
+        "method": "student_t"
+      }
+    }
+  },
+  "recorded_repetitions": 120
+}
