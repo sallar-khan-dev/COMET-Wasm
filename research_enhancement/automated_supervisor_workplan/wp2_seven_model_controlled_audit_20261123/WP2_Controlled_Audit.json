@@ -1,0 +1,56 @@
+{
+  "audit_utc": "2026-11-23T04:43:47.315301+00:00",
+  "status": "COVERAGE_CHECKED_NOT_FULL_WP2_SCIENTIFIC_ACCEPTANCE",
+  "density_levels": 49,
+  "backend_density_conditions": 98,
+  "conditions_precision_met": 98,
+  "conditions_precision_not_met": 0,
+  "precision_misses": [],
+  "readiness_retries_six_model_campaign": 2,
+  "readiness_events": [
+    {
+      "utc": "2026-11-22T23:04:37.621051+00:00",
+      "model": "svm",
+      "backend": "wasmtime",
+      "tenants": "50",
+      "repetition": "17",
+      "attempt": "1",
+      "error": "Readiness failed: <urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "utc": "2026-11-23T02:27:04.589084+00:00",
+      "model": "mlp",
+      "backend": "wasmtime",
+      "tenants": "100",
+      "repetition": "5",
+      "attempt": "1",
+      "error": "Readiness failed: <urlopen error [Errno 111] Connection refused>"
+    }
+  ],
+  "raw_repetitions_per_model": {
+    "logistic_regression": 280,
+    "naive_bayes": 280,
+    "decision_tree": 280,
+    "kmeans": 280,
+    "random_forest": 280,
+    "svm": 280,
+    "mlp": 280
+  },
+  "frozen_manifests": {
+    "logistic_regression": "research_enhancement/automated_supervisor_workplan/wp2_lr_controlled_density_20261121/manifest.json",
+    "naive_bayes": "research_enhancement/automated_supervisor_workplan/wp2_six_models_controlled_density_20261121/naive_bayes/manifest.json",
+    "decision_tree": "research_enhancement/automated_supervisor_workplan/wp2_six_models_controlled_density_20261121/decision_tree/manifest.json",
+    "kmeans": "research_enhancement/automated_supervisor_workplan/wp2_six_models_controlled_density_20261121/kmeans/manifest.json",
+    "random_forest": "research_enhancement/automated_supervisor_workplan/wp2_six_models_controlled_density_20261121/random_forest/manifest.json",
+    "svm": "research_enhancement/automated_supervisor_workplan/wp2_six_models_controlled_density_20261121/svm/manifest.json",
+    "mlp": "research_enhancement/automated_supervisor_workplan/wp2_six_models_controlled_density_20261121/mlp/manifest.json"
+  },
+  "known_limitations": [
+    "The measured metric is total application PSS, not full Docker daemon/helper ownership.",
+    "Base/process, model-resident and incremental tenant PSS require explicit decomposition.",
+    "JIT/AOT configuration sensitivity must be integrated with separately run pilot evidence.",
+    "WP1 common-gateway, native parity and high-headroom verification remain independent.",
+    "WP3 full symmetric cold and warm readiness is not established by this density dataset.",
+    "Precision misses are recorded and not converted into passes."
+  ]
+}

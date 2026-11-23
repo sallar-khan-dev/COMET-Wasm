@@ -1,0 +1,117 @@
+{
+  "precision_by_density": {
+    "1": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 10.927294921875,
+        "student_t_pct": 0.20546341257892722,
+        "bootstrap_pct": 0.18701042490537917,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 2.298844401041667,
+        "student_t_pct": 1.3527683666257995,
+        "bootstrap_pct": 1.2376363803711405,
+        "accepted": true
+      }
+    },
+    "5": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 10.995068359375,
+        "student_t_pct": 0.1888893852795413,
+        "bootstrap_pct": 0.17504777680570524,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 4.384049479166667,
+        "student_t_pct": 0.437505815562696,
+        "bootstrap_pct": 0.3994991758119436,
+        "accepted": true
+      }
+    },
+    "10": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 11.035026041666667,
+        "student_t_pct": 0.12349783695800515,
+        "bootstrap_pct": 0.11290878063457503,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 5.994287109375,
+        "student_t_pct": 0.18612298094786067,
+        "bootstrap_pct": 0.16821368544810308,
+        "accepted": true
+      }
+    },
+    "20": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 11.146435546875,
+        "student_t_pct": 0.17650703834152698,
+        "bootstrap_pct": 0.1587348522349067,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 8.834391276041666,
+        "student_t_pct": 0.09058685655787348,
+        "bootstrap_pct": 0.08318441003342003,
+        "accepted": true
+      }
+    },
+    "50": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 11.475699869791665,
+        "student_t_pct": 0.1783268421276207,
+        "bootstrap_pct": 0.16346850724825046,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 16.93019205729167,
+        "student_t_pct": 0.05529847477502027,
+        "bootstrap_pct": 0.051292262671002675,
+        "accepted": true
+      }
+    },
+    "100": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 12.0283203125,
+        "student_t_pct": 0.20750987007176136,
+        "bootstrap_pct": 0.19363481367216337,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 30.292431640625004,
+        "student_t_pct": 0.03200278562341591,
+        "bootstrap_pct": 0.028961667598887325,
+        "accepted": true
+      }
+    },
+    "200": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 13.110498046875,
+        "student_t_pct": 0.0977501645112412,
+        "bootstrap_pct": 0.08976622235132284,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 56.91044921875,
+        "student_t_pct": 0.03235790049090244,
+        "bootstrap_pct": 0.029518861012108554,
+        "accepted": true
+      }
+    }
+  },
+  "raw": "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/wp2_lr_controlled_density_20261121/trials.csv"
+}

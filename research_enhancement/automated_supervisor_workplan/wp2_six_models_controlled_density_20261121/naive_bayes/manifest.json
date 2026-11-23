@@ -1,0 +1,28 @@
+{
+  "model": "naive_bayes",
+  "levels": [
+    1,
+    5,
+    10,
+    20,
+    50,
+    100,
+    200
+  ],
+  "cpu": 0,
+  "minimum_reps": 20,
+  "maximum_reps": 40,
+  "thread_policy": "TOKIO_WORKER_THREADS=1; Wasmtime and Docker pinned to same CPU",
+  "wasm_sha256": "c2c133d5c665cd0410710de77b256abade1e5f69caa81ca00a7f479ae3a6a2de",
+  "golden_sha256": "168519359f407316d5dc735210154744bd5f77bf381e07e93f2187fcb78dd9cb",
+  "docker_image_id": "sha256:caaf320e23e3e78156f42aec165ee4d07005959619a531bbeb61a3c57e9457bb",
+  "docker_network": "bridge",
+  "scope": "Total application PSS only; excludes Docker helper ownership and base/model separation",
+  "measurement": "Three /proc/smaps_rollup samples per independent launched serving configuration",
+  "resource_limits": {
+    "per_docker_container_memory": "128m",
+    "per_docker_container_pids": 16
+  },
+  "repetition_independence": "New Wasm serving process, new N Docker containers per rep",
+  "historical_experiments_not_pooled": true
+}

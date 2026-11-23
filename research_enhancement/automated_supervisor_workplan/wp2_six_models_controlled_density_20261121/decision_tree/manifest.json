@@ -1,0 +1,28 @@
+{
+  "model": "decision_tree",
+  "levels": [
+    1,
+    5,
+    10,
+    20,
+    50,
+    100,
+    200
+  ],
+  "cpu": 0,
+  "minimum_reps": 20,
+  "maximum_reps": 40,
+  "thread_policy": "TOKIO_WORKER_THREADS=1; Wasmtime and Docker pinned to same CPU",
+  "wasm_sha256": "4d47c894975e253a72fcc8405b3b86db92e5d2e9febed5f77775a7cc51de76dc",
+  "golden_sha256": "46a31c984b55a05a69159e14277fbe8481322ffbd3076d839610f0847e89825b",
+  "docker_image_id": "sha256:353ee5b7cec8bf2ac30886c59ee77993512091eebb98a3ea6c268ac9a53009e4",
+  "docker_network": "bridge",
+  "scope": "Total application PSS only; excludes Docker helper ownership and base/model separation",
+  "measurement": "Three /proc/smaps_rollup samples per independent launched serving configuration",
+  "resource_limits": {
+    "per_docker_container_memory": "128m",
+    "per_docker_container_pids": 16
+  },
+  "repetition_independence": "New Wasm serving process, new N Docker containers per rep",
+  "historical_experiments_not_pooled": true
+}

@@ -1,0 +1,26 @@
+{
+  "scope": "WP2 controlled LR pilot, total application PSS; not final base/model/helper decomposition",
+  "cpu": 0,
+  "levels": [
+    1,
+    5,
+    10,
+    20,
+    50,
+    100,
+    200
+  ],
+  "minimum_reps": 20,
+  "maximum_reps": 40,
+  "wasm_sha256": "f78b0eb25db720a01f5f8e9496fbc145603e75ebd670036dcc504f3f88574faf",
+  "server_sha256": "6796b06410541e24d6461481c2ade87af55c8f11730bf3fd5124dcf0b4a721d4",
+  "golden_sha256": "37020d0a69705dc99f2054da29a069535512830ca20d7413dbe29c990082fc34",
+  "docker_image_id": "sha256:883b5a144ebcc2cd75a22ce38b1f8dcf29a99cf0396feef939d12c9a054927e5",
+  "docker_network": "bridge",
+  "tokio_workers_env": "1",
+  "memory_samples_per_repetition": 3,
+  "warmup_predictions_per_tenant": 2,
+  "docker_memory_limit": "128m",
+  "docker_pids_limit": 16,
+  "new_treatment_not_pooled_with_historical_density": true
+}

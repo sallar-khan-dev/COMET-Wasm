@@ -1,0 +1,118 @@
+{
+  "model": "decision_tree",
+  "precision_by_density": {
+    "1": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 12.424202473958333,
+        "student_t_pct": 0.23205843370744464,
+        "bootstrap_pct": 0.21078826949352023,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 2.3412109375,
+        "student_t_pct": 0.9250385061603221,
+        "bootstrap_pct": 0.8443956647479138,
+        "accepted": true
+      }
+    },
+    "5": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 12.461376953125,
+        "student_t_pct": 0.2255987875023458,
+        "bootstrap_pct": 0.2057153809883893,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 4.417626953125,
+        "student_t_pct": 0.5380921470646642,
+        "bootstrap_pct": 0.49300159531940535,
+        "accepted": true
+      }
+    },
+    "10": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 12.476578776041666,
+        "student_t_pct": 0.3042967443725704,
+        "bootstrap_pct": 0.27362956111777365,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 6.044710286458333,
+        "student_t_pct": 0.262876844618725,
+        "bootstrap_pct": 0.2377641112909121,
+        "accepted": true
+      }
+    },
+    "20": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 12.535709635416667,
+        "student_t_pct": 0.25757391969479204,
+        "bootstrap_pct": 0.2348807573156839,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 8.936555989583335,
+        "student_t_pct": 0.09187155987208385,
+        "bootstrap_pct": 0.08250889699160942,
+        "accepted": true
+      }
+    },
+    "50": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 12.853255208333332,
+        "student_t_pct": 0.20146110568036862,
+        "bootstrap_pct": 0.18336775551344855,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 17.16197916666667,
+        "student_t_pct": 0.050341296406219774,
+        "bootstrap_pct": 0.04609353661497112,
+        "accepted": true
+      }
+    },
+    "100": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 13.44833984375,
+        "student_t_pct": 0.27977179934270846,
+        "bootstrap_pct": 0.25234458394753995,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 30.726334635416663,
+        "student_t_pct": 0.032504615759405095,
+        "bootstrap_pct": 0.030459639818493752,
+        "accepted": true
+      }
+    },
+    "200": {
+      "wasmtime": {
+        "n": 20,
+        "mean_pss_mib": 14.603059895833331,
+        "student_t_pct": 0.24891095850215264,
+        "bootstrap_pct": 0.22756048737644666,
+        "accepted": true
+      },
+      "docker": {
+        "n": 20,
+        "mean_pss_mib": 57.75598958333334,
+        "student_t_pct": 0.027182073103179265,
+        "bootstrap_pct": 0.0246905195619156,
+        "accepted": true
+      }
+    }
+  },
+  "all_accepted": true
+}
