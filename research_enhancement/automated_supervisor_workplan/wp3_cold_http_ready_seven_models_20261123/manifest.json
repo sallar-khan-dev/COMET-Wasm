@@ -1,0 +1,90 @@
+{
+  "study": "WP3 exploratory cold-deployment/direct-functional-HTTP-readiness",
+  "scope_warning": "NOT final common-gateway equivalence. Docker lacks /health; POST /infer used for both. Wasmtime launches one process/N instances; Docker launches N containers.",
+  "models": [
+    "logistic_regression",
+    "naive_bayes",
+    "decision_tree",
+    "kmeans",
+    "random_forest",
+    "svm",
+    "mlp"
+  ],
+  "tenant_densities": [
+    1,
+    20,
+    50
+  ],
+  "minimum_reps": 20,
+  "maximum_reps": 60,
+  "maximum_readiness_retries": 3,
+  "cpu": 0,
+  "server_sha256": "6796b06410541e24d6461481c2ade87af55c8f11730bf3fd5124dcf0b4a721d4",
+  "docker_network": "bridge",
+  "worker_threads_env": "TOKIO_WORKER_THREADS=1",
+  "docker_memory_limit_per_tenant": "128m",
+  "docker_pids_limit": 16,
+  "measurement": "perf_counter_ns from just before process/docker-run launch to valid /infer for first tenant, and until all N tenants return reference-equivalent responses",
+  "models_frozen": {
+    "logistic_regression": {
+      "model": "logistic_regression",
+      "image": "sha256:883b5a144ebcc2cd75a22ce38b1f8dcf29a99cf0396feef939d12c9a054927e5",
+      "image_tag": "comet-wp1cap-lr:latest",
+      "wasm_sha256": "f78b0eb25db720a01f5f8e9496fbc145603e75ebd670036dcc504f3f88574faf",
+      "golden_sha256": "37020d0a69705dc99f2054da29a069535512830ca20d7413dbe29c990082fc34"
+    },
+    "naive_bayes": {
+      "model": "naive_bayes",
+      "image": "sha256:caaf320e23e3e78156f42aec165ee4d07005959619a531bbeb61a3c57e9457bb",
+      "image_tag": "comet-wp1-nb:latest",
+      "wasm_sha256": "c2c133d5c665cd0410710de77b256abade1e5f69caa81ca00a7f479ae3a6a2de",
+      "golden_sha256": "168519359f407316d5dc735210154744bd5f77bf381e07e93f2187fcb78dd9cb"
+    },
+    "decision_tree": {
+      "model": "decision_tree",
+      "image": "sha256:353ee5b7cec8bf2ac30886c59ee77993512091eebb98a3ea6c268ac9a53009e4",
+      "image_tag": "comet-wp1-dt:latest",
+      "wasm_sha256": "4d47c894975e253a72fcc8405b3b86db92e5d2e9febed5f77775a7cc51de76dc",
+      "golden_sha256": "46a31c984b55a05a69159e14277fbe8481322ffbd3076d839610f0847e89825b"
+    },
+    "kmeans": {
+      "model": "kmeans",
+      "image": "sha256:35d3b3ac334296b939b068ff4e9d77bef9f482a4b65aa9a5e0923db13b2f9f09",
+      "image_tag": "comet-wp1-kmeans:latest",
+      "wasm_sha256": "ae20b7069e3b55c632329be921fb552a2f4725fc4a18c1d09e66d4a05d103721",
+      "golden_sha256": "c39c64cdbe5d4aa15c81245c91d232c1bc5d59c7a62e5285f8dcc89ad429882f"
+    },
+    "random_forest": {
+      "model": "random_forest",
+      "image": "sha256:694b2945ddfb6758e9ebd3f24435cd5ba74a0953faf493e54a0def73d15bbd9f",
+      "image_tag": "comet-wp1-rf:latest",
+      "wasm_sha256": "deabe74ecd8734b0833b5d33414a3142652e8088832451b14931a5e16febc049",
+      "golden_sha256": "69bdde867803bc19988c006276b3d9c62387712aafa35cbaf984871c7c003da8"
+    },
+    "svm": {
+      "model": "svm",
+      "image": "sha256:ed7c14356e8f01ab2b901ca667acc2341c354e6cc66805d2de159d53554cf84a",
+      "image_tag": "comet-wp1-svm:latest",
+      "wasm_sha256": "900b962d61d922717ac07127bfbfa76c8cc9df77a223f205015e2ee0cf325220",
+      "golden_sha256": "fec83ad3a20a0e8a601b25d7ad34f5a5eabeab6e730dbbc69c3dccc1728263ae"
+    },
+    "mlp": {
+      "model": "mlp",
+      "image": "sha256:891e754ff9f82879cd682ade00f0fdd6f4a2c7e136b0b6c3332299e99b8c16a5",
+      "image_tag": "comet-wp1-mlp:latest",
+      "wasm_sha256": "d28b971205df934d6bd6ed1fa2c3222f208125de1602460543858ef13e7a6560",
+      "golden_sha256": "d7d4e0a8f70183b315bc35057e5a15ea641b96da3fb2ea78fe7a8e63b37d9176"
+    }
+  },
+  "golden_records": {
+    "logistic_regression": 45,
+    "naive_bayes": 569,
+    "decision_tree": 569,
+    "kmeans": 150,
+    "random_forest": 569,
+    "svm": 569,
+    "mlp": 569
+  },
+  "not_poolable_with_other_startup_campaigns": true,
+  "precision_policy": "Minimum 20 and maximum 60 per backend-condition; require 95% Student-t and bootstrap relative CI <=2.5% for both first-valid and all-ready timings before early stopping; report misses at 60 and proceed"
+}
