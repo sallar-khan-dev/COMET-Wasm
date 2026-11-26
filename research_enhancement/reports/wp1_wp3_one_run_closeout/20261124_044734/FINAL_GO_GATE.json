@@ -1,0 +1,165 @@
+{
+  "decision": "NO_GO",
+  "checks": {
+    "WP1_common_gateway_native_Wasm_Docker": true,
+    "WP1_validated_equal_input_traces": true,
+    "WP1_no_op_headroom_all_six_configurations": true,
+    "WP1_zero_loss_correctness_controlled_60": true,
+    "WP1_zero_loss_correctness_native_30": true,
+    "WP1_actual_affinity_threads_context_recorded": true,
+    "WP2_98_density_cells": "PARTIALLY_DOCUMENTED",
+    "WP2_staged_Wasmtime_all_seven": true,
+    "WP2_Docker_application_PSS_LR_RF": false,
+    "WP2_Docker_helper_where_measurable": "UNAVAILABLE_PERMISSION",
+    "WP2_JIT_AOT_deployment_choice": "UNVERIFIED",
+    "WP3_batched_LR_RF": "PREVIOUSLY_MEASURED",
+    "WP3_full_LR_RF_service_cost": true,
+    "WP3_cold_HTTP_readiness": "PREVIOUSLY_ACCEPTED",
+    "WP3_warm_admission": "MEASURED_WITH_DISCLOSED_4.95%_CI"
+  },
+  "blockers": [
+    "WP2_Docker_application_PSS_LR_RF",
+    "WP2_JIT_AOT_deployment_choice"
+  ],
+  "wp1": {
+    "corrected_wasm_docker_repetitions": 60,
+    "new_native_repetitions": 30,
+    "conditions": 30,
+    "all_three_backend_conditions": true,
+    "trace_matches": {
+      "lr": {
+        "wasmtime_docker_trace_digest_by_filename": {
+          "lr_trace_1500.json": "018b26ea3c864e9e59afe0fb7fb8c392c5b2cdbefe596c07b7a3647966a380d8",
+          "lr_trace_18000.json": "d6e9be247b6323e25383f4a72960e0ca813abed6036c395d40c800256fc402ff",
+          "lr_trace_36000.json": "d39f320d15c95c090bb3bddf2a91d0dd166584fe069cefbd421075ba83454854",
+          "lr_trace_4500.json": "e7cd02b57ecd78c0c9f7ba3c4348a4e46542568e1f81a871fdc81b565a466224",
+          "lr_trace_9000.json": "5faffef09a2179c42bde36e912a0f3b006b1d19034432c36efed9aa31f631b97"
+        },
+        "native_trace_digest_by_filename": {
+          "lr_trace_1500.json": "018b26ea3c864e9e59afe0fb7fb8c392c5b2cdbefe596c07b7a3647966a380d8",
+          "lr_trace_18000.json": "d6e9be247b6323e25383f4a72960e0ca813abed6036c395d40c800256fc402ff",
+          "lr_trace_36000.json": "d39f320d15c95c090bb3bddf2a91d0dd166584fe069cefbd421075ba83454854",
+          "lr_trace_4500.json": "e7cd02b57ecd78c0c9f7ba3c4348a4e46542568e1f81a871fdc81b565a466224",
+          "lr_trace_9000.json": "5faffef09a2179c42bde36e912a0f3b006b1d19034432c36efed9aa31f631b97"
+        },
+        "identical": true
+      },
+      "rf": {
+        "wasmtime_docker_trace_digest_by_filename": {
+          "rf_trace_1500.json": "89776d4cf688fee8841ab80492f0e71b027006cd2ed340b2d7ab0a2421bdcc43",
+          "rf_trace_18000.json": "719fa144b113377c64f96684cef168677f03e895d20d41f2af3e5bb2e3d3bef5",
+          "rf_trace_36000.json": "677272bcf1f1f63edb74d75e4f4177c40c82702eb9233f6653a805481b40b0fb",
+          "rf_trace_4500.json": "341fb4b68fd42d1d0de27db29405f29c75e7203edbcedcae5500eda67e6fe13d",
+          "rf_trace_9000.json": "030edbe560d17028eb5304d7d7460ae6ca6e2229866f50cd1e4af66ce9f6ddcb"
+        },
+        "native_trace_digest_by_filename": {
+          "rf_trace_1500.json": "89776d4cf688fee8841ab80492f0e71b027006cd2ed340b2d7ab0a2421bdcc43",
+          "rf_trace_18000.json": "719fa144b113377c64f96684cef168677f03e895d20d41f2af3e5bb2e3d3bef5",
+          "rf_trace_36000.json": "677272bcf1f1f63edb74d75e4f4177c40c82702eb9233f6653a805481b40b0fb",
+          "rf_trace_4500.json": "341fb4b68fd42d1d0de27db29405f29c75e7203edbcedcae5500eda67e6fe13d",
+          "rf_trace_9000.json": "030edbe560d17028eb5304d7d7460ae6ca6e2229866f50cd1e4af66ce9f6ddcb"
+        },
+        "identical": true
+      }
+    },
+    "resource": {
+      "lr_wasmtime": {
+        "resource_files": 15,
+        "affinity": {
+          "gateway": "0"
+        },
+        "gateway_threads_peak": 4,
+        "actual_proc_samples": true,
+        "context_switch_samples_present": true
+      },
+      "lr_docker": {
+        "resource_files": 15,
+        "affinity": {
+          "gateway": "0",
+          "docker_backend": "0"
+        },
+        "gateway_threads_peak": 2,
+        "actual_proc_samples": true,
+        "context_switch_samples_present": true
+      },
+      "lr_native": {
+        "resource_files": 15,
+        "affinity": {
+          "gateway": "0",
+          "native_backend": "0"
+        },
+        "gateway_threads_peak": 2,
+        "actual_proc_samples": true,
+        "context_switch_samples_present": true
+      },
+      "rf_wasmtime": {
+        "resource_files": 15,
+        "affinity": {
+          "gateway": "0"
+        },
+        "gateway_threads_peak": 4,
+        "actual_proc_samples": true,
+        "context_switch_samples_present": true
+      },
+      "rf_docker": {
+        "resource_files": 15,
+        "affinity": {
+          "gateway": "0",
+          "docker_backend": "0"
+        },
+        "gateway_threads_peak": 2,
+        "actual_proc_samples": true,
+        "context_switch_samples_present": true
+      },
+      "rf_native": {
+        "resource_files": 15,
+        "affinity": {
+          "gateway": "0",
+          "native_backend": "0"
+        },
+        "gateway_threads_peak": 2,
+        "actual_proc_samples": true,
+        "context_switch_samples_present": true
+      }
+    },
+    "no_op": {
+      "lr_wasmtime": true,
+      "lr_docker": true,
+      "rf_wasmtime": true,
+      "rf_docker": true,
+      "lr_native": true,
+      "rf_native": true
+    }
+  },
+  "wp2": {
+    "density_cells_previously_reported": 98,
+    "staged_seven": true,
+    "docker_app_mean_pss_mib": {
+      "images": null
+    },
+    "docker_helper": {
+      "scope": null,
+      "warning": null,
+      "utc": null,
+      "images": null,
+      "unavailable_images": null
+    },
+    "helper_interpretation": "Not measurable under current user permissions; not zero; supervisor says where measurable",
+    "jit_aot_candidates": []
+  },
+  "wp3": {
+    "service_valid_pairs": 13366428,
+    "warm_admission": {
+      "wasmtime_mean_ms": 0.008290701516666665,
+      "wasmtime_ci95_relative_half_width_pct": 4.945850788527493,
+      "docker_warm_start_mean_ms": 237.3321684,
+      "docker_ci95_relative_half_width_pct": 1.4729845056780477,
+      "precision_note": "2.5% is prior engineering target, NOT a universal supervisor acceptance condition; disclose 4.95% and distinct admission semantics"
+    },
+    "batched_native_Wasm_LR_RF": "Completed earlier, verified output reported",
+    "cold_http_deployment": "Completed earlier, accepted output reported"
+  },
+  "data_preservation": "Original prior results never modified. New native baseline in separate run.",
+  "wp4_started": false,
+  "supervisor_condition": "Do not start WP4 before trustworthy WP1-WP3 primitives"
+}

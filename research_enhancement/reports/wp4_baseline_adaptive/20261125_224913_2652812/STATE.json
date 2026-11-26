@@ -1,0 +1,366 @@
+{
+  "scope": "WP4 \u00a77: EXISTING MLP/SVM light baseline; RF baseline retained from WP1",
+  "precision": {
+    "student_t_ci95_relative_halfwidth_target_pct": 2.5,
+    "min": 20,
+    "max": 60,
+    "metrics": [
+      "P50_ms",
+      "P95_ms",
+      "P99_ms"
+    ],
+    "condition": "model x backend x offered RPS"
+  },
+  "rates": [
+    100,
+    600,
+    2400
+  ],
+  "seconds_per_repetition": 15,
+  "server_cpu": 0,
+  "client_cpu": 1,
+  "results": [
+    {
+      "model": "mlp",
+      "backend": "wasmtime",
+      "rate": 100,
+      "runs": 60,
+      "precision": {
+        "P50_ms": {
+          "n": 60,
+          "mean_ms": 1.4309842333333334,
+          "ci95_relative_halfwidth_pct": 2.5927150540647794,
+          "precision_ok": false
+        },
+        "P95_ms": {
+          "n": 60,
+          "mean_ms": 1.94428875,
+          "ci95_relative_halfwidth_pct": 1.939077764984599,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 60,
+          "mean_ms": 2.0226319333333334,
+          "ci95_relative_halfwidth_pct": 1.8331256940162506,
+          "precision_ok": true
+        }
+      },
+      "all_precision_ok": false,
+      "lost_requests": 840
+    },
+    {
+      "model": "mlp",
+      "backend": "wasmtime",
+      "rate": 600,
+      "runs": 49,
+      "precision": {
+        "P50_ms": {
+          "n": 49,
+          "mean_ms": 1.1594549795918367,
+          "ci95_relative_halfwidth_pct": 2.4940183297506096,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 49,
+          "mean_ms": 1.9036888979591837,
+          "ci95_relative_halfwidth_pct": 1.5845681893078798,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 49,
+          "mean_ms": 2.0136477959183674,
+          "ci95_relative_halfwidth_pct": 1.4880962346715663,
+          "precision_ok": true
+        }
+      },
+      "all_precision_ok": true,
+      "lost_requests": 0
+    },
+    {
+      "model": "mlp",
+      "backend": "wasmtime",
+      "rate": 2400,
+      "runs": 20,
+      "precision": {
+        "P50_ms": {
+          "n": 20,
+          "mean_ms": 1.2161698,
+          "ci95_relative_halfwidth_pct": 0.8710266895322045,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 20,
+          "mean_ms": 1.95079,
+          "ci95_relative_halfwidth_pct": 0.6209656634425482,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 20,
+          "mean_ms": 2.1639605,
+          "ci95_relative_halfwidth_pct": 0.5888707695237639,
+          "precision_ok": true
+        }
+      },
+      "all_precision_ok": true,
+      "lost_requests": 0
+    },
+    {
+      "model": "mlp",
+      "backend": "docker",
+      "rate": 100,
+      "runs": 58,
+      "precision": {
+        "P50_ms": {
+          "n": 58,
+          "mean_ms": 1.6901504137931034,
+          "ci95_relative_halfwidth_pct": 2.467248966875468,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 58,
+          "mean_ms": 2.19587225862069,
+          "ci95_relative_halfwidth_pct": 1.7896865773301682,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 58,
+          "mean_ms": 2.3243294137931034,
+          "ci95_relative_halfwidth_pct": 1.711258961666544,
+          "precision_ok": true
+        }
+      },
+      "all_precision_ok": true,
+      "lost_requests": 0
+    },
+    {
+      "model": "mlp",
+      "backend": "docker",
+      "rate": 600,
+      "runs": 60,
+      "precision": {
+        "P50_ms": {
+          "n": 60,
+          "mean_ms": 1.2500868666666667,
+          "ci95_relative_halfwidth_pct": 2.675486451493307,
+          "precision_ok": false
+        },
+        "P95_ms": {
+          "n": 60,
+          "mean_ms": 2.07446765,
+          "ci95_relative_halfwidth_pct": 1.9979826167598822,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 60,
+          "mean_ms": 2.4284025833333334,
+          "ci95_relative_halfwidth_pct": 10.397522599545928,
+          "precision_ok": false
+        }
+      },
+      "all_precision_ok": false,
+      "lost_requests": 0
+    },
+    {
+      "model": "mlp",
+      "backend": "docker",
+      "rate": 2400,
+      "runs": 60,
+      "precision": {
+        "P50_ms": {
+          "n": 60,
+          "mean_ms": 1.4163103333333333,
+          "ci95_relative_halfwidth_pct": 0.48293149184466594,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 60,
+          "mean_ms": 2.3661244833333335,
+          "ci95_relative_halfwidth_pct": 3.1156940035356953,
+          "precision_ok": false
+        },
+        "P99_ms": {
+          "n": 60,
+          "mean_ms": 4.428075833333334,
+          "ci95_relative_halfwidth_pct": 18.08970502484624,
+          "precision_ok": false
+        }
+      },
+      "all_precision_ok": false,
+      "lost_requests": 13
+    },
+    {
+      "model": "svm",
+      "backend": "wasmtime",
+      "rate": 100,
+      "runs": 20,
+      "precision": {
+        "P50_ms": {
+          "n": 20,
+          "mean_ms": 1.4816278,
+          "ci95_relative_halfwidth_pct": 2.281223642098195,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 20,
+          "mean_ms": 1.9908155,
+          "ci95_relative_halfwidth_pct": 1.7876092676595452,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 20,
+          "mean_ms": 2.0767955,
+          "ci95_relative_halfwidth_pct": 1.7770023553114331,
+          "precision_ok": true
+        }
+      },
+      "all_precision_ok": true,
+      "lost_requests": 0
+    },
+    {
+      "model": "svm",
+      "backend": "wasmtime",
+      "rate": 600,
+      "runs": 59,
+      "precision": {
+        "P50_ms": {
+          "n": 59,
+          "mean_ms": 1.188059338983051,
+          "ci95_relative_halfwidth_pct": 2.49983145489826,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 59,
+          "mean_ms": 1.8203143559322035,
+          "ci95_relative_halfwidth_pct": 1.6358085279510814,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 59,
+          "mean_ms": 1.9275883728813559,
+          "ci95_relative_halfwidth_pct": 1.5255823312911267,
+          "precision_ok": true
+        }
+      },
+      "all_precision_ok": true,
+      "lost_requests": 0
+    },
+    {
+      "model": "svm",
+      "backend": "wasmtime",
+      "rate": 2400,
+      "runs": 60,
+      "precision": {
+        "P50_ms": {
+          "n": 60,
+          "mean_ms": 1.2462024666666667,
+          "ci95_relative_halfwidth_pct": 0.6054334653247386,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 60,
+          "mean_ms": 1.97764625,
+          "ci95_relative_halfwidth_pct": 0.49181000742997544,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 60,
+          "mean_ms": 2.3793749833333333,
+          "ci95_relative_halfwidth_pct": 9.978616071894205,
+          "precision_ok": false
+        }
+      },
+      "all_precision_ok": false,
+      "lost_requests": 0
+    },
+    {
+      "model": "svm",
+      "backend": "docker",
+      "rate": 100,
+      "runs": 47,
+      "precision": {
+        "P50_ms": {
+          "n": 47,
+          "mean_ms": 1.7006363191489362,
+          "ci95_relative_halfwidth_pct": 2.4756369939951384,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 47,
+          "mean_ms": 2.1996216382978724,
+          "ci95_relative_halfwidth_pct": 1.946845224851994,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 47,
+          "mean_ms": 2.3135833617021277,
+          "ci95_relative_halfwidth_pct": 1.7857681899901658,
+          "precision_ok": true
+        }
+      },
+      "all_precision_ok": true,
+      "lost_requests": 0
+    },
+    {
+      "model": "svm",
+      "backend": "docker",
+      "rate": 600,
+      "runs": 60,
+      "precision": {
+        "P50_ms": {
+          "n": 60,
+          "mean_ms": 1.29747095,
+          "ci95_relative_halfwidth_pct": 2.1123594833658177,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 60,
+          "mean_ms": 2.128649116666667,
+          "ci95_relative_halfwidth_pct": 1.4691026075021807,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 60,
+          "mean_ms": 2.4063194333333335,
+          "ci95_relative_halfwidth_pct": 8.658918223536432,
+          "precision_ok": false
+        }
+      },
+      "all_precision_ok": false,
+      "lost_requests": 0
+    },
+    {
+      "model": "svm",
+      "backend": "docker",
+      "rate": 2400,
+      "runs": 60,
+      "precision": {
+        "P50_ms": {
+          "n": 60,
+          "mean_ms": 1.4127748,
+          "ci95_relative_halfwidth_pct": 0.6744095162347669,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 60,
+          "mean_ms": 2.3181537666666667,
+          "ci95_relative_halfwidth_pct": 0.8817426446329444,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 60,
+          "mean_ms": 5.3439729,
+          "ci95_relative_halfwidth_pct": 17.86302044349901,
+          "precision_ok": false
+        }
+      },
+      "all_precision_ok": false,
+      "lost_requests": 0
+    }
+  ],
+  "status": "BASELINE_COMPLETE",
+  "not_yet_done": [
+    "scaled MLP/RF/SVM models",
+    "WP4 heavy density remeasurement",
+    "compute crossover validation"
+  ]
+}

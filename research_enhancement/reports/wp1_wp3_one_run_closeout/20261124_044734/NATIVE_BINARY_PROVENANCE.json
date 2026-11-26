@@ -1,0 +1,14 @@
+{
+  "lr": {
+    "docker_image": "comet-wp1cap-lr:latest",
+    "image_id": "sha256:883b5a144ebcc2cd75a22ce38b1f8dcf29a99cf0396feef939d12c9a054927e5",
+    "native_executable": "/home/sallar/wasiMultitenant/research_enhancement/reports/wp1_wp3_one_run_closeout/20261124_044734/native_binaries/docker_lr_server",
+    "binary_sha256": "d2143f508ab34efd719035a47336a48b6d2660f7aac40511be1fd3943355d434"
+  },
+  "rf": {
+    "docker_image": "comet-wp1-rf:validated-20261123",
+    "image_id": "sha256:694b2945ddfb6758e9ebd3f24435cd5ba74a0953faf493e54a0def73d15bbd9f",
+    "native_executable": "/home/sallar/wasiMultitenant/research_enhancement/reports/wp1_wp3_one_run_closeout/20261124_044734/native_binaries/docker_rf_server",
+    "binary_sha256": "5df77bdb655b3670461a0b7dad23a81da2ca26c4442a067f6600caf2d68ee14f"
+  }
+}

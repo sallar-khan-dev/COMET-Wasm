@@ -1,0 +1,3 @@
+model,wasm_kernel_ns,docker_kernel_ns,wasm_service_ns,docker_service_ns,wasm_non_kernel_ns,docker_non_kernel_ns,kernel_ratio_wasm_over_docker,predicted_docker_kernel_crossover_ns,predicted_docker_kernel_crossover_ms,wasm_execution_share_pct,docker_execution_share_pct,interpretation
+lr,389.976,178.821,13474.076,212392.219,13084.099999999999,212213.39800000002,2.1808176891975775,168636.7843416353,0.1686367843416353,2.89426896508525,0.08419376229597186,"Positive design estimate, not a measured backend crossover"
+rf,6082.866,3677.95,19486.103,220626.534,13403.237,216948.584,1.653874033089085,311291.3752491355,0.31129137524913547,31.216431525585183,1.6670478991434454,"Positive design estimate, not a measured backend crossover"

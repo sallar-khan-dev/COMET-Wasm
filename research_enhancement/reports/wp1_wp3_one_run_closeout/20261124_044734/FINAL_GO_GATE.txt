@@ -1,0 +1,8 @@
+FINAL WP1–WP3 SUPERVISOR GATE: NO_GO
+WP1: 60 controlled Wasmtime/Docker + 30 new native runs; 30/30 model/backend/rate conditions
+WP1: no-op 6/6; matched deterministic traces: True; CPU/thread evidence True
+WP2: seven model staged PSS: True; Docker app PSS LR/RF: False; helper PSS unavailable (not zero)
+WP3: 13366428 valid service records; warm CI uncertainty transparently reported
+REMAINING: WP2_Docker_application_PSS_LR_RF; WP2_JIT_AOT_deployment_choice
+WP4 eligibility: BLOCKED by unresolved supervisor evidence
+Report: /home/sallar/wasiMultitenant/research_enhancement/reports/wp1_wp3_one_run_closeout/20261124_044734/FINAL_GO_GATE.json

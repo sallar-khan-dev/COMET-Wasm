@@ -1,0 +1,164 @@
+{
+  "experiment": "WP2 \u00a75.1 measured matched-thread Wasmtime JIT versus AOT sensitivity pilot",
+  "method": "Fresh processes; engine default; two instances; same models and Wasmtime 44 for JIT and precompiled AOT",
+  "precision": {
+    "minimum_repetitions": 20,
+    "maximum_repetitions": 60,
+    "target_relative_CI95_halfwidth_percent": 2.5,
+    "criteria": [
+      "total_pss_mib",
+      "module_incremental_pss_mib"
+    ]
+  },
+  "comparison": {
+    "lr": {
+      "wasm_sha256": "f78b0eb25db720a01f5f8e9496fbc145603e75ebd670036dcc504f3f88574faf",
+      "precompiled_sha256": "a55eca34b031e755aff26b1d1188fc2750182478aa4ee6f3abf9e37598bc1ca7",
+      "modes": {
+        "jit": {
+          "total_pss_mib": {
+            "n": 20,
+            "mean": 14.428369140625,
+            "CI95_halfwidth": 0.03935098170727989,
+            "CI95_relative_halfwidth_pct": 0.27273339989952117,
+            "precision_2_5pct_accepted": true
+          },
+          "module_incremental_pss_mib": {
+            "n": 20,
+            "mean": 10.959130859375,
+            "CI95_halfwidth": 0.04369638954324558,
+            "CI95_relative_halfwidth_pct": 0.3987213046723086,
+            "precision_2_5pct_accepted": true
+          },
+          "two_instance_incremental_pss_mib": {
+            "n": 20,
+            "mean": 0.16875,
+            "CI95_halfwidth": 0.019216282061568106,
+            "CI95_relative_halfwidth_pct": 11.387426406855173,
+            "precision_2_5pct_accepted": false
+          },
+          "module_load_ns": {
+            "n": 20,
+            "mean": 14937378.05,
+            "CI95_halfwidth": 302309.7677279887,
+            "CI95_relative_halfwidth_pct": 2.023847603749901,
+            "precision_2_5pct_accepted": true
+          }
+        },
+        "aot": {
+          "total_pss_mib": {
+            "n": 30,
+            "mean": 5.0015625,
+            "CI95_halfwidth": 0.032128517988914196,
+            "CI95_relative_halfwidth_pct": 0.6423696192722612,
+            "precision_2_5pct_accepted": true
+          },
+          "module_incremental_pss_mib": {
+            "n": 30,
+            "mean": 1.483203125,
+            "CI95_halfwidth": 0.03628157086297926,
+            "CI95_relative_halfwidth_pct": 2.446163323919592,
+            "precision_2_5pct_accepted": true
+          },
+          "two_instance_incremental_pss_mib": {
+            "n": 30,
+            "mean": 0.20309244791666667,
+            "CI95_halfwidth": 0.025293291344898928,
+            "CI95_relative_halfwidth_pct": 12.45407773866477,
+            "precision_2_5pct_accepted": false
+          },
+          "module_load_ns": {
+            "n": 30,
+            "mean": 407425.06666666665,
+            "CI95_halfwidth": 12037.86053963021,
+            "CI95_relative_halfwidth_pct": 2.95461951767414,
+            "precision_2_5pct_accepted": false
+          }
+        }
+      }
+    },
+    "rf": {
+      "wasm_sha256": "deabe74ecd8734b0833b5d33414a3142652e8088832451b14931a5e16febc049",
+      "precompiled_sha256": "075c4753f2c7b79849668e5b866d092de6b9e6959b0ac173ec01d2a82bba8ca6",
+      "modes": {
+        "jit": {
+          "total_pss_mib": {
+            "n": 20,
+            "mean": 30.919580078125,
+            "CI95_halfwidth": 0.30830495152337795,
+            "CI95_relative_halfwidth_pct": 0.9971188183810351,
+            "precision_2_5pct_accepted": true
+          },
+          "module_incremental_pss_mib": {
+            "n": 20,
+            "mean": 27.3943359375,
+            "CI95_halfwidth": 0.2854263124690985,
+            "CI95_relative_halfwidth_pct": 1.0419172529689962,
+            "precision_2_5pct_accepted": true
+          },
+          "two_instance_incremental_pss_mib": {
+            "n": 20,
+            "mean": 0.190625,
+            "CI95_halfwidth": 0.022206452285732457,
+            "CI95_relative_halfwidth_pct": 11.649286444974406,
+            "precision_2_5pct_accepted": false
+          },
+          "module_load_ns": {
+            "n": 20,
+            "mean": 23803670.3,
+            "CI95_halfwidth": 633302.9503697965,
+            "CI95_relative_halfwidth_pct": 2.660526475069672,
+            "precision_2_5pct_accepted": false
+          }
+        },
+        "aot": {
+          "total_pss_mib": {
+            "n": 32,
+            "mean": 5.129302978515625,
+            "CI95_halfwidth": 0.029258116894035877,
+            "CI95_relative_halfwidth_pct": 0.5704111653490768,
+            "precision_2_5pct_accepted": true
+          },
+          "module_incremental_pss_mib": {
+            "n": 32,
+            "mean": 1.624847412109375,
+            "CI95_halfwidth": 0.040262026330146326,
+            "CI95_relative_halfwidth_pct": 2.4778958337926764,
+            "precision_2_5pct_accepted": true
+          },
+          "two_instance_incremental_pss_mib": {
+            "n": 32,
+            "mean": 0.209014892578125,
+            "CI95_halfwidth": 0.025172188221438525,
+            "CI95_relative_halfwidth_pct": 12.043251038693207,
+            "precision_2_5pct_accepted": false
+          },
+          "module_load_ns": {
+            "n": 32,
+            "mean": 524523.0625,
+            "CI95_halfwidth": 9321.907277160377,
+            "CI95_relative_halfwidth_pct": 1.7772159021435547,
+            "precision_2_5pct_accepted": true
+          }
+        }
+      }
+    }
+  },
+  "deployment_choice": "jit",
+  "selected_mode": "jit",
+  "deployment_choice_reason": "Freeze currently deployed Engine::default + Module::from_file JIT-loaded Wasmtime configuration; do not select a mode because it favours Wasmtime.",
+  "frozen_configuration": {
+    "wasmtime_version": "44.0.0",
+    "mode": "jit",
+    "ingress_tokio_workers": 1,
+    "max_blocking_threads": 1,
+    "wasm_inference_workers": 1,
+    "one_model_per_host": true
+  },
+  "limits": [
+    "Fresh-process staged sensitivity: not interchangeable with complete gateway density results",
+    "Unmet precision at 60 repetitions is reported as uncertainty, never accepted silently"
+  ],
+  "raw_evidence": "/home/sallar/wasiMultitenant/research_enhancement/reports/wp2_jit_aot_precision/20261125_223252_2640788/RAW.jsonl",
+  "utc": "2026-11-25T22:33:13.115228+00:00"
+}

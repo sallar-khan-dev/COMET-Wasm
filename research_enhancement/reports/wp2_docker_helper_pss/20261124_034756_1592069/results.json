@@ -1,0 +1,660 @@
+{
+  "scope": "WP2 \u00a75 Docker application PSS and measurable per-container runtime helpers",
+  "warning": "Shared dockerd/containerd PSS change is shown separately but is NOT safely attributable to a single tenant. No substitution for seven-model density matrix.",
+  "utc": "2026-11-24T03:47:56.191987+00:00",
+  "images": {
+    "comet-wp1cap-lr:latest": {
+      "repetitions": [
+        {
+          "repetition": 1,
+          "container_id": "81ce0fa05061d9fe01b57c46588f41539b77ae86131ebe1fcaff98ab38ee7dde",
+          "app_process_pss_mib": {
+            "1592338": 1.861328125
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.861328125,
+          "per_container_shim_pss_mib": {
+            "1592314": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 2,
+          "container_id": "170224ec7f3685a442b2f624a20adfc3cd2b9dae1d41edfcae4e3d00b719c227",
+          "app_process_pss_mib": {
+            "1592849": 1.9033203125
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9033203125,
+          "per_container_shim_pss_mib": {
+            "1592826": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 3,
+          "container_id": "cdafbe652fbf5cbaa42ee2b0f74ce9e087e539de5de8c10950416b22a26a4efd",
+          "app_process_pss_mib": {
+            "1593109": 1.9228515625
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9228515625,
+          "per_container_shim_pss_mib": {
+            "1593084": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 4,
+          "container_id": "7599ca01ceec9060585dc93c21e79a39392ca795c2348813ca0a64c7b71ba124",
+          "app_process_pss_mib": {
+            "1593357": 1.8828125
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.8828125,
+          "per_container_shim_pss_mib": {
+            "1593334": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 5,
+          "container_id": "55211732cd8d6202f7ba49407d6943fee33729abf100b4bd5f8d3d728ceda26e",
+          "app_process_pss_mib": {
+            "1593605": 1.9072265625
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9072265625,
+          "per_container_shim_pss_mib": {
+            "1593581": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 6,
+          "container_id": "de8623356743fd0c9d6264a3ddb295663a7eca78d6b9d77738b015e49434f833",
+          "app_process_pss_mib": {
+            "1593874": 1.947265625
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.947265625,
+          "per_container_shim_pss_mib": {
+            "1593851": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 7,
+          "container_id": "69a44beef6ad75403a0c77b859884d087abc816d6d774aae134ff1f605a9d6cb",
+          "app_process_pss_mib": {
+            "1594131": 1.916015625
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.916015625,
+          "per_container_shim_pss_mib": {
+            "1594107": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 8,
+          "container_id": "fac62f72c25154d54edf73512a50a4476a03c2c89d2fd3ad132824fde9d3eff7",
+          "app_process_pss_mib": {
+            "1594386": 1.8857421875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.8857421875,
+          "per_container_shim_pss_mib": {
+            "1594362": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 9,
+          "container_id": "e68916df97b2fca97b9341e003c56e80529adfb9294f4631c01773532a7108c2",
+          "app_process_pss_mib": {
+            "1594638": 1.87109375
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.87109375,
+          "per_container_shim_pss_mib": {
+            "1594614": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 10,
+          "container_id": "a09a2deb84cb8bee43440cf019cd2de994b0a96e48c2280a49e4b65345ec9029",
+          "app_process_pss_mib": {
+            "1594893": 1.908203125
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.908203125,
+          "per_container_shim_pss_mib": {
+            "1594869": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 11,
+          "container_id": "7cf781763df40d366b541c156b0252a89110bfc30ded109c92976799597eed92",
+          "app_process_pss_mib": {
+            "1595156": 1.89453125
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.89453125,
+          "per_container_shim_pss_mib": {
+            "1595131": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 12,
+          "container_id": "5e2f26e10db31817a98a2116203f6c9f3357223571ba4cef46bc434c8cc6d9a5",
+          "app_process_pss_mib": {
+            "1595407": 1.9482421875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9482421875,
+          "per_container_shim_pss_mib": {
+            "1595383": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 13,
+          "container_id": "acbb7d9535f49a0af3a4e0f86e21883f3de67da10f70c5e0090d0d862f644e28",
+          "app_process_pss_mib": {
+            "1595659": 1.951171875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.951171875,
+          "per_container_shim_pss_mib": {
+            "1595637": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 14,
+          "container_id": "0ade8122d51b613a525448a3389777711965d05a451ebdb5d7eba0d3c2ea0bc5",
+          "app_process_pss_mib": {
+            "1595985": 1.88671875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.88671875,
+          "per_container_shim_pss_mib": {
+            "1595962": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 15,
+          "container_id": "10167a608b70002e0adbbe0d9af9ece4a65ec7aa9ee774212eab789bd9847c65",
+          "app_process_pss_mib": {
+            "1596243": 1.9072265625
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9072265625,
+          "per_container_shim_pss_mib": {
+            "1596219": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 16,
+          "container_id": "cefc6f03940c2fdd135ef8f54ebf9fec604add18416251c71a518b2750c6714b",
+          "app_process_pss_mib": {
+            "1596495": 1.966796875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.966796875,
+          "per_container_shim_pss_mib": {
+            "1596471": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 17,
+          "container_id": "08a1c06e19a55188dbefa87e8dc36e718377da7a3243f5f8f98a5a76db383188",
+          "app_process_pss_mib": {
+            "1596752": 1.8876953125
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.8876953125,
+          "per_container_shim_pss_mib": {
+            "1596728": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 18,
+          "container_id": "57cf3e95e4cd710c113b180918fe71d1009686a6aaeec80c534ccd79cf00dab8",
+          "app_process_pss_mib": {
+            "1597021": 1.90625
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.90625,
+          "per_container_shim_pss_mib": {
+            "1596997": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 19,
+          "container_id": "73ff520a1ab396265f1335aa0a9ff25178e0dfffcbea55bbb0dff1b6a71d0f9d",
+          "app_process_pss_mib": {
+            "1597273": 1.9453125
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9453125,
+          "per_container_shim_pss_mib": {
+            "1597249": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 20,
+          "container_id": "62a1a179eef16f1a30a949f79579e4fe6397978093bdbb8b9f542aedcde0a74d",
+          "app_process_pss_mib": {
+            "1597530": 1.8935546875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.8935546875,
+          "per_container_shim_pss_mib": {
+            "1597506": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        }
+      ],
+      "application_mean_pss_mib": 1.90966796875,
+      "measured_shim_mean_pss_mib": null
+    },
+    "comet-wp1-rf:validated-20261123": {
+      "repetitions": [
+        {
+          "repetition": 1,
+          "container_id": "45bce82b24eab64b46b1a31442e225db7e5fc96d50a01e321f2e74028ffc5ce5",
+          "app_process_pss_mib": {
+            "1597815": 1.966796875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.966796875,
+          "per_container_shim_pss_mib": {
+            "1597791": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 2,
+          "container_id": "518b3d8aadbc9575b682d5cb7d25ebb06eb23503aa6728249ce3f6e142eda245",
+          "app_process_pss_mib": {
+            "1598070": 1.94921875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.94921875,
+          "per_container_shim_pss_mib": {
+            "1598047": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 3,
+          "container_id": "6d17499e6eed908eb66b97265919eb1cc923cdd74821e8c8017bf007792c5b24",
+          "app_process_pss_mib": {
+            "1598320": 1.9130859375
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9130859375,
+          "per_container_shim_pss_mib": {
+            "1598297": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 4,
+          "container_id": "5a19abfee34d741c82de9d6190fd289d7de89053243ac60b20531ac112ed2150",
+          "app_process_pss_mib": {
+            "1598573": 1.9033203125
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9033203125,
+          "per_container_shim_pss_mib": {
+            "1598550": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 5,
+          "container_id": "7d19863da05d9a13517cbb3c7df90506d151d42a7fdf2637f8c2a8ebcc184e27",
+          "app_process_pss_mib": {
+            "1598832": 1.9931640625
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9931640625,
+          "per_container_shim_pss_mib": {
+            "1598807": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 6,
+          "container_id": "0d6f93ce3999102bf90d354a187adf65d07c59a4325a5486427769d05c997459",
+          "app_process_pss_mib": {
+            "1599150": 1.89453125
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.89453125,
+          "per_container_shim_pss_mib": {
+            "1599126": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 7,
+          "container_id": "cf1a8393dfbba48aa59d986506f093a365b5d33ec0ba9cc7a4bea78ec839d825",
+          "app_process_pss_mib": {
+            "1599403": 1.9609375
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9609375,
+          "per_container_shim_pss_mib": {
+            "1599378": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 8,
+          "container_id": "afdd3632a5df7afbff5d5c16e1548ac3b49f7e34e90a2b2492e6f434bd81c454",
+          "app_process_pss_mib": {
+            "1599658": 1.98828125
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.98828125,
+          "per_container_shim_pss_mib": {
+            "1599634": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 9,
+          "container_id": "f4edcb3ef9b58e3dd3cd63cce16402781a48d73147fbd452b16dfa0872d94338",
+          "app_process_pss_mib": {
+            "1599913": 1.9462890625
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9462890625,
+          "per_container_shim_pss_mib": {
+            "1599890": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 10,
+          "container_id": "566e22a7947b3266a8edca2843866148b154dec478302487edcee4a0435cae86",
+          "app_process_pss_mib": {
+            "1600172": 2.0224609375
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 2.0224609375,
+          "per_container_shim_pss_mib": {
+            "1600150": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 11,
+          "container_id": "030b119260d2f17b0cfca5faa5fdbb914dd352978159a0d9e405875747e70e8d",
+          "app_process_pss_mib": {
+            "1600434": 1.97265625
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.97265625,
+          "per_container_shim_pss_mib": {
+            "1600408": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 12,
+          "container_id": "708b2e069a6e40a71a0e2b4793f134dc8d37e5606c803cd21dc3c12014d7a631",
+          "app_process_pss_mib": {
+            "1600688": 1.9833984375
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9833984375,
+          "per_container_shim_pss_mib": {
+            "1600662": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 13,
+          "container_id": "062ddb1a6c14e3f898bbb3b3134b007d356f89ed4ebfe16d867e79165a2f07f2",
+          "app_process_pss_mib": {
+            "1600941": 2.0068359375
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 2.0068359375,
+          "per_container_shim_pss_mib": {
+            "1600917": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 14,
+          "container_id": "c53f9a864cab9625f11aec57a471f5525ba63a204bf3b1ea386096e6d5076cc0",
+          "app_process_pss_mib": {
+            "1601198": 2.0009765625
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 2.0009765625,
+          "per_container_shim_pss_mib": {
+            "1601175": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 15,
+          "container_id": "e8d3b4d20ad9e0bbac2f18266996c97bc23f4db7da4be6f78dd3024a841894c2",
+          "app_process_pss_mib": {
+            "1601453": 2.0107421875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 2.0107421875,
+          "per_container_shim_pss_mib": {
+            "1601430": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 16,
+          "container_id": "f9945179b7828794f2efa33c12d12be75c3ce95ff14f444ec77573eb5510b077",
+          "app_process_pss_mib": {
+            "1601704": 1.9619140625
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9619140625,
+          "per_container_shim_pss_mib": {
+            "1601681": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 17,
+          "container_id": "bc465e6344257fcf7be1c04b9001b4fac5bdcdb65ee8a5669991e042c9d6321d",
+          "app_process_pss_mib": {
+            "1601961": 1.8857421875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.8857421875,
+          "per_container_shim_pss_mib": {
+            "1601937": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 18,
+          "container_id": "192e9d06f5c349671565fd567e39c130d335b900c4e0ef9acda2056e0470b377",
+          "app_process_pss_mib": {
+            "1602220": 1.9716796875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9716796875,
+          "per_container_shim_pss_mib": {
+            "1602196": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 19,
+          "container_id": "011b728a21066ff9f10560dde8f9036c0e89683659cca94420d92d7e32cb8d73",
+          "app_process_pss_mib": {
+            "1602469": 1.9794921875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9794921875,
+          "per_container_shim_pss_mib": {
+            "1602445": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        },
+        {
+          "repetition": 20,
+          "container_id": "1b0144eb7034c74ad0d66f4084c5915f29217ae21caac30df9314e670d14750a",
+          "app_process_pss_mib": {
+            "1602725": 1.9482421875
+          },
+          "app_pss_measurement_source": "docker_exec_pid1_smaps_rollup",
+          "app_total_pss_mib": 1.9482421875,
+          "per_container_shim_pss_mib": {
+            "1602701": null
+          },
+          "shim_pss_measurable": false,
+          "shim_pss_permission_limited": true,
+          "shim_total_pss_mib": null,
+          "shared_docker_daemon_pss_change_mib_NONATTRIBUTABLE": {}
+        }
+      ],
+      "application_mean_pss_mib": 1.96298828125,
+      "measured_shim_mean_pss_mib": null
+    }
+  },
+  "unavailable_images": []
+}

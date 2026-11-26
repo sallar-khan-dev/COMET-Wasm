@@ -1,3 +1,4 @@
+import gzip
 #!/usr/bin/env python3
 """Supervisor WP1 §4 / WP3 §6.1: real native-through-common-ingress LR
 attribution and decomposition of existing native/Wasmtime/Docker trace records.
@@ -32,7 +33,7 @@ def call(args,*,log=None,timeout=900,env=None):
         r=subprocess.run(argv,cwd=ROOT,env=env,capture_output=True,text=True,timeout=timeout)
     else:
         with open(log,'w') as f:r=subprocess.run(argv,cwd=ROOT,env=env,stdout=f,stderr=subprocess.STDOUT,timeout=timeout)
-    if r.returncode:raise Abort(f'Exit {r.returncode}: {argv!r}, log={log}, {getattr(r,"stdout","")[-700:]}')
+    if r.returncode:raise Abort(f'Exit {r.returncode}: {argv!r}, log={log}, {(getattr(r,"stdout",None) or "")[-700:]}')
     return r
 
 def jsonread(p):return json.loads(pathlib.Path(p).read_text())
@@ -197,19 +198,22 @@ def main():
     native=None;gateway=None
     try:
         print('BUILD isolated gateway and native crates from existing repository source',flush=True)
-        gw,nv=prepare_isolated_sources(out)
-        builddir=out/'cargo_build'
-        call(['cargo','build','--release','--manifest-path',nv/'Cargo.toml','--target-dir',builddir],log=out/'native_build.log',timeout=2400)
-        call(['cargo','build','--release','--manifest-path',gw/'Cargo.toml','--target-dir',builddir],log=out/'gateway_build.log',timeout=3600)
-        native_bin=builddir/'release/docker_lr_server'
-        gateway_bin=builddir/'release/comet_common_ingress'
-        if not native_bin.is_file() or not gateway_bin.is_file():raise Abort('Isolated binaries not produced')
-        report['source_sha256']['isolated_native_binary']=sha(native_bin)
-        report['source_sha256']['isolated_gateway_binary']=sha(gateway_bin)
+        native_bin=ROOT/'research_enhancement/native_lr_prebuilt/docker_lr_server'
+        gateway_bin=GATEWAY
+        report['binary_provenance']={
+            'native_binary_sha256':sha(native_bin),
+            'gateway_binary_sha256':sha(gateway_bin),
+            'native_source':'existing comet-wp1-lr:latest Docker image executable',
+            'execution':'native host process',
+            'port_method':'LD_PRELOAD bind-port remapping at startup only'
+        }
         routes={str(i):{'backend':'native','model':'lr','url':f'http://127.0.0.1:{NATIVE_PORT}/infer'} for i in range(3)}
         routefile=out/'native_routes.json';routefile.write_text(json.dumps(routes,indent=2)+'\n')
         env=os.environ.copy();env.update({'COMET_INGRESS_WORKERS':'2','COMET_WASM_WORKERS':'2','COMET_ISOLATED_GATEWAY_PORT':str(GATEWAY_PORT),'COMET_ISOLATED_NATIVE_PORT':str(NATIVE_PORT)})
         # Release only the port about to be bound by our own isolated process.
+        env['LD_PRELOAD']=str(ROOT/'research_enhancement/native_lr_prebuilt/libcomet_portshim.so')
+        env['COMET_NATIVE_BIND_PORT']=str(NATIVE_PORT)
+        env['COMET_GATEWAY_BIND_PORT']=str(GATEWAY_PORT)
         held[1].close()
         native=start_cmd(['taskset','-c',str(srv),native_bin],out/'native_server.log',env)
         held[0].close()
@@ -229,6 +233,13 @@ def main():
                 call(cmd,log=base/f'rps{rate}_rep{rep}.log',timeout=SECONDS*4+90,env=clientenv)
                 summ=jsonread(prefix.with_suffix('.summary.json'))
                 raw=analyze_records(prefix.with_suffix('.requests.jsonl'))
+                raw_file=prefix.with_suffix('.requests.jsonl')
+                with raw_file.open('rb') as inp, gzip.open(
+                    str(raw_file)+'.gz','wb',compresslevel=1
+                ) as compressed:
+                    shutil.copyfileobj(inp,compressed)
+                raw_file.unlink()
+
                 row={'backend':'native','model':'lr','rps':rate,'repeat':rep,'summary':summ,'raw_analysis':raw,
                   'gateway_threads':procstatus(gateway.pid).get('Threads'),'native_threads':procstatus(native.pid).get('Threads')}
                 report['results'].append(row);save()

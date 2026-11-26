@@ -1,0 +1,66 @@
+{
+  "scope": "WP2 \u00a75 staged Wasmtime PSS only; non-interchangeable with high-density measurements",
+  "measured_models": [
+    "decision_tree",
+    "kmeans",
+    "logistic_regression",
+    "mlp",
+    "naive_bayes",
+    "random_forest",
+    "svm"
+  ],
+  "missing_models": [],
+  "repetitions_per_measured_model": 20,
+  "mean_by_model": {
+    "decision_tree": {
+      "process_baseline_pss_mib": 1.707958984375,
+      "engine_delta_mib": 1.566015625,
+      "module_delta_mib": 26.970703125,
+      "two_instances_delta_mib": 0.225048828125,
+      "total_two_instance_pss_mib": 30.4697265625
+    },
+    "kmeans": {
+      "process_baseline_pss_mib": 1.6994140625,
+      "engine_delta_mib": 1.5501953125,
+      "module_delta_mib": 10.4408203125,
+      "two_instances_delta_mib": 0.203125,
+      "total_two_instance_pss_mib": 13.8935546875
+    },
+    "logistic_regression": {
+      "process_baseline_pss_mib": 1.697998046875,
+      "engine_delta_mib": 1.5552734375,
+      "module_delta_mib": 10.989892578125,
+      "two_instances_delta_mib": 0.209375,
+      "total_two_instance_pss_mib": 14.4525390625
+    },
+    "mlp": {
+      "process_baseline_pss_mib": 1.7111328125,
+      "engine_delta_mib": 1.5494140625,
+      "module_delta_mib": 11.51943359375,
+      "two_instances_delta_mib": 0.215625,
+      "total_two_instance_pss_mib": 14.99560546875
+    },
+    "naive_bayes": {
+      "process_baseline_pss_mib": 1.709130859375,
+      "engine_delta_mib": 1.5400390625,
+      "module_delta_mib": 10.72890625,
+      "two_instances_delta_mib": 0.209326171875,
+      "total_two_instance_pss_mib": 14.18740234375
+    },
+    "random_forest": {
+      "process_baseline_pss_mib": 1.698193359375,
+      "engine_delta_mib": 1.574609375,
+      "module_delta_mib": 27.433642578125,
+      "two_instances_delta_mib": 0.24375,
+      "total_two_instance_pss_mib": 30.9501953125
+    },
+    "svm": {
+      "process_baseline_pss_mib": 1.692724609375,
+      "engine_delta_mib": 1.5630859375,
+      "module_delta_mib": 11.333154296875,
+      "two_instances_delta_mib": 0.21875,
+      "total_two_instance_pss_mib": 14.80771484375
+    }
+  },
+  "unresolved": "Docker application/helper PSS remains unmeasured here; this is not STOP/GO approval"
+}

@@ -1,0 +1,296 @@
+{
+  "timestamp": "2026-11-24T14:01:12.596059+00:00",
+  "decision": "NO_GO",
+  "checks": {
+    "WP1_corrected_pilot_all_three_backends": {
+      "status": "PASS",
+      "evidence": {
+        "runs": 90,
+        "conditions": 30,
+        "losses": 0
+      },
+      "remaining": ""
+    },
+    "WP1_equal_golden_trace": {
+      "status": "PASS",
+      "evidence": {
+        "lr": {
+          "old": 5,
+          "native": 5,
+          "same": true
+        },
+        "rf": {
+          "old": 5,
+          "native": 5,
+          "same": true
+        }
+      },
+      "remaining": ""
+    },
+    "WP1_gateway_noop_headroom": {
+      "status": "PASS",
+      "evidence": {
+        "lr_wasmtime": true,
+        "lr_docker": true,
+        "lr_native": true,
+        "rf_wasmtime": true,
+        "rf_docker": true,
+        "rf_native": true
+      },
+      "remaining": ""
+    },
+    "WP1_affinity_threads_context_switches": {
+      "status": "PASS",
+      "evidence": {
+        "lr_wasmtime": {
+          "complete": true,
+          "details": {
+            "resource_files": 15,
+            "affinity": {
+              "gateway": "0"
+            },
+            "threads_context_observed": true
+          }
+        },
+        "lr_docker": {
+          "complete": true,
+          "details": {
+            "resource_files": 15,
+            "affinity": {
+              "gateway": "0",
+              "docker_backend": "0"
+            },
+            "threads_context_observed": true
+          }
+        },
+        "lr_native": {
+          "complete": true,
+          "details": {
+            "resource_files": 15,
+            "affinity": {
+              "gateway": "0",
+              "native_backend": "0"
+            },
+            "threads_context_observed": true
+          }
+        },
+        "rf_wasmtime": {
+          "complete": true,
+          "details": {
+            "resource_files": 15,
+            "affinity": {
+              "gateway": "0"
+            },
+            "threads_context_observed": true
+          }
+        },
+        "rf_docker": {
+          "complete": true,
+          "details": {
+            "resource_files": 15,
+            "affinity": {
+              "gateway": "0",
+              "docker_backend": "0"
+            },
+            "threads_context_observed": true
+          }
+        },
+        "rf_native": {
+          "complete": true,
+          "details": {
+            "resource_files": 15,
+            "affinity": {
+              "gateway": "0",
+              "native_backend": "0"
+            },
+            "threads_context_observed": true
+          }
+        }
+      },
+      "remaining": ""
+    },
+    "WP1_explicit_worker_limits": {
+      "status": "PASS",
+      "evidence": {
+        "wasmtime_tokio_blocking_limit_source": true,
+        "native_runs": 30,
+        "note": "Effective concurrency is not equivalent to total Linux thread count"
+      },
+      "remaining": ""
+    },
+    "WP2_Docker_LR_RF_application_PSS": {
+      "status": "PASS",
+      "evidence": {
+        "data": {
+          "comet-wp1cap-lr:latest": {
+            "application_pss_mib": 1.90966796875,
+            "helper_pss_mib": null,
+            "repetitions": 20,
+            "host_shim_measurements": 0,
+            "measurement_source": [
+              "docker_exec_pid1_smaps_rollup"
+            ]
+          },
+          "comet-wp1-rf:validated-20261123": {
+            "application_pss_mib": 1.96298828125,
+            "helper_pss_mib": null,
+            "repetitions": 20,
+            "host_shim_measurements": 0,
+            "measurement_source": [
+              "docker_exec_pid1_smaps_rollup"
+            ]
+          }
+        },
+        "file": "/home/sallar/wasiMultitenant/research_enhancement/reports/wp2_docker_helper_pss/20261124_034756_1592069/results.json"
+      },
+      "remaining": ""
+    },
+    "WP2_Docker_helpers_where_measurable": {
+      "status": "PASS",
+      "evidence": {
+        "measured": {
+          "comet-wp1cap-lr:latest": {
+            "application_pss_mib": 1.90966796875,
+            "helper_pss_mib": null,
+            "repetitions": 20,
+            "host_shim_measurements": 0,
+            "measurement_source": [
+              "docker_exec_pid1_smaps_rollup"
+            ]
+          },
+          "comet-wp1-rf:validated-20261123": {
+            "application_pss_mib": 1.96298828125,
+            "helper_pss_mib": null,
+            "repetitions": 20,
+            "host_shim_measurements": 0,
+            "measurement_source": [
+              "docker_exec_pid1_smaps_rollup"
+            ]
+          }
+        },
+        "limitation": "The per-container shim and shared daemon are not zero. Per-container shim PSS is unavailable from this user account; daemon memory is shared and not safely attributable to one tenant."
+      },
+      "remaining": ""
+    },
+    "WP2_all_seven_staged_PSS": {
+      "status": "PASS",
+      "evidence": [
+        "RESULT.json"
+      ],
+      "remaining": ""
+    },
+    "WP2_98_density_app_PSS": {
+      "status": "PASS",
+      "evidence": {
+        "cells": 98,
+        "file": "/home/sallar/wasiMultitenant/research_enhancement/reports/supervisor_wp2_wp3_execution/20261124_033232_1568742/RESULT.json"
+      },
+      "remaining": ""
+    },
+    "WP2_JIT_AOT_measured_and_frozen": {
+      "status": "UNRESOLVED",
+      "evidence": {
+        "serving_config": "JIT-loaded (Engine::default, Module::from_file)",
+        "jit_aot_candidate_artifacts": [],
+        "files_with_both_modes_and_memory_or_latency": [],
+        "explicit_pilot_selection": null,
+        "note": "A sensitivity comparison under matched thread limits and a documented frozen selection are both required."
+      },
+      "remaining": "JIT versus precompiled/AOT matched-thread sensitivity comparison and explicit deployment selection must be documented"
+    },
+    "WP3_LR_RF_service_spans": {
+      "status": "PASS",
+      "evidence": {
+        "paired_responses": 13366428,
+        "models": [
+          "lr_wasmtime",
+          "lr_docker",
+          "rf_wasmtime",
+          "rf_docker"
+        ]
+      },
+      "remaining": ""
+    },
+    "WP3_batched_kernel": {
+      "status": "PASS",
+      "evidence": {
+        "lr": [
+          "/home/sallar/wasiMultitenant/research_enhancement/reports/supervisor_wp2_wp3_execution/20261124_033232_1568742/wp3_kernel_lr.json"
+        ],
+        "rf": [
+          "/home/sallar/wasiMultitenant/research_enhancement/reports/supervisor_wp2_wp3_execution/20261124_033232_1568742/wp3_kernel_rf.json"
+        ]
+      },
+      "remaining": ""
+    },
+    "WP3_warm_admission_with_reported_uncertainty": {
+      "status": "PASS",
+      "evidence": {
+        "wasmtime_batched_mean_ms": 0.008290701516666665,
+        "wasmtime_CI95_halfwidth_pct": 4.945850788527493,
+        "docker_precreated_start_mean_ms": 237.3321684,
+        "docker_CI95_halfwidth_pct": 1.4729845056780477,
+        "note": "Matched backend semantics differ by design; 2.5% is NOT a supervisor-mandated universal precision gate."
+      },
+      "remaining": ""
+    },
+    "WP3_cold_symmetric_HTTP_probe": {
+      "status": "PASS",
+      "evidence": "Previously accepted 60 symmetric cold-start trials per backend; original cold report must be retained",
+      "remaining": ""
+    }
+  },
+  "unresolved": [
+    "WP2_JIT_AOT_measured_and_frozen"
+  ],
+  "precisions": {
+    "new_experiments": false,
+    "policy_if_new": "20 minimum / 60 maximum repetitions, precision-controlled; none initiated"
+  },
+  "WP1": {
+    "90_repetitions": 90,
+    "conditions": 30,
+    "losses": 0
+  },
+  "WP2": {
+    "docker_PSS": {
+      "comet-wp1cap-lr:latest": {
+        "application_pss_mib": 1.90966796875,
+        "helper_pss_mib": null,
+        "repetitions": 20,
+        "host_shim_measurements": 0,
+        "measurement_source": [
+          "docker_exec_pid1_smaps_rollup"
+        ]
+      },
+      "comet-wp1-rf:validated-20261123": {
+        "application_pss_mib": 1.96298828125,
+        "helper_pss_mib": null,
+        "repetitions": 20,
+        "host_shim_measurements": 0,
+        "measurement_source": [
+          "docker_exec_pid1_smaps_rollup"
+        ]
+      }
+    },
+    "JIT_AOT": {
+      "serving_config": "JIT-loaded (Engine::default, Module::from_file)",
+      "jit_aot_candidate_artifacts": [],
+      "files_with_both_modes_and_memory_or_latency": [],
+      "explicit_pilot_selection": null,
+      "note": "A sensitivity comparison under matched thread limits and a documented frozen selection are both required."
+    }
+  },
+  "WP3": {
+    "service_pairs": 13366428,
+    "warm": {
+      "wasmtime_batched_mean_ms": 0.008290701516666665,
+      "wasmtime_CI95_halfwidth_pct": 4.945850788527493,
+      "docker_precreated_start_mean_ms": 237.3321684,
+      "docker_CI95_halfwidth_pct": 1.4729845056780477,
+      "note": "Matched backend semantics differ by design; 2.5% is NOT a supervisor-mandated universal precision gate."
+    }
+  },
+  "NOTE": "Evidence reconciliation is not scientific signoff and does not launch WP4 automatically.",
+  "previous_results_untouched": true
+}

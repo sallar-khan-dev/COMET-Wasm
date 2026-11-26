@@ -1,0 +1,293 @@
+{
+  "scope": "WP3 \u00a76.1 paired complete backend service decomposition from recorded gateway response fields",
+  "source": "/home/sallar/wasiMultitenant/research_enhancement/automated_supervisor_workplan/20261123_184837_1364620",
+  "created_utc": "2026-11-24T03:52:40.244436+00:00",
+  "models": {
+    "lr_wasmtime": {
+      "source_files": 220,
+      "record_counts": {
+        "records": 1980000,
+        "valid_pairs": 1980000
+      },
+      "components": {
+        "execution_time_ns": {
+          "n": 1980000,
+          "mean_ns": 389.976,
+          "median_ns": 368,
+          "p95_ns": 456,
+          "p99_ns": 725,
+          "mean_ms": 0.00038998
+        },
+        "gateway_outside_inference_ns": {
+          "n": 1980000,
+          "mean_ns": 12552.55,
+          "median_ns": 11920,
+          "p95_ns": 16296,
+          "p99_ns": 22606,
+          "mean_ms": 0.01255255
+        },
+        "inference_nonexecution_ns": {
+          "n": 1980000,
+          "mean_ns": 531.55,
+          "median_ns": 496,
+          "p95_ns": 759,
+          "p99_ns": 1138,
+          "mean_ms": 0.00053155
+        },
+        "inference_time_ns": {
+          "n": 1980000,
+          "mean_ns": 921.526,
+          "median_ns": 880,
+          "p95_ns": 1147,
+          "p99_ns": 1919,
+          "mean_ms": 0.00092153
+        },
+        "isolated_execution_ns": {
+          "n": 1980000,
+          "mean_ns": 389.976,
+          "median_ns": 368,
+          "p95_ns": 456,
+          "p99_ns": 725,
+          "mean_ms": 0.00038998
+        },
+        "request_total_ns": {
+          "n": 1980000,
+          "mean_ns": 13474.076,
+          "median_ns": 12812,
+          "p95_ns": 17416,
+          "p99_ns": 23979,
+          "mean_ms": 0.01347408
+        }
+      },
+      "measurement_kind": "paired elapsed spans, no new experiment"
+    },
+    "lr_docker": {
+      "source_files": 279,
+      "record_counts": {
+        "records": 3964500,
+        "valid_pairs": 3964486,
+        "missing_required_response_fields": 14
+      },
+      "components": {
+        "adapter_noninference_ns": {
+          "n": 3964486,
+          "mean_ns": 208026.313,
+          "median_ns": 169515,
+          "p95_ns": 392922,
+          "p99_ns": 510206,
+          "mean_ms": 0.20802631
+        },
+        "adapter_roundtrip_ns": {
+          "n": 3964486,
+          "mean_ns": 208368.762,
+          "median_ns": 169852,
+          "p95_ns": 393268,
+          "p99_ns": 510572,
+          "mean_ms": 0.20836876
+        },
+        "backend_inference_nonexecution_ns": {
+          "n": 3964486,
+          "mean_ns": 163.628,
+          "median_ns": 172,
+          "p95_ns": 182,
+          "p99_ns": 266,
+          "mean_ms": 0.00016363
+        },
+        "execution_time_ns": {
+          "n": 3964486,
+          "mean_ns": 178.821,
+          "median_ns": 182,
+          "p95_ns": 213,
+          "p99_ns": 336,
+          "mean_ms": 0.00017882
+        },
+        "gateway_outside_adapter_ns": {
+          "n": 3964486,
+          "mean_ns": 4023.457,
+          "median_ns": 2838,
+          "p95_ns": 4062,
+          "p99_ns": 54110,
+          "mean_ms": 0.00402346
+        },
+        "inference_time_ns": {
+          "n": 3964486,
+          "mean_ns": 342.449,
+          "median_ns": 356,
+          "p95_ns": 394,
+          "p99_ns": 530,
+          "mean_ms": 0.00034245
+        },
+        "isolated_execution_ns": {
+          "n": 3964486,
+          "mean_ns": 178.821,
+          "median_ns": 182,
+          "p95_ns": 213,
+          "p99_ns": 336,
+          "mean_ms": 0.00017882
+        },
+        "request_total_ns": {
+          "n": 3964486,
+          "mean_ns": 212392.219,
+          "median_ns": 174025,
+          "p95_ns": 398673,
+          "p99_ns": 514266,
+          "mean_ms": 0.21239222
+        }
+      },
+      "measurement_kind": "paired elapsed spans, no new experiment"
+    },
+    "rf_wasmtime": {
+      "source_files": 241,
+      "record_counts": {
+        "records": 3334500,
+        "valid_pairs": 3334500
+      },
+      "components": {
+        "execution_time_ns": {
+          "n": 3334500,
+          "mean_ns": 6082.866,
+          "median_ns": 5942,
+          "p95_ns": 9465,
+          "p99_ns": 11220,
+          "mean_ms": 0.00608287
+        },
+        "gateway_outside_inference_ns": {
+          "n": 3334500,
+          "mean_ns": 12804.538,
+          "median_ns": 12121,
+          "p95_ns": 16480,
+          "p99_ns": 23575,
+          "mean_ms": 0.01280454
+        },
+        "inference_nonexecution_ns": {
+          "n": 3334500,
+          "mean_ns": 598.7,
+          "median_ns": 582,
+          "p95_ns": 783,
+          "p99_ns": 1156,
+          "mean_ms": 0.0005987
+        },
+        "inference_time_ns": {
+          "n": 3334500,
+          "mean_ns": 6681.565,
+          "median_ns": 6545,
+          "p95_ns": 10094,
+          "p99_ns": 12065,
+          "mean_ms": 0.00668157
+        },
+        "isolated_execution_ns": {
+          "n": 3334500,
+          "mean_ns": 6082.866,
+          "median_ns": 5942,
+          "p95_ns": 9465,
+          "p99_ns": 11220,
+          "mean_ms": 0.00608287
+        },
+        "request_total_ns": {
+          "n": 3334500,
+          "mean_ns": 19486.103,
+          "median_ns": 18987,
+          "p95_ns": 24729,
+          "p99_ns": 32354,
+          "mean_ms": 0.0194861
+        }
+      },
+      "measurement_kind": "paired elapsed spans, no new experiment"
+    },
+    "rf_docker": {
+      "source_files": 287,
+      "record_counts": {
+        "records": 4087500,
+        "valid_pairs": 4087442,
+        "missing_required_response_fields": 58
+      },
+      "components": {
+        "adapter_noninference_ns": {
+          "n": 4087442,
+          "mean_ns": 203573.203,
+          "median_ns": 163342,
+          "p95_ns": 396533,
+          "p99_ns": 525604,
+          "mean_ms": 0.2035732
+        },
+        "adapter_roundtrip_ns": {
+          "n": 4087442,
+          "mean_ns": 207417.93,
+          "median_ns": 167445,
+          "p95_ns": 400573,
+          "p99_ns": 529512,
+          "mean_ms": 0.20741793
+        },
+        "backend_inference_nonexecution_ns": {
+          "n": 4087442,
+          "mean_ns": 166.777,
+          "median_ns": 175,
+          "p95_ns": 216,
+          "p99_ns": 276,
+          "mean_ms": 0.00016678
+        },
+        "execution_time_ns": {
+          "n": 4087442,
+          "mean_ns": 3677.95,
+          "median_ns": 2940,
+          "p95_ns": 7916,
+          "p99_ns": 9433,
+          "mean_ms": 0.00367795
+        },
+        "gateway_outside_adapter_ns": {
+          "n": 4087442,
+          "mean_ns": 13208.604,
+          "median_ns": 5808,
+          "p95_ns": 63312,
+          "p99_ns": 72447,
+          "mean_ms": 0.0132086
+        },
+        "inference_time_ns": {
+          "n": 4087442,
+          "mean_ns": 3844.727,
+          "median_ns": 3107,
+          "p95_ns": 8112,
+          "p99_ns": 9655,
+          "mean_ms": 0.00384473
+        },
+        "isolated_execution_ns": {
+          "n": 4087442,
+          "mean_ns": 3677.95,
+          "median_ns": 2940,
+          "p95_ns": 7916,
+          "p99_ns": 9433,
+          "mean_ms": 0.00367795
+        },
+        "request_total_ns": {
+          "n": 4087442,
+          "mean_ns": 220626.534,
+          "median_ns": 183695,
+          "p95_ns": 413643,
+          "p99_ns": 540526,
+          "mean_ms": 0.22062653
+        }
+      },
+      "measurement_kind": "paired elapsed spans, no new experiment"
+    }
+  },
+  "interpretation": {
+    "request_total_ns": "Gateway request-handler elapsed time, excludes client-side HTTP and scheduling time",
+    "inference_time_ns": "Backend-specific inference window reported by backend or Wasm adapter",
+    "execution_time_ns": "Backend-reported isolated model execution window",
+    "adapter_roundtrip_ns": "Docker adapter outbound HTTP request and response duration",
+    "wasmtime_gateway_overhead": "request_total_ns - inference_time_ns, includes gateway and spawn-blocking scheduling outside inference window",
+    "wasmtime_nonexecution_inference": "inference_time_ns - execution_time_ns, includes lock waiting and input conversion/copy; NOT pure memory-copy time",
+    "docker_gateway_overhead": "request_total_ns - adapter_roundtrip_ns, gateway handling outside Docker adapter",
+    "docker_adapter_noninference": "adapter_roundtrip_ns - inference_time_ns, includes network/HTTP and backend handling outside backend inference window",
+    "docker_inference_nonexecution": "inference_time_ns - execution_time_ns, backend overhead within inference window",
+    "kernel_batched": "Use separately measured WP3 batched kernel results for pure native/Wasm guest and copy isolation; these response fields do not replace them"
+  },
+  "limits": [
+    "No negative residuals retained as valid components; invalid ordering is counted",
+    "These decomposition terms are elapsed times of nested spans, not independent additive CPU consumption",
+    "Measured gateway server service cost is not the same as client-side end-to-end latency",
+    "Source-specific denominators vary: only complete response records enter paired decomposition",
+    "No invented corrected 2.5% significance; preserves observed measurements"
+  ],
+  "go_decision": "NOT_AUTOMATICALLY_GRANTED"
+}
