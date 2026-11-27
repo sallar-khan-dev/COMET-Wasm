@@ -242,7 +242,7 @@ def main():
       print('  Reusing completed no-op calibration',flush=True)
      else:
       samples=sample_during([GEN,'noop',f'http://127.0.0.1:{PORT_GATE}/noop',
-       '4800',str(14900/4800),'3000','256',noop],section/'noop.log',pids,timeout=90)
+       '4800',str(14900/4800),'3000','512',noop],section/'noop.log',pids,timeout=90)
       save(section/'noop.resources.json',samples)
      no=json.loads((section/'noop.summary.json').read_text())
      if no.get('offered_requests')!=no.get('successful_requests') or no.get('successful_requests')!=14900:

@@ -1,0 +1,197 @@
+{
+  "scope": "WP4 \u00a77: SCALED rf_trees_200 matched common-gateway serving",
+  "precision": {
+    "student_t_ci95_relative_halfwidth_target_pct": 2.5,
+    "min": 20,
+    "max": 60,
+    "metrics": [
+      "P50_ms",
+      "P95_ms",
+      "P99_ms"
+    ],
+    "condition": "model x backend x offered RPS"
+  },
+  "rates": [
+    100,
+    600,
+    2400
+  ],
+  "seconds_per_repetition": 15,
+  "server_cpu": 0,
+  "client_cpu": 1,
+  "results": [
+    {
+      "model": "rf_trees_200",
+      "backend": "wasmtime",
+      "rate": 100,
+      "runs": 60,
+      "precision": {
+        "P50_ms": {
+          "n": 60,
+          "mean_ms": 1.4014078166666666,
+          "ci95_relative_halfwidth_pct": 2.8597842247281244,
+          "precision_ok": false
+        },
+        "P95_ms": {
+          "n": 60,
+          "mean_ms": 1.9181012166666667,
+          "ci95_relative_halfwidth_pct": 2.056459361648804,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 60,
+          "mean_ms": 2.0197250666666666,
+          "ci95_relative_halfwidth_pct": 1.994482389912236,
+          "precision_ok": true
+        }
+      },
+      "all_precision_ok": false,
+      "lost_requests": 0
+    },
+    {
+      "model": "rf_trees_200",
+      "backend": "wasmtime",
+      "rate": 600,
+      "runs": 60,
+      "precision": {
+        "P50_ms": {
+          "n": 60,
+          "mean_ms": 1.2312939166666668,
+          "ci95_relative_halfwidth_pct": 2.224447935023993,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 60,
+          "mean_ms": 1.9867403666666668,
+          "ci95_relative_halfwidth_pct": 1.4012496355086774,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 60,
+          "mean_ms": 13.1386597,
+          "ci95_relative_halfwidth_pct": 82.7797142491929,
+          "precision_ok": false
+        }
+      },
+      "all_precision_ok": false,
+      "lost_requests": 212
+    },
+    {
+      "model": "rf_trees_200",
+      "backend": "wasmtime",
+      "rate": 2400,
+      "runs": 60,
+      "precision": {
+        "P50_ms": {
+          "n": 60,
+          "mean_ms": 1.1889954833333334,
+          "ci95_relative_halfwidth_pct": 0.6044569554815619,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 60,
+          "mean_ms": 1.8699339666666666,
+          "ci95_relative_halfwidth_pct": 0.6107457473159542,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 60,
+          "mean_ms": 2.48617935,
+          "ci95_relative_halfwidth_pct": 18.402743127730787,
+          "precision_ok": false
+        }
+      },
+      "all_precision_ok": false,
+      "lost_requests": 628
+    },
+    {
+      "model": "rf_trees_200",
+      "backend": "docker",
+      "rate": 100,
+      "runs": 60,
+      "precision": {
+        "P50_ms": {
+          "n": 60,
+          "mean_ms": 1.6693292833333333,
+          "ci95_relative_halfwidth_pct": 2.842206510409662,
+          "precision_ok": false
+        },
+        "P95_ms": {
+          "n": 60,
+          "mean_ms": 2.1774009,
+          "ci95_relative_halfwidth_pct": 2.1609815099750955,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 60,
+          "mean_ms": 10.014281666666667,
+          "ci95_relative_halfwidth_pct": 91.34714849067211,
+          "precision_ok": false
+        }
+      },
+      "all_precision_ok": false,
+      "lost_requests": 0
+    },
+    {
+      "model": "rf_trees_200",
+      "backend": "docker",
+      "rate": 600,
+      "runs": 60,
+      "precision": {
+        "P50_ms": {
+          "n": 60,
+          "mean_ms": 1.3683162,
+          "ci95_relative_halfwidth_pct": 2.0333235384150914,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 60,
+          "mean_ms": 2.2378476,
+          "ci95_relative_halfwidth_pct": 1.339739804052576,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 60,
+          "mean_ms": 14.465217283333333,
+          "ci95_relative_halfwidth_pct": 81.22625861486362,
+          "precision_ok": false
+        }
+      },
+      "all_precision_ok": false,
+      "lost_requests": 206
+    },
+    {
+      "model": "rf_trees_200",
+      "backend": "docker",
+      "rate": 2400,
+      "runs": 60,
+      "precision": {
+        "P50_ms": {
+          "n": 60,
+          "mean_ms": 1.4045773,
+          "ci95_relative_halfwidth_pct": 0.607032829241218,
+          "precision_ok": true
+        },
+        "P95_ms": {
+          "n": 60,
+          "mean_ms": 2.3160036,
+          "ci95_relative_halfwidth_pct": 0.683528175085673,
+          "precision_ok": true
+        },
+        "P99_ms": {
+          "n": 60,
+          "mean_ms": 4.853711716666667,
+          "ci95_relative_halfwidth_pct": 15.438559833202657,
+          "precision_ok": false
+        }
+      },
+      "all_precision_ok": false,
+      "lost_requests": 1897
+    }
+  ],
+  "status": "BASELINE_COMPLETE",
+  "not_yet_done": [
+    "WP4 scaled density remeasurement",
+    "WP4 crossover boundary analysis"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "date_utc": "2026-11-27T00:17:14.616797+00:00",
+  "scope": "WP4 \u00a77 scaled RF/SVM: matched Wasmtime and Docker via the corrected common gateway",
+  "run_policy": {
+    "confidence": 0.95,
+    "relative_ci_target_pct": 2.5,
+    "min_repetitions": 20,
+    "max_repetitions": 60,
+    "metrics": [
+      "P50",
+      "P95",
+      "P99"
+    ],
+    "rates_rps": [
+      100,
+      600,
+      2400
+    ]
+  },
+  "variants": [
+    "rf_trees_100",
+    "rf_trees_200",
+    "rf_trees_400",
+    "svm_c_0p03",
+    "svm_c_0p1",
+    "svm_c_0p3"
+  ],
+  "preflight": {
+    "rf_trees_100": [],
+    "rf_trees_200": [],
+    "rf_trees_400": [],
+    "svm_c_0p03": [],
+    "svm_c_0p1": [],
+    "svm_c_0p3": []
+  },
+  "status": "SCALED_RF_SVM_SERVING_COMPLETE",
+  "density_levels_required_later": [
+    1,
+    5,
+    10,
+    20,
+    50,
+    100,
+    200
+  ],
+  "note": "No unsupported switch to pre-WP1 multitenant_server. MLP scaling to be completed separately if no independent parity validation is present.",
+  "completed": [
+    {
+      "model": "rf_trees_100",
+      "state": "/home/sallar/wasiMultitenant/research_enhancement/reports/wp4_scaled_gateway_adaptive/rf_trees_100/20261126_144403_3036761/STATE.json",
+      "reused": true
+    },
+    {
+      "model": "rf_trees_200",
+      "state": "/home/sallar/wasiMultitenant/research_enhancement/reports/wp4_scaled_gateway_adaptive/rf_trees_200/20261126_173330_3127687/STATE.json",
+      "reused": true
+    },
+    {
+      "model": "rf_trees_400",
+      "state": "/home/sallar/wasiMultitenant/research_enhancement/reports/wp4_scaled_gateway_adaptive/rf_trees_400/20261126_190502_3178321/STATE.json",
+      "reused": true
+    },
+    {
+      "model": "svm_c_0p03",
+      "state": "/home/sallar/wasiMultitenant/research_enhancement/reports/wp4_scaled_gateway_adaptive/svm_c_0p03/20261126_203635_3230166/STATE.json",
+      "reused": false
+    },
+    {
+      "model": "svm_c_0p1",
+      "state": "/home/sallar/wasiMultitenant/research_enhancement/reports/wp4_scaled_gateway_adaptive/svm_c_0p1/20261127_010119_3340693/STATE.json",
+      "reused": false
+    },
+    {
+      "model": "svm_c_0p3",
+      "state": "/home/sallar/wasiMultitenant/research_enhancement/reports/wp4_scaled_gateway_adaptive/svm_c_0p3/20261127_022407_3372576/STATE.json",
+      "reused": false
+    }
+  ]
+}
